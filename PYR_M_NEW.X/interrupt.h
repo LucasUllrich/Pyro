@@ -1,23 +1,21 @@
 /* 
- * File:   communication.h
+ * File:   interrupt.h
  * Author: Lucas
  *
- * Created on 12. Juli 2016, 16:54
+ * Created on 14. Juli 2016, 19:56
  */
 
-#ifndef COMMUNICATION_H
-#define	COMMUNICATION_H
+#ifndef INTERRUPT_H
+#define	INTERRUPT_H
 #include "main.h"
 
 /***************************************************
  * Functionprototypes
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
-void Transmit(unsigned char slave, unsigned char trans_data);
-unsigned char Receive(void);
+void interrupt Isr(void);
 // </editor-fold>
 
 
-
-#endif	/* COMMUNICATION_H */
+#endif	/* INTERRUPT_H */
 

@@ -153,6 +153,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S574 . . . . . . . . ]
 "9950
 [v _RCSTA1bits `VS574 ~T0 @X0 0 e@4011 ]
+"16815
+[s S1075 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1075 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"16825
+[s S1076 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1076 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16835
+[s S1077 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1077 . . GIEL GIEH ]
+"16840
+[s S1078 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1078 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16850
+[s S1079 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1079 . . GIEL GIEH ]
+"16814
+[u S1074 `S1075 1 `S1076 1 `S1077 1 `S1078 1 `S1079 1 ]
+[n S1074 . . . . . . ]
+"16856
+[v _INTCONbits `VS1074 ~T0 @X0 0 e@4082 ]
+"8965
+[s S527 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S527 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE ]
+"8974
+[s S528 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S528 . . SSPIE TXIE RCIE ]
+"8964
+[u S526 `S527 1 `S528 1 ]
+[n S526 . . . ]
+"8981
+[v _PIE1bits `VS526 ~T0 @X0 0 e@3997 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7292,6 +7323,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
+[; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
+[; ;communication.h: 17: unsigned char Receive(void);
+[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
 "3 init.c
 [v _Init `(v ~T0 @X0 1 ef ]
 {
@@ -7467,7 +7501,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.c: 60: void InitInterrupt(void) {
 [e :U _InitInterrupt ]
 [f ]
-[; ;init.c: 62: }
+[; ;init.c: 61: INTCONbits.GIE = 1;
+"61
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;init.c: 62: INTCONbits.PEIE = 1;
 "62
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;init.c: 63: PIE1bits.RCIE = 1;
+"63
+[e = . . _PIE1bits 1 3 -> -> 1 `i `uc ]
+[; ;init.c: 64: }
+"64
 [e :UE 1112 ]
 }

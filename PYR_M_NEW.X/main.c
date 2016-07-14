@@ -80,12 +80,9 @@ void Delay_Routine(unsigned char delay_multiplyer) {
 void main(void) {
     Init();
     while(1) {
-        if(Time_Up == 1 || Time_Down == 1 || Time_Upup == 1 ||
-                Slave_Up == 1 || Port_Up == 1 || Ignite == 1) {
-            Led = 1;
-            Delay_Routine(8);
-        } else {
-            Led = 0;
+        if(Port_Up == 1) {
+            __delay_ms(10);
+            Transmit(1, 'L');
         }
     }
     return;

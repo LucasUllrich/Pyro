@@ -1,5 +1,5 @@
 
-# 1 "ignition.c"
+# 1 "interrupt.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -8946,3 +8946,21 @@ void InitTransmission(void);
 void InitTimer(void);
 void InitInterrupt(void);
 
+# 16 "communication.h"
+void Transmit(unsigned char slave, unsigned char trans_data);
+unsigned char Receive(void);
+
+# 54 "main.h"
+void Delay_Routine(unsigned char delay_multiplyer);
+
+# 3 "interrupt.c"
+void interrupt Isr(void) {
+if(PIR1bits.RCIF == 1) {
+PIR1bits.RCIF = 0;
+unsigned char received = 0;
+received = Receive();
+if(received == 1 || received == 'L') {
+PORTAbits.RA0 = 1;
+}
+}
+}

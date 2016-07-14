@@ -8946,6 +8946,13 @@ void InitTransmission(void);
 void InitTimer(void);
 void InitInterrupt(void);
 
+# 16 "communication.h"
+void Transmit(unsigned char slave, unsigned char trans_data);
+unsigned char Receive(void);
+
+# 54 "main.h"
+void Delay_Routine(unsigned char delay_multiplyer);
+
 # 3 "init.c"
 void Init(void) {
 InitPort();
@@ -9005,5 +9012,7 @@ void InitTimer(void) {
 }
 
 void InitInterrupt(void) {
-
+INTCONbits.GIE = 1;
+INTCONbits.PEIE = 1;
+PIE1bits.RCIE = 1;
 }

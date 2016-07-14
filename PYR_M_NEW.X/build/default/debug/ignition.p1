@@ -7138,3 +7138,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
+[; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
+[; ;communication.h: 17: unsigned char Receive(void);
+[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);

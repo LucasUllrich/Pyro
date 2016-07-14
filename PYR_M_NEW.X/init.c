@@ -41,7 +41,7 @@ void InitTransmission(void) {
 //UART
     TXSTA1bits.SYNC = 0;
     TXSTA1bits.BRGH = 1;
-    BAUDCON1bits.BRG16 = 0;
+    BAUDCON1bits.BRG16 = 0; //Baudrate 9600
     SPBRG1 = 25;
     TRISCbits.RC6 = 1;      //TX
     TRISCbits.RC7 = 1;      //RX
@@ -58,5 +58,7 @@ void InitTimer(void) {
 }
 
 void InitInterrupt(void) {
-    //RC1?
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.RCIE = 1;
 }

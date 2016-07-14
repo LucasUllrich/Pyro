@@ -1,4 +1,34 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"9041 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[s S530 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S530 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
+"9050
+[s S531 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S531 . . SSPIF TXIF RCIF ]
+"9040
+[u S529 `S530 1 `S531 1 ]
+[n S529 . . . ]
+"9057
+[v _PIR1bits `VS529 ~T0 @X0 0 e@3998 ]
+"10371
+[s S599 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S599 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"10381
+[s S600 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S600 . TX9D1 TRMT1 BRGH1 SENDB1 SYNC1 TXEN1 TX91 CSRC1 ]
+"10391
+[s S601 :6 `uc 1 :1 `uc 1 ]
+[n S601 . . TX8_9 ]
+"10395
+[s S602 :1 `uc 1 ]
+[n S602 . TXD8 ]
+"10370
+[u S598 `S599 1 `S600 1 `S601 1 `S602 1 ]
+[n S598 . . . . . ]
+"10399
+[v _TXSTA1bits `VS598 ~T0 @X0 0 e@4012 ]
+"10736
+[v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7138,3 +7168,59 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
+[; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
+[; ;communication.h: 17: unsigned char Receive(void);
+[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
+"3 communication.c
+[v _Transmit `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;communication.c: 3: void Transmit(unsigned char slave, unsigned char trans_data) {
+[e :U _Transmit ]
+[v _slave `uc ~T0 @X0 1 r1 ]
+[v _trans_data `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;communication.c: 4: while(PIR1bits.TXIF == 0);
+"4
+[e $U 1106  ]
+[e :U 1107 ]
+[e :U 1106 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1107  ]
+[e :U 1108 ]
+[; ;communication.c: 5: TXSTA1bits.TX9D = 1;
+"5
+[e = . . _TXSTA1bits 0 0 -> -> 1 `i `uc ]
+[; ;communication.c: 6: TXREG1 = slave;
+"6
+[e = _TXREG1 _slave ]
+[; ;communication.c: 7: while(PIR1bits.TXIF == 0);
+"7
+[e $U 1109  ]
+[e :U 1110 ]
+[e :U 1109 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1110  ]
+[e :U 1111 ]
+[; ;communication.c: 8: TXREG1 = trans_data;
+"8
+[e = _TXREG1 _trans_data ]
+[; ;communication.c: 9: }
+"9
+[e :UE 1105 ]
+}
+"12
+[v _Receive `(uc ~T0 @X0 1 ef ]
+{
+[; ;communication.c: 12: unsigned char Receive(void) {
+[e :U _Receive ]
+[f ]
+"13
+[v _received `uc ~T0 @X0 1 a ]
+[; ;communication.c: 13: unsigned char received = 0;
+[e = _received -> -> 0 `i `uc ]
+[; ;communication.c: 14: return (received);
+"14
+[e ) _received ]
+[e $UE 1112  ]
+[; ;communication.c: 15: }
+"15
+[e :UE 1112 ]
+}

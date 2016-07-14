@@ -9001,14 +9001,28 @@ void InitTransmission(void);
 void InitTimer(void);
 void InitInterrupt(void);
 
-# 74 "main.c"
+# 16 "communication.h"
+void Transmit(unsigned char slave, unsigned char trans_data);
+unsigned char Receive(void);
+
+# 54 "main.h"
+void Delay_Routine(unsigned char delay_multiplyer);
+
+# 73 "main.c"
+void Delay_Routine(unsigned char delay_multiplyer) {
+for (unsigned char delay_counter = 0; delay_counter < delay_multiplyer;
+delay_counter++) {
+_delay((unsigned long)((100)*(4000000/4000.0)));
+}
+}
+
 void main(void) {
 Init();
 while(1) {
-PORTAbits.RA0 = 1;
-_delay((unsigned long)((100)*(4000000/4000.0)));
-PORTAbits.RA0 = 0;
-_delay((unsigned long)((150)*(4000000/4000.0)));
+if(PORTBbits.RB1 == 1) {
+_delay((unsigned long)((10)*(4000000/4000.0)));
+Transmit(1, 'L');
+}
 }
 return;
 }

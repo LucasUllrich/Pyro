@@ -1,6 +1,6 @@
- build/default/debug/main.d  \
- build/default/debug/main.p1:  \
- main.c  \
+ build/default/debug/interrupt.d  \
+ build/default/debug/interrupt.p1:  \
+ interrupt.c  \
 init.h  \
 storage.h  \
 communication.h  \

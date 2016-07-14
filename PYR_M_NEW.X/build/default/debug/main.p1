@@ -1,58 +1,48 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"16 init.h
-[v _Init `(v ~T0 @X0 0 ef ]
-"6272 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
-[s S397 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S397 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"6282
-[s S398 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S398 . AN0 AN1 AN2 AN3 . AN4 ]
-"6290
-[s S399 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S399 . C12IN0M C12IN1M C2INP C1INP C1OUT C2OUT ]
-"6298
-[s S400 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S400 . C12IN0N C12IN1N VREFM VREFP T0CKI SS ]
-"6306
-[s S401 :5 `uc 1 :1 `uc 1 ]
-[n S401 . . NOT_SS ]
-"6310
-[s S402 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S402 . . VREFN . SRQ nSS ]
-"6317
-[s S403 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S403 . . CVREF . CCP5 LVDIN ]
-"6324
-[s S404 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S404 . . DACOUT . HLVDIN ]
-"6330
-[s S405 :5 `uc 1 :1 `uc 1 ]
-[n S405 . . SS1 ]
-"6334
-[s S406 :5 `uc 1 :1 `uc 1 ]
-[n S406 . . NOT_SS1 ]
-"6338
-[s S407 :5 `uc 1 :1 `uc 1 ]
-[n S407 . . nSS1 ]
-"6342
-[s S408 :5 `uc 1 :1 `uc 1 ]
-[n S408 . . SRNQ ]
-"6346
-[s S409 :7 `uc 1 :1 `uc 1 ]
-[n S409 . . RJPU ]
-"6350
-[s S410 :1 `uc 1 ]
-[n S410 . ULPWUIN ]
-"6271
-[u S396 `S397 1 `S398 1 `S399 1 `S400 1 `S401 1 `S402 1 `S403 1 `S404 1 `S405 1 `S406 1 `S407 1 `S408 1 `S409 1 `S410 1 ]
-[n S396 . . . . . . . . . . . . . . . ]
-"6354
-[v _PORTAbits `VS396 ~T0 @X0 0 e@3968 ]
 [v F7486 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF7486 ~T0 @X0 0 e ]
 [p i __delay ]
+[p mainexit ]
+"16 init.h
+[v _Init `(v ~T0 @X0 0 ef ]
+"6564 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[s S412 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S412 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"6574
+[s S413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S413 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"6584
+[s S414 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S414 . AN12 AN10 AN8 AN9 AN11 AN13 TX2 RX2 ]
+"6594
+[s S415 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S415 . FLT0 C12IN3M P1B C12IN2M T5G T1G CK2 DT2 ]
+"6604
+[s S416 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S416 . SRI C12IN3N CTED1 C12IN2N P1D CCP3 PGC PGD ]
+"6614
+[s S417 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S417 . CCP4 P1C SDA2 CTED2 . T3CKI ]
+"6622
+[s S418 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S418 . SS2 SCL2 SDI2 P2A . P3A ]
+"6630
+[s S419 :1 `uc 1 ]
+[n S419 . NOT_SS2 ]
+"6633
+[s S420 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S420 . nSS2 SCK2 . SDO2 . P2B ]
+"6641
+[s S421 :3 `uc 1 :1 `uc 1 ]
+[n S421 . . CCP2_PA2 ]
+"6563
+[u S411 `S412 1 `S413 1 `S414 1 `S415 1 `S416 1 `S417 1 `S418 1 `S419 1 `S420 1 `S421 1 ]
+[n S411 . . . . . . . . . . . ]
+"6646
+[v _PORTBbits `VS411 ~T0 @X0 0 e@3969 ]
+"16 communication.h
+[v _Transmit `(v ~T0 @X0 0 ef2`uc`uc ]
 "17 main.c
 [p x FOSC=INTIO67 ]
 "18
@@ -7256,42 +7246,82 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
-"74 main.c
+[; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
+[; ;communication.h: 17: unsigned char Receive(void);
+[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
+"73 main.c
+[v _Delay_Routine `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;main.c: 73: void Delay_Routine(unsigned char delay_multiplyer) {
+[e :U _Delay_Routine ]
+[v _delay_multiplyer `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 74: for (unsigned char delay_counter = 0; delay_counter < delay_multiplyer;
+"74
+{
+[v _delay_counter `uc ~T0 @X0 1 a ]
+[e = _delay_counter -> -> 0 `i `uc ]
+[; ;main.c: 75: delay_counter++) {
+[e $U 1109  ]
+"75
+[e :U 1106 ]
+{
+[; ;main.c: 76: _delay((unsigned long)((100)*(4000000/4000.0)));
+"76
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"77
+}
+"75
+[e ++ _delay_counter -> -> 1 `i `uc ]
+"74
+[e :U 1109 ]
+[e $ < -> _delay_counter `i -> _delay_multiplyer `i 1106  ]
+[e :U 1107 ]
+"77
+}
+[; ;main.c: 77: }
+[; ;main.c: 78: }
+"78
+[e :UE 1105 ]
+}
+"80
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 74: void main(void) {
+[; ;main.c: 80: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 75: Init();
-"75
-[e ( _Init ..  ]
-[; ;main.c: 76: while(1) {
-"76
-[e :U 1107 ]
-{
-[; ;main.c: 77: PORTAbits.RA0 = 1;
-"77
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 78: _delay((unsigned long)((100)*(4000000/4000.0)));
-"78
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 79: PORTAbits.RA0 = 0;
-"79
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 80: _delay((unsigned long)((150)*(4000000/4000.0)));
-"80
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 81: Init();
 "81
-}
-[e :U 1106 ]
-"76
-[e $U 1107  ]
-[e :U 1108 ]
-[; ;main.c: 81: }
-[; ;main.c: 82: return;
+[e ( _Init ..  ]
+[; ;main.c: 82: while(1) {
 "82
-[e $UE 1105  ]
-[; ;main.c: 83: }
+[e :U 1112 ]
+{
+[; ;main.c: 83: if(PORTBbits.RB1 == 1) {
 "83
-[e :UE 1105 ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 1114  ]
+{
+[; ;main.c: 84: _delay((unsigned long)((10)*(4000000/4000.0)));
+"84
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 85: Transmit(1, 'L');
+"85
+[e ( _Transmit (2 , -> -> 1 `i `uc -> -> 76 `ui `uc ]
+"86
+}
+[e :U 1114 ]
+"87
+}
+[e :U 1111 ]
+"82
+[e $U 1112  ]
+[e :U 1113 ]
+[; ;main.c: 86: }
+[; ;main.c: 87: }
+[; ;main.c: 88: return;
+"88
+[e $UE 1110  ]
+[; ;main.c: 89: }
+"89
+[e :UE 1110 ]
 }

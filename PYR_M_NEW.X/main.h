@@ -40,7 +40,7 @@
 #define Time_Down   PORTBbits.RB3       //Decrease time at selected port
 #define Time_Upup   PORTBbits.RB4       //Increase time at selected
                                             //port by 10
-#define Transmit    PORTBbits.RB5       //Enable transmission
+#define Transmit_En PORTBbits.RB5       //Enable transmission
 #define Show_Write  PORTCbits.RC0       //Enable and latch to output
                                             //of shift registers
 #define Ignite      PORTCbits.RC1       //Ignition signal
