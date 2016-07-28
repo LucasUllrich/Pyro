@@ -8950,6 +8950,9 @@ void InitInterrupt(void);
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
 
-# 54 "main.h"
+# 24
+unsigned char overrun = 0;
+
+# 55 "main.h"
 void Delay_Routine(unsigned char delay_multiplyer);
 

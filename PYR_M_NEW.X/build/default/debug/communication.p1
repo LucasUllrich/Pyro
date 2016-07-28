@@ -1,4 +1,68 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"6564 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[s S412 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S412 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"6574
+[s S413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S413 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"6584
+[s S414 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S414 . AN12 AN10 AN8 AN9 AN11 AN13 TX2 RX2 ]
+"6594
+[s S415 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S415 . FLT0 C12IN3M P1B C12IN2M T5G T1G CK2 DT2 ]
+"6604
+[s S416 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S416 . SRI C12IN3N CTED1 C12IN2N P1D CCP3 PGC PGD ]
+"6614
+[s S417 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S417 . CCP4 P1C SDA2 CTED2 . T3CKI ]
+"6622
+[s S418 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S418 . SS2 SCL2 SDI2 P2A . P3A ]
+"6630
+[s S419 :1 `uc 1 ]
+[n S419 . NOT_SS2 ]
+"6633
+[s S420 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S420 . nSS2 SCK2 . SDO2 . P2B ]
+"6641
+[s S421 :3 `uc 1 :1 `uc 1 ]
+[n S421 . . CCP2_PA2 ]
+"6563
+[u S411 `S412 1 `S413 1 `S414 1 `S415 1 `S416 1 `S417 1 `S418 1 `S419 1 `S420 1 `S421 1 ]
+[n S411 . . . . . . . . . . . ]
+"6646
+[v _PORTBbits `VS411 ~T0 @X0 0 e@3969 ]
+"9910
+[s S575 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S575 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"9920
+[s S576 :3 `uc 1 :1 `uc 1 ]
+[n S576 . . ADEN ]
+"9924
+[s S577 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S577 . RX9D1 OERR1 FERR1 ADDEN1 CREN1 SREN1 RX91 SPEN1 ]
+"9934
+[s S578 :6 `uc 1 :1 `uc 1 ]
+[n S578 . . RC8_9 ]
+"9938
+[s S579 :6 `uc 1 :1 `uc 1 ]
+[n S579 . . RC9 ]
+"9942
+[s S580 :1 `uc 1 ]
+[n S580 . RCD8 ]
+"9945
+[s S581 :5 `uc 1 :1 `uc 1 ]
+[n S581 . . SRENA ]
+"9909
+[u S574 `S575 1 `S576 1 `S577 1 `S578 1 `S579 1 `S580 1 `S581 1 ]
+[n S574 . . . . . . . . ]
+"9950
+[v _RCSTA1bits `VS574 ~T0 @X0 0 e@4011 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "9041 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
 [s S530 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S530 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
@@ -10,25 +74,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S529 . . . ]
 "9057
 [v _PIR1bits `VS529 ~T0 @X0 0 e@3998 ]
-"10371
-[s S599 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S599 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"10381
-[s S600 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S600 . TX9D1 TRMT1 BRGH1 SENDB1 SYNC1 TXEN1 TX91 CSRC1 ]
-"10391
-[s S601 :6 `uc 1 :1 `uc 1 ]
-[n S601 . . TX8_9 ]
-"10395
-[s S602 :1 `uc 1 ]
-[n S602 . TXD8 ]
-"10370
-[u S598 `S599 1 `S600 1 `S601 1 `S602 1 ]
-[n S598 . . . . . ]
-"10399
-[v _TXSTA1bits `VS598 ~T0 @X0 0 e@4012 ]
 "10736
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
+"10813
+[v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7170,7 +7219,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 23: void InitInterrupt(void);
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
+"24 communication.h
+[v _overrun `uc ~T0 @X0 1 e ]
+[i _overrun
+-> -> 0 `i `uc
+]
+[; ;communication.h: 24: unsigned char overrun = 0;
+[; ;main.h: 55: void Delay_Routine(unsigned char delay_multiplyer);
 "3 communication.c
 [v _Transmit `(v ~T0 @X0 1 ef2`uc`uc ]
 {
@@ -7179,48 +7234,94 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _slave `uc ~T0 @X0 1 r1 ]
 [v _trans_data `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;communication.c: 4: while(PIR1bits.TXIF == 0);
+[; ;communication.c: 4: PORTBbits.RB5 = 1;
 "4
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+[; ;communication.c: 5: RCSTA1bits.CREN = 0;
+"5
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;communication.c: 6: __nop();
+"6
+[e ( ___nop ..  ]
+[; ;communication.c: 7: while(PIR1bits.TXIF == 0);
+"7
 [e $U 1106  ]
 [e :U 1107 ]
 [e :U 1106 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1107  ]
 [e :U 1108 ]
-[; ;communication.c: 5: TXSTA1bits.TX9D = 1;
-"5
-[e = . . _TXSTA1bits 0 0 -> -> 1 `i `uc ]
-[; ;communication.c: 6: TXREG1 = slave;
-"6
+[; ;communication.c: 9: TXREG1 = slave;
+"9
 [e = _TXREG1 _slave ]
-[; ;communication.c: 7: while(PIR1bits.TXIF == 0);
-"7
+[; ;communication.c: 10: while(PIR1bits.TXIF == 0);
+"10
 [e $U 1109  ]
 [e :U 1110 ]
 [e :U 1109 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1110  ]
 [e :U 1111 ]
-[; ;communication.c: 8: TXREG1 = trans_data;
-"8
+[; ;communication.c: 11: TXREG1 = trans_data;
+"11
 [e = _TXREG1 _trans_data ]
-[; ;communication.c: 9: }
-"9
+[; ;communication.c: 12: while(PIR1bits.TXIF == 0);
+"12
+[e $U 1112  ]
+[e :U 1113 ]
+[e :U 1112 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1113  ]
+[e :U 1114 ]
+[; ;communication.c: 13: PORTBbits.RB5 = 0;
+"13
+[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+[; ;communication.c: 14: RCSTA1bits.CREN = 1;
+"14
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;communication.c: 15: __nop();
+"15
+[e ( ___nop ..  ]
+[; ;communication.c: 16: }
+"16
 [e :UE 1105 ]
 }
-"12
+"19
 [v _Receive `(uc ~T0 @X0 1 ef ]
 {
-[; ;communication.c: 12: unsigned char Receive(void) {
+[; ;communication.c: 19: unsigned char Receive(void) {
 [e :U _Receive ]
 [f ]
-"13
-[v _received `uc ~T0 @X0 1 a ]
-[; ;communication.c: 13: unsigned char received = 0;
-[e = _received -> -> 0 `i `uc ]
-[; ;communication.c: 14: return (received);
-"14
-[e ) _received ]
-[e $UE 1112  ]
-[; ;communication.c: 15: }
-"15
-[e :UE 1112 ]
+[; ;communication.c: 20: if(RCSTA1bits.OERR == 1) {
+"20
+[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1116  ]
+{
+[; ;communication.c: 21: RCSTA1bits.CREN = 0;
+"21
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;communication.c: 22: RCSTA1bits.CREN = 1;
+"22
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;communication.c: 23: overrun = 1;
+"23
+[e = _overrun -> -> 1 `i `uc ]
+"24
+}
+[; ;communication.c: 24: }
+[e $U 1117  ]
+"26
+[e :U 1116 ]
+[; ;communication.c: 26: else {
+{
+[; ;communication.c: 27: overrun = 0;
+"27
+[e = _overrun -> -> 0 `i `uc ]
+"28
+}
+[e :U 1117 ]
+[; ;communication.c: 28: }
+[; ;communication.c: 30: return (RCREG1);
+"30
+[e ) _RCREG1 ]
+[e $UE 1115  ]
+[; ;communication.c: 31: }
+"31
+[e :UE 1115 ]
 }

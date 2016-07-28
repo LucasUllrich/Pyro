@@ -17,6 +17,13 @@ void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
 // </editor-fold>
 
+/***************************************************
+ * Variables and constants
+ ***************************************************/
+// <editor-fold defaultstate="collapsed" desc="Variables">
+unsigned char overrun = 0;
+// </editor-fold>
+
 
 
 #endif	/* COMMUNICATION_H */

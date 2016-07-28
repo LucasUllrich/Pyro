@@ -13,9 +13,14 @@
  * Functionprototypes
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
-
+void Timer_Count(void);
 // </editor-fold>
 
-
+/***************************************************
+ * Variables and constants
+ ***************************************************/
+// <editor-fold defaultstate="collapsed" desc="variables">
+unsigned char current_time = 0;
+// </editor-fold>
 #endif	/* IGNITION_H */
 

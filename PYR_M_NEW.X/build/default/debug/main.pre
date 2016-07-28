@@ -9005,7 +9005,10 @@ void InitInterrupt(void);
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
 
-# 54 "main.h"
+# 24
+unsigned char overrun = 0;
+
+# 55 "main.h"
 void Delay_Routine(unsigned char delay_multiplyer);
 
 # 73 "main.c"
@@ -9019,10 +9022,10 @@ _delay((unsigned long)((100)*(4000000/4000.0)));
 void main(void) {
 Init();
 while(1) {
-if(PORTBbits.RB1 == 1) {
-_delay((unsigned long)((10)*(4000000/4000.0)));
-Transmit(1, 'L');
-}
+
+_delay((unsigned long)((100)*(4000000/4000000.0)));
+Transmit('P', 'L');
+
 }
 return;
 }

@@ -8950,7 +8950,10 @@ void InitInterrupt(void);
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
 
-# 54 "main.h"
+# 24
+unsigned char overrun = 0;
+
+# 55 "main.h"
 void Delay_Routine(unsigned char delay_multiplyer);
 
 # 3 "interrupt.c"
@@ -8959,8 +8962,11 @@ if(PIR1bits.RCIF == 1) {
 PIR1bits.RCIF = 0;
 unsigned char received = 0;
 received = Receive();
-if(received == 1 || received == 'L') {
+__nop();
+if(received == 'L' ) {
 PORTAbits.RA0 = 1;
+}else {
+PORTAbits.RA0 = 0;
 }
 }
 }

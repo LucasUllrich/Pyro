@@ -5,8 +5,14 @@ void interrupt Isr(void) {
         PIR1bits.RCIF = 0;
         unsigned char received = 0;
         received = Receive();
-        if(received == 1 || received == 'L') {
+        NOP();
+        if(received == '1' || received == 'L') {
             Led = 1;
+        }else {
+            Led = 0;
         }
+    }if(PIR1bits.CCP1IF == 1) {
+        PIR1bits.CCP1IF = 0;
+        current_time++;
     }
 }

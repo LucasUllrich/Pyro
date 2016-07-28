@@ -7325,7 +7325,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 23: void InitInterrupt(void);
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
+"24 communication.h
+[v _overrun `uc ~T0 @X0 1 e ]
+[i _overrun
+-> -> 0 `i `uc
+]
+[; ;communication.h: 24: unsigned char overrun = 0;
+[; ;main.h: 55: void Delay_Routine(unsigned char delay_multiplyer);
 "3 init.c
 [v _Init `(v ~T0 @X0 1 ef ]
 {

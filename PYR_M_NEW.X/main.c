@@ -80,9 +80,10 @@ void Delay_Routine(unsigned char delay_multiplyer) {
 void main(void) {
     Init();
     while(1) {
-        if(Slave_Up == 1) {
-            __delay_ms(10);
-            Transmit(1, 'L');
+        if(Ignite_Ready == 1) {
+            
+        }else {
+            
         }
     }
     return;
