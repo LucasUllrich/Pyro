@@ -49,7 +49,12 @@ void InitTransmission(void) {
     TXSTA1bits.TX9 = 1;
     TXSTA1bits.TXEN = 1;
     RCSTA1bits.RC9 = 1;
+#ifdef COM_TEST
+    RCSTA1bits.CREN = 0;
+#endif
+#ifndef COM_TEST
     RCSTA1bits.CREN = 1;
+#endif
     TRISCbits.RC6 = 0;
 }
 

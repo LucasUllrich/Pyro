@@ -25,6 +25,7 @@
  * Variables and constants
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="variables">
+#define COM_TEST
 #define _XTAL_FREQ  4000000
 // </editor-fold>
 
