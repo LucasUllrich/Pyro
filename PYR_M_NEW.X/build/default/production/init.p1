@@ -153,6 +153,65 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S574 . . . . . . . . ]
 "9950
 [v _RCSTA1bits `VS574 ~T0 @X0 0 e@4011 ]
+"15590
+[s S990 :2 `uc 1 :1 `uc 1 ]
+[n S990 . . NOT_T1SYNC ]
+"15594
+[s S991 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S991 . TMR1ON T1RD16 nT1SYNC T1SOSCEN T1CKPS TMR1CS ]
+"15602
+[s S992 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S992 . . RD16 T1SYNC T1OSCEN T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
+"15612
+[s S993 :3 `uc 1 :1 `uc 1 ]
+[n S993 . . SOSCEN ]
+"15589
+[u S989 `S990 1 `S991 1 `S992 1 `S993 1 ]
+[n S989 . . . . . ]
+"15617
+[v _T1CONbits `VS989 ~T0 @X0 0 e@4045 ]
+"11050
+[s S650 :2 `uc 1 :1 `uc 1 ]
+[n S650 . . NOT_T3SYNC ]
+"11054
+[s S651 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S651 . TMR3ON T3RD16 nT3SYNC T3SOSCEN T3CKPS TMR3CS ]
+"11062
+[s S652 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S652 . . T3OSCEN T3CKPS0 T3CKPS1 TMR3CS0 TMR3CS1 ]
+"11070
+[s S653 :7 `uc 1 :1 `uc 1 ]
+[n S653 . . RD163 ]
+"11074
+[s S654 :3 `uc 1 :1 `uc 1 ]
+[n S654 . . SOSCEN3 ]
+"11049
+[u S649 `S650 1 `S651 1 `S652 1 `S653 1 `S654 1 ]
+[n S649 . . . . . . ]
+"11079
+[v _T3CONbits `VS649 ~T0 @X0 0 e@4017 ]
+"13001
+[s S782 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S782 . CCP1M DC1B P1M ]
+"13006
+[s S783 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S783 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 DC1B0 DC1B1 P1M0 P1M1 ]
+"13000
+[u S781 `S782 1 `S783 1 ]
+[n S781 . . . ]
+"13017
+[v _CCP1CONbits `VS781 ~T0 @X0 0 e@4029 ]
+"1286
+[s S59 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :2 `uc 1 ]
+[n S59 . C1TSEL . C2TSEL . C3TSEL ]
+"1293
+[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S60 . C1TSEL0 C1TSEL1 . C2TSEL0 C2TSEL1 . C3TSEL0 C3TSEL1 ]
+"1285
+[u S58 `S59 1 `S60 1 ]
+[n S58 . . . ]
+"1304
+[v _CCPTMRS0bits `VS58 ~T0 @X0 0 e@3913 ]
 "16815
 [s S1075 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1075 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -7323,9 +7382,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
+[; ;buttonchanges.h: 16: void Check_Buttons(void);
+[; ;ignition.h: 16: void Timer_Count(void);
+"23 ignition.h
+[v _current_time `uc ~T0 @X0 1 e ]
+[i _current_time
+-> -> 0 `i `uc
+]
+[; ;ignition.h: 23: unsigned char current_time = 0;
+[; ;storage.h: 16: void Save_Data(unsigned char store);
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
+"24 communication.h
+[v _overrun `uc ~T0 @X0 1 e ]
+[i _overrun
+-> -> 0 `i `uc
+]
+[; ;communication.h: 24: unsigned char overrun = 0;
+"31 main.h
+[v _ignite_ready `b ~T0 @X0 1 e ]
+[i _ignite_ready
+-> 0 `i
+]
+[; ;main.h: 31: bit ignite_ready = 0;
+[; ;main.h: 57: void Delay_Routine(unsigned char delay_multiplyer);
 "3 init.c
 [v _Init `(v ~T0 @X0 1 ef ]
 {
@@ -7491,26 +7571,53 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.c: 56: void InitTimer(void) {
 [e :U _InitTimer ]
 [f ]
-[; ;init.c: 58: }
+[; ;init.c: 58: T1CONbits.TMR1CS = 0b00;
 "58
+[e = . . _T1CONbits 1 5 -> -> 0 `i `uc ]
+[; ;init.c: 59: T1CONbits.T1CKPS = 0b11;
+"59
+[e = . . _T1CONbits 1 4 -> -> 3 `i `uc ]
+[; ;init.c: 60: T1CONbits.nT1SYNC = 0;
+"60
+[e = . . _T1CONbits 1 2 -> -> 0 `i `uc ]
+[; ;init.c: 62: T3CONbits.TMR3CS = 0b00;
+"62
+[e = . . _T3CONbits 1 5 -> -> 0 `i `uc ]
+[; ;init.c: 63: T3CONbits.T3CKPS = 0b11;
+"63
+[e = . . _T3CONbits 1 4 -> -> 3 `i `uc ]
+[; ;init.c: 64: T3CONbits.nT3SYNC = 0;
+"64
+[e = . . _T3CONbits 1 2 -> -> 0 `i `uc ]
+[; ;init.c: 66: CCP1CONbits.CCP1M = 0b1010;
+"66
+[e = . . _CCP1CONbits 0 0 -> -> 10 `i `uc ]
+[; ;init.c: 67: CCPTMRS0bits.C1TSEL = 0b01;
+"67
+[e = . . _CCPTMRS0bits 0 0 -> -> 1 `i `uc ]
+[; ;init.c: 68: }
+"68
 [e :UE 1111 ]
 }
-"60
+"70
 [v _InitInterrupt `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 60: void InitInterrupt(void) {
+[; ;init.c: 70: void InitInterrupt(void) {
 [e :U _InitInterrupt ]
 [f ]
-[; ;init.c: 61: INTCONbits.GIE = 1;
-"61
+[; ;init.c: 71: INTCONbits.GIE = 1;
+"71
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;init.c: 62: INTCONbits.PEIE = 1;
-"62
+[; ;init.c: 72: INTCONbits.PEIE = 1;
+"72
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;init.c: 63: PIE1bits.RCIE = 1;
-"63
+[; ;init.c: 73: PIE1bits.RCIE = 1;
+"73
 [e = . . _PIE1bits 1 3 -> -> 1 `i `uc ]
-[; ;init.c: 64: }
-"64
+[; ;init.c: 74: PIE1bits.CCP1IE = 1;
+"74
+[e = . . _PIE1bits 0 2 -> -> 1 `i `uc ]
+[; ;init.c: 75: }
+"75
 [e :UE 1112 ]
 }

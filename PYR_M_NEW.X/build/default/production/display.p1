@@ -7138,6 +7138,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
+[; ;buttonchanges.h: 16: void Check_Buttons(void);
+[; ;ignition.h: 16: void Timer_Count(void);
+"23 ignition.h
+[v _current_time `uc ~T0 @X0 1 e ]
+[i _current_time
+-> -> 0 `i `uc
+]
+[; ;ignition.h: 23: unsigned char current_time = 0;
+[; ;storage.h: 16: void Save_Data(unsigned char store);
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
+"24 communication.h
+[v _overrun `uc ~T0 @X0 1 e ]
+[i _overrun
+-> -> 0 `i `uc
+]
+[; ;communication.h: 24: unsigned char overrun = 0;
+"31 main.h
+[v _ignite_ready `b ~T0 @X0 1 e ]
+[i _ignite_ready
+-> 0 `i
+]
+[; ;main.h: 31: bit ignite_ready = 0;
+[; ;main.h: 57: void Delay_Routine(unsigned char delay_multiplyer);

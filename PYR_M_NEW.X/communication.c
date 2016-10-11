@@ -22,7 +22,7 @@ void Transmit(unsigned char slave, unsigned char trans_data) {
     TXREG1 = slave;             //Transmitting slave address
     while(PIR1bits.TXIF == 0);  //Checking for a clear TXREG
     TXREG1 = trans_data;        //Transmitting actual data
-    while(PIR1bits.TRMT == 0);  //Checking for a clear TXREG
+    while(TXSTA1bits.TRMT == 0);//Checking for a clear TSR
     Transmit_En = 0;            //Disable RS485 module for transmission
     RCSTA1bits.CREN = 1;        //Enabling receiver again
     NOP();                      //Debugging
@@ -35,10 +35,6 @@ unsigned char Receive(void) {
         RCSTA1bits.CREN = 1;
         overrun = 1;            //Setting a status bit to react
     }
-#ifdef COM_TEST
-    else {
-        overrun = 0;
-    }
-#endif
+
     return (RCREG1);
 }

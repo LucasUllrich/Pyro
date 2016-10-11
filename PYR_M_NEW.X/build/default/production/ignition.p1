@@ -1,4 +1,60 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"15702 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
+"15721
+[v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
+"9041
+[s S530 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S530 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
+"9050
+[s S531 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S531 . . SSPIF TXIF RCIF ]
+"9040
+[u S529 `S530 1 `S531 1 ]
+[n S529 . . . ]
+"9057
+[v _PIR1bits `VS529 ~T0 @X0 0 e@3998 ]
+"15590
+[s S990 :2 `uc 1 :1 `uc 1 ]
+[n S990 . . NOT_T1SYNC ]
+"15594
+[s S991 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S991 . TMR1ON T1RD16 nT1SYNC T1SOSCEN T1CKPS TMR1CS ]
+"15602
+[s S992 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S992 . . RD16 T1SYNC T1OSCEN T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
+"15612
+[s S993 :3 `uc 1 :1 `uc 1 ]
+[n S993 . . SOSCEN ]
+"15589
+[u S989 `S990 1 `S991 1 `S992 1 `S993 1 ]
+[n S989 . . . . . ]
+"15617
+[v _T1CONbits `VS989 ~T0 @X0 0 e@4045 ]
+"13082
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"13101
+[v _CCPR1H `Vuc ~T0 @X0 0 e@4031 ]
+"11050
+[s S650 :2 `uc 1 :1 `uc 1 ]
+[n S650 . . NOT_T3SYNC ]
+"11054
+[s S651 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S651 . TMR3ON T3RD16 nT3SYNC T3SOSCEN T3CKPS TMR3CS ]
+"11062
+[s S652 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S652 . . T3OSCEN T3CKPS0 T3CKPS1 TMR3CS0 TMR3CS1 ]
+"11070
+[s S653 :7 `uc 1 :1 `uc 1 ]
+[n S653 . . RD163 ]
+"11074
+[s S654 :3 `uc 1 :1 `uc 1 ]
+[n S654 . . SOSCEN3 ]
+"11049
+[u S649 `S650 1 `S651 1 `S652 1 `S653 1 `S654 1 ]
+[n S649 . . . . . . ]
+"11079
+[v _T3CONbits `VS649 ~T0 @X0 0 e@4017 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7138,6 +7194,68 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
+[; ;buttonchanges.h: 16: void Check_Buttons(void);
+[; ;ignition.h: 16: void Timer_Count(void);
+"23 ignition.h
+[v _current_time `uc ~T0 @X0 1 e ]
+[i _current_time
+-> -> 0 `i `uc
+]
+[; ;ignition.h: 23: unsigned char current_time = 0;
+[; ;storage.h: 16: void Save_Data(unsigned char store);
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
+"24 communication.h
+[v _overrun `uc ~T0 @X0 1 e ]
+[i _overrun
+-> -> 0 `i `uc
+]
+[; ;communication.h: 24: unsigned char overrun = 0;
+"31 main.h
+[v _ignite_ready `b ~T0 @X0 1 e ]
+[i _ignite_ready
+-> 0 `i
+]
+[; ;main.h: 31: bit ignite_ready = 0;
+[; ;main.h: 57: void Delay_Routine(unsigned char delay_multiplyer);
+"12 ignition.c
+[v _Timer_Count `(v ~T0 @X0 1 ef ]
+{
+[; ;ignition.c: 12: void Timer_Count(void) {
+[e :U _Timer_Count ]
+[f ]
+[; ;ignition.c: 13: TMR1L = 0;
+"13
+[e = _TMR1L -> -> 0 `i `uc ]
+[; ;ignition.c: 14: TMR1H = 0;
+"14
+[e = _TMR1H -> -> 0 `i `uc ]
+[; ;ignition.c: 15: PIR1bits.TMR1IF = 0;
+"15
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;ignition.c: 16: T1CONbits.TMR1ON = 1;
+"16
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+[; ;ignition.c: 17: CCPR1L = 72;
+"17
+[e = _CCPR1L -> -> 72 `i `uc ]
+[; ;ignition.c: 18: CCPR1H = 232;
+"18
+[e = _CCPR1H -> -> 232 `i `uc ]
+[; ;ignition.c: 19: while(PIR1bits.TMR1IF == 0);
+"19
+[e $U 1106  ]
+[e :U 1107 ]
+[e :U 1106 ]
+[e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1107  ]
+[e :U 1108 ]
+[; ;ignition.c: 20: T3CONbits.TMR3ON = 1;
+"20
+[e = . . _T3CONbits 1 0 -> -> 1 `i `uc ]
+[; ;ignition.c: 21: T1CONbits.TMR1ON = 0;
+"21
+[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
+[; ;ignition.c: 23: }
+"23
+[e :UE 1105 ]
+}

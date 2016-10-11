@@ -8946,11 +8946,29 @@ void InitTransmission(void);
 void InitTimer(void);
 void InitInterrupt(void);
 
+# 16 "buttonchanges.h"
+void Check_Buttons(void);
+
+# 16 "ignition.h"
+void Timer_Count(void);
+
+# 23
+unsigned char current_time = 0;
+
+# 16 "storage.h"
+void Save_Data(unsigned char store);
+
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
 
-# 54 "main.h"
+# 24
+unsigned char overrun = 0;
+
+# 31 "main.h"
+bit ignite_ready = 0;
+
+# 57
 void Delay_Routine(unsigned char delay_multiplyer);
 
 # 3 "interrupt.c"
@@ -8959,8 +8977,14 @@ if(PIR1bits.RCIF == 1) {
 PIR1bits.RCIF = 0;
 unsigned char received = 0;
 received = Receive();
-if(received == 1 || received == 'L') {
+__nop();
+if(received == '1' || received == 'L') {
 PORTAbits.RA0 = 1;
+}else {
+PORTAbits.RA0 = 0;
 }
+}if(PIR1bits.CCP1IF == 1) {
+PIR1bits.CCP1IF = 0;
+current_time++;
 }
 }

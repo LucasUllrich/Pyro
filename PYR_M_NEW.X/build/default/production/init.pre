@@ -8946,11 +8946,29 @@ void InitTransmission(void);
 void InitTimer(void);
 void InitInterrupt(void);
 
+# 16 "buttonchanges.h"
+void Check_Buttons(void);
+
+# 16 "ignition.h"
+void Timer_Count(void);
+
+# 23
+unsigned char current_time = 0;
+
+# 16 "storage.h"
+void Save_Data(unsigned char store);
+
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
 
-# 54 "main.h"
+# 24
+unsigned char overrun = 0;
+
+# 31 "main.h"
+bit ignite_ready = 0;
+
+# 57
 void Delay_Routine(unsigned char delay_multiplyer);
 
 # 3 "init.c"
@@ -9009,10 +9027,21 @@ TRISCbits.RC6 = 0;
 
 void InitTimer(void) {
 
+T1CONbits.TMR1CS = 0b00;
+T1CONbits.T1CKPS = 0b11;
+T1CONbits.nT1SYNC = 0;
+
+T3CONbits.TMR3CS = 0b00;
+T3CONbits.T3CKPS = 0b11;
+T3CONbits.nT3SYNC = 0;
+
+CCP1CONbits.CCP1M = 0b1010;
+CCPTMRS0bits.C1TSEL = 0b01;
 }
 
 void InitInterrupt(void) {
 INTCONbits.GIE = 1;
 INTCONbits.PEIE = 1;
 PIE1bits.RCIE = 1;
+PIE1bits.CCP1IE = 1;
 }

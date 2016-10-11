@@ -8946,10 +8946,41 @@ void InitTransmission(void);
 void InitTimer(void);
 void InitInterrupt(void);
 
+# 16 "buttonchanges.h"
+void Check_Buttons(void);
+
+# 16 "ignition.h"
+void Timer_Count(void);
+
+# 23
+unsigned char current_time = 0;
+
+# 16 "storage.h"
+void Save_Data(unsigned char store);
+
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
 
-# 54 "main.h"
+# 24
+unsigned char overrun = 0;
+
+# 31 "main.h"
+bit ignite_ready = 0;
+
+# 57
 void Delay_Routine(unsigned char delay_multiplyer);
 
+# 12 "ignition.c"
+void Timer_Count(void) {
+TMR1L = 0;
+TMR1H = 0;
+PIR1bits.TMR1IF = 0;
+T1CONbits.TMR1ON = 1;
+CCPR1L = 72;
+CCPR1H = 232;
+while(PIR1bits.TMR1IF == 0);
+T3CONbits.TMR3ON = 1;
+T1CONbits.TMR1ON = 0;
+
+}

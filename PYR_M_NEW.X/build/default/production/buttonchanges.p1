@@ -1,4 +1,78 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"6936 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[s S423 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S423 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"6946
+[s S424 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S424 . T1OSO T1OSI T5CKI SCK SDI SDO TX RX ]
+"6956
+[s S425 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S425 . P2B P2A P1A SCL SDA . CK DT ]
+"6966
+[s S426 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S426 . T1CKI CCP2 CCP1 SCK1 SDI1 SDO1 TX1 RX1 ]
+"6976
+[s S427 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S427 . T3CKI . CTPLS SCL1 SDA1 . CK1 DT1 ]
+"6986
+[s S428 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S428 . T3G . AN14 AN15 AN16 AN17 AN18 AN19 ]
+"6996
+[s S429 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S429 . . CCP3 P3B ]
+"7001
+[s S430 :6 `uc 1 :1 `uc 1 ]
+[n S430 . . P3A ]
+"7005
+[s S431 :2 `uc 1 :1 `uc 1 ]
+[n S431 . . PA1 ]
+"7009
+[s S432 :1 `uc 1 :1 `uc 1 ]
+[n S432 . . PA2 ]
+"6935
+[u S422 `S423 1 `S424 1 `S425 1 `S426 1 `S427 1 `S428 1 `S429 1 `S430 1 `S431 1 `S432 1 ]
+[n S422 . . . . . . . . . . . ]
+"7014
+[v _PORTCbits `VS422 ~T0 @X0 0 e@3970 ]
+[v F7486 `(v ~T0 @X0 1 tf1`ul ]
+"152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v __delay `JF7486 ~T0 @X0 0 e ]
+[p i __delay ]
+"6564 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[s S412 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S412 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"6574
+[s S413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S413 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"6584
+[s S414 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S414 . AN12 AN10 AN8 AN9 AN11 AN13 TX2 RX2 ]
+"6594
+[s S415 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S415 . FLT0 C12IN3M P1B C12IN2M T5G T1G CK2 DT2 ]
+"6604
+[s S416 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S416 . SRI C12IN3N CTED1 C12IN2N P1D CCP3 PGC PGD ]
+"6614
+[s S417 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S417 . CCP4 P1C SDA2 CTED2 . T3CKI ]
+"6622
+[s S418 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S418 . SS2 SCL2 SDI2 P2A . P3A ]
+"6630
+[s S419 :1 `uc 1 ]
+[n S419 . NOT_SS2 ]
+"6633
+[s S420 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S420 . nSS2 SCK2 . SDO2 . P2B ]
+"6641
+[s S421 :3 `uc 1 :1 `uc 1 ]
+[n S421 . . CCP2_PA2 ]
+"6563
+[u S411 `S412 1 `S413 1 `S414 1 `S415 1 `S416 1 `S417 1 `S418 1 `S419 1 `S420 1 `S421 1 ]
+[n S411 . . . . . . . . . . . ]
+"6646
+[v _PORTBbits `VS411 ~T0 @X0 0 e@3969 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7138,6 +7212,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
+[; ;buttonchanges.h: 16: void Check_Buttons(void);
+[; ;ignition.h: 16: void Timer_Count(void);
+"23 ignition.h
+[v _current_time `uc ~T0 @X0 1 e ]
+[i _current_time
+-> -> 0 `i `uc
+]
+[; ;ignition.h: 23: unsigned char current_time = 0;
+[; ;storage.h: 16: void Save_Data(unsigned char store);
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;main.h: 54: void Delay_Routine(unsigned char delay_multiplyer);
+"24 communication.h
+[v _overrun `uc ~T0 @X0 1 e ]
+[i _overrun
+-> -> 0 `i `uc
+]
+[; ;communication.h: 24: unsigned char overrun = 0;
+"31 main.h
+[v _ignite_ready `b ~T0 @X0 1 e ]
+[i _ignite_ready
+-> 0 `i
+]
+[; ;main.h: 31: bit ignite_ready = 0;
+[; ;main.h: 57: void Delay_Routine(unsigned char delay_multiplyer);
+"3 buttonchanges.c
+[v _Check_Buttons `(v ~T0 @X0 1 ef ]
+{
+[; ;buttonchanges.c: 3: void Check_Buttons(void) {
+[e :U _Check_Buttons ]
+[f ]
+[; ;buttonchanges.c: 4: if(PORTCbits.RC1 == 1) {
+"4
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 1 `i 1106  ]
+{
+[; ;buttonchanges.c: 5: _delay((unsigned long)((300)*(4000000/4000.0)));
+"5
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;buttonchanges.c: 6: ignite_ready = 1;
+"6
+[e = _ignite_ready -> -> 1 `i `b ]
+[; ;buttonchanges.c: 7: return;
+"7
+[e $UE 1105  ]
+"9
+}
+[; ;buttonchanges.c: 9: } else if(PORTBbits.RB2 == 1) {
+[e $U 1107  ]
+[e :U 1106 ]
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 1108  ]
+{
+"11
+}
+[; ;buttonchanges.c: 11: } else if(PORTBbits.RB3 == 1) {
+[e $U 1109  ]
+[e :U 1108 ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1110  ]
+{
+"13
+}
+[; ;buttonchanges.c: 13: } else if(PORTBbits.RB4 == 1) {
+[e $U 1111  ]
+[e :U 1110 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 1 `i 1112  ]
+{
+"15
+}
+[e :U 1112 ]
+"16
+[e :U 1111 ]
+[e :U 1109 ]
+[e :U 1107 ]
+[; ;buttonchanges.c: 15: }
+[; ;buttonchanges.c: 16: }
+[e :UE 1105 ]
+}

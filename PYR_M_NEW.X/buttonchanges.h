@@ -13,7 +13,7 @@
  * Functionprototypes
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
-
+void Check_Buttons(void);
 // </editor-fold>
 
 #endif	/* BUTTONCHANGES_H */

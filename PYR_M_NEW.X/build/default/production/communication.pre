@@ -8946,27 +8946,55 @@ void InitTransmission(void);
 void InitTimer(void);
 void InitInterrupt(void);
 
+# 16 "buttonchanges.h"
+void Check_Buttons(void);
+
+# 16 "ignition.h"
+void Timer_Count(void);
+
+# 23
+unsigned char current_time = 0;
+
+# 16 "storage.h"
+void Save_Data(unsigned char store);
+
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
 
-# 54 "main.h"
+# 24
+unsigned char overrun = 0;
+
+# 31 "main.h"
+bit ignite_ready = 0;
+
+# 57
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 3 "communication.c"
+# 15 "communication.c"
 void Transmit(unsigned char slave, unsigned char trans_data) {
 PORTBbits.RB5 = 1;
+RCSTA1bits.CREN = 0;
+
+__nop();
 while(PIR1bits.TXIF == 0);
 TXSTA1bits.TX9D = 1;
 TXREG1 = slave;
 while(PIR1bits.TXIF == 0);
 TXREG1 = trans_data;
-while(PIR1bits.TXIF == 0);
+while(TXSTA1bits.TRMT == 0);
 PORTBbits.RB5 = 0;
+RCSTA1bits.CREN = 1;
+__nop();
 }
 
 
 unsigned char Receive(void) {
-unsigned char received = 0;
-return (received);
+if(RCSTA1bits.OERR == 1) {
+RCSTA1bits.CREN = 0;
+RCSTA1bits.CREN = 1;
+overrun = 1;
+}
+
+return (RCREG1);
 }

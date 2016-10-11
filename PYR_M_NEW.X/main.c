@@ -80,7 +80,7 @@ void Delay_Routine(unsigned char delay_multiplyer) {
 void main(void) {
     Init();
     while(1) {
-        if(Ignite_Ready == 1) {
+        if(ignite_ready == 1) {
             
         }else {
             
