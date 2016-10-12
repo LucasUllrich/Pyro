@@ -20,7 +20,7 @@ void Timer_Count(void);
  * Variables and constants
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="variables">
-unsigned char current_time = 0;
+unsigned int current_time = 0;
 // </editor-fold>
 #endif	/* IGNITION_H */
 

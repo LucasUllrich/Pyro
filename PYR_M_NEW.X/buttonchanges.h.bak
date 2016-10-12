@@ -1,0 +1,72 @@
+/* 
+ * File:   buttonchanges.h
+ * Author: Lucas
+ *
+ * Created on 14. April 2016, 12:49
+ */
+
+#ifndef BUTTONCHANGES_H
+#define	BUTTONCHANGES_H
+#include "main.h"
+
+/***************************************************
+ * Functionprototypes
+ ***************************************************/
+// <editor-fold defaultstate="collapsed" desc="Prototypes">
+void Check_Buttons(void);
+// </editor-fold>
+
+/***************************************************
+ * Variables and constants
+ ***************************************************/
+// <editor-fold defaultstate="collapsed" desc="variables">
+//#define COM_TEST
+typedef struct Slave_Output
+{
+    unsigned char slave;
+    unsigned char output;
+    unsigned char storage_address;
+    unsigned int time;
+}sl_out;
+
+sl_out pin[] =
+{
+    {1, 1,   1, },
+    {1, 2,   2, },
+    {1, 3,   3, },
+    {1, 4,   4, },
+    {1, 5,   5, },
+    {1, 6,   6, },
+    {1, 7,   7, },
+    {1, 8,   8, },
+    {1, 9,   9, },
+    {1, 10, 10, },
+    {2, 1,  11, },
+    {2, 2,  12, },
+    {2, 3,  13, },
+    {2, 4,  14, },
+    {2, 4,  14, },
+    {2, 5,  15, },
+    {2, 6,  16, },
+    {2, 7,  17, },
+    {2, 8,  18, },
+    {2, 9,  19, },
+    {2, 10, 20, },
+    {3, 1,  21, },
+    {3, 2,  22, },
+    {3, 3,  23, },
+    {3, 4,  24, },
+    {3, 5,  25, },
+    {3, 6,  26, },
+    {3, 7,  27, },
+    {3, 8,  28, },
+    {3, 9,  29, },
+    {3, 10, 30, },
+};
+
+unsigned char current_pin = 1;
+unsigned char current_slave = 1;
+// </editor-fold>
+
+#endif	/* BUTTONCHANGES_H */
+
