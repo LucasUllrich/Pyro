@@ -5,6 +5,7 @@ void Check_Buttons(void) {
         Delay_Routine(3);
         if(Ignite == 1) {
             ignite_ready = 1;
+            NOP();
             return;             //End of Subroutine! No further actions
                                 // need to be possible and ignition is
                                 // prioritized
@@ -16,6 +17,7 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time > 999) {
                 pin[pin_selected].time = 0;
             }
+            NOP();
         }
     } else if(Time_Down == 1) {
         Delay_Routine(3);
@@ -24,6 +26,7 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time < 0) {
                 pin[pin_selected].time = 999;
             }
+            NOP();
         }
     } else if(Time_Upup == 1) {
         Delay_Routine(3);
@@ -32,6 +35,7 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time > 999) {
                 pin[pin_selected].time = 0;
             }
+            NOP();
         }
     } else if(Port_Up == 1) {
         Delay_Routine(3);
@@ -55,6 +59,7 @@ void Check_Buttons(void) {
                     }
                     break;
             }
+            NOP();
         }
     } else if(Slave_Up == 1) {
         Delay_Routine(3);
@@ -64,6 +69,8 @@ void Check_Buttons(void) {
             if(slave_selected > 2) {
                 slave_selected = 0;
             }
+            pin_selected = slave_selected * 10;
+            NOP();
         }
     }
 }

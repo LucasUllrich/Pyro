@@ -8949,14 +8949,60 @@ void InitInterrupt(void);
 # 16 "buttonchanges.h"
 void Check_Buttons(void);
 
+# 24
+typedef struct Slave_Output
+{
+unsigned char slave;
+unsigned char output;
+unsigned char address;
+signed int time;
+}sl_out;
+
+sl_out pin[] =
+{
+{0, 0, 0, },
+{0, 1, 1, },
+{0, 2, 2, },
+{0, 3, 3, },
+{0, 4, 4, },
+{0, 5, 5, },
+{0, 6, 6, },
+{0, 7, 7, },
+{0, 8, 8, },
+{0, 9, 9, },
+{1, 0, 10, },
+{1, 1, 11, },
+{1, 2, 12, },
+{1, 3, 13, },
+{1, 4, 14, },
+{1, 5, 15, },
+{1, 6, 16, },
+{1, 7, 17, },
+{1, 8, 18, },
+{1, 9, 19, },
+{2, 0, 20, },
+{2, 1, 21, },
+{2, 2, 22, },
+{2, 3, 23, },
+{2, 4, 24, },
+{2, 5, 25, },
+{2, 6, 26, },
+{2, 7, 27, },
+{2, 8, 28, },
+{2, 9, 29, },
+};
+
+unsigned char slave_selected = 0;
+unsigned char pin_selected = 0;
+
 # 16 "ignition.h"
 void Timer_Count(void);
 
 # 23
-unsigned char current_time = 0;
+unsigned int current_time = 0;
 
 # 16 "storage.h"
-void Save_Data(unsigned char store);
+void Save_Data(signed int store, unsigned char store_address);
 
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);
@@ -8974,15 +9020,74 @@ void Delay_Routine(unsigned char delay_multiplyer);
 # 3 "buttonchanges.c"
 void Check_Buttons(void) {
 if(PORTCbits.RC1 == 1) {
-_delay((unsigned long)((300)*(4000000/4000.0)));
+Delay_Routine(3);
+if(PORTCbits.RC1 == 1) {
 ignite_ready = 1;
+__nop();
 return;
 
+
+}
 } else if(PORTBbits.RB2 == 1) {
-
+Delay_Routine(3);
+if(PORTBbits.RB2 == 1) {
+pin[pin_selected].time++;
+if(pin[pin_selected].time > 999) {
+pin[pin_selected].time = 0;
+}
+__nop();
+}
 } else if(PORTBbits.RB3 == 1) {
-
+Delay_Routine(3);
+if(PORTBbits.RB3 == 1) {
+pin[pin_selected].time--;
+if(pin[pin_selected].time < 0) {
+pin[pin_selected].time = 999;
+}
+__nop();
+}
 } else if(PORTBbits.RB4 == 1) {
-
+Delay_Routine(3);
+if(PORTBbits.RB4 == 1) {
+pin[pin_selected].time += 10;
+if(pin[pin_selected].time > 999) {
+pin[pin_selected].time = 0;
+}
+__nop();
+}
+} else if(PORTBbits.RB1 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB1 == 1) {
+Save_Data(pin[pin_selected].time, pin[pin_selected].address);
+pin_selected++;
+switch (slave_selected) {
+case 0:
+if(pin_selected > 9) {
+pin_selected = 0;
+}
+break;
+case 1:
+if(pin_selected > 19) {
+pin_selected = 10;
+}
+break;
+case 2:
+if(pin_selected > 29) {
+pin_selected = 20;
+}
+break;
+}
+__nop();
+}
+} else if(PORTBbits.RB0 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB0 == 1) {
+Save_Data(pin[pin_selected].time, pin[pin_selected].address);
+slave_selected++;
+if(slave_selected > 2) {
+slave_selected = 0;
+}
+__nop();
+}
 }
 }

@@ -1,5 +1,5 @@
 
-# 1 "interrupt.c"
+# 1 "buttonchanges.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9017,20 +9017,78 @@ bit ignite_ready = 0;
 # 57
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 3 "interrupt.c"
-void interrupt Isr(void) {
-if(PIR1bits.RCIF == 1) {
-PIR1bits.RCIF = 0;
-unsigned char received = 0;
-received = Receive();
+# 3 "buttonchanges.c"
+void Check_Buttons(void) {
+if(PORTCbits.RC1 == 1) {
+Delay_Routine(3);
+if(PORTCbits.RC1 == 1) {
+ignite_ready = 1;
 __nop();
-if(received == '1' || received == 'L') {
-PORTAbits.RA0 = 1;
-}else {
-PORTAbits.RA0 = 0;
+return;
+
+
 }
-}if(PIR1bits.CCP1IF == 1) {
-PIR1bits.CCP1IF = 0;
-current_time++;
+} else if(PORTBbits.RB2 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB2 == 1) {
+pin[pin_selected].time++;
+if(pin[pin_selected].time > 999) {
+pin[pin_selected].time = 0;
+}
+__nop();
+}
+} else if(PORTBbits.RB3 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB3 == 1) {
+pin[pin_selected].time--;
+if(pin[pin_selected].time < 0) {
+pin[pin_selected].time = 999;
+}
+__nop();
+}
+} else if(PORTBbits.RB4 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB4 == 1) {
+pin[pin_selected].time += 10;
+if(pin[pin_selected].time > 999) {
+pin[pin_selected].time = 0;
+}
+__nop();
+}
+} else if(PORTBbits.RB1 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB1 == 1) {
+Save_Data(pin[pin_selected].time, pin[pin_selected].address);
+pin_selected++;
+switch (slave_selected) {
+case 0:
+if(pin_selected > 9) {
+pin_selected = 0;
+}
+break;
+case 1:
+if(pin_selected > 19) {
+pin_selected = 10;
+}
+break;
+case 2:
+if(pin_selected > 29) {
+pin_selected = 20;
+}
+break;
+}
+__nop();
+}
+} else if(PORTBbits.RB0 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB0 == 1) {
+Save_Data(pin[pin_selected].time, pin[pin_selected].address);
+slave_selected++;
+if(slave_selected > 2) {
+slave_selected = 0;
+}
+pin_selected = slave_selected * 10;
+__nop();
+}
 }
 }

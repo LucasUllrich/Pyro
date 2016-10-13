@@ -2,250 +2,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 "24 buttonchanges.h
 [s S1105 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address time ]
-"17 init.h
-[v _InitPort `(v ~T0 @X0 0 ef ]
-"18
-[v _InitTris `(v ~T0 @X0 0 ef ]
-"19
-[v _InitAnsel `(v ~T0 @X0 0 ef ]
-"20
-[v _InitMiscellaneous `(v ~T0 @X0 0 ef ]
-"21
-[v _InitTransmission `(v ~T0 @X0 0 ef ]
-"22
-[v _InitTimer `(v ~T0 @X0 0 ef ]
-"23
-[v _InitInterrupt `(v ~T0 @X0 0 ef ]
-"6266 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
-[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
-"6558
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
-"6930
-[v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
-"7263
-[v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
-"7928
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"8149
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"8370
-[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
-"8591
-[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
-"49
-[v _ANSELA `Vuc ~T0 @X0 0 e@3896 ]
-"93
-[v _ANSELB `Vuc ~T0 @X0 0 e@3897 ]
-"142
-[v _ANSELC `Vuc ~T0 @X0 0 e@3898 ]
-"15955
-[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"14147
-[v _SSP1STAT `Vuc ~T0 @X0 0 e@4039 ]
-"13868
-[v _SSP1CON1 `Vuc ~T0 @X0 0 e@4038 ]
-"10371
-[s S599 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S599 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"10381
-[s S600 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S600 . TX9D1 TRMT1 BRGH1 SENDB1 SYNC1 TXEN1 TX91 CSRC1 ]
-"10391
-[s S601 :6 `uc 1 :1 `uc 1 ]
-[n S601 . . TX8_9 ]
-"10395
-[s S602 :1 `uc 1 ]
-[n S602 . TXD8 ]
-"10370
-[u S598 `S599 1 `S600 1 `S601 1 `S602 1 ]
-[n S598 . . . . . ]
-"10399
-[v _TXSTA1bits `VS598 ~T0 @X0 0 e@4012 ]
-"11944
-[s S689 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S689 . ABDEN WUE . BRG16 CKTXP DTRXP RCIDL ABDOVF ]
-"11954
-[s S690 :4 `uc 1 :1 `uc 1 ]
-[n S690 . . SCKP ]
-"11958
-[s S691 :1 `uc 1 ]
-[n S691 . ABDEN1 ]
-"11961
-[s S692 :7 `uc 1 :1 `uc 1 ]
-[n S692 . . ABDOVF1 ]
-"11965
-[s S693 :3 `uc 1 :1 `uc 1 ]
-[n S693 . . BRG161 ]
-"11969
-[s S694 :5 `uc 1 :1 `uc 1 ]
-[n S694 . . DTRXP1 ]
-"11973
-[s S695 :6 `uc 1 :1 `uc 1 ]
-[n S695 . . RCIDL1 ]
-"11977
-[s S696 :6 `uc 1 :1 `uc 1 ]
-[n S696 . . RCMT ]
-"11981
-[s S697 :6 `uc 1 :1 `uc 1 ]
-[n S697 . . RCMT1 ]
-"11985
-[s S698 :5 `uc 1 :1 `uc 1 ]
-[n S698 . . RXDTP ]
-"11989
-[s S699 :5 `uc 1 :1 `uc 1 ]
-[n S699 . . RXDTP1 ]
-"11993
-[s S700 :4 `uc 1 :1 `uc 1 ]
-[n S700 . . SCKP1 ]
-"11997
-[s S701 :4 `uc 1 :1 `uc 1 ]
-[n S701 . . TXCKP ]
-"12001
-[s S702 :4 `uc 1 :1 `uc 1 ]
-[n S702 . . TXCKP1 ]
-"12005
-[s S703 :1 `uc 1 :1 `uc 1 ]
-[n S703 . . WUE1 ]
-"12009
-[s S704 :5 `uc 1 :1 `uc 1 ]
-[n S704 . . RXCKP ]
-"12013
-[s S705 :1 `uc 1 :1 `uc 1 ]
-[n S705 . . W4E ]
-"11943
-[u S688 `S689 1 `S690 1 `S691 1 `S692 1 `S693 1 `S694 1 `S695 1 `S696 1 `S697 1 `S698 1 `S699 1 `S700 1 `S701 1 `S702 1 `S703 1 `S704 1 `S705 1 ]
-[n S688 . . . . . . . . . . . . . . . . . . ]
-"12018
-[v _BAUDCON1bits `VS688 ~T0 @X0 0 e@4024 ]
-"10890
-[v _SPBRG1 `Vuc ~T0 @X0 0 e@4015 ]
-"8381
-[s S506 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S506 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"8391
-[s S507 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S507 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"8380
-[u S505 `S506 1 `S507 1 ]
-[n S505 . . . ]
-"8402
-[v _TRISCbits `VS505 ~T0 @X0 0 e@3988 ]
-"9910
-[s S575 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S575 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"9920
-[s S576 :3 `uc 1 :1 `uc 1 ]
-[n S576 . . ADEN ]
-"9924
-[s S577 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S577 . RX9D1 OERR1 FERR1 ADDEN1 CREN1 SREN1 RX91 SPEN1 ]
-"9934
-[s S578 :6 `uc 1 :1 `uc 1 ]
-[n S578 . . RC8_9 ]
-"9938
-[s S579 :6 `uc 1 :1 `uc 1 ]
-[n S579 . . RC9 ]
-"9942
-[s S580 :1 `uc 1 ]
-[n S580 . RCD8 ]
-"9945
-[s S581 :5 `uc 1 :1 `uc 1 ]
-[n S581 . . SRENA ]
-"9909
-[u S574 `S575 1 `S576 1 `S577 1 `S578 1 `S579 1 `S580 1 `S581 1 ]
-[n S574 . . . . . . . . ]
-"9950
-[v _RCSTA1bits `VS574 ~T0 @X0 0 e@4011 ]
-"15590
-[s S990 :2 `uc 1 :1 `uc 1 ]
-[n S990 . . NOT_T1SYNC ]
-"15594
-[s S991 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S991 . TMR1ON T1RD16 nT1SYNC T1SOSCEN T1CKPS TMR1CS ]
-"15602
-[s S992 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S992 . . RD16 T1SYNC T1OSCEN T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
-"15612
-[s S993 :3 `uc 1 :1 `uc 1 ]
-[n S993 . . SOSCEN ]
-"15589
-[u S989 `S990 1 `S991 1 `S992 1 `S993 1 ]
-[n S989 . . . . . ]
-"15617
-[v _T1CONbits `VS989 ~T0 @X0 0 e@4045 ]
-"11050
-[s S650 :2 `uc 1 :1 `uc 1 ]
-[n S650 . . NOT_T3SYNC ]
-"11054
-[s S651 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S651 . TMR3ON T3RD16 nT3SYNC T3SOSCEN T3CKPS TMR3CS ]
-"11062
-[s S652 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S652 . . T3OSCEN T3CKPS0 T3CKPS1 TMR3CS0 TMR3CS1 ]
-"11070
-[s S653 :7 `uc 1 :1 `uc 1 ]
-[n S653 . . RD163 ]
-"11074
-[s S654 :3 `uc 1 :1 `uc 1 ]
-[n S654 . . SOSCEN3 ]
-"11049
-[u S649 `S650 1 `S651 1 `S652 1 `S653 1 `S654 1 ]
-[n S649 . . . . . . ]
-"11079
-[v _T3CONbits `VS649 ~T0 @X0 0 e@4017 ]
-"13001
-[s S782 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S782 . CCP1M DC1B P1M ]
-"13006
-[s S783 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S783 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 DC1B0 DC1B1 P1M0 P1M1 ]
-"13000
-[u S781 `S782 1 `S783 1 ]
-[n S781 . . . ]
-"13017
-[v _CCP1CONbits `VS781 ~T0 @X0 0 e@4029 ]
-"1286
-[s S59 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :2 `uc 1 ]
-[n S59 . C1TSEL . C2TSEL . C3TSEL ]
-"1293
-[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S60 . C1TSEL0 C1TSEL1 . C2TSEL0 C2TSEL1 . C3TSEL0 C3TSEL1 ]
-"1285
-[u S58 `S59 1 `S60 1 ]
-[n S58 . . . ]
-"1304
-[v _CCPTMRS0bits `VS58 ~T0 @X0 0 e@3913 ]
-"16815
-[s S1075 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1075 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"16825
-[s S1076 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1076 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"16835
-[s S1077 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1077 . . GIEL GIEH ]
-"16840
-[s S1078 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1078 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"16850
-[s S1079 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1079 . . GIEL GIEH ]
-"16814
-[u S1074 `S1075 1 `S1076 1 `S1077 1 `S1078 1 `S1079 1 ]
-[n S1074 . . . . . . ]
-"16856
-[v _INTCONbits `VS1074 ~T0 @X0 0 e@4082 ]
-"8965
-[s S527 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S527 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE ]
-"8974
-[s S528 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S528 . . SSPIE TXIE RCIE ]
-"8964
-[u S526 `S527 1 `S528 1 ]
-[n S526 . . . ]
-"8981
-[v _PIE1bits `VS526 ~T0 @X0 0 e@3997 ]
+"6936 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[s S423 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S423 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"6946
+[s S424 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S424 . T1OSO T1OSI T5CKI SCK SDI SDO TX RX ]
+"6956
+[s S425 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S425 . P2B P2A P1A SCL SDA . CK DT ]
+"6966
+[s S426 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S426 . T1CKI CCP2 CCP1 SCK1 SDI1 SDO1 TX1 RX1 ]
+"6976
+[s S427 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S427 . T3CKI . CTPLS SCL1 SDA1 . CK1 DT1 ]
+"6986
+[s S428 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S428 . T3G . AN14 AN15 AN16 AN17 AN18 AN19 ]
+"6996
+[s S429 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S429 . . CCP3 P3B ]
+"7001
+[s S430 :6 `uc 1 :1 `uc 1 ]
+[n S430 . . P3A ]
+"7005
+[s S431 :2 `uc 1 :1 `uc 1 ]
+[n S431 . . PA1 ]
+"7009
+[s S432 :1 `uc 1 :1 `uc 1 ]
+[n S432 . . PA2 ]
+"6935
+[u S422 `S423 1 `S424 1 `S425 1 `S426 1 `S427 1 `S428 1 `S429 1 `S430 1 `S431 1 `S432 1 ]
+[n S422 . . . . . . . . . . . ]
+"7014
+[v _PORTCbits `VS422 ~T0 @X0 0 e@3970 ]
+"57 main.h
+[v _Delay_Routine `(v ~T0 @X0 0 ef1`uc ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"6564 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[s S412 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S412 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"6574
+[s S413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S413 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"6584
+[s S414 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S414 . AN12 AN10 AN8 AN9 AN11 AN13 TX2 RX2 ]
+"6594
+[s S415 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S415 . FLT0 C12IN3M P1B C12IN2M T5G T1G CK2 DT2 ]
+"6604
+[s S416 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S416 . SRI C12IN3N CTED1 C12IN2N P1D CCP3 PGC PGD ]
+"6614
+[s S417 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S417 . CCP4 P1C SDA2 CTED2 . T3CKI ]
+"6622
+[s S418 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S418 . SS2 SCL2 SDI2 P2A . P3A ]
+"6630
+[s S419 :1 `uc 1 ]
+[n S419 . NOT_SS2 ]
+"6633
+[s S420 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S420 . nSS2 SCK2 . SDO2 . P2B ]
+"6641
+[s S421 :3 `uc 1 :1 `uc 1 ]
+[n S421 . . CCP2_PA2 ]
+"6563
+[u S411 `S412 1 `S413 1 `S414 1 `S415 1 `S416 1 `S417 1 `S418 1 `S419 1 `S420 1 `S421 1 ]
+[n S411 . . . . . . . . . . . ]
+"6646
+[v _PORTBbits `VS411 ~T0 @X0 0 e@3969 ]
+"16 storage.h
+[v _Save_Data `(v ~T0 @X0 0 ef2`i`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7647,218 +7480,286 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;main.h: 31: bit ignite_ready = 0;
 [; ;main.h: 57: void Delay_Routine(unsigned char delay_multiplyer);
-"3 init.c
-[v _Init `(v ~T0 @X0 1 ef ]
+"3 buttonchanges.c
+[v _Check_Buttons `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 3: void Init(void) {
-[e :U _Init ]
+[; ;buttonchanges.c: 3: void Check_Buttons(void) {
+[e :U _Check_Buttons ]
 [f ]
-[; ;init.c: 4: InitPort();
+[; ;buttonchanges.c: 4: if(PORTCbits.RC1 == 1) {
 "4
-[e ( _InitPort ..  ]
-[; ;init.c: 5: InitTris();
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 1 `i 1107  ]
+{
+[; ;buttonchanges.c: 5: Delay_Routine(3);
 "5
-[e ( _InitTris ..  ]
-[; ;init.c: 6: InitAnsel();
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 6: if(PORTCbits.RC1 == 1) {
 "6
-[e ( _InitAnsel ..  ]
-[; ;init.c: 7: InitMiscellaneous();
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 1 `i 1108  ]
+{
+[; ;buttonchanges.c: 7: ignite_ready = 1;
 "7
-[e ( _InitMiscellaneous ..  ]
-[; ;init.c: 8: InitTransmission();
+[e = _ignite_ready -> -> 1 `i `b ]
+[; ;buttonchanges.c: 8: __nop();
 "8
-[e ( _InitTransmission ..  ]
-[; ;init.c: 9: InitTimer();
+[e ( ___nop ..  ]
+[; ;buttonchanges.c: 9: return;
 "9
-[e ( _InitTimer ..  ]
-[; ;init.c: 10: InitInterrupt();
-"10
-[e ( _InitInterrupt ..  ]
-[; ;init.c: 11: }
-"11
-[e :UE 1106 ]
+[e $UE 1106  ]
+"12
 }
+[e :U 1108 ]
 "13
-[v _InitPort `(v ~T0 @X0 1 ef ]
+}
+[; ;buttonchanges.c: 12: }
+[; ;buttonchanges.c: 13: } else if(PORTBbits.RB2 == 1) {
+[e $U 1109  ]
+[e :U 1107 ]
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 1110  ]
 {
-[; ;init.c: 13: void InitPort(void) {
-[e :U _InitPort ]
-[f ]
-[; ;init.c: 14: PORTA = 0b00000000;
+[; ;buttonchanges.c: 14: Delay_Routine(3);
 "14
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;init.c: 15: PORTB = 0b00000000;
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 15: if(PORTBbits.RB2 == 1) {
 "15
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;init.c: 16: PORTC = 0b00000001;
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 1111  ]
+{
+[; ;buttonchanges.c: 16: pin[pin_selected].time++;
 "16
-[e = _PORTC -> -> 1 `i `uc ]
-[; ;init.c: 17: PORTE = 0;
+[e ++ . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 1 `i ]
+[; ;buttonchanges.c: 17: if(pin[pin_selected].time > 999) {
 "17
-[e = _PORTE -> -> 0 `i `uc ]
-[; ;init.c: 18: }
+[e $ ! > . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 999 `i 1112  ]
+{
+[; ;buttonchanges.c: 18: pin[pin_selected].time = 0;
 "18
-[e :UE 1107 ]
+[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 0 `i ]
+"19
 }
+[e :U 1112 ]
+[; ;buttonchanges.c: 19: }
+[; ;buttonchanges.c: 20: __nop();
 "20
-[v _InitTris `(v ~T0 @X0 1 ef ]
-{
-[; ;init.c: 20: void InitTris(void) {
-[e :U _InitTris ]
-[f ]
-[; ;init.c: 21: TRISA = 0b00000000;
+[e ( ___nop ..  ]
 "21
-[e = _TRISA -> -> 0 `i `uc ]
-[; ;init.c: 22: TRISB = 0b00011111;
+}
+[e :U 1111 ]
 "22
-[e = _TRISB -> -> 31 `i `uc ]
-[; ;init.c: 23: TRISC = 0b10000010;
+}
+[; ;buttonchanges.c: 21: }
+[; ;buttonchanges.c: 22: } else if(PORTBbits.RB3 == 1) {
+[e $U 1113  ]
+[e :U 1110 ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1114  ]
+{
+[; ;buttonchanges.c: 23: Delay_Routine(3);
 "23
-[e = _TRISC -> -> 130 `i `uc ]
-[; ;init.c: 24: TRISE = 0;
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 24: if(PORTBbits.RB3 == 1) {
 "24
-[e = _TRISE -> -> 0 `i `uc ]
-[; ;init.c: 25: }
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1115  ]
+{
+[; ;buttonchanges.c: 25: pin[pin_selected].time--;
 "25
-[e :UE 1108 ]
-}
+[e -- . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 1 `i ]
+[; ;buttonchanges.c: 26: if(pin[pin_selected].time < 0) {
+"26
+[e $ ! < . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 0 `i 1116  ]
+{
+[; ;buttonchanges.c: 27: pin[pin_selected].time = 999;
 "27
-[v _InitAnsel `(v ~T0 @X0 1 ef ]
-{
-[; ;init.c: 27: void InitAnsel(void) {
-[e :U _InitAnsel ]
-[f ]
-[; ;init.c: 28: ANSELA = 0;
+[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 999 `i ]
 "28
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;init.c: 29: ANSELB = 0;
+}
+[e :U 1116 ]
+[; ;buttonchanges.c: 28: }
+[; ;buttonchanges.c: 29: __nop();
 "29
-[e = _ANSELB -> -> 0 `i `uc ]
-[; ;init.c: 30: ANSELC = 0;
+[e ( ___nop ..  ]
 "30
-[e = _ANSELC -> -> 0 `i `uc ]
-[; ;init.c: 31: }
+}
+[e :U 1115 ]
 "31
-[e :UE 1109 ]
 }
+[; ;buttonchanges.c: 30: }
+[; ;buttonchanges.c: 31: } else if(PORTBbits.RB4 == 1) {
+[e $U 1117  ]
+[e :U 1114 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 1 `i 1118  ]
+{
+[; ;buttonchanges.c: 32: Delay_Routine(3);
+"32
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 33: if(PORTBbits.RB4 == 1) {
 "33
-[v _InitMiscellaneous `(v ~T0 @X0 1 ef ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 1 `i 1119  ]
 {
-[; ;init.c: 33: void InitMiscellaneous(void) {
-[e :U _InitMiscellaneous ]
-[f ]
-[; ;init.c: 34: OSCCON = 0b01010011;
+[; ;buttonchanges.c: 34: pin[pin_selected].time += 10;
 "34
-[e = _OSCCON -> -> 83 `i `uc ]
-[; ;init.c: 35: }
+[e =+ . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 10 `i ]
+[; ;buttonchanges.c: 35: if(pin[pin_selected].time > 999) {
 "35
-[e :UE 1110 ]
-}
+[e $ ! > . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 999 `i 1120  ]
+{
+[; ;buttonchanges.c: 36: pin[pin_selected].time = 0;
+"36
+[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 -> 0 `i ]
 "37
-[v _InitTransmission `(v ~T0 @X0 1 ef ]
-{
-[; ;init.c: 37: void InitTransmission(void) {
-[e :U _InitTransmission ]
-[f ]
-[; ;init.c: 39: SSP1STAT = 0b01000000;
+}
+[e :U 1120 ]
+[; ;buttonchanges.c: 37: }
+[; ;buttonchanges.c: 38: __nop();
+"38
+[e ( ___nop ..  ]
 "39
-[e = _SSP1STAT -> -> 64 `i `uc ]
-[; ;init.c: 40: SSP1CON1 = 0b00100010;
+}
+[e :U 1119 ]
 "40
-[e = _SSP1CON1 -> -> 34 `i `uc ]
-[; ;init.c: 42: TXSTA1bits.SYNC = 0;
+}
+[; ;buttonchanges.c: 39: }
+[; ;buttonchanges.c: 40: } else if(PORTBbits.RB1 == 1) {
+[e $U 1121  ]
+[e :U 1118 ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 1122  ]
+{
+[; ;buttonchanges.c: 41: Delay_Routine(3);
+"41
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 42: if(PORTBbits.RB1 == 1) {
 "42
-[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;init.c: 43: TXSTA1bits.BRGH = 1;
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 1123  ]
+{
+[; ;buttonchanges.c: 43: Save_Data(pin[pin_selected].time, pin[pin_selected].address);
 "43
-[e = . . _TXSTA1bits 0 2 -> -> 1 `i `uc ]
-[; ;init.c: 44: BAUDCON1bits.BRG16 = 0;
+[e ( _Save_Data (2 , . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 ]
+[; ;buttonchanges.c: 44: pin_selected++;
 "44
-[e = . . _BAUDCON1bits 0 3 -> -> 0 `i `uc ]
-[; ;init.c: 45: SPBRG1 = 25;
+[e ++ _pin_selected -> -> 1 `i `uc ]
+[; ;buttonchanges.c: 45: switch (slave_selected) {
 "45
-[e = _SPBRG1 -> -> 25 `i `uc ]
-[; ;init.c: 46: TRISCbits.RC6 = 1;
+[e $U 1125  ]
+{
+[; ;buttonchanges.c: 46: case 0:
 "46
-[e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
-[; ;init.c: 47: TRISCbits.RC7 = 1;
+[e :U 1126 ]
+[; ;buttonchanges.c: 47: if(pin_selected > 9) {
 "47
-[e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
-[; ;init.c: 48: RCSTA1bits.SPEN = 1;
+[e $ ! > -> _pin_selected `i -> 9 `i 1127  ]
+{
+[; ;buttonchanges.c: 48: pin_selected = 0;
 "48
-[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-[; ;init.c: 49: TXSTA1bits.TX9 = 1;
+[e = _pin_selected -> -> 0 `i `uc ]
 "49
-[e = . . _TXSTA1bits 0 6 -> -> 1 `i `uc ]
-[; ;init.c: 50: TXSTA1bits.TXEN = 1;
+}
+[e :U 1127 ]
+[; ;buttonchanges.c: 49: }
+[; ;buttonchanges.c: 50: break;
 "50
-[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
-[; ;init.c: 51: RCSTA1bits.RC9 = 1;
+[e $U 1124  ]
+[; ;buttonchanges.c: 51: case 1:
 "51
-[e = . . _RCSTA1bits 4 1 -> -> 1 `i `uc ]
-[; ;init.c: 52: RCSTA1bits.CREN = 1;
+[e :U 1128 ]
+[; ;buttonchanges.c: 52: if(pin_selected > 19) {
 "52
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;init.c: 53: TRISCbits.RC6 = 0;
+[e $ ! > -> _pin_selected `i -> 19 `i 1129  ]
+{
+[; ;buttonchanges.c: 53: pin_selected = 10;
 "53
-[e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
-[; ;init.c: 54: }
+[e = _pin_selected -> -> 10 `i `uc ]
 "54
-[e :UE 1111 ]
 }
+[e :U 1129 ]
+[; ;buttonchanges.c: 54: }
+[; ;buttonchanges.c: 55: break;
+"55
+[e $U 1124  ]
+[; ;buttonchanges.c: 56: case 2:
 "56
-[v _InitTimer `(v ~T0 @X0 1 ef ]
+[e :U 1130 ]
+[; ;buttonchanges.c: 57: if(pin_selected > 29) {
+"57
+[e $ ! > -> _pin_selected `i -> 29 `i 1131  ]
 {
-[; ;init.c: 56: void InitTimer(void) {
-[e :U _InitTimer ]
-[f ]
-[; ;init.c: 58: T1CONbits.TMR1CS = 0b00;
+[; ;buttonchanges.c: 58: pin_selected = 20;
 "58
-[e = . . _T1CONbits 1 5 -> -> 0 `i `uc ]
-[; ;init.c: 59: T1CONbits.T1CKPS = 0b11;
+[e = _pin_selected -> -> 20 `i `uc ]
 "59
-[e = . . _T1CONbits 1 4 -> -> 3 `i `uc ]
-[; ;init.c: 60: T1CONbits.nT1SYNC = 0;
-"60
-[e = . . _T1CONbits 1 2 -> -> 0 `i `uc ]
-[; ;init.c: 62: T3CONbits.TMR3CS = 0b00;
-"62
-[e = . . _T3CONbits 1 5 -> -> 0 `i `uc ]
-[; ;init.c: 63: T3CONbits.T3CKPS = 0b11;
-"63
-[e = . . _T3CONbits 1 4 -> -> 3 `i `uc ]
-[; ;init.c: 64: T3CONbits.nT3SYNC = 0;
-"64
-[e = . . _T3CONbits 1 2 -> -> 0 `i `uc ]
-[; ;init.c: 66: CCP1CONbits.CCP1M = 0b1010;
-"66
-[e = . . _CCP1CONbits 0 0 -> -> 10 `i `uc ]
-[; ;init.c: 67: CCPTMRS0bits.C1TSEL = 0b01;
-"67
-[e = . . _CCPTMRS0bits 0 0 -> -> 1 `i `uc ]
-[; ;init.c: 68: }
-"68
-[e :UE 1112 ]
 }
-"70
-[v _InitInterrupt `(v ~T0 @X0 1 ef ]
+[e :U 1131 ]
+[; ;buttonchanges.c: 59: }
+[; ;buttonchanges.c: 60: break;
+"60
+[e $U 1124  ]
+"61
+}
+[; ;buttonchanges.c: 61: }
+[e $U 1124  ]
+"45
+[e :U 1125 ]
+[e [\ _slave_selected , $ -> -> 0 `i `uc 1126
+ , $ -> -> 1 `i `uc 1128
+ , $ -> -> 2 `i `uc 1130
+ 1124 ]
+"61
+[e :U 1124 ]
+[; ;buttonchanges.c: 62: __nop();
+"62
+[e ( ___nop ..  ]
+"63
+}
+[e :U 1123 ]
+"64
+}
+[; ;buttonchanges.c: 63: }
+[; ;buttonchanges.c: 64: } else if(PORTBbits.RB0 == 1) {
+[e $U 1132  ]
+[e :U 1122 ]
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 1133  ]
 {
-[; ;init.c: 70: void InitInterrupt(void) {
-[e :U _InitInterrupt ]
-[f ]
-[; ;init.c: 71: INTCONbits.GIE = 1;
+[; ;buttonchanges.c: 65: Delay_Routine(3);
+"65
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 66: if(PORTBbits.RB0 == 1) {
+"66
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 1134  ]
+{
+[; ;buttonchanges.c: 67: Save_Data(pin[pin_selected].time, pin[pin_selected].address);
+"67
+[e ( _Save_Data (2 , . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 3 . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 ]
+[; ;buttonchanges.c: 68: slave_selected++;
+"68
+[e ++ _slave_selected -> -> 1 `i `uc ]
+[; ;buttonchanges.c: 69: if(slave_selected > 2) {
+"69
+[e $ ! > -> _slave_selected `i -> 2 `i 1135  ]
+{
+[; ;buttonchanges.c: 70: slave_selected = 0;
+"70
+[e = _slave_selected -> -> 0 `i `uc ]
 "71
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;init.c: 72: INTCONbits.PEIE = 1;
+}
+[e :U 1135 ]
+[; ;buttonchanges.c: 71: }
+[; ;buttonchanges.c: 72: pin_selected = slave_selected * 10;
 "72
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;init.c: 73: PIE1bits.RCIE = 1;
+[e = _pin_selected -> * -> _slave_selected `i -> 10 `i `uc ]
+[; ;buttonchanges.c: 73: __nop();
 "73
-[e = . . _PIE1bits 1 3 -> -> 1 `i `uc ]
-[; ;init.c: 74: PIE1bits.CCP1IE = 1;
+[e ( ___nop ..  ]
 "74
-[e = . . _PIE1bits 0 2 -> -> 1 `i `uc ]
-[; ;init.c: 75: }
+}
+[e :U 1134 ]
 "75
-[e :UE 1113 ]
+}
+[e :U 1133 ]
+"76
+[e :U 1132 ]
+[e :U 1121 ]
+[e :U 1117 ]
+[e :U 1113 ]
+[e :U 1109 ]
+[; ;buttonchanges.c: 74: }
+[; ;buttonchanges.c: 75: }
+[; ;buttonchanges.c: 76: }
+[e :UE 1106 ]
 }
