@@ -2,6 +2,57 @@ Version 3.2 HI-TECH Software Intermediate Code
 "24 buttonchanges.h
 [s S1105 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address time ]
+"9826 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[v _EEADR `Vuc ~T0 @X0 0 e@4009 ]
+"9807
+[v _EEDATA `Vuc ~T0 @X0 0 e@4008 ]
+"9729
+[s S565 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S565 . RD WR WREN WRERR FREE . CFGS EEPGD ]
+"9739
+[s S566 :6 `uc 1 :1 `uc 1 ]
+[n S566 . . EEFS ]
+"9728
+[u S564 `S565 1 `S566 1 ]
+[n S564 . . . ]
+"9744
+[v _EECON1bits `VS564 ~T0 @X0 0 e@4006 ]
+"16815
+[s S1075 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1075 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"16825
+[s S1076 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1076 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16835
+[s S1077 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1077 . . GIEL GIEH ]
+"16840
+[s S1078 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1078 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"16850
+[s S1079 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1079 . . GIEL GIEH ]
+"16814
+[u S1074 `S1075 1 `S1076 1 `S1077 1 `S1078 1 `S1079 1 ]
+[n S1074 . . . . . . ]
+"16856
+[v _INTCONbits `VS1074 ~T0 @X0 0 e@4082 ]
+"9788
+[v _EECON2 `Vuc ~T0 @X0 0 e@4007 ]
+"9278
+[s S540 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S540 . CCP2IF TMR3IF HLVDIF BCL1IF EEIF C2IF C1IF OSCFIF ]
+"9288
+[s S541 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S541 . . LVDIF BCLIF ]
+"9293
+[s S542 :6 `uc 1 :1 `uc 1 ]
+[n S542 . . CMIF ]
+"9277
+[u S539 `S540 1 `S541 1 `S542 1 ]
+[n S539 . . . . ]
+"9298
+[v _PIR2bits `VS539 ~T0 @X0 0 e@4001 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7415,7 +7466,93 @@ Version 3.2 HI-TECH Software Intermediate Code
 "8
 [v _store_address `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;storage.c: 10: }
+[; ;storage.c: 9: EEADR = store_address;
+"9
+[e = _EEADR _store_address ]
+[; ;storage.c: 10: EEDATA = store;
 "10
+[e = _EEDATA -> _store `uc ]
+[; ;storage.c: 11: EECON1bits.EEPGD = 0;
+"11
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+[; ;storage.c: 12: EECON1bits.CFGS = 0;
+"12
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;storage.c: 13: INTCONbits.GIE = 0;
+"13
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;storage.c: 14: EECON1bits.WREN = 1;
+"14
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;storage.c: 15: EECON2 = 0x55;
+"15
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;storage.c: 16: EECON2 = 0xAA;
+"16
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;storage.c: 17: EECON1bits.WR = 1;
+"17
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;storage.c: 18: while(PIR2bits.EEIF == 0);
+"18
+[e $U 1107  ]
+[e :U 1108 ]
+[e :U 1107 ]
+[e $ == -> . . _PIR2bits 0 4 `i -> 0 `i 1108  ]
+[e :U 1109 ]
+[; ;storage.c: 19: PIR2bits.EEIF = 0;
+"19
+[e = . . _PIR2bits 0 4 -> -> 0 `i `uc ]
+[; ;storage.c: 20: store >>= 8;
+"20
+[e =>> _store -> 8 `i ]
+[; ;storage.c: 21: store_address += 50;
+"21
+[e =+ _store_address -> -> 50 `i `uc ]
+[; ;storage.c: 22: EEADR = store_address;
+"22
+[e = _EEADR _store_address ]
+[; ;storage.c: 23: EEDATA = store;
+"23
+[e = _EEDATA -> _store `uc ]
+[; ;storage.c: 24: EECON1bits.EEPGD = 0;
+"24
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+[; ;storage.c: 25: EECON1bits.CFGS = 0;
+"25
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;storage.c: 26: EECON1bits.WREN = 1;
+"26
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;storage.c: 27: INTCONbits.GIE = 0;
+"27
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;storage.c: 28: EECON2 = 0x55;
+"28
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;storage.c: 29: EECON2 = 0xAA;
+"29
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;storage.c: 30: EECON1bits.WR = 1;
+"30
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;storage.c: 31: while(PIR2bits.EEIF == 0);
+"31
+[e $U 1110  ]
+[e :U 1111 ]
+[e :U 1110 ]
+[e $ == -> . . _PIR2bits 0 4 `i -> 0 `i 1111  ]
+[e :U 1112 ]
+[; ;storage.c: 32: PIR2bits.EEIF = 0;
+"32
+[e = . . _PIR2bits 0 4 -> -> 0 `i `uc ]
+[; ;storage.c: 33: EECON1bits.WREN = 0;
+"33
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+[; ;storage.c: 34: INTCONbits.GIE = 1;
+"34
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;storage.c: 35: }
+"35
 [e :UE 1106 ]
 }

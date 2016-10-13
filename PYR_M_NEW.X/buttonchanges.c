@@ -59,6 +59,7 @@ void Check_Buttons(void) {
                     }
                     break;
             }
+            pin[pin_selected].time = Read_Data(pin[pin_selected].address);
             NOP();
         }
     } else if(Slave_Up == 1) {
@@ -70,6 +71,7 @@ void Check_Buttons(void) {
                 slave_selected = 0;
             }
             pin_selected = slave_selected * 10;
+            pin[pin_selected].time = Read_Data(pin[pin_selected].address);
             NOP();
         }
     }

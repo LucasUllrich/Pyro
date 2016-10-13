@@ -4,7 +4,7 @@
  * @param store
  */
 
-void Save_Data(signed int store, 
+void Save_Data(unsigned int store, 
             unsigned char store_address) {
     EEADR = store_address;  //Storing lower 8 bits
     EEDATA = store;
@@ -32,4 +32,21 @@ void Save_Data(signed int store,
     PIR2bits.EEIF = 0;
     EECON1bits.WREN = 0;
     INTCONbits.GIE = 1;
+}
+
+unsigned int Read_Data(unsigned char read_address) {
+    unsigned int data_read = 0;
+    read_address += 50;
+    EEADR = read_address;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;
+    EECON1bits.RD = 1;
+    data_read = EEDATA;
+    read_address -= 50;
+    data_read <<= 8;
+    EEADR = read_address;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;
+    EECON1bits.RD = 1;
+    data_read |= EEDATA;
 }

@@ -84,7 +84,7 @@
 [v _CCPTMRS0bits CCPTMRS0bits `VES1009  1 e 1 @3913 ]
 "6266
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
-[s S1451 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1577 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -94,66 +94,66 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "6354
-[s S1460 . 1 `uc 1 AN0 1 0 :1:0 
+[s S1586 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S1467 . 1 `uc 1 C12IN0M 1 0 :1:0 
+[s S1593 . 1 `uc 1 C12IN0M 1 0 :1:0 
 `uc 1 C12IN1M 1 0 :1:1 
 `uc 1 C2INP 1 0 :1:2 
 `uc 1 C1INP 1 0 :1:3 
 `uc 1 C1OUT 1 0 :1:4 
 `uc 1 C2OUT 1 0 :1:5 
 ]
-[s S1474 . 1 `uc 1 C12IN0N 1 0 :1:0 
+[s S1600 . 1 `uc 1 C12IN0N 1 0 :1:0 
 `uc 1 C12IN1N 1 0 :1:1 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 SS 1 0 :1:5 
 ]
-[s S1481 . 1 `uc 1 . 1 0 :5:0 
+[s S1607 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS 1 0 :1:5 
 ]
-[s S1484 . 1 `uc 1 . 1 0 :2:0 
+[s S1610 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFN 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 SRQ 1 0 :1:4 
 `uc 1 nSS 1 0 :1:5 
 ]
-[s S1490 . 1 `uc 1 . 1 0 :2:0 
+[s S1616 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CVREF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 CCP5 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S1496 . 1 `uc 1 . 1 0 :2:0 
+[s S1622 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 DACOUT 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S1501 . 1 `uc 1 . 1 0 :5:0 
+[s S1627 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SS1 1 0 :1:5 
 ]
-[s S1504 . 1 `uc 1 . 1 0 :5:0 
+[s S1630 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS1 1 0 :1:5 
 ]
-[s S1507 . 1 `uc 1 . 1 0 :5:0 
+[s S1633 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 nSS1 1 0 :1:5 
 ]
-[s S1510 . 1 `uc 1 . 1 0 :5:0 
+[s S1636 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRNQ 1 0 :1:5 
 ]
-[s S1513 . 1 `uc 1 . 1 0 :7:0 
+[s S1639 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[s S1516 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S1642 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 ]
-[u S1518 . 1 `S1451 1 . 1 0 `S1460 1 . 1 0 `S1467 1 . 1 0 `S1474 1 . 1 0 `S1481 1 . 1 0 `S1484 1 . 1 0 `S1490 1 . 1 0 `S1496 1 . 1 0 `S1501 1 . 1 0 `S1504 1 . 1 0 `S1507 1 . 1 0 `S1510 1 . 1 0 `S1513 1 . 1 0 `S1516 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1518  1 e 1 @3968 ]
+[u S1644 . 1 `S1577 1 . 1 0 `S1586 1 . 1 0 `S1593 1 . 1 0 `S1600 1 . 1 0 `S1607 1 . 1 0 `S1610 1 . 1 0 `S1616 1 . 1 0 `S1622 1 . 1 0 `S1627 1 . 1 0 `S1630 1 . 1 0 `S1633 1 . 1 0 `S1636 1 . 1 0 `S1639 1 . 1 0 `S1642 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1644  1 e 1 @3968 ]
 "6558
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
 [s S210 . 1 `uc 1 RB0 1 0 :1:0 
@@ -356,6 +356,46 @@
 ]
 [u S414 . 1 `S401 1 . 1 0 `S409 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES414  1 e 1 @3998 ]
+[s S1288 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 TMR3IF 1 0 :1:1 
+`uc 1 HLVDIF 1 0 :1:2 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 EEIF 1 0 :1:4 
+`uc 1 C2IF 1 0 :1:5 
+`uc 1 C1IF 1 0 :1:6 
+`uc 1 OSCFIF 1 0 :1:7 
+]
+"9298
+[s S1297 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIF 1 0 :1:2 
+`uc 1 BCLIF 1 0 :1:3 
+]
+[s S1301 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CMIF 1 0 :1:6 
+]
+[u S1304 . 1 `S1288 1 . 1 0 `S1297 1 . 1 0 `S1301 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES1304  1 e 1 @4001 ]
+[s S1217 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CFGS 1 0 :1:6 
+`uc 1 EEPGD 1 0 :1:7 
+]
+"9744
+[s S1226 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 EEFS 1 0 :1:6 
+]
+[u S1229 . 1 `S1217 1 . 1 0 `S1226 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES1229  1 e 1 @4006 ]
+"9788
+[v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
+"9807
+[v _EEDATA EEDATA `VEuc  1 e 1 @4008 ]
+"9826
+[v _EEADR EEADR `VEuc  1 e 1 @4009 ]
 [s S833 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
@@ -650,7 +690,7 @@
 [v Save_Data@store store `i  1 p 2 15 ]
 "8
 [v Save_Data@store_address store_address `uc  1 p 1 17 ]
-"10
+"35
 } 0
 "73 C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
 [v _Delay_Routine Delay_Routine `(v  1 e 0 0 ]

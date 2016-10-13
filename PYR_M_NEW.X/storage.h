@@ -13,7 +13,8 @@
  * Functionprototypes
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
-void Save_Data(signed int store, unsigned char store_address);
+void Save_Data(unsigned int store, unsigned char store_address);
+unsigned int Read_Data(unsigned char read_address);
 // </editor-fold>
 
 #endif	/* STORAGE_H */
