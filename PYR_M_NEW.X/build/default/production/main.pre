@@ -9057,7 +9057,14 @@ void Timer_Count(void);
 unsigned int current_time = 0;
 
 # 16 "storage.h"
-void Save_Data(signed int store, unsigned char store_address);
+void Save_Data(unsigned int store, unsigned char store_address);
+unsigned int Read_Data(unsigned char read_address);
+
+# 16 "display.h"
+void Display(unsigned char type, unsigned int value);
+
+# 24
+bool pixels[52];
 
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);

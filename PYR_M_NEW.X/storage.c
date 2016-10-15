@@ -49,4 +49,5 @@ unsigned int Read_Data(unsigned char read_address) {
     EECON1bits.CFGS = 0;
     EECON1bits.RD = 1;
     data_read |= EEDATA;
+    return(data_read);
 }
