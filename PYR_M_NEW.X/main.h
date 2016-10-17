@@ -22,6 +22,14 @@
 // </editor-fold>
 
 /***************************************************
+ * Defenitions
+ ***************************************************/
+// <editor-fold defaultstate="collapsed" desc="Defenitions">
+#define ELEMENTS(x) (sizeof(x) / sizeof(x[0]))
+// </editor-fold>
+
+
+/***************************************************
  * Variables and constants
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="variables">

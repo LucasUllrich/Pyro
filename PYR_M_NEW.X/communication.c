@@ -38,3 +38,7 @@ unsigned char Receive(void) {
 
     return (RCREG1);
 }
+
+void Write_Display(unsigned char write_data) {
+    
+}

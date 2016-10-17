@@ -15,6 +15,7 @@
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
+void Write_Display(unsigned char write_data);
 // </editor-fold>
 
 /***************************************************
