@@ -17,6 +17,7 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time > 999) {
                 pin[pin_selected].time = 0;
             }
+            //*****Display
             NOP();
         }
     } else if(Time_Down == 1) {
@@ -26,6 +27,7 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time < 0) {
                 pin[pin_selected].time = 999;
             }
+            //*****Display
             NOP();
         }
     } else if(Time_Upup == 1) {
@@ -35,6 +37,7 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time > 999) {
                 pin[pin_selected].time = 0;
             }
+            //*****Display
             NOP();
         }
     } else if(Port_Up == 1) {
@@ -60,6 +63,7 @@ void Check_Buttons(void) {
                     break;
             }
             pin[pin_selected].time = Read_Data(pin[pin_selected].address);
+            //*****Display Port and time
             NOP();
         }
     } else if(Slave_Up == 1) {
@@ -72,6 +76,7 @@ void Check_Buttons(void) {
             }
             pin_selected = slave_selected * 10;
             pin[pin_selected].time = Read_Data(pin[pin_selected].address);
+            //*****Display Slave, Port and time
             NOP();
         }
     }

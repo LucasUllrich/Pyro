@@ -1,0 +1,106 @@
+/* 
+ * File:   display.h
+ * Author: Lucas
+ *
+ * Created on 14. April 2016, 13:17
+ */
+
+#ifndef DISPLAY_H
+#define	DISPLAY_H
+#include "main.h"
+
+/***************************************************
+ * Functionprototypes
+ ***************************************************/
+// <editor-fold defaultstate="collapsed" desc="Prototypes">
+void Display(void);
+void Evaluate_Display(unsigned int evaluate);
+void Set_Display(unsigned char type, unsigned char target,
+        unsigned char set_pixels);
+// </editor-fold>
+
+/***************************************************
+ * Variables and constants
+ ***************************************************/
+// <editor-fold defaultstate="collapsed" desc="variables">
+//#define COM_TEST
+unsigned char pixels[57];
+/** Description to pixels[]
+ * First 3 Bytes: 7-segment displays
+ *  Bit 7, MSB: empty
+ *  Bit 6:      g, center
+ *  Bit 5:      f, top left
+ *  Bit 4:      e, bottom left
+ *  Bit 3:      d, bottom
+ *  Bit 2:      c, bottom right
+ *  Bit 1:      b, top right
+ *  Bit 0:      a, top
+ * 
+ * Following 4 Bytes: LED signals
+ *  Bit 55 and 56 empty
+ *  Bit 54 Led 
+ *  Bit 51 Led 
+ *  Bit 52 Led 
+ *  Bit 50 Led 
+ *  Bit 49 Led 
+ *  Bit 48 Led 
+ *  Bit 47 Led 
+ *  Bit 46 Led 
+ *  Bit 45 Led 
+ *  Bit 44 Led 
+ *  Bit 43 Led 
+ *  Bit 42 Led 
+ *  Bit 41 Led 
+ *  Bit 40 Led 
+ *  Bit 39 Led 
+ *  Bit 38 Led 
+ *  Bit 37 Led 
+ *  Bit 36 Led 
+ *  Bit 35 Led 
+ *  Bit 34 Led 
+ *  Bit 33 Led 
+ *  Bit 32 Led 
+ *  Bit 31 Led 
+ *  Bit 30 Led 
+ *  Bit 29 Led 
+ *  Bit 28 Led 
+ *  Bit 27 Led 
+ *  Bit 26 Led 
+ *  Bit 25 Led 
+ *  Bit 24 Led 
+ *  Bit 23 Led 17
+ *  Bit 22 Led 18
+ *  Bit 21 Led 19
+ *  Bit 20 Led 20
+ *  Bit 19 Led 21
+ *  Bit 18 Led 22
+ *  Bit 17 Led 23
+ *  Bit 16 Led 24
+ *  Bit 15 Led 9
+ *  Bit 14 Led 10
+ *  Bit 13 Led 11
+ *  Bit 12 Led 12
+ *  Bit 11 Led 13
+ *  Bit 10 Led 14
+ *  Bit 9  Led 15
+ *  Bit 8  Led 16
+ *  Bit 7  Led 1
+ *  Bit 6  Led 2
+ *  Bit 5  Led 3
+ *  Bit 4  Led 4
+ *  Bit 3  Led 5
+ *  Bit 2  Led 6
+ *  Bit 1  Led 7
+ *  Bit 0  Led 8
+ */
+
+//unsigned char reg0 = 0;     //Bit 7 to 1 Display left
+//unsigned char reg1 = 0;     //Bit 7 to 1 Display mid
+//unsigned char reg2 = 0;     //Bit 7 to 1 Display right
+//unsigned char reg3 = 0;     //Bit 1 first led top left
+//unsigned char reg4 = 0;
+//unsigned char reg5 = 0;
+//unsigned char reg6 = 0;     //6 & 7 unused
+// </editor-fold>
+#endif	/* DISPLAY_H */
+

@@ -1,6 +1,22 @@
 #include "main.h"
 
-void Display(unsigned int value) {
+void Evaluate_Display(unsigned int evaluate) {
+    
+}
+
+void Set_Display(unsigned char type, unsigned char target,
+        unsigned char set_pixels) {
+    switch (type) {
+        case 'S':
+            
+            break;
+        case 'L':
+            
+            break;
+    }
+}
+
+void Display(void) {
     unsigned char write_reg = 0;
     unsigned char write_counter = 0;
     for(unsigned char pin_counter = 0; pin_counter < 
