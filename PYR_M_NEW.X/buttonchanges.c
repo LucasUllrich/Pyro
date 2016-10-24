@@ -76,6 +76,7 @@ void Check_Buttons(void) {
             }
             pin_selected = slave_selected * 10;
             pin[pin_selected].time = Read_Data(pin[pin_selected].address);
+            Set_Display('7', 'E', pin[pin_selected].slave);
             //*****Display Slave, Port and time
             NOP();
         }

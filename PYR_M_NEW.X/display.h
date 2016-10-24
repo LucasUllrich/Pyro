@@ -14,9 +14,9 @@
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
 void Display(void);
-void Evaluate_Display(unsigned int evaluate);
-void Set_Display(unsigned char type, unsigned char target,
-        unsigned char set_pixels);
+void Evaluate_Display(unsigned char size, unsigned int *evaluate);
+void Set_Display(unsigned char type, unsigned char information,
+        unsigned int value);
 // </editor-fold>
 
 /***************************************************
