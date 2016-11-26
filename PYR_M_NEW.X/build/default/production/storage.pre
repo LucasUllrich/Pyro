@@ -1,5 +1,5 @@
 
-# 1 "ignition.c"
+# 1 "storage.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9031,16 +9031,51 @@ bit ignite_ready = 0;
 # 65
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 12 "ignition.c"
-void Timer_Count(void) {
-TMR1L = 0;
-TMR1H = 0;
-PIR1bits.TMR1IF = 0;
-T1CONbits.TMR1ON = 1;
-CCPR1L = 72;
-CCPR1H = 232;
-while(PIR1bits.TMR1IF == 0);
-T3CONbits.TMR3ON = 1;
-T1CONbits.TMR1ON = 0;
+# 7 "storage.c"
+void Save_Data(unsigned int store,
+unsigned char store_address) {
+EEADR = store_address;
+EEDATA = store;
+EECON1bits.EEPGD = 0;
+EECON1bits.CFGS = 0;
+INTCONbits.GIE = 0;
+EECON1bits.WREN = 1;
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
+while(PIR2bits.EEIF == 0);
+PIR2bits.EEIF = 0;
+store >>= 8;
+store_address += 50;
+EEADR = store_address;
+EEDATA = store;
+EECON1bits.EEPGD = 0;
+EECON1bits.CFGS = 0;
+EECON1bits.WREN = 1;
+INTCONbits.GIE = 0;
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
+while(PIR2bits.EEIF == 0);
+PIR2bits.EEIF = 0;
+EECON1bits.WREN = 0;
+INTCONbits.GIE = 1;
+}
 
+unsigned int Read_Data(unsigned char read_address) {
+unsigned int data_read = 0;
+read_address += 50;
+EEADR = read_address;
+EECON1bits.EEPGD = 0;
+EECON1bits.CFGS = 0;
+EECON1bits.RD = 1;
+data_read = EEDATA;
+read_address -= 50;
+data_read <<= 8;
+EEADR = read_address;
+EECON1bits.EEPGD = 0;
+EECON1bits.CFGS = 0;
+EECON1bits.RD = 1;
+data_read |= EEDATA;
+return(data_read);
 }

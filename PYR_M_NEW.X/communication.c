@@ -40,5 +40,10 @@ unsigned char Receive(void) {
 }
 
 void Write_Display(unsigned char write_data) {
-    
+    if(SSP1IF = 1) {
+        SSP1IF = 0;
+    }
+    SSP1BUF = write_data;
+    while (SSP1IF == 0);
+    SSP1IF = 0;
 }

@@ -1,5 +1,5 @@
 
-# 1 "ignition.c"
+# 1 "communication.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9031,16 +9031,34 @@ bit ignite_ready = 0;
 # 65
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 12 "ignition.c"
-void Timer_Count(void) {
-TMR1L = 0;
-TMR1H = 0;
-PIR1bits.TMR1IF = 0;
-T1CONbits.TMR1ON = 1;
-CCPR1L = 72;
-CCPR1H = 232;
-while(PIR1bits.TMR1IF == 0);
-T3CONbits.TMR3ON = 1;
-T1CONbits.TMR1ON = 0;
+# 15 "communication.c"
+void Transmit(unsigned char slave, unsigned char trans_data) {
+PORTBbits.RB5 = 1;
+RCSTA1bits.CREN = 0;
+
+__nop();
+while(PIR1bits.TXIF == 0);
+TXSTA1bits.TX9D = 1;
+TXREG1 = slave;
+while(PIR1bits.TXIF == 0);
+TXREG1 = trans_data;
+while(TXSTA1bits.TRMT == 0);
+PORTBbits.RB5 = 0;
+RCSTA1bits.CREN = 1;
+__nop();
+}
+
+
+unsigned char Receive(void) {
+if(RCSTA1bits.OERR == 1) {
+RCSTA1bits.CREN = 0;
+RCSTA1bits.CREN = 1;
+overrun = 1;
+}
+
+return (RCREG1);
+}
+
+void Write_Display(unsigned char write_data) {
 
 }

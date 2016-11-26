@@ -1,9 +1,10 @@
 #include "main.h"
+
 /**
  * 
  * @param store
+ * @param store_address
  */
-
 void Save_Data(unsigned int store, 
             unsigned char store_address) {
     EEADR = store_address;  //Storing lower 8 bits
@@ -34,6 +35,12 @@ void Save_Data(unsigned int store,
     INTCONbits.GIE = 1;
 }
 
+
+/**
+ * 
+ * @param read_address
+ * @return 
+ */
 unsigned int Read_Data(unsigned char read_address) {
     unsigned int data_read = 0;
     read_address += 50;
@@ -49,5 +56,5 @@ unsigned int Read_Data(unsigned char read_address) {
     EECON1bits.CFGS = 0;
     EECON1bits.RD = 1;
     data_read |= EEDATA;
-    return(data_read);
+    return data_read;
 }

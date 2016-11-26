@@ -70,6 +70,11 @@
 
 #include "main.h"
 
+
+/**
+ * Routine to prolonge the available delays
+ * @param delay_multiplyer  Multiplyer for delay in 100 ms steps
+ */
 void Delay_Routine(unsigned char delay_multiplyer) {
     for (unsigned char delay_counter = 0; delay_counter < delay_multiplyer;
             delay_counter++) {
