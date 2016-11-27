@@ -7474,13 +7474,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;buttonchanges.h: 68: unsigned char pin_selected = 0;
+"69
+[v _testflag `b ~T0 @X0 1 e ]
+[i _testflag
+-> 0 `i
+]
+[; ;buttonchanges.h: 69: bit testflag = 0;
 [; ;ignition.h: 16: void Timer_Count(void);
-"23 ignition.h
+[; ;ignition.h: 17: void Check_Detonators(void);
+"24 ignition.h
 [v _current_time `ui ~T0 @X0 1 e ]
 [i _current_time
 -> -> 0 `i `ui
 ]
-[; ;ignition.h: 23: unsigned int current_time = 0;
+[; ;ignition.h: 24: unsigned int current_time = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;display.h: 16: void Display(void);
@@ -7510,9 +7517,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;main.h: 39: bit ignite_ready = 0;
 [; ;main.h: 65: void Delay_Routine(unsigned char delay_multiplyer);
-[v F7555 `(v ~T0 @X0 1 tf ]
+[v F7558 `(v ~T0 @X0 1 tf ]
 "3 interrupt.c
-[v _Isr `IF7555 ~T0 @X0 1 e ]
+[v _Isr `IF7558 ~T0 @X0 1 e ]
 {
 [; ;interrupt.c: 3: void interrupt Isr(void) {
 [e :U _Isr ]

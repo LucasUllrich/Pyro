@@ -7462,13 +7462,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;buttonchanges.h: 68: unsigned char pin_selected = 0;
+"69
+[v _testflag `b ~T0 @X0 1 e ]
+[i _testflag
+-> 0 `i
+]
+[; ;buttonchanges.h: 69: bit testflag = 0;
 [; ;ignition.h: 16: void Timer_Count(void);
-"23 ignition.h
+[; ;ignition.h: 17: void Check_Detonators(void);
+"24 ignition.h
 [v _current_time `ui ~T0 @X0 1 e ]
 [i _current_time
 -> -> 0 `i `ui
 ]
-[; ;ignition.h: 23: unsigned int current_time = 0;
+[; ;ignition.h: 24: unsigned int current_time = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;display.h: 16: void Display(void);
@@ -7498,143 +7505,122 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;main.h: 39: bit ignite_ready = 0;
 [; ;main.h: 65: void Delay_Routine(unsigned char delay_multiplyer);
-"7 storage.c
+"8 storage.c
 [v _Save_Data `(v ~T0 @X0 1 ef2`ui`uc ]
-"8
+"9
 {
-[; ;storage.c: 7: void Save_Data(unsigned int store,
-[; ;storage.c: 8: unsigned char store_address) {
+[; ;storage.c: 8: void Save_Data(unsigned int store,
+[; ;storage.c: 9: unsigned char store_address) {
 [e :U _Save_Data ]
-"7
-[v _store `ui ~T0 @X0 1 r1 ]
 "8
+[v _store `ui ~T0 @X0 1 r1 ]
+"9
 [v _store_address `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;storage.c: 9: EEADR = store_address;
-"9
-[e = _EEADR _store_address ]
-[; ;storage.c: 10: EEDATA = store;
+[; ;storage.c: 10: EEADR = store_address;
 "10
-[e = _EEDATA -> _store `uc ]
-[; ;storage.c: 11: EECON1bits.EEPGD = 0;
+[e = _EEADR _store_address ]
+[; ;storage.c: 11: EEDATA = store;
 "11
-[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-[; ;storage.c: 12: EECON1bits.CFGS = 0;
+[e = _EEDATA -> _store `uc ]
+[; ;storage.c: 12: EECON1bits.EEPGD = 0;
 "12
-[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-[; ;storage.c: 13: INTCONbits.GIE = 0;
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+[; ;storage.c: 13: EECON1bits.CFGS = 0;
 "13
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;storage.c: 14: EECON1bits.WREN = 1;
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;storage.c: 14: INTCONbits.GIE = 0;
 "14
-[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
-[; ;storage.c: 15: EECON2 = 0x55;
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;storage.c: 15: EECON1bits.WREN = 1;
 "15
-[e = _EECON2 -> -> 85 `i `uc ]
-[; ;storage.c: 16: EECON2 = 0xAA;
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;storage.c: 16: EECON2 = 0x55;
 "16
-[e = _EECON2 -> -> 170 `i `uc ]
-[; ;storage.c: 17: EECON1bits.WR = 1;
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;storage.c: 17: EECON2 = 0xAA;
 "17
-[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
-[; ;storage.c: 18: while(PIR2bits.EEIF == 0);
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;storage.c: 18: EECON1bits.WR = 1;
 "18
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;storage.c: 19: while(PIR2bits.EEIF == 0);
+"19
 [e $U 1107  ]
 [e :U 1108 ]
 [e :U 1107 ]
 [e $ == -> . . _PIR2bits 0 4 `i -> 0 `i 1108  ]
 [e :U 1109 ]
-[; ;storage.c: 19: PIR2bits.EEIF = 0;
-"19
-[e = . . _PIR2bits 0 4 -> -> 0 `i `uc ]
-[; ;storage.c: 20: store >>= 8;
+[; ;storage.c: 20: PIR2bits.EEIF = 0;
 "20
-[e =>> _store -> 8 `i ]
-[; ;storage.c: 21: store_address += 50;
+[e = . . _PIR2bits 0 4 -> -> 0 `i `uc ]
+[; ;storage.c: 21: store >>= 8;
 "21
-[e =+ _store_address -> -> 50 `i `uc ]
-[; ;storage.c: 22: EEADR = store_address;
+[e =>> _store -> 8 `i ]
+[; ;storage.c: 22: store_address += 50;
 "22
-[e = _EEADR _store_address ]
-[; ;storage.c: 23: EEDATA = store;
+[e =+ _store_address -> -> 50 `i `uc ]
+[; ;storage.c: 23: EEADR = store_address;
 "23
-[e = _EEDATA -> _store `uc ]
-[; ;storage.c: 24: EECON1bits.EEPGD = 0;
+[e = _EEADR _store_address ]
+[; ;storage.c: 24: EEDATA = store;
 "24
-[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-[; ;storage.c: 25: EECON1bits.CFGS = 0;
+[e = _EEDATA -> _store `uc ]
+[; ;storage.c: 25: EECON1bits.EEPGD = 0;
 "25
-[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-[; ;storage.c: 26: EECON1bits.WREN = 1;
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+[; ;storage.c: 26: EECON1bits.CFGS = 0;
 "26
-[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
-[; ;storage.c: 27: INTCONbits.GIE = 0;
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;storage.c: 27: EECON1bits.WREN = 1;
 "27
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;storage.c: 28: EECON2 = 0x55;
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;storage.c: 28: INTCONbits.GIE = 0;
 "28
-[e = _EECON2 -> -> 85 `i `uc ]
-[; ;storage.c: 29: EECON2 = 0xAA;
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;storage.c: 29: EECON2 = 0x55;
 "29
-[e = _EECON2 -> -> 170 `i `uc ]
-[; ;storage.c: 30: EECON1bits.WR = 1;
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;storage.c: 30: EECON2 = 0xAA;
 "30
-[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
-[; ;storage.c: 31: while(PIR2bits.EEIF == 0);
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;storage.c: 31: EECON1bits.WR = 1;
 "31
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;storage.c: 32: while(PIR2bits.EEIF == 0);
+"32
 [e $U 1110  ]
 [e :U 1111 ]
 [e :U 1110 ]
 [e $ == -> . . _PIR2bits 0 4 `i -> 0 `i 1111  ]
 [e :U 1112 ]
-[; ;storage.c: 32: PIR2bits.EEIF = 0;
-"32
-[e = . . _PIR2bits 0 4 -> -> 0 `i `uc ]
-[; ;storage.c: 33: EECON1bits.WREN = 0;
+[; ;storage.c: 33: PIR2bits.EEIF = 0;
 "33
-[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
-[; ;storage.c: 34: INTCONbits.GIE = 1;
+[e = . . _PIR2bits 0 4 -> -> 0 `i `uc ]
+[; ;storage.c: 34: EECON1bits.WREN = 0;
 "34
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;storage.c: 35: }
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+[; ;storage.c: 35: INTCONbits.GIE = 1;
 "35
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;storage.c: 36: }
+"36
 [e :UE 1106 ]
 }
-"37
+"44
 [v _Read_Data `(ui ~T0 @X0 1 ef1`uc ]
 {
-[; ;storage.c: 37: unsigned int Read_Data(unsigned char read_address) {
+[; ;storage.c: 44: unsigned int Read_Data(unsigned char read_address) {
 [e :U _Read_Data ]
 [v _read_address `uc ~T0 @X0 1 r1 ]
 [f ]
-"38
-[v _data_read `ui ~T0 @X0 1 a ]
-[; ;storage.c: 38: unsigned int data_read = 0;
-[e = _data_read -> -> 0 `i `ui ]
-[; ;storage.c: 39: read_address += 50;
-"39
-[e =+ _read_address -> -> 50 `i `uc ]
-[; ;storage.c: 40: EEADR = read_address;
-"40
-[e = _EEADR _read_address ]
-[; ;storage.c: 41: EECON1bits.EEPGD = 0;
-"41
-[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-[; ;storage.c: 42: EECON1bits.CFGS = 0;
-"42
-[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-[; ;storage.c: 43: EECON1bits.RD = 1;
-"43
-[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-[; ;storage.c: 44: data_read = EEDATA;
-"44
-[e = _data_read -> _EEDATA `ui ]
-[; ;storage.c: 45: read_address -= 50;
 "45
-[e =- _read_address -> -> 50 `i `uc ]
-[; ;storage.c: 46: data_read <<= 8;
+[v _data_read `ui ~T0 @X0 1 a ]
+[; ;storage.c: 45: unsigned int data_read = 0;
+[e = _data_read -> -> 0 `i `ui ]
+[; ;storage.c: 46: read_address += 50;
 "46
-[e =<< _data_read -> 8 `i ]
+[e =+ _read_address -> -> 50 `i `uc ]
 [; ;storage.c: 47: EEADR = read_address;
 "47
 [e = _EEADR _read_address ]
@@ -7647,14 +7633,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;storage.c: 50: EECON1bits.RD = 1;
 "50
 [e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-[; ;storage.c: 51: data_read |= EEDATA;
+[; ;storage.c: 51: data_read = EEDATA;
 "51
-[e =| _data_read -> _EEDATA `ui ]
-[; ;storage.c: 52: return(data_read);
+[e = _data_read -> _EEDATA `ui ]
+[; ;storage.c: 52: read_address -= 50;
 "52
+[e =- _read_address -> -> 50 `i `uc ]
+[; ;storage.c: 53: data_read <<= 8;
+"53
+[e =<< _data_read -> 8 `i ]
+[; ;storage.c: 54: EEADR = read_address;
+"54
+[e = _EEADR _read_address ]
+[; ;storage.c: 55: EECON1bits.EEPGD = 0;
+"55
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+[; ;storage.c: 56: EECON1bits.CFGS = 0;
+"56
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;storage.c: 57: EECON1bits.RD = 1;
+"57
+[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
+[; ;storage.c: 58: data_read |= EEDATA;
+"58
+[e =| _data_read -> _EEDATA `ui ]
+[; ;storage.c: 59: return data_read;
+"59
 [e ) _data_read ]
 [e $UE 1113  ]
-[; ;storage.c: 53: }
-"53
+[; ;storage.c: 60: }
+"60
 [e :UE 1113 ]
 }

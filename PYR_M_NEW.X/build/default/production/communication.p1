@@ -98,6 +98,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 "10813
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
+"18829
+[v _SSP1IF `Vb ~T0 @X0 0 e@31987 ]
+"15195
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7507,13 +7511,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;buttonchanges.h: 68: unsigned char pin_selected = 0;
+"69
+[v _testflag `b ~T0 @X0 1 e ]
+[i _testflag
+-> 0 `i
+]
+[; ;buttonchanges.h: 69: bit testflag = 0;
 [; ;ignition.h: 16: void Timer_Count(void);
-"23 ignition.h
+[; ;ignition.h: 17: void Check_Detonators(void);
+"24 ignition.h
 [v _current_time `ui ~T0 @X0 1 e ]
 [i _current_time
 -> -> 0 `i `ui
 ]
-[; ;ignition.h: 23: unsigned int current_time = 0;
+[; ;ignition.h: 24: unsigned int current_time = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;display.h: 16: void Display(void);
@@ -7641,7 +7652,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _Write_Display ]
 [v _write_data `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;communication.c: 44: }
+[; ;communication.c: 43: if(SSP1IF = 1) {
+"43
+[e $ ! = _SSP1IF -> -> 1 `i `b 1119  ]
+{
+[; ;communication.c: 44: SSP1IF = 0;
 "44
+[e = _SSP1IF -> -> 0 `i `b ]
+"45
+}
+[e :U 1119 ]
+[; ;communication.c: 45: }
+[; ;communication.c: 46: SSP1BUF = write_data;
+"46
+[e = _SSP1BUF _write_data ]
+[; ;communication.c: 47: while (SSP1IF == 0);
+"47
+[e $U 1120  ]
+[e :U 1121 ]
+[e :U 1120 ]
+[e $ == -> _SSP1IF `i -> 0 `i 1121  ]
+[e :U 1122 ]
+[; ;communication.c: 48: SSP1IF = 0;
+"48
+[e = _SSP1IF -> -> 0 `i `b ]
+[; ;communication.c: 49: }
+"49
 [e :UE 1118 ]
 }

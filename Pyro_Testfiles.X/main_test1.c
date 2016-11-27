@@ -11,7 +11,14 @@
 void function(const unsigned char *pointer) {
     unsigned char var;
     for(unsigned char counter = 0; counter < 5; counter++) {
-        var = pointer[counter];
+        switch (pointer[counter]) {
+            case '1':
+                var = 'A';
+                break;
+            default:
+                var = 'X';
+                break;
+        }
         NOP();
     }
     var = 1;

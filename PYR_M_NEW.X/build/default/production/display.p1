@@ -4,6 +4,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1105 Slave_Output slave output address led_address time ]
 "18 communication.h
 [v _Write_Display `(v ~T0 @X0 0 ef1`uc ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7413,13 +7416,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;buttonchanges.h: 68: unsigned char pin_selected = 0;
+"69
+[v _testflag `b ~T0 @X0 1 e ]
+[i _testflag
+-> 0 `i
+]
+[; ;buttonchanges.h: 69: bit testflag = 0;
 [; ;ignition.h: 16: void Timer_Count(void);
-"23 ignition.h
+[; ;ignition.h: 17: void Check_Detonators(void);
+"24 ignition.h
 [v _current_time `ui ~T0 @X0 1 e ]
 [i _current_time
 -> -> 0 `i `ui
 ]
-[; ;ignition.h: 23: unsigned int current_time = 0;
+[; ;ignition.h: 24: unsigned int current_time = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;display.h: 16: void Display(void);
@@ -7537,9 +7547,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.c: 34: break;
 "34
 [e $U 1111  ]
+[; ;display.c: 35: default:
 "35
+[e :U 1120 ]
+[; ;display.c: 36: break;
+"36
+[e $U 1111  ]
+"37
 }
-[; ;display.c: 35: }
+[; ;display.c: 37: }
 [e $U 1111  ]
 "13
 [e :U 1112 ]
@@ -7550,10 +7566,10 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 69 `ui `uc 1117
  , $ -> -> 70 `ui `uc 1118
  , $ -> -> 71 `ui `uc 1119
- 1111 ]
-"35
+ 1120 ]
+"37
 [e :U 1111 ]
-"36
+"38
 }
 "12
 [e ++ _bitcount -> -> 1 `i `uc ]
@@ -7561,366 +7577,386 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1110 ]
 [e $ != -> *U + _bits * -> _bitcount `ux -> -> # *U _bits `ui `ux `ui -> 0 `ui 1107  ]
 [e :U 1108 ]
-"36
-}
-[; ;display.c: 36: }
-[; ;display.c: 37: Write_Display(Bitoutput);
-"37
-[e ( _Write_Display (1 _Bitoutput ]
-[; ;display.c: 38: }
 "38
+}
+[; ;display.c: 38: }
+[; ;display.c: 39: Write_Display(Bitoutput);
+"39
+[e ( _Write_Display (1 _Bitoutput ]
+[; ;display.c: 40: }
+"40
 [e :UE 1106 ]
 }
-"47
+"49
 [v _Evaluate_Display `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
-[; ;display.c: 47: void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
+[; ;display.c: 49: void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
 [e :U _Evaluate_Display ]
 [v _size `uc ~T0 @X0 1 r1 ]
 [v _evaluate `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;display.c: 48: for(unsigned char counter = size; counter > 0;)
-"48
+[; ;display.c: 50: for(unsigned char counter = 0; counter < size; counter++)
+"50
 {
 [v _counter `uc ~T0 @X0 1 a ]
-[e = _counter _size ]
-[e $ > -> _counter `i -> 0 `i 1121  ]
-[e $U 1122  ]
-"49
-[e :U 1121 ]
-[; ;display.c: 49: switch (evaluate[--size]) {
+[e = _counter -> -> 0 `i `uc ]
 [e $U 1125  ]
-{
-[; ;display.c: 50: case '0':
-"50
-[e :U 1126 ]
-[; ;display.c: 51: Set_Bits("ABCDEF");
 "51
-[e ( _Set_Bits (1 :s 1C ]
-[; ;display.c: 52: break;
-"52
-[e $U 1124  ]
-[; ;display.c: 53: case '1':
-"53
-[e :U 1127 ]
-[; ;display.c: 54: Set_Bits("BC");
-"54
-[e ( _Set_Bits (1 :s 2C ]
-[; ;display.c: 55: break;
-"55
-[e $U 1124  ]
-[; ;display.c: 56: case '2':
-"56
-[e :U 1128 ]
-[; ;display.c: 57: Set_Bits("ABDEG");
-"57
-[e ( _Set_Bits (1 :s 3C ]
-[; ;display.c: 58: break;
-"58
-[e $U 1124  ]
-[; ;display.c: 59: case '3':
-"59
-[e :U 1129 ]
-[; ;display.c: 60: Set_Bits("ABCDG");
-"60
-[e ( _Set_Bits (1 :s 4C ]
-[; ;display.c: 61: break;
-"61
-[e $U 1124  ]
-[; ;display.c: 62: case '4':
-"62
-[e :U 1130 ]
-[; ;display.c: 63: Set_Bits("BCFG");
-"63
-[e ( _Set_Bits (1 :s 5C ]
-[; ;display.c: 64: break;
-"64
-[e $U 1124  ]
-[; ;display.c: 65: case '5':
-"65
-[e :U 1131 ]
-[; ;display.c: 66: Set_Bits("ACDFG");
-"66
-[e ( _Set_Bits (1 :s 6C ]
-[; ;display.c: 67: break;
-"67
-[e $U 1124  ]
-[; ;display.c: 68: case '6':
-"68
-[e :U 1132 ]
-[; ;display.c: 69: Set_Bits("ACDEFG");
-"69
-[e ( _Set_Bits (1 :s 7C ]
-[; ;display.c: 70: break;
-"70
-[e $U 1124  ]
-[; ;display.c: 71: case '7':
-"71
-[e :U 1133 ]
-[; ;display.c: 72: Set_Bits("ABC");
-"72
-[e ( _Set_Bits (1 :s 8C ]
-[; ;display.c: 73: break;
-"73
-[e $U 1124  ]
-[; ;display.c: 74: case '8':
-"74
-[e :U 1134 ]
-[; ;display.c: 75: Set_Bits("ABCDEFG");
-"75
-[e ( _Set_Bits (1 :s 9C ]
-[; ;display.c: 76: break;
-"76
-[e $U 1124  ]
-[; ;display.c: 77: case '9':
-"77
-[e :U 1135 ]
-[; ;display.c: 78: Set_Bits("ABCDFG");
-"78
-[e ( _Set_Bits (1 :s 10C ]
-[; ;display.c: 79: break;
-"79
-[e $U 1124  ]
-[; ;display.c: 80: case 'E':
-"80
-[e :U 1136 ]
-[; ;display.c: 81: Set_Bits("ADEFG");
-"81
-[e ( _Set_Bits (1 :s 11C ]
-[; ;display.c: 82: break;
-"82
-[e $U 1124  ]
-[; ;display.c: 83: case 'A':
-"83
-[e :U 1137 ]
-[; ;display.c: 84: Set_Bits("ABCEFG");
-"84
-[e ( _Set_Bits (1 :s 12C ]
-[; ;display.c: 85: break;
-"85
-[e $U 1124  ]
-[; ;display.c: 86: case '-':
-"86
-[e :U 1138 ]
-[; ;display.c: 87: Set_Bits("G");
-"87
-[e ( _Set_Bits (1 :s 13C ]
-[; ;display.c: 88: break;
-"88
-[e $U 1124  ]
-"89
-}
-[; ;display.c: 89: }
-[e $U 1124  ]
-"49
-[e :U 1125 ]
-[e [\ *U + _evaluate * -> =- _size -> -> 1 `i `uc `ux -> -> # *U _evaluate `ui `ux , $ -> -> 48 `ui `uc 1126
- , $ -> -> 49 `ui `uc 1127
- , $ -> -> 50 `ui `uc 1128
- , $ -> -> 51 `ui `uc 1129
- , $ -> -> 52 `ui `uc 1130
- , $ -> -> 53 `ui `uc 1131
- , $ -> -> 54 `ui `uc 1132
- , $ -> -> 55 `ui `uc 1133
- , $ -> -> 56 `ui `uc 1134
- , $ -> -> 57 `ui `uc 1135
- , $ -> -> 69 `ui `uc 1136
- , $ -> -> 65 `ui `uc 1137
- , $ -> -> 45 `ui `uc 1138
- 1124 ]
-"89
-[e :U 1124 ]
-"48
-[e $ > -> _counter `i -> 0 `i 1121  ]
 [e :U 1122 ]
+[; ;display.c: 51: switch (evaluate[counter]) {
+[e $U 1127  ]
+{
+[; ;display.c: 52: case '0':
+"52
+[e :U 1128 ]
+[; ;display.c: 53: Set_Bits("ABCDEF");
+"53
+[e ( _Set_Bits (1 :s 1C ]
+[; ;display.c: 54: break;
+"54
+[e $U 1126  ]
+[; ;display.c: 55: case '1':
+"55
+[e :U 1129 ]
+[; ;display.c: 56: Set_Bits("BC");
+"56
+[e ( _Set_Bits (1 :s 2C ]
+[; ;display.c: 57: break;
+"57
+[e $U 1126  ]
+[; ;display.c: 58: case '2':
+"58
+[e :U 1130 ]
+[; ;display.c: 59: Set_Bits("ABDEG");
+"59
+[e ( _Set_Bits (1 :s 3C ]
+[; ;display.c: 60: break;
+"60
+[e $U 1126  ]
+[; ;display.c: 61: case '3':
+"61
+[e :U 1131 ]
+[; ;display.c: 62: Set_Bits("ABCDG");
+"62
+[e ( _Set_Bits (1 :s 4C ]
+[; ;display.c: 63: break;
+"63
+[e $U 1126  ]
+[; ;display.c: 64: case '4':
+"64
+[e :U 1132 ]
+[; ;display.c: 65: Set_Bits("BCFG");
+"65
+[e ( _Set_Bits (1 :s 5C ]
+[; ;display.c: 66: break;
+"66
+[e $U 1126  ]
+[; ;display.c: 67: case '5':
+"67
+[e :U 1133 ]
+[; ;display.c: 68: Set_Bits("ACDFG");
+"68
+[e ( _Set_Bits (1 :s 6C ]
+[; ;display.c: 69: break;
+"69
+[e $U 1126  ]
+[; ;display.c: 70: case '6':
+"70
+[e :U 1134 ]
+[; ;display.c: 71: Set_Bits("ACDEFG");
+"71
+[e ( _Set_Bits (1 :s 7C ]
+[; ;display.c: 72: break;
+"72
+[e $U 1126  ]
+[; ;display.c: 73: case '7':
+"73
+[e :U 1135 ]
+[; ;display.c: 74: Set_Bits("ABC");
+"74
+[e ( _Set_Bits (1 :s 8C ]
+[; ;display.c: 75: break;
+"75
+[e $U 1126  ]
+[; ;display.c: 76: case '8':
+"76
+[e :U 1136 ]
+[; ;display.c: 77: Set_Bits("ABCDEFG");
+"77
+[e ( _Set_Bits (1 :s 9C ]
+[; ;display.c: 78: break;
+"78
+[e $U 1126  ]
+[; ;display.c: 79: case '9':
+"79
+[e :U 1137 ]
+[; ;display.c: 80: Set_Bits("ABCDFG");
+"80
+[e ( _Set_Bits (1 :s 10C ]
+[; ;display.c: 81: break;
+"81
+[e $U 1126  ]
+[; ;display.c: 82: case 'E':
+"82
+[e :U 1138 ]
+[; ;display.c: 83: Set_Bits("ADEFG");
+"83
+[e ( _Set_Bits (1 :s 11C ]
+[; ;display.c: 84: break;
+"84
+[e $U 1126  ]
+[; ;display.c: 85: case 'A':
+"85
+[e :U 1139 ]
+[; ;display.c: 86: Set_Bits("ABCEFG");
+"86
+[e ( _Set_Bits (1 :s 12C ]
+[; ;display.c: 87: break;
+"87
+[e $U 1126  ]
+[; ;display.c: 88: case '-':
+"88
+[e :U 1140 ]
+[; ;display.c: 89: Set_Bits("G");
 "89
-}
-[; ;display.c: 90: }
+[e ( _Set_Bits (1 :s 13C ]
+[; ;display.c: 90: break;
 "90
-[e :UE 1120 ]
+[e $U 1126  ]
+[; ;display.c: 91: default:
+"91
+[e :U 1141 ]
+[; ;display.c: 92: Set_Bits(0);
+"92
+[e ( _Set_Bits (1 -> -> 0 `i `*Cuc ]
+"93
 }
-"97
+[; ;display.c: 93: }
+[e $U 1126  ]
+"51
+[e :U 1127 ]
+[e [\ *U + _evaluate * -> _counter `ux -> -> # *U _evaluate `ui `ux , $ -> -> 48 `ui `uc 1128
+ , $ -> -> 49 `ui `uc 1129
+ , $ -> -> 50 `ui `uc 1130
+ , $ -> -> 51 `ui `uc 1131
+ , $ -> -> 52 `ui `uc 1132
+ , $ -> -> 53 `ui `uc 1133
+ , $ -> -> 54 `ui `uc 1134
+ , $ -> -> 55 `ui `uc 1135
+ , $ -> -> 56 `ui `uc 1136
+ , $ -> -> 57 `ui `uc 1137
+ , $ -> -> 69 `ui `uc 1138
+ , $ -> -> 65 `ui `uc 1139
+ , $ -> -> 45 `ui `uc 1140
+ 1141 ]
+"93
+[e :U 1126 ]
+"50
+[e ++ _counter -> -> 1 `i `uc ]
+[e :U 1125 ]
+[e $ < -> _counter `i -> _size `i 1122  ]
+[e :U 1123 ]
+"93
+}
+[; ;display.c: 94: }
+"94
+[e :UE 1121 ]
+}
+"101
 [v _Evaluate_Signs `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;display.c: 97: void Evaluate_Signs(unsigned int evaluation_value) {
+[; ;display.c: 101: void Evaluate_Signs(unsigned int evaluation_value) {
 [e :U _Evaluate_Signs ]
 [v _evaluation_value `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;display.c: 98: for(unsigned char valuecounter = sizeof(signs); valuecounter > 0;) {
-"98
+[; ;display.c: 102: for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
+"102
 {
 [v _valuecounter `uc ~T0 @X0 1 a ]
-[e = _valuecounter -> -> # _signs `ui `uc ]
-[e $ > -> _valuecounter `i -> 0 `i 1140  ]
-[e $U 1141  ]
-[e :U 1140 ]
-{
-[; ;display.c: 99: signs[--valuecounter] = evaluation_value % 10;
-"99
-[e = *U + &U _signs * -> =- _valuecounter -> -> 1 `i `uc `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
-[; ;display.c: 100: evaluation_value >>= 1;
-"100
-[e =>> _evaluation_value -> 1 `i ]
-"101
-}
-"98
-[e $ > -> _valuecounter `i -> 0 `i 1140  ]
-[e :U 1141 ]
-"101
-}
-[; ;display.c: 101: }
-[; ;display.c: 102: Evaluate_Display(sizeof(signs), signs);
-"102
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
-[; ;display.c: 103: }
+[e = _valuecounter -> -> 0 `i `uc ]
+[; ;display.c: 103: valuecounter++) {
+[e $ < -> _valuecounter `ui -> # _signs `ui 1143  ]
+[e $U 1144  ]
 "103
-[e :UE 1139 ]
-}
-"114
-[v _Set_Display `(v ~T0 @X0 1 ef3`uc`uc`ui ]
-"115
+[e :U 1143 ]
 {
-[; ;display.c: 114: void Set_Display(unsigned char type, unsigned char information,
-[; ;display.c: 115: unsigned int value) {
+[; ;display.c: 104: signs[valuecounter] = evaluation_value % 10;
+"104
+[e = *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
+[; ;display.c: 105: signs[valuecounter] += 0x30;
+"105
+[e =+ *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[; ;display.c: 106: evaluation_value >>= 1;
+"106
+[e =>> _evaluation_value -> 1 `i ]
+"107
+}
+"103
+[e ++ _valuecounter -> -> 1 `i `uc ]
+"102
+[e $ < -> _valuecounter `ui -> # _signs `ui 1143  ]
+[e :U 1144 ]
+"107
+}
+[; ;display.c: 107: }
+[; ;display.c: 108: __nop();
+"108
+[e ( ___nop ..  ]
+[; ;display.c: 109: Evaluate_Display(sizeof(signs), signs);
+"109
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
+[; ;display.c: 110: }
+"110
+[e :UE 1142 ]
+}
+"121
+[v _Set_Display `(v ~T0 @X0 1 ef3`uc`uc`ui ]
+"122
+{
+[; ;display.c: 121: void Set_Display(unsigned char type, unsigned char information,
+[; ;display.c: 122: unsigned int value) {
 [e :U _Set_Display ]
-"114
+"121
 [v _type `uc ~T0 @X0 1 r1 ]
 [v _information `uc ~T0 @X0 1 r2 ]
-"115
+"122
 [v _value `ui ~T0 @X0 1 r3 ]
 [f ]
-[; ;display.c: 116: switch (type) {
-"116
-[e $U 1145  ]
-{
-[; ;display.c: 117: case '7':
-"117
-[e :U 1146 ]
-[; ;display.c: 118: if(information != '-') {
-"118
-[e $ ! != -> _information `ui -> 45 `ui 1147  ]
-{
-[; ;display.c: 119: signs[0] = information;
-"119
-[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
-[; ;display.c: 120: signs[1] = '-';
-"120
-[e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
-[; ;display.c: 121: signs[2] = value;
-"121
-[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
-[; ;display.c: 122: Evaluate_Display(sizeof(signs), signs);
-"122
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
+[; ;display.c: 123: switch (type) {
 "123
-}
-[; ;display.c: 123: } else {
 [e $U 1148  ]
-[e :U 1147 ]
 {
-[; ;display.c: 124: Evaluate_Signs(value);
+[; ;display.c: 124: case '7':
 "124
-[e ( _Evaluate_Signs (1 _value ]
-"125
-}
-[e :U 1148 ]
-[; ;display.c: 125: }
-[; ;display.c: 126: break;
-"126
-[e $U 1144  ]
-[; ;display.c: 127: case 'L':
-"127
 [e :U 1149 ]
-[; ;display.c: 129: break;
+[; ;display.c: 125: if(information != '-') {
+"125
+[e $ ! != -> _information `ui -> 45 `ui 1150  ]
+{
+[; ;display.c: 126: signs[0] = value;
+"126
+[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
+[; ;display.c: 127: signs[0] += 0x30;
+"127
+[e =+ *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[; ;display.c: 128: signs[1] = '-';
+"128
+[e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
+[; ;display.c: 129: signs[2] = information;
 "129
-[e $U 1144  ]
+[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
+[; ;display.c: 130: Evaluate_Display(sizeof(signs), signs);
 "130
-}
-[; ;display.c: 130: }
-[e $U 1144  ]
-"116
-[e :U 1145 ]
-[e [\ _type , $ -> -> 55 `ui `uc 1146
- , $ -> -> 76 `ui `uc 1149
- 1144 ]
-"130
-[e :U 1144 ]
-[; ;display.c: 131: }
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
 "131
-[e :UE 1143 ]
 }
+[; ;display.c: 131: } else {
+[e $U 1151  ]
+[e :U 1150 ]
+{
+[; ;display.c: 132: Evaluate_Signs(value);
+"132
+[e ( _Evaluate_Signs (1 _value ]
 "133
+}
+[e :U 1151 ]
+[; ;display.c: 133: }
+[; ;display.c: 134: break;
+"134
+[e $U 1147  ]
+[; ;display.c: 135: case 'L':
+"135
+[e :U 1152 ]
+[; ;display.c: 137: break;
+"137
+[e $U 1147  ]
+"138
+}
+[; ;display.c: 138: }
+[e $U 1147  ]
+"123
+[e :U 1148 ]
+[e [\ _type , $ -> -> 55 `ui `uc 1149
+ , $ -> -> 76 `ui `uc 1152
+ 1147 ]
+"138
+[e :U 1147 ]
+[; ;display.c: 139: }
+"139
+[e :UE 1146 ]
+}
+"141
 [v _Display `(v ~T0 @X0 1 ef ]
 {
-[; ;display.c: 133: void Display(void) {
+[; ;display.c: 141: void Display(void) {
 [e :U _Display ]
 [f ]
-"134
+"142
 [v _write_reg `uc ~T0 @X0 1 a ]
-[; ;display.c: 134: unsigned char write_reg = 0;
+[; ;display.c: 142: unsigned char write_reg = 0;
 [e = _write_reg -> -> 0 `i `uc ]
-"135
+"143
 [v _write_counter `uc ~T0 @X0 1 a ]
-[; ;display.c: 135: unsigned char write_counter = 0;
+[; ;display.c: 143: unsigned char write_counter = 0;
 [e = _write_counter -> -> 0 `i `uc ]
-[; ;display.c: 136: for(unsigned char pin_counter = 0; pin_counter <
-"136
+[; ;display.c: 144: for(unsigned char pin_counter = 0; pin_counter <
+"144
 {
 [v _pin_counter `uc ~T0 @X0 1 a ]
 [e = _pin_counter -> -> 0 `i `uc ]
-[; ;display.c: 137: (sizeof(pixels) / sizeof(pixels[0])); pin_counter ++) {
-[e $ < -> _pin_counter `ui / -> # _pixels `ui -> # *U + &U _pixels * -> -> -> 0 `i `ui `ux -> -> # *U &U _pixels `ui `ux `ui 1151  ]
-[e $U 1152  ]
-"137
-[e :U 1151 ]
-{
-[; ;display.c: 138: if(pixels[pin_counter] & 0x01) {
-"138
-[e $ ! != & -> *U + &U _pixels * -> _pin_counter `ux -> -> # *U &U _pixels `ui `ux `i -> 1 `i -> 0 `i 1154  ]
-{
-[; ;display.c: 139: write_reg |= 0x01;
-"139
-[e =| _write_reg -> -> 1 `i `uc ]
-"140
-}
-[e :U 1154 ]
-[; ;display.c: 140: }
-[; ;display.c: 141: write_reg >>= 1;
-"141
-[e =>> _write_reg -> 1 `i ]
-[; ;display.c: 142: write_counter ++;
-"142
-[e ++ _write_counter -> -> 1 `i `uc ]
-[; ;display.c: 143: if(write_counter > 7) {
-"143
-[e $ ! > -> _write_counter `i -> 7 `i 1155  ]
-{
-[; ;display.c: 144: Write_Display(write_reg);
-"144
-[e ( _Write_Display (1 _write_reg ]
-[; ;display.c: 145: write_counter = 0;
+[; ;display.c: 145: (sizeof(pixels) / sizeof(pixels[0])); pin_counter ++) {
+[e $ < -> _pin_counter `ui / -> # _pixels `ui -> # *U + &U _pixels * -> -> -> 0 `i `ui `ux -> -> # *U &U _pixels `ui `ux `ui 1154  ]
+[e $U 1155  ]
 "145
-[e = _write_counter -> -> 0 `i `uc ]
-[; ;display.c: 146: write_reg = 0;
+[e :U 1154 ]
+{
+[; ;display.c: 146: if(pixels[pin_counter] & 0x01) {
 "146
-[e = _write_reg -> -> 0 `i `uc ]
+[e $ ! != & -> *U + &U _pixels * -> _pin_counter `ux -> -> # *U &U _pixels `ui `ux `i -> 1 `i -> 0 `i 1157  ]
+{
+[; ;display.c: 147: write_reg |= 0x01;
 "147
-}
-[e :U 1155 ]
+[e =| _write_reg -> -> 1 `i `uc ]
 "148
 }
-"137
-[e ++ _pin_counter -> -> 1 `i `uc ]
-"136
-[e $ < -> _pin_counter `ui / -> # _pixels `ui -> # *U + &U _pixels * -> -> -> 0 `i `ui `ux -> -> # *U &U _pixels `ui `ux `ui 1151  ]
-[e :U 1152 ]
-"148
-}
-[; ;display.c: 147: }
+[e :U 1157 ]
 [; ;display.c: 148: }
-[; ;display.c: 149: }
+[; ;display.c: 149: write_reg >>= 1;
 "149
-[e :UE 1150 ]
+[e =>> _write_reg -> 1 `i ]
+[; ;display.c: 150: write_counter ++;
+"150
+[e ++ _write_counter -> -> 1 `i `uc ]
+[; ;display.c: 151: if(write_counter > 7) {
+"151
+[e $ ! > -> _write_counter `i -> 7 `i 1158  ]
+{
+[; ;display.c: 152: Write_Display(write_reg);
+"152
+[e ( _Write_Display (1 _write_reg ]
+[; ;display.c: 153: write_counter = 0;
+"153
+[e = _write_counter -> -> 0 `i `uc ]
+[; ;display.c: 154: write_reg = 0;
+"154
+[e = _write_reg -> -> 0 `i `uc ]
+"155
+}
+[e :U 1158 ]
+"156
+}
+"145
+[e ++ _pin_counter -> -> 1 `i `uc ]
+"144
+[e $ < -> _pin_counter `ui / -> # _pixels `ui -> # *U + &U _pixels * -> -> -> 0 `i `ui `ux -> -> # *U &U _pixels `ui `ux `ui 1154  ]
+[e :U 1155 ]
+"156
+}
+[; ;display.c: 155: }
+[; ;display.c: 156: }
+[; ;display.c: 157: }
+"157
+[e :UE 1153 ]
 }
 [a 9C 65 66 67 68 69 70 71 0 ]
 [a 7C 65 67 68 69 70 71 0 ]

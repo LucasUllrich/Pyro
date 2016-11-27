@@ -17,6 +17,7 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time > 999) {
                 pin[pin_selected].time = 0;
             }
+            NOP();
             Set_Display('7', '-', pin[pin_selected].time);
             NOP();
         }
@@ -27,6 +28,7 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time < 0) {
                 pin[pin_selected].time = 999;
             }
+            NOP();
             Set_Display('7', '-', pin[pin_selected].time);
             NOP();
         }
@@ -37,12 +39,19 @@ void Check_Buttons(void) {
             if(pin[pin_selected].time > 999) {
                 pin[pin_selected].time = 0;
             }
+            NOP();
             Set_Display('7', '-', pin[pin_selected].time);
             NOP();
         }
     } else if(Port_Up == 1) {
         Delay_Routine(3);
         if(Port_Up == 1) {
+            if(Slave_Up == 1) {
+                Delay_Routine(3);
+                if(Slave_Up == 1) {
+                    testflag = 1;
+                }
+            }
             Save_Data(pin[pin_selected].time, pin[pin_selected].address);
             pin_selected++;
             switch (slave_selected) {
@@ -63,6 +72,7 @@ void Check_Buttons(void) {
                     break;
             }
             pin[pin_selected].time = Read_Data(pin[pin_selected].address);
+            NOP();
             Set_Display('7', 'A', pin[pin_selected].output);
             Delay_Routine(30);
             Set_Display('7', '-', pin[pin_selected].time);
@@ -72,6 +82,12 @@ void Check_Buttons(void) {
     } else if(Slave_Up == 1) {
         Delay_Routine(3);
         if(Slave_Up == 1) {
+            if(Port_Up == 1) {
+                Delay_Routine(3);
+                if(Port_Up == 1) {
+                    testflag = 1;
+                }
+            }
             Save_Data(pin[pin_selected].time, pin[pin_selected].address);
             slave_selected++;
             if(slave_selected > 2) {
@@ -79,6 +95,7 @@ void Check_Buttons(void) {
             }
             pin_selected = slave_selected * 10;
             pin[pin_selected].time = Read_Data(pin[pin_selected].address);
+            NOP();
             Set_Display('7', 'E', pin[pin_selected].slave);
             //Displays 'E' = Empfänger and selected receiver
             Delay_Routine(30);

@@ -66,6 +66,7 @@ sl_out pin[] =
 
 unsigned char slave_selected = 0;
 unsigned char pin_selected = 0;
+bit testflag = 0;
 // </editor-fold>
 
 #endif	/* BUTTONCHANGES_H */

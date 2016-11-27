@@ -9050,11 +9050,13 @@ sl_out pin[] =
 
 unsigned char slave_selected = 0;
 unsigned char pin_selected = 0;
+bit testflag = 0;
 
 # 16 "ignition.h"
 void Timer_Count(void);
+void Check_Detonators(void);
 
-# 23
+# 24
 unsigned int current_time = 0;
 
 # 16 "storage.h"
@@ -9086,18 +9088,23 @@ bit ignite_ready = 0;
 # 65
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 73 "main.c"
+# 78 "main.c"
 void Delay_Routine(unsigned char delay_multiplyer) {
 for (unsigned char delay_counter = 0; delay_counter < delay_multiplyer;
 delay_counter++) {
 _delay((unsigned long)((100)*(4000000/4000.0)));
 }
+__nop();
 }
 
 void main(void) {
 Init();
 while(1) {
 Check_Buttons();
+if(testflag == 1) {
+Set_Display('7', 'T',0);
+Check_Detonators();
+}
 }
 return;
 }

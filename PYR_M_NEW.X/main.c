@@ -80,12 +80,17 @@ void Delay_Routine(unsigned char delay_multiplyer) {
             delay_counter++) {
         __delay_ms(100);
     }
+    NOP();
 }
 
 void main(void) {
     Init();
     while(1) {
         Check_Buttons();
+        if(testflag == 1) {
+            Set_Display('7', 'T',0);
+            Check_Detonators();
+        }
     }
     return;
 }

@@ -8995,11 +8995,13 @@ sl_out pin[] =
 
 unsigned char slave_selected = 0;
 unsigned char pin_selected = 0;
+bit testflag = 0;
 
 # 16 "ignition.h"
 void Timer_Count(void);
+void Check_Detonators(void);
 
-# 23
+# 24
 unsigned int current_time = 0;
 
 # 16 "storage.h"
@@ -9031,7 +9033,7 @@ bit ignite_ready = 0;
 # 65
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 7 "storage.c"
+# 8 "storage.c"
 void Save_Data(unsigned int store,
 unsigned char store_address) {
 EEADR = store_address;
@@ -9062,6 +9064,7 @@ EECON1bits.WREN = 0;
 INTCONbits.GIE = 1;
 }
 
+# 44
 unsigned int Read_Data(unsigned char read_address) {
 unsigned int data_read = 0;
 read_address += 50;
@@ -9077,5 +9080,5 @@ EECON1bits.EEPGD = 0;
 EECON1bits.CFGS = 0;
 EECON1bits.RD = 1;
 data_read |= EEDATA;
-return(data_read);
+return data_read;
 }

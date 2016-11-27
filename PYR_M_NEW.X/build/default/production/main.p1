@@ -6,11 +6,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF7486 ~T0 @X0 0 e ]
 [p i __delay ]
+"43
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 [p mainexit ]
 "16 init.h
 [v _Init `(v ~T0 @X0 0 ef ]
 "16 buttonchanges.h
 [v _Check_Buttons `(v ~T0 @X0 0 ef ]
+"19 display.h
+[v _Set_Display `(v ~T0 @X0 0 ef3`uc`uc`ui ]
+"17 ignition.h
+[v _Check_Detonators `(v ~T0 @X0 0 ef ]
 "17 main.c
 [p x FOSC=INTIO67 ]
 "18
@@ -7484,13 +7491,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;buttonchanges.h: 68: unsigned char pin_selected = 0;
+"69
+[v _testflag `b ~T0 @X0 1 e ]
+[i _testflag
+-> 0 `i
+]
+[; ;buttonchanges.h: 69: bit testflag = 0;
 [; ;ignition.h: 16: void Timer_Count(void);
-"23 ignition.h
+[; ;ignition.h: 17: void Check_Detonators(void);
+"24 ignition.h
 [v _current_time `ui ~T0 @X0 1 e ]
 [i _current_time
 -> -> 0 `i `ui
 ]
-[; ;ignition.h: 23: unsigned int current_time = 0;
+[; ;ignition.h: 24: unsigned int current_time = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;display.h: 16: void Display(void);
@@ -7520,68 +7534,85 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;main.h: 39: bit ignite_ready = 0;
 [; ;main.h: 65: void Delay_Routine(unsigned char delay_multiplyer);
-"73 main.c
+"78 main.c
 [v _Delay_Routine `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 73: void Delay_Routine(unsigned char delay_multiplyer) {
+[; ;main.c: 78: void Delay_Routine(unsigned char delay_multiplyer) {
 [e :U _Delay_Routine ]
 [v _delay_multiplyer `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 74: for (unsigned char delay_counter = 0; delay_counter < delay_multiplyer;
-"74
+[; ;main.c: 79: for (unsigned char delay_counter = 0; delay_counter < delay_multiplyer;
+"79
 {
 [v _delay_counter `uc ~T0 @X0 1 a ]
 [e = _delay_counter -> -> 0 `i `uc ]
-[; ;main.c: 75: delay_counter++) {
+[; ;main.c: 80: delay_counter++) {
 [e $U 1110  ]
-"75
+"80
 [e :U 1107 ]
 {
-[; ;main.c: 76: _delay((unsigned long)((100)*(4000000/4000.0)));
-"76
+[; ;main.c: 81: _delay((unsigned long)((100)*(4000000/4000.0)));
+"81
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"77
+"82
 }
-"75
+"80
 [e ++ _delay_counter -> -> 1 `i `uc ]
-"74
+"79
 [e :U 1110 ]
 [e $ < -> _delay_counter `i -> _delay_multiplyer `i 1107  ]
 [e :U 1108 ]
-"77
+"82
 }
-[; ;main.c: 77: }
-[; ;main.c: 78: }
-"78
+[; ;main.c: 82: }
+[; ;main.c: 83: __nop();
+"83
+[e ( ___nop ..  ]
+[; ;main.c: 84: }
+"84
 [e :UE 1106 ]
 }
-"80
+"86
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 80: void main(void) {
+[; ;main.c: 86: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 81: Init();
-"81
+[; ;main.c: 87: Init();
+"87
 [e ( _Init ..  ]
-[; ;main.c: 82: while(1) {
-"82
+[; ;main.c: 88: while(1) {
+"88
 [e :U 1113 ]
 {
-[; ;main.c: 83: Check_Buttons();
-"83
+[; ;main.c: 89: Check_Buttons();
+"89
 [e ( _Check_Buttons ..  ]
-"84
+[; ;main.c: 90: if(testflag == 1) {
+"90
+[e $ ! == -> _testflag `i -> 1 `i 1115  ]
+{
+[; ;main.c: 91: Set_Display('7', 'T',0);
+"91
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 84 `ui `uc -> -> 0 `i `ui ]
+[; ;main.c: 92: Check_Detonators();
+"92
+[e ( _Check_Detonators ..  ]
+"93
+}
+[e :U 1115 ]
+"94
 }
 [e :U 1112 ]
-"82
+"88
 [e $U 1113  ]
 [e :U 1114 ]
-[; ;main.c: 84: }
-[; ;main.c: 85: return;
-"85
+[; ;main.c: 93: }
+[; ;main.c: 94: }
+[; ;main.c: 95: return;
+"95
 [e $UE 1111  ]
-[; ;main.c: 86: }
-"86
+[; ;main.c: 96: }
+"96
 [e :UE 1111 ]
 }

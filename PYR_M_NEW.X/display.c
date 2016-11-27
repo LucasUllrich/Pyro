@@ -31,7 +31,9 @@ void Set_Bits(const unsigned char *bits) {
                 break;
             case 'G':
                 Bitoutput |= 0b01000000;
-                break;                
+                break;
+            default:
+                break;
         }
     }
     Write_Display(Bitoutput);
@@ -45,8 +47,8 @@ void Set_Bits(const unsigned char *bits) {
  * @param evaluate  Value that should be displayed as pointer on array
  */
 void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
-    for(unsigned char counter = size; counter > 0;)
-    switch (evaluate[--size]) {
+    for(unsigned char counter = 0; counter < size; counter++)
+    switch (evaluate[counter]) {
         case '0':
             Set_Bits("ABCDEF");
             break;
@@ -86,6 +88,8 @@ void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
         case '-':
             Set_Bits("G");
             break;
+        default:
+            Set_Bits(0);
     }
 }
 
@@ -95,10 +99,13 @@ void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
  * @param evaluation_value  Tha value that should be evaluated
  */
 void Evaluate_Signs(unsigned int evaluation_value) {
-    for(unsigned char valuecounter = sizeof(signs); valuecounter > 0;) {
-       signs[--valuecounter] = evaluation_value % 10;
+    for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
+            valuecounter++) {
+       signs[valuecounter] = evaluation_value % 10;
+       signs[valuecounter] += 0x30;
        evaluation_value >>= 1;
     }
+    NOP();
     Evaluate_Display(sizeof(signs), signs);
 }
 
@@ -116,9 +123,10 @@ void Set_Display(unsigned char type, unsigned char information,
     switch (type) {
         case '7':       //The 7-segment displays should be addressed
             if(information != '-') {
-                signs[0] = information;
+                signs[0] = value;
+                signs[0] += 0x30;
                 signs[1] = '-';
-                signs[2] = value;
+                signs[2] = information;
                 Evaluate_Display(sizeof(signs), signs);
             } else {
                 Evaluate_Signs(value);

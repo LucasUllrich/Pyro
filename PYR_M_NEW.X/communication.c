@@ -39,7 +39,7 @@ unsigned char Receive(void) {
     return (RCREG1);
 }
 
-void Write_Display(unsigned char write_data) {
+void Write_Display_Byte(unsigned char write_data) {
     if(SSP1IF = 1) {
         SSP1IF = 0;
     }

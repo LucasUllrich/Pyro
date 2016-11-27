@@ -8995,11 +8995,13 @@ sl_out pin[] =
 
 unsigned char slave_selected = 0;
 unsigned char pin_selected = 0;
+bit testflag = 0;
 
 # 16 "ignition.h"
 void Timer_Count(void);
+void Check_Detonators(void);
 
-# 23
+# 24
 unsigned int current_time = 0;
 
 # 16 "storage.h"
@@ -9049,7 +9051,8 @@ pin[pin_selected].time++;
 if(pin[pin_selected].time > 999) {
 pin[pin_selected].time = 0;
 }
-
+__nop();
+Set_Display('7', '-', pin[pin_selected].time);
 __nop();
 }
 } else if(PORTBbits.RB3 == 1) {
@@ -9059,7 +9062,8 @@ pin[pin_selected].time--;
 if(pin[pin_selected].time < 0) {
 pin[pin_selected].time = 999;
 }
-
+__nop();
+Set_Display('7', '-', pin[pin_selected].time);
 __nop();
 }
 } else if(PORTBbits.RB4 == 1) {
@@ -9069,12 +9073,19 @@ pin[pin_selected].time += 10;
 if(pin[pin_selected].time > 999) {
 pin[pin_selected].time = 0;
 }
-
+__nop();
+Set_Display('7', '-', pin[pin_selected].time);
 __nop();
 }
 } else if(PORTBbits.RB1 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB1 == 1) {
+if(PORTBbits.RB0 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB0 == 1) {
+testflag = 1;
+}
+}
 Save_Data(pin[pin_selected].time, pin[pin_selected].address);
 pin_selected++;
 switch (slave_selected) {
@@ -9095,12 +9106,22 @@ pin_selected = 20;
 break;
 }
 pin[pin_selected].time = Read_Data(pin[pin_selected].address);
-
+__nop();
+Set_Display('7', 'A', pin[pin_selected].output);
+Delay_Routine(30);
+Set_Display('7', '-', pin[pin_selected].time);
+Delay_Routine(30);
 __nop();
 }
 } else if(PORTBbits.RB0 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB0 == 1) {
+if(PORTBbits.RB1 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB1 == 1) {
+testflag = 1;
+}
+}
 Save_Data(pin[pin_selected].time, pin[pin_selected].address);
 slave_selected++;
 if(slave_selected > 2) {
@@ -9108,9 +9129,14 @@ slave_selected = 0;
 }
 pin_selected = slave_selected * 10;
 pin[pin_selected].time = Read_Data(pin[pin_selected].address);
+__nop();
 Set_Display('7', 'E', pin[pin_selected].slave);
 
-
+Delay_Routine(30);
+Set_Display('7', 'A', pin[pin_selected].output);
+Delay_Routine(30);
+Set_Display('7', '-', pin[pin_selected].time);
+Delay_Routine(30);
 __nop();
 }
 }

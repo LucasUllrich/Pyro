@@ -21,3 +21,7 @@ void Timer_Count(void) {
     T1CONbits.TMR1ON = 0;
     /* 1 s is now signaled by an interrupt of the compare unit! */
 }
+
+void Check_Detonators(void) {
+    
+}

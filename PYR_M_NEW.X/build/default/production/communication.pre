@@ -8995,11 +8995,13 @@ sl_out pin[] =
 
 unsigned char slave_selected = 0;
 unsigned char pin_selected = 0;
+bit testflag = 0;
 
 # 16 "ignition.h"
 void Timer_Count(void);
+void Check_Detonators(void);
 
-# 23
+# 24
 unsigned int current_time = 0;
 
 # 16 "storage.h"
@@ -9060,5 +9062,10 @@ return (RCREG1);
 }
 
 void Write_Display(unsigned char write_data) {
-
+if(SSP1IF = 1) {
+SSP1IF = 0;
+}
+SSP1BUF = write_data;
+while (SSP1IF == 0);
+SSP1IF = 0;
 }

@@ -14,6 +14,7 @@
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
 void Timer_Count(void);
+void Check_Detonators(void);
 // </editor-fold>
 
 /***************************************************
