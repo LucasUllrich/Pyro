@@ -39,11 +39,14 @@ unsigned char Receive(void) {
     return (RCREG1);
 }
 
-void Write_Display_Byte(unsigned char write_data) {
-    if(SSP1IF = 1) {
+void Write_Display_Byte(unsigned char *write_data) {
+    for(unsigned char counter = sizeof(pixels); counter > 0;
+            counter--) {
+        if(SSP1IF = 1) {
+            SSP1IF = 0;
+        }
+        SSP1BUF = write_data[counter - 1];
+        while (SSP1IF == 0);
         SSP1IF = 0;
     }
-    SSP1BUF = write_data;
-    while (SSP1IF == 0);
-    SSP1IF = 0;
 }

@@ -8950,6 +8950,44 @@ void InitInterrupt(void);
 void Check_Buttons(void);
 
 # 24
+unsigned char slave_selected = 0;
+unsigned char pin_selected = 0;
+bit testflag = 0;
+
+# 16 "ignition.h"
+void Timer_Count(void);
+void Check_Detonators(void);
+
+# 24
+unsigned int current_time = 0;
+
+# 16 "storage.h"
+void Save_Data(unsigned int store, unsigned char store_address);
+unsigned int Read_Data(unsigned char read_address);
+
+# 16 "display.h"
+void Display(void);
+void Evaluate_Display(unsigned char size, unsigned char *evaluate);
+void Evaluate_Signs(unsigned int evaluation_value);
+void Set_Display(unsigned char type, unsigned char information,
+unsigned int value);
+
+# 28
+unsigned char pixels[7];
+unsigned char signs[3];
+unsigned char display_counter = 0;
+
+# 16 "communication.h"
+void Transmit(unsigned char slave, unsigned char trans_data);
+unsigned char Receive(void);
+void Write_Display_Byte(unsigned char write_data);
+
+# 25
+unsigned char overrun = 0;
+
+# 39 "main.h"
+bit ignite_ready = 0;
+
 typedef struct Slave_Output
 {
 unsigned char slave;
@@ -8993,44 +9031,7 @@ sl_out pin[] =
 {2, 9, 29, 48, },
 };
 
-unsigned char slave_selected = 0;
-unsigned char pin_selected = 0;
-bit testflag = 0;
-
-# 16 "ignition.h"
-void Timer_Count(void);
-void Check_Detonators(void);
-
-# 24
-unsigned int current_time = 0;
-
-# 16 "storage.h"
-void Save_Data(unsigned int store, unsigned char store_address);
-unsigned int Read_Data(unsigned char read_address);
-
-# 16 "display.h"
-void Display(void);
-void Evaluate_Display(unsigned char size, unsigned char *evaluate);
-void Evaluate_Signs(unsigned int evaluation_value);
-void Set_Display(unsigned char type, unsigned char information,
-unsigned int value);
-
-# 28
-unsigned char pixels[57];
-unsigned char signs[3];
-
-# 16 "communication.h"
-void Transmit(unsigned char slave, unsigned char trans_data);
-unsigned char Receive(void);
-void Write_Display(unsigned char write_data);
-
-# 25
-unsigned char overrun = 0;
-
-# 39 "main.h"
-bit ignite_ready = 0;
-
-# 65
+# 108
 void Delay_Routine(unsigned char delay_multiplyer);
 
 # 3 "buttonchanges.c"

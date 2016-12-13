@@ -25,8 +25,9 @@ void Set_Display(unsigned char type, unsigned char information,
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="variables">
 //#define COM_TEST
-unsigned char pixels[57];
+unsigned char pixels[7];
 unsigned char signs[3];
+unsigned char display_counter = 0;
 /** Description to pixels[]
  * First 3 Bytes: 7-segment displays
  *  Bit 7, MSB: empty

@@ -1,9 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"24 buttonchanges.h
+"41 main.h
 [s S1105 `uc 1 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address led_address time ]
-"18 communication.h
-[v _Write_Display `(v ~T0 @X0 0 ef1`uc ]
 "43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -7147,281 +7145,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
 [; ;buttonchanges.h: 16: void Check_Buttons(void);
-[; ;buttonchanges.h: 24: typedef struct Slave_Output
-[; ;buttonchanges.h: 25: {
-[; ;buttonchanges.h: 26: unsigned char slave;
-[; ;buttonchanges.h: 27: unsigned char output;
-[; ;buttonchanges.h: 28: unsigned char address;
-[; ;buttonchanges.h: 29: unsigned char led_address;
-[; ;buttonchanges.h: 30: signed int time;
-[; ;buttonchanges.h: 31: }sl_out;
-"33 buttonchanges.h
-[v _pin `S1105 ~T0 @X0 -> 0 `x e ]
-[i _pin
-:U ..
-:U ..
-"35
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 31 `i `uc
-..
-:U ..
-"36
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 30 `i `uc
-..
-:U ..
-"37
--> -> 0 `i `uc
--> -> 2 `i `uc
--> -> 2 `i `uc
--> -> 29 `i `uc
-..
-:U ..
-"38
--> -> 0 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 28 `i `uc
-..
-:U ..
-"39
--> -> 0 `i `uc
--> -> 4 `i `uc
--> -> 4 `i `uc
--> -> 27 `i `uc
-..
-:U ..
-"40
--> -> 0 `i `uc
--> -> 5 `i `uc
--> -> 5 `i `uc
--> -> 26 `i `uc
-..
-:U ..
-"41
--> -> 0 `i `uc
--> -> 6 `i `uc
--> -> 6 `i `uc
--> -> 25 `i `uc
-..
-:U ..
-"42
--> -> 0 `i `uc
--> -> 7 `i `uc
--> -> 7 `i `uc
--> -> 24 `i `uc
-..
-:U ..
-"43
--> -> 0 `i `uc
--> -> 8 `i `uc
--> -> 8 `i `uc
--> -> 39 `i `uc
-..
-:U ..
-"44
--> -> 0 `i `uc
--> -> 9 `i `uc
--> -> 9 `i `uc
--> -> 38 `i `uc
-..
-:U ..
-"45
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 10 `i `uc
--> -> 37 `i `uc
-..
-:U ..
-"46
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 11 `i `uc
--> -> 36 `i `uc
-..
-:U ..
-"47
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 12 `i `uc
--> -> 35 `i `uc
-..
-:U ..
-"48
--> -> 1 `i `uc
--> -> 3 `i `uc
--> -> 13 `i `uc
--> -> 34 `i `uc
-..
-:U ..
-"49
--> -> 1 `i `uc
--> -> 4 `i `uc
--> -> 14 `i `uc
--> -> 33 `i `uc
-..
-:U ..
-"50
--> -> 1 `i `uc
--> -> 5 `i `uc
--> -> 15 `i `uc
--> -> 32 `i `uc
-..
-:U ..
-"51
--> -> 1 `i `uc
--> -> 6 `i `uc
--> -> 16 `i `uc
--> -> 47 `i `uc
-..
-:U ..
-"52
--> -> 1 `i `uc
--> -> 7 `i `uc
--> -> 17 `i `uc
--> -> 46 `i `uc
-..
-:U ..
-"53
--> -> 1 `i `uc
--> -> 8 `i `uc
--> -> 18 `i `uc
--> -> 45 `i `uc
-..
-:U ..
-"54
--> -> 1 `i `uc
--> -> 9 `i `uc
--> -> 19 `i `uc
--> -> 44 `i `uc
-..
-:U ..
-"55
--> -> 2 `i `uc
--> -> 0 `i `uc
--> -> 20 `i `uc
--> -> 43 `i `uc
-..
-:U ..
-"56
--> -> 2 `i `uc
--> -> 1 `i `uc
--> -> 21 `i `uc
--> -> 42 `i `uc
-..
-:U ..
-"57
--> -> 2 `i `uc
--> -> 2 `i `uc
--> -> 22 `i `uc
--> -> 41 `i `uc
-..
-:U ..
-"58
--> -> 2 `i `uc
--> -> 3 `i `uc
--> -> 23 `i `uc
--> -> 40 `i `uc
-..
-:U ..
-"59
--> -> 2 `i `uc
--> -> 4 `i `uc
--> -> 24 `i `uc
--> -> 53 `i `uc
-..
-:U ..
-"60
--> -> 2 `i `uc
--> -> 5 `i `uc
--> -> 25 `i `uc
--> -> 52 `i `uc
-..
-:U ..
-"61
--> -> 2 `i `uc
--> -> 6 `i `uc
--> -> 26 `i `uc
--> -> 51 `i `uc
-..
-:U ..
-"62
--> -> 2 `i `uc
--> -> 7 `i `uc
--> -> 27 `i `uc
--> -> 50 `i `uc
-..
-:U ..
-"63
--> -> 2 `i `uc
--> -> 8 `i `uc
--> -> 28 `i `uc
--> -> 49 `i `uc
-..
-:U ..
-"64
--> -> 2 `i `uc
--> -> 9 `i `uc
--> -> 29 `i `uc
--> -> 48 `i `uc
-..
-..
-]
-[; ;buttonchanges.h: 33: sl_out pin[] =
-[; ;buttonchanges.h: 34: {
-[; ;buttonchanges.h: 35: {0, 0, 0, 31, },
-[; ;buttonchanges.h: 36: {0, 1, 1, 30, },
-[; ;buttonchanges.h: 37: {0, 2, 2, 29, },
-[; ;buttonchanges.h: 38: {0, 3, 3, 28, },
-[; ;buttonchanges.h: 39: {0, 4, 4, 27, },
-[; ;buttonchanges.h: 40: {0, 5, 5, 26, },
-[; ;buttonchanges.h: 41: {0, 6, 6, 25, },
-[; ;buttonchanges.h: 42: {0, 7, 7, 24, },
-[; ;buttonchanges.h: 43: {0, 8, 8, 39, },
-[; ;buttonchanges.h: 44: {0, 9, 9, 38, },
-[; ;buttonchanges.h: 45: {1, 0, 10, 37, },
-[; ;buttonchanges.h: 46: {1, 1, 11, 36, },
-[; ;buttonchanges.h: 47: {1, 2, 12, 35, },
-[; ;buttonchanges.h: 48: {1, 3, 13, 34, },
-[; ;buttonchanges.h: 49: {1, 4, 14, 33, },
-[; ;buttonchanges.h: 50: {1, 5, 15, 32, },
-[; ;buttonchanges.h: 51: {1, 6, 16, 47, },
-[; ;buttonchanges.h: 52: {1, 7, 17, 46, },
-[; ;buttonchanges.h: 53: {1, 8, 18, 45, },
-[; ;buttonchanges.h: 54: {1, 9, 19, 44, },
-[; ;buttonchanges.h: 55: {2, 0, 20, 43, },
-[; ;buttonchanges.h: 56: {2, 1, 21, 42, },
-[; ;buttonchanges.h: 57: {2, 2, 22, 41, },
-[; ;buttonchanges.h: 58: {2, 3, 23, 40, },
-[; ;buttonchanges.h: 59: {2, 4, 24, 53, },
-[; ;buttonchanges.h: 60: {2, 5, 25, 52, },
-[; ;buttonchanges.h: 61: {2, 6, 26, 51, },
-[; ;buttonchanges.h: 62: {2, 7, 27, 50, },
-[; ;buttonchanges.h: 63: {2, 8, 28, 49, },
-[; ;buttonchanges.h: 64: {2, 9, 29, 48, },
-[; ;buttonchanges.h: 65: };
-"67
+"24 buttonchanges.h
 [v _slave_selected `uc ~T0 @X0 1 e ]
 [i _slave_selected
 -> -> 0 `i `uc
 ]
-[; ;buttonchanges.h: 67: unsigned char slave_selected = 0;
-"68
+[; ;buttonchanges.h: 24: unsigned char slave_selected = 0;
+"25
 [v _pin_selected `uc ~T0 @X0 1 e ]
 [i _pin_selected
 -> -> 0 `i `uc
 ]
-[; ;buttonchanges.h: 68: unsigned char pin_selected = 0;
-"69
+[; ;buttonchanges.h: 25: unsigned char pin_selected = 0;
+"26
 [v _testflag `b ~T0 @X0 1 e ]
 [i _testflag
 -> 0 `i
 ]
-[; ;buttonchanges.h: 69: bit testflag = 0;
+[; ;buttonchanges.h: 26: bit testflag = 0;
 [; ;ignition.h: 16: void Timer_Count(void);
 [; ;ignition.h: 17: void Check_Detonators(void);
 "24 ignition.h
@@ -7438,14 +7179,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 57 `i e ]
-[; ;display.h: 28: unsigned char pixels[57];
+[v _pixels `uc ~T0 @X0 -> 7 `i e ]
+[; ;display.h: 28: unsigned char pixels[7];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
+"30
+[v _display_counter `uc ~T0 @X0 1 e ]
+[i _display_counter
+-> -> 0 `i `uc
+]
+[; ;display.h: 30: unsigned char display_counter = 0;
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;communication.h: 18: void Write_Display(unsigned char write_data);
+[; ;communication.h: 18: void Write_Display_Byte(unsigned char write_data);
 "25 communication.h
 [v _overrun `uc ~T0 @X0 1 e ]
 [i _overrun
@@ -7458,106 +7205,363 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;main.h: 39: bit ignite_ready = 0;
-[; ;main.h: 65: void Delay_Routine(unsigned char delay_multiplyer);
-"9 display.c
+[; ;main.h: 41: typedef struct Slave_Output
+[; ;main.h: 42: {
+[; ;main.h: 43: unsigned char slave;
+[; ;main.h: 44: unsigned char output;
+[; ;main.h: 45: unsigned char address;
+[; ;main.h: 46: unsigned char led_address;
+[; ;main.h: 47: signed int time;
+[; ;main.h: 48: }sl_out;
+"50
+[v _pin `S1105 ~T0 @X0 -> 0 `x e ]
+[i _pin
+:U ..
+:U ..
+"52
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 31 `i `uc
+..
+:U ..
+"53
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 30 `i `uc
+..
+:U ..
+"54
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 29 `i `uc
+..
+:U ..
+"55
+-> -> 0 `i `uc
+-> -> 3 `i `uc
+-> -> 3 `i `uc
+-> -> 28 `i `uc
+..
+:U ..
+"56
+-> -> 0 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 27 `i `uc
+..
+:U ..
+"57
+-> -> 0 `i `uc
+-> -> 5 `i `uc
+-> -> 5 `i `uc
+-> -> 26 `i `uc
+..
+:U ..
+"58
+-> -> 0 `i `uc
+-> -> 6 `i `uc
+-> -> 6 `i `uc
+-> -> 25 `i `uc
+..
+:U ..
+"59
+-> -> 0 `i `uc
+-> -> 7 `i `uc
+-> -> 7 `i `uc
+-> -> 24 `i `uc
+..
+:U ..
+"60
+-> -> 0 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 39 `i `uc
+..
+:U ..
+"61
+-> -> 0 `i `uc
+-> -> 9 `i `uc
+-> -> 9 `i `uc
+-> -> 38 `i `uc
+..
+:U ..
+"62
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 37 `i `uc
+..
+:U ..
+"63
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 11 `i `uc
+-> -> 36 `i `uc
+..
+:U ..
+"64
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 12 `i `uc
+-> -> 35 `i `uc
+..
+:U ..
+"65
+-> -> 1 `i `uc
+-> -> 3 `i `uc
+-> -> 13 `i `uc
+-> -> 34 `i `uc
+..
+:U ..
+"66
+-> -> 1 `i `uc
+-> -> 4 `i `uc
+-> -> 14 `i `uc
+-> -> 33 `i `uc
+..
+:U ..
+"67
+-> -> 1 `i `uc
+-> -> 5 `i `uc
+-> -> 15 `i `uc
+-> -> 32 `i `uc
+..
+:U ..
+"68
+-> -> 1 `i `uc
+-> -> 6 `i `uc
+-> -> 16 `i `uc
+-> -> 47 `i `uc
+..
+:U ..
+"69
+-> -> 1 `i `uc
+-> -> 7 `i `uc
+-> -> 17 `i `uc
+-> -> 46 `i `uc
+..
+:U ..
+"70
+-> -> 1 `i `uc
+-> -> 8 `i `uc
+-> -> 18 `i `uc
+-> -> 45 `i `uc
+..
+:U ..
+"71
+-> -> 1 `i `uc
+-> -> 9 `i `uc
+-> -> 19 `i `uc
+-> -> 44 `i `uc
+..
+:U ..
+"72
+-> -> 2 `i `uc
+-> -> 0 `i `uc
+-> -> 20 `i `uc
+-> -> 43 `i `uc
+..
+:U ..
+"73
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 21 `i `uc
+-> -> 42 `i `uc
+..
+:U ..
+"74
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 22 `i `uc
+-> -> 41 `i `uc
+..
+:U ..
+"75
+-> -> 2 `i `uc
+-> -> 3 `i `uc
+-> -> 23 `i `uc
+-> -> 40 `i `uc
+..
+:U ..
+"76
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 24 `i `uc
+-> -> 53 `i `uc
+..
+:U ..
+"77
+-> -> 2 `i `uc
+-> -> 5 `i `uc
+-> -> 25 `i `uc
+-> -> 52 `i `uc
+..
+:U ..
+"78
+-> -> 2 `i `uc
+-> -> 6 `i `uc
+-> -> 26 `i `uc
+-> -> 51 `i `uc
+..
+:U ..
+"79
+-> -> 2 `i `uc
+-> -> 7 `i `uc
+-> -> 27 `i `uc
+-> -> 50 `i `uc
+..
+:U ..
+"80
+-> -> 2 `i `uc
+-> -> 8 `i `uc
+-> -> 28 `i `uc
+-> -> 49 `i `uc
+..
+:U ..
+"81
+-> -> 2 `i `uc
+-> -> 9 `i `uc
+-> -> 29 `i `uc
+-> -> 48 `i `uc
+..
+..
+]
+[; ;main.h: 50: sl_out pin[] =
+[; ;main.h: 51: {
+[; ;main.h: 52: {0, 0, 0, 31, },
+[; ;main.h: 53: {0, 1, 1, 30, },
+[; ;main.h: 54: {0, 2, 2, 29, },
+[; ;main.h: 55: {0, 3, 3, 28, },
+[; ;main.h: 56: {0, 4, 4, 27, },
+[; ;main.h: 57: {0, 5, 5, 26, },
+[; ;main.h: 58: {0, 6, 6, 25, },
+[; ;main.h: 59: {0, 7, 7, 24, },
+[; ;main.h: 60: {0, 8, 8, 39, },
+[; ;main.h: 61: {0, 9, 9, 38, },
+[; ;main.h: 62: {1, 0, 10, 37, },
+[; ;main.h: 63: {1, 1, 11, 36, },
+[; ;main.h: 64: {1, 2, 12, 35, },
+[; ;main.h: 65: {1, 3, 13, 34, },
+[; ;main.h: 66: {1, 4, 14, 33, },
+[; ;main.h: 67: {1, 5, 15, 32, },
+[; ;main.h: 68: {1, 6, 16, 47, },
+[; ;main.h: 69: {1, 7, 17, 46, },
+[; ;main.h: 70: {1, 8, 18, 45, },
+[; ;main.h: 71: {1, 9, 19, 44, },
+[; ;main.h: 72: {2, 0, 20, 43, },
+[; ;main.h: 73: {2, 1, 21, 42, },
+[; ;main.h: 74: {2, 2, 22, 41, },
+[; ;main.h: 75: {2, 3, 23, 40, },
+[; ;main.h: 76: {2, 4, 24, 53, },
+[; ;main.h: 77: {2, 5, 25, 52, },
+[; ;main.h: 78: {2, 6, 26, 51, },
+[; ;main.h: 79: {2, 7, 27, 50, },
+[; ;main.h: 80: {2, 8, 28, 49, },
+[; ;main.h: 81: {2, 9, 29, 48, },
+[; ;main.h: 82: };
+[; ;main.h: 108: void Delay_Routine(unsigned char delay_multiplyer);
+"12 display.c
 [v _Set_Bits `(v ~T0 @X0 1 ef1`*Cuc ]
 {
-[; ;display.c: 9: void Set_Bits(const unsigned char *bits) {
+[; ;display.c: 12: void Set_Bits(const unsigned char *bits) {
 [e :U _Set_Bits ]
 [v _bits `*Cuc ~T0 @X0 1 r1 ]
 [f ]
-"10
+"13
 [v _Bitoutput `uc ~T0 @X0 1 a ]
-[; ;display.c: 10: unsigned char Bitoutput = 0;
+[; ;display.c: 13: unsigned char Bitoutput = 0;
 [e = _Bitoutput -> -> 0 `i `uc ]
-[; ;display.c: 11: for(unsigned char bitcount = 0; bits[bitcount] != '\0';
-"11
+[; ;display.c: 14: for(unsigned char bitcount = 0; bits[bitcount] != '\0';
+"14
 {
 [v _bitcount `uc ~T0 @X0 1 a ]
 [e = _bitcount -> -> 0 `i `uc ]
-[; ;display.c: 12: bitcount++) {
+[; ;display.c: 15: bitcount++) {
 [e $U 1110  ]
-"12
+"15
 [e :U 1107 ]
 {
-[; ;display.c: 13: switch (bits[bitcount]) {
-"13
+[; ;display.c: 16: switch (bits[bitcount]) {
+"16
 [e $U 1112  ]
 {
-[; ;display.c: 14: case 'A':
-"14
-[e :U 1113 ]
-[; ;display.c: 15: Bitoutput |= 0b00000001;
-"15
-[e =| _Bitoutput -> -> 1 `i `uc ]
-[; ;display.c: 16: break;
-"16
-[e $U 1111  ]
-[; ;display.c: 17: case 'B':
+[; ;display.c: 17: case 'A':
 "17
-[e :U 1114 ]
-[; ;display.c: 18: Bitoutput |= 0b00000010;
+[e :U 1113 ]
+[; ;display.c: 18: Bitoutput |= 0b00000001;
 "18
-[e =| _Bitoutput -> -> 2 `i `uc ]
+[e =| _Bitoutput -> -> 1 `i `uc ]
 [; ;display.c: 19: break;
 "19
 [e $U 1111  ]
-[; ;display.c: 20: case 'C':
+[; ;display.c: 20: case 'B':
 "20
-[e :U 1115 ]
-[; ;display.c: 21: Bitoutput |= 0b00000100;
+[e :U 1114 ]
+[; ;display.c: 21: Bitoutput |= 0b00000010;
 "21
-[e =| _Bitoutput -> -> 4 `i `uc ]
+[e =| _Bitoutput -> -> 2 `i `uc ]
 [; ;display.c: 22: break;
 "22
 [e $U 1111  ]
-[; ;display.c: 23: case 'D':
+[; ;display.c: 23: case 'C':
 "23
-[e :U 1116 ]
-[; ;display.c: 24: Bitoutput |= 0b00001000;
+[e :U 1115 ]
+[; ;display.c: 24: Bitoutput |= 0b00000100;
 "24
-[e =| _Bitoutput -> -> 8 `i `uc ]
+[e =| _Bitoutput -> -> 4 `i `uc ]
 [; ;display.c: 25: break;
 "25
 [e $U 1111  ]
-[; ;display.c: 26: case 'E':
+[; ;display.c: 26: case 'D':
 "26
-[e :U 1117 ]
-[; ;display.c: 27: Bitoutput |= 0b00010000;
+[e :U 1116 ]
+[; ;display.c: 27: Bitoutput |= 0b00001000;
 "27
-[e =| _Bitoutput -> -> 16 `i `uc ]
+[e =| _Bitoutput -> -> 8 `i `uc ]
 [; ;display.c: 28: break;
 "28
 [e $U 1111  ]
-[; ;display.c: 29: case 'F':
+[; ;display.c: 29: case 'E':
 "29
-[e :U 1118 ]
-[; ;display.c: 30: Bitoutput |= 0b00100000;
+[e :U 1117 ]
+[; ;display.c: 30: Bitoutput |= 0b00010000;
 "30
-[e =| _Bitoutput -> -> 32 `i `uc ]
+[e =| _Bitoutput -> -> 16 `i `uc ]
 [; ;display.c: 31: break;
 "31
 [e $U 1111  ]
-[; ;display.c: 32: case 'G':
+[; ;display.c: 32: case 'F':
 "32
-[e :U 1119 ]
-[; ;display.c: 33: Bitoutput |= 0b01000000;
+[e :U 1118 ]
+[; ;display.c: 33: Bitoutput |= 0b00100000;
 "33
-[e =| _Bitoutput -> -> 64 `i `uc ]
+[e =| _Bitoutput -> -> 32 `i `uc ]
 [; ;display.c: 34: break;
 "34
 [e $U 1111  ]
-[; ;display.c: 35: default:
+[; ;display.c: 35: case 'G':
 "35
-[e :U 1120 ]
-[; ;display.c: 36: break;
+[e :U 1119 ]
+[; ;display.c: 36: Bitoutput |= 0b01000000;
 "36
-[e $U 1111  ]
+[e =| _Bitoutput -> -> 64 `i `uc ]
+[; ;display.c: 37: break;
 "37
-}
-[; ;display.c: 37: }
 [e $U 1111  ]
-"13
+[; ;display.c: 38: default:
+"38
+[e :U 1120 ]
+[; ;display.c: 39: break;
+"39
+[e $U 1111  ]
+"40
+}
+[; ;display.c: 40: }
+[e $U 1111  ]
+"16
 [e :U 1112 ]
 [e [\ *U + _bits * -> _bitcount `ux -> -> # *U _bits `ui `ux , $ -> -> 65 `ui `uc 1113
  , $ -> -> 66 `ui `uc 1114
@@ -7567,175 +7571,174 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 70 `ui `uc 1118
  , $ -> -> 71 `ui `uc 1119
  1120 ]
-"37
+"40
 [e :U 1111 ]
-"38
+"41
 }
-"12
+"15
 [e ++ _bitcount -> -> 1 `i `uc ]
-"11
+"14
 [e :U 1110 ]
 [e $ != -> *U + _bits * -> _bitcount `ux -> -> # *U _bits `ui `ux `ui -> 0 `ui 1107  ]
 [e :U 1108 ]
-"38
+"41
 }
-[; ;display.c: 38: }
-[; ;display.c: 39: Write_Display(Bitoutput);
-"39
-[e ( _Write_Display (1 _Bitoutput ]
-[; ;display.c: 40: }
-"40
+[; ;display.c: 41: }
+[; ;display.c: 43: }
+"43
 [e :UE 1106 ]
 }
-"49
+"52
 [v _Evaluate_Display `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
-[; ;display.c: 49: void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
+[; ;display.c: 52: void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
 [e :U _Evaluate_Display ]
 [v _size `uc ~T0 @X0 1 r1 ]
 [v _evaluate `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;display.c: 50: for(unsigned char counter = 0; counter < size; counter++)
-"50
+[; ;display.c: 53: for(display_counter = 0; display_counter < size;
+"53
 {
-[v _counter `uc ~T0 @X0 1 a ]
-[e = _counter -> -> 0 `i `uc ]
+[e = _display_counter -> -> 0 `i `uc ]
+[; ;display.c: 54: display_counter++) {
 [e $U 1125  ]
-"51
+"54
 [e :U 1122 ]
-[; ;display.c: 51: switch (evaluate[counter]) {
+{
+[; ;display.c: 55: switch (evaluate[display_counter]) {
+"55
 [e $U 1127  ]
 {
-[; ;display.c: 52: case '0':
-"52
-[e :U 1128 ]
-[; ;display.c: 53: Set_Bits("ABCDEF");
-"53
-[e ( _Set_Bits (1 :s 1C ]
-[; ;display.c: 54: break;
-"54
-[e $U 1126  ]
-[; ;display.c: 55: case '1':
-"55
-[e :U 1129 ]
-[; ;display.c: 56: Set_Bits("BC");
+[; ;display.c: 56: case '0':
 "56
-[e ( _Set_Bits (1 :s 2C ]
-[; ;display.c: 57: break;
+[e :U 1128 ]
+[; ;display.c: 57: Set_Bits("ABCDEF");
 "57
-[e $U 1126  ]
-[; ;display.c: 58: case '2':
+[e ( _Set_Bits (1 :s 1C ]
+[; ;display.c: 58: break;
 "58
-[e :U 1130 ]
-[; ;display.c: 59: Set_Bits("ABDEG");
+[e $U 1126  ]
+[; ;display.c: 59: case '1':
 "59
-[e ( _Set_Bits (1 :s 3C ]
-[; ;display.c: 60: break;
+[e :U 1129 ]
+[; ;display.c: 60: Set_Bits("BC");
 "60
-[e $U 1126  ]
-[; ;display.c: 61: case '3':
+[e ( _Set_Bits (1 :s 2C ]
+[; ;display.c: 61: break;
 "61
-[e :U 1131 ]
-[; ;display.c: 62: Set_Bits("ABCDG");
+[e $U 1126  ]
+[; ;display.c: 62: case '2':
 "62
-[e ( _Set_Bits (1 :s 4C ]
-[; ;display.c: 63: break;
+[e :U 1130 ]
+[; ;display.c: 63: Set_Bits("ABDEG");
 "63
-[e $U 1126  ]
-[; ;display.c: 64: case '4':
+[e ( _Set_Bits (1 :s 3C ]
+[; ;display.c: 64: break;
 "64
-[e :U 1132 ]
-[; ;display.c: 65: Set_Bits("BCFG");
+[e $U 1126  ]
+[; ;display.c: 65: case '3':
 "65
-[e ( _Set_Bits (1 :s 5C ]
-[; ;display.c: 66: break;
+[e :U 1131 ]
+[; ;display.c: 66: Set_Bits("ABCDG");
 "66
-[e $U 1126  ]
-[; ;display.c: 67: case '5':
+[e ( _Set_Bits (1 :s 4C ]
+[; ;display.c: 67: break;
 "67
-[e :U 1133 ]
-[; ;display.c: 68: Set_Bits("ACDFG");
+[e $U 1126  ]
+[; ;display.c: 68: case '4':
 "68
-[e ( _Set_Bits (1 :s 6C ]
-[; ;display.c: 69: break;
+[e :U 1132 ]
+[; ;display.c: 69: Set_Bits("BCFG");
 "69
-[e $U 1126  ]
-[; ;display.c: 70: case '6':
+[e ( _Set_Bits (1 :s 5C ]
+[; ;display.c: 70: break;
 "70
-[e :U 1134 ]
-[; ;display.c: 71: Set_Bits("ACDEFG");
+[e $U 1126  ]
+[; ;display.c: 71: case '5':
 "71
-[e ( _Set_Bits (1 :s 7C ]
-[; ;display.c: 72: break;
+[e :U 1133 ]
+[; ;display.c: 72: Set_Bits("ACDFG");
 "72
-[e $U 1126  ]
-[; ;display.c: 73: case '7':
+[e ( _Set_Bits (1 :s 6C ]
+[; ;display.c: 73: break;
 "73
-[e :U 1135 ]
-[; ;display.c: 74: Set_Bits("ABC");
+[e $U 1126  ]
+[; ;display.c: 74: case '6':
 "74
-[e ( _Set_Bits (1 :s 8C ]
-[; ;display.c: 75: break;
+[e :U 1134 ]
+[; ;display.c: 75: Set_Bits("ACDEFG");
 "75
-[e $U 1126  ]
-[; ;display.c: 76: case '8':
+[e ( _Set_Bits (1 :s 7C ]
+[; ;display.c: 76: break;
 "76
-[e :U 1136 ]
-[; ;display.c: 77: Set_Bits("ABCDEFG");
+[e $U 1126  ]
+[; ;display.c: 77: case '7':
 "77
-[e ( _Set_Bits (1 :s 9C ]
-[; ;display.c: 78: break;
+[e :U 1135 ]
+[; ;display.c: 78: Set_Bits("ABC");
 "78
-[e $U 1126  ]
-[; ;display.c: 79: case '9':
+[e ( _Set_Bits (1 :s 8C ]
+[; ;display.c: 79: break;
 "79
-[e :U 1137 ]
-[; ;display.c: 80: Set_Bits("ABCDFG");
+[e $U 1126  ]
+[; ;display.c: 80: case '8':
 "80
-[e ( _Set_Bits (1 :s 10C ]
-[; ;display.c: 81: break;
+[e :U 1136 ]
+[; ;display.c: 81: Set_Bits("ABCDEFG");
 "81
-[e $U 1126  ]
-[; ;display.c: 82: case 'E':
+[e ( _Set_Bits (1 :s 9C ]
+[; ;display.c: 82: break;
 "82
-[e :U 1138 ]
-[; ;display.c: 83: Set_Bits("ADEFG");
+[e $U 1126  ]
+[; ;display.c: 83: case '9':
 "83
-[e ( _Set_Bits (1 :s 11C ]
-[; ;display.c: 84: break;
+[e :U 1137 ]
+[; ;display.c: 84: Set_Bits("ABCDFG");
 "84
-[e $U 1126  ]
-[; ;display.c: 85: case 'A':
+[e ( _Set_Bits (1 :s 10C ]
+[; ;display.c: 85: break;
 "85
-[e :U 1139 ]
-[; ;display.c: 86: Set_Bits("ABCEFG");
+[e $U 1126  ]
+[; ;display.c: 86: case 'E':
 "86
-[e ( _Set_Bits (1 :s 12C ]
-[; ;display.c: 87: break;
+[e :U 1138 ]
+[; ;display.c: 87: Set_Bits("ADEFG");
 "87
-[e $U 1126  ]
-[; ;display.c: 88: case '-':
+[e ( _Set_Bits (1 :s 11C ]
+[; ;display.c: 88: break;
 "88
-[e :U 1140 ]
-[; ;display.c: 89: Set_Bits("G");
+[e $U 1126  ]
+[; ;display.c: 89: case 'A':
 "89
-[e ( _Set_Bits (1 :s 13C ]
-[; ;display.c: 90: break;
+[e :U 1139 ]
+[; ;display.c: 90: Set_Bits("ABCEFG");
 "90
-[e $U 1126  ]
-[; ;display.c: 91: default:
+[e ( _Set_Bits (1 :s 12C ]
+[; ;display.c: 91: break;
 "91
-[e :U 1141 ]
-[; ;display.c: 92: Set_Bits(0);
-"92
-[e ( _Set_Bits (1 -> -> 0 `i `*Cuc ]
-"93
-}
-[; ;display.c: 93: }
 [e $U 1126  ]
-"51
+[; ;display.c: 92: case '-':
+"92
+[e :U 1140 ]
+[; ;display.c: 93: Set_Bits("G");
+"93
+[e ( _Set_Bits (1 :s 13C ]
+[; ;display.c: 94: break;
+"94
+[e $U 1126  ]
+[; ;display.c: 95: default:
+"95
+[e :U 1141 ]
+[; ;display.c: 96: Set_Bits(0);
+"96
+[e ( _Set_Bits (1 -> -> 0 `i `*Cuc ]
+"97
+}
+[; ;display.c: 97: }
+[e $U 1126  ]
+"55
 [e :U 1127 ]
-[e [\ *U + _evaluate * -> _counter `ux -> -> # *U _evaluate `ui `ux , $ -> -> 48 `ui `uc 1128
+[e [\ *U + _evaluate * -> _display_counter `ux -> -> # *U _evaluate `ui `ux , $ -> -> 48 `ui `uc 1128
  , $ -> -> 49 `ui `uc 1129
  , $ -> -> 50 `ui `uc 1130
  , $ -> -> 51 `ui `uc 1131
@@ -7749,214 +7752,145 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 65 `ui `uc 1139
  , $ -> -> 45 `ui `uc 1140
  1141 ]
-"93
+"97
 [e :U 1126 ]
-"50
-[e ++ _counter -> -> 1 `i `uc ]
-[e :U 1125 ]
-[e $ < -> _counter `i -> _size `i 1122  ]
-[e :U 1123 ]
-"93
+"98
 }
-[; ;display.c: 94: }
-"94
+"54
+[e ++ _display_counter -> -> 1 `i `uc ]
+"53
+[e :U 1125 ]
+[e $ < -> _display_counter `i -> _size `i 1122  ]
+[e :U 1123 ]
+"98
+}
+[; ;display.c: 98: }
+[; ;display.c: 99: }
+"99
 [e :UE 1121 ]
 }
-"101
+"106
 [v _Evaluate_Signs `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;display.c: 101: void Evaluate_Signs(unsigned int evaluation_value) {
+[; ;display.c: 106: void Evaluate_Signs(unsigned int evaluation_value) {
 [e :U _Evaluate_Signs ]
 [v _evaluation_value `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;display.c: 102: for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
-"102
+[; ;display.c: 107: for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
+"107
 {
 [v _valuecounter `uc ~T0 @X0 1 a ]
 [e = _valuecounter -> -> 0 `i `uc ]
-[; ;display.c: 103: valuecounter++) {
+[; ;display.c: 108: valuecounter++) {
 [e $ < -> _valuecounter `ui -> # _signs `ui 1143  ]
 [e $U 1144  ]
-"103
+"108
 [e :U 1143 ]
 {
-[; ;display.c: 104: signs[valuecounter] = evaluation_value % 10;
-"104
+[; ;display.c: 109: signs[valuecounter] = evaluation_value % 10;
+"109
 [e = *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
-[; ;display.c: 105: signs[valuecounter] += 0x30;
-"105
+[; ;display.c: 110: signs[valuecounter] += 0x30;
+"110
 [e =+ *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
-[; ;display.c: 106: evaluation_value >>= 1;
-"106
+[; ;display.c: 111: evaluation_value >>= 1;
+"111
 [e =>> _evaluation_value -> 1 `i ]
-"107
+"112
 }
-"103
+"108
 [e ++ _valuecounter -> -> 1 `i `uc ]
-"102
+"107
 [e $ < -> _valuecounter `ui -> # _signs `ui 1143  ]
 [e :U 1144 ]
-"107
+"112
 }
-[; ;display.c: 107: }
-[; ;display.c: 108: __nop();
-"108
+[; ;display.c: 112: }
+[; ;display.c: 113: __nop();
+"113
 [e ( ___nop ..  ]
-[; ;display.c: 109: Evaluate_Display(sizeof(signs), signs);
-"109
+[; ;display.c: 114: Evaluate_Display(sizeof(signs), signs);
+"114
 [e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
-[; ;display.c: 110: }
-"110
+[; ;display.c: 115: }
+"115
 [e :UE 1142 ]
 }
-"121
+"126
 [v _Set_Display `(v ~T0 @X0 1 ef3`uc`uc`ui ]
-"122
+"127
 {
-[; ;display.c: 121: void Set_Display(unsigned char type, unsigned char information,
-[; ;display.c: 122: unsigned int value) {
+[; ;display.c: 126: void Set_Display(unsigned char type, unsigned char information,
+[; ;display.c: 127: unsigned int value) {
 [e :U _Set_Display ]
-"121
+"126
 [v _type `uc ~T0 @X0 1 r1 ]
 [v _information `uc ~T0 @X0 1 r2 ]
-"122
+"127
 [v _value `ui ~T0 @X0 1 r3 ]
 [f ]
-[; ;display.c: 123: switch (type) {
-"123
+[; ;display.c: 128: switch (type) {
+"128
 [e $U 1148  ]
 {
-[; ;display.c: 124: case '7':
-"124
+[; ;display.c: 129: case '7':
+"129
 [e :U 1149 ]
-[; ;display.c: 125: if(information != '-') {
-"125
+[; ;display.c: 130: if(information != '-') {
+"130
 [e $ ! != -> _information `ui -> 45 `ui 1150  ]
 {
-[; ;display.c: 126: signs[0] = value;
-"126
-[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
-[; ;display.c: 127: signs[0] += 0x30;
-"127
-[e =+ *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
-[; ;display.c: 128: signs[1] = '-';
-"128
-[e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
-[; ;display.c: 129: signs[2] = information;
-"129
-[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
-[; ;display.c: 130: Evaluate_Display(sizeof(signs), signs);
-"130
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
+[; ;display.c: 131: signs[0] = value;
 "131
+[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
+[; ;display.c: 132: signs[0] += 0x30;
+"132
+[e =+ *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[; ;display.c: 133: signs[1] = '-';
+"133
+[e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
+[; ;display.c: 134: signs[2] = information;
+"134
+[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
+[; ;display.c: 135: Evaluate_Display(sizeof(signs), signs);
+"135
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
+"136
 }
-[; ;display.c: 131: } else {
+[; ;display.c: 136: } else {
 [e $U 1151  ]
 [e :U 1150 ]
 {
-[; ;display.c: 132: Evaluate_Signs(value);
-"132
-[e ( _Evaluate_Signs (1 _value ]
-"133
-}
-[e :U 1151 ]
-[; ;display.c: 133: }
-[; ;display.c: 134: break;
-"134
-[e $U 1147  ]
-[; ;display.c: 135: case 'L':
-"135
-[e :U 1152 ]
-[; ;display.c: 137: break;
+[; ;display.c: 137: Evaluate_Signs(value);
 "137
-[e $U 1147  ]
+[e ( _Evaluate_Signs (1 _value ]
 "138
 }
+[e :U 1151 ]
 [; ;display.c: 138: }
+[; ;display.c: 139: break;
+"139
 [e $U 1147  ]
-"123
+[; ;display.c: 140: case 'L':
+"140
+[e :U 1152 ]
+[; ;display.c: 142: break;
+"142
+[e $U 1147  ]
+"143
+}
+[; ;display.c: 143: }
+[e $U 1147  ]
+"128
 [e :U 1148 ]
 [e [\ _type , $ -> -> 55 `ui `uc 1149
  , $ -> -> 76 `ui `uc 1152
  1147 ]
-"138
-[e :U 1147 ]
-[; ;display.c: 139: }
-"139
-[e :UE 1146 ]
-}
-"141
-[v _Display `(v ~T0 @X0 1 ef ]
-{
-[; ;display.c: 141: void Display(void) {
-[e :U _Display ]
-[f ]
-"142
-[v _write_reg `uc ~T0 @X0 1 a ]
-[; ;display.c: 142: unsigned char write_reg = 0;
-[e = _write_reg -> -> 0 `i `uc ]
 "143
-[v _write_counter `uc ~T0 @X0 1 a ]
-[; ;display.c: 143: unsigned char write_counter = 0;
-[e = _write_counter -> -> 0 `i `uc ]
-[; ;display.c: 144: for(unsigned char pin_counter = 0; pin_counter <
+[e :U 1147 ]
+[; ;display.c: 144: }
 "144
-{
-[v _pin_counter `uc ~T0 @X0 1 a ]
-[e = _pin_counter -> -> 0 `i `uc ]
-[; ;display.c: 145: (sizeof(pixels) / sizeof(pixels[0])); pin_counter ++) {
-[e $ < -> _pin_counter `ui / -> # _pixels `ui -> # *U + &U _pixels * -> -> -> 0 `i `ui `ux -> -> # *U &U _pixels `ui `ux `ui 1154  ]
-[e $U 1155  ]
-"145
-[e :U 1154 ]
-{
-[; ;display.c: 146: if(pixels[pin_counter] & 0x01) {
-"146
-[e $ ! != & -> *U + &U _pixels * -> _pin_counter `ux -> -> # *U &U _pixels `ui `ux `i -> 1 `i -> 0 `i 1157  ]
-{
-[; ;display.c: 147: write_reg |= 0x01;
-"147
-[e =| _write_reg -> -> 1 `i `uc ]
-"148
-}
-[e :U 1157 ]
-[; ;display.c: 148: }
-[; ;display.c: 149: write_reg >>= 1;
-"149
-[e =>> _write_reg -> 1 `i ]
-[; ;display.c: 150: write_counter ++;
-"150
-[e ++ _write_counter -> -> 1 `i `uc ]
-[; ;display.c: 151: if(write_counter > 7) {
-"151
-[e $ ! > -> _write_counter `i -> 7 `i 1158  ]
-{
-[; ;display.c: 152: Write_Display(write_reg);
-"152
-[e ( _Write_Display (1 _write_reg ]
-[; ;display.c: 153: write_counter = 0;
-"153
-[e = _write_counter -> -> 0 `i `uc ]
-[; ;display.c: 154: write_reg = 0;
-"154
-[e = _write_reg -> -> 0 `i `uc ]
-"155
-}
-[e :U 1158 ]
-"156
-}
-"145
-[e ++ _pin_counter -> -> 1 `i `uc ]
-"144
-[e $ < -> _pin_counter `ui / -> # _pixels `ui -> # *U + &U _pixels * -> -> -> 0 `i `ui `ux -> -> # *U &U _pixels `ui `ux `ui 1154  ]
-[e :U 1155 ]
-"156
-}
-[; ;display.c: 155: }
-[; ;display.c: 156: }
-[; ;display.c: 157: }
-"157
-[e :UE 1153 ]
+[e :UE 1146 ]
 }
 [a 9C 65 66 67 68 69 70 71 0 ]
 [a 7C 65 67 68 69 70 71 0 ]

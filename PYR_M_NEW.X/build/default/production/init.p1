@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"24 buttonchanges.h
+"41 main.h
 [s S1105 `uc 1 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address led_address time ]
 "17 init.h
@@ -7386,281 +7386,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 22: void InitTimer(void);
 [; ;init.h: 23: void InitInterrupt(void);
 [; ;buttonchanges.h: 16: void Check_Buttons(void);
-[; ;buttonchanges.h: 24: typedef struct Slave_Output
-[; ;buttonchanges.h: 25: {
-[; ;buttonchanges.h: 26: unsigned char slave;
-[; ;buttonchanges.h: 27: unsigned char output;
-[; ;buttonchanges.h: 28: unsigned char address;
-[; ;buttonchanges.h: 29: unsigned char led_address;
-[; ;buttonchanges.h: 30: signed int time;
-[; ;buttonchanges.h: 31: }sl_out;
-"33 buttonchanges.h
-[v _pin `S1105 ~T0 @X0 -> 0 `x e ]
-[i _pin
-:U ..
-:U ..
-"35
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 31 `i `uc
-..
-:U ..
-"36
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 30 `i `uc
-..
-:U ..
-"37
--> -> 0 `i `uc
--> -> 2 `i `uc
--> -> 2 `i `uc
--> -> 29 `i `uc
-..
-:U ..
-"38
--> -> 0 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 28 `i `uc
-..
-:U ..
-"39
--> -> 0 `i `uc
--> -> 4 `i `uc
--> -> 4 `i `uc
--> -> 27 `i `uc
-..
-:U ..
-"40
--> -> 0 `i `uc
--> -> 5 `i `uc
--> -> 5 `i `uc
--> -> 26 `i `uc
-..
-:U ..
-"41
--> -> 0 `i `uc
--> -> 6 `i `uc
--> -> 6 `i `uc
--> -> 25 `i `uc
-..
-:U ..
-"42
--> -> 0 `i `uc
--> -> 7 `i `uc
--> -> 7 `i `uc
--> -> 24 `i `uc
-..
-:U ..
-"43
--> -> 0 `i `uc
--> -> 8 `i `uc
--> -> 8 `i `uc
--> -> 39 `i `uc
-..
-:U ..
-"44
--> -> 0 `i `uc
--> -> 9 `i `uc
--> -> 9 `i `uc
--> -> 38 `i `uc
-..
-:U ..
-"45
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 10 `i `uc
--> -> 37 `i `uc
-..
-:U ..
-"46
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 11 `i `uc
--> -> 36 `i `uc
-..
-:U ..
-"47
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 12 `i `uc
--> -> 35 `i `uc
-..
-:U ..
-"48
--> -> 1 `i `uc
--> -> 3 `i `uc
--> -> 13 `i `uc
--> -> 34 `i `uc
-..
-:U ..
-"49
--> -> 1 `i `uc
--> -> 4 `i `uc
--> -> 14 `i `uc
--> -> 33 `i `uc
-..
-:U ..
-"50
--> -> 1 `i `uc
--> -> 5 `i `uc
--> -> 15 `i `uc
--> -> 32 `i `uc
-..
-:U ..
-"51
--> -> 1 `i `uc
--> -> 6 `i `uc
--> -> 16 `i `uc
--> -> 47 `i `uc
-..
-:U ..
-"52
--> -> 1 `i `uc
--> -> 7 `i `uc
--> -> 17 `i `uc
--> -> 46 `i `uc
-..
-:U ..
-"53
--> -> 1 `i `uc
--> -> 8 `i `uc
--> -> 18 `i `uc
--> -> 45 `i `uc
-..
-:U ..
-"54
--> -> 1 `i `uc
--> -> 9 `i `uc
--> -> 19 `i `uc
--> -> 44 `i `uc
-..
-:U ..
-"55
--> -> 2 `i `uc
--> -> 0 `i `uc
--> -> 20 `i `uc
--> -> 43 `i `uc
-..
-:U ..
-"56
--> -> 2 `i `uc
--> -> 1 `i `uc
--> -> 21 `i `uc
--> -> 42 `i `uc
-..
-:U ..
-"57
--> -> 2 `i `uc
--> -> 2 `i `uc
--> -> 22 `i `uc
--> -> 41 `i `uc
-..
-:U ..
-"58
--> -> 2 `i `uc
--> -> 3 `i `uc
--> -> 23 `i `uc
--> -> 40 `i `uc
-..
-:U ..
-"59
--> -> 2 `i `uc
--> -> 4 `i `uc
--> -> 24 `i `uc
--> -> 53 `i `uc
-..
-:U ..
-"60
--> -> 2 `i `uc
--> -> 5 `i `uc
--> -> 25 `i `uc
--> -> 52 `i `uc
-..
-:U ..
-"61
--> -> 2 `i `uc
--> -> 6 `i `uc
--> -> 26 `i `uc
--> -> 51 `i `uc
-..
-:U ..
-"62
--> -> 2 `i `uc
--> -> 7 `i `uc
--> -> 27 `i `uc
--> -> 50 `i `uc
-..
-:U ..
-"63
--> -> 2 `i `uc
--> -> 8 `i `uc
--> -> 28 `i `uc
--> -> 49 `i `uc
-..
-:U ..
-"64
--> -> 2 `i `uc
--> -> 9 `i `uc
--> -> 29 `i `uc
--> -> 48 `i `uc
-..
-..
-]
-[; ;buttonchanges.h: 33: sl_out pin[] =
-[; ;buttonchanges.h: 34: {
-[; ;buttonchanges.h: 35: {0, 0, 0, 31, },
-[; ;buttonchanges.h: 36: {0, 1, 1, 30, },
-[; ;buttonchanges.h: 37: {0, 2, 2, 29, },
-[; ;buttonchanges.h: 38: {0, 3, 3, 28, },
-[; ;buttonchanges.h: 39: {0, 4, 4, 27, },
-[; ;buttonchanges.h: 40: {0, 5, 5, 26, },
-[; ;buttonchanges.h: 41: {0, 6, 6, 25, },
-[; ;buttonchanges.h: 42: {0, 7, 7, 24, },
-[; ;buttonchanges.h: 43: {0, 8, 8, 39, },
-[; ;buttonchanges.h: 44: {0, 9, 9, 38, },
-[; ;buttonchanges.h: 45: {1, 0, 10, 37, },
-[; ;buttonchanges.h: 46: {1, 1, 11, 36, },
-[; ;buttonchanges.h: 47: {1, 2, 12, 35, },
-[; ;buttonchanges.h: 48: {1, 3, 13, 34, },
-[; ;buttonchanges.h: 49: {1, 4, 14, 33, },
-[; ;buttonchanges.h: 50: {1, 5, 15, 32, },
-[; ;buttonchanges.h: 51: {1, 6, 16, 47, },
-[; ;buttonchanges.h: 52: {1, 7, 17, 46, },
-[; ;buttonchanges.h: 53: {1, 8, 18, 45, },
-[; ;buttonchanges.h: 54: {1, 9, 19, 44, },
-[; ;buttonchanges.h: 55: {2, 0, 20, 43, },
-[; ;buttonchanges.h: 56: {2, 1, 21, 42, },
-[; ;buttonchanges.h: 57: {2, 2, 22, 41, },
-[; ;buttonchanges.h: 58: {2, 3, 23, 40, },
-[; ;buttonchanges.h: 59: {2, 4, 24, 53, },
-[; ;buttonchanges.h: 60: {2, 5, 25, 52, },
-[; ;buttonchanges.h: 61: {2, 6, 26, 51, },
-[; ;buttonchanges.h: 62: {2, 7, 27, 50, },
-[; ;buttonchanges.h: 63: {2, 8, 28, 49, },
-[; ;buttonchanges.h: 64: {2, 9, 29, 48, },
-[; ;buttonchanges.h: 65: };
-"67
+"24 buttonchanges.h
 [v _slave_selected `uc ~T0 @X0 1 e ]
 [i _slave_selected
 -> -> 0 `i `uc
 ]
-[; ;buttonchanges.h: 67: unsigned char slave_selected = 0;
-"68
+[; ;buttonchanges.h: 24: unsigned char slave_selected = 0;
+"25
 [v _pin_selected `uc ~T0 @X0 1 e ]
 [i _pin_selected
 -> -> 0 `i `uc
 ]
-[; ;buttonchanges.h: 68: unsigned char pin_selected = 0;
-"69
+[; ;buttonchanges.h: 25: unsigned char pin_selected = 0;
+"26
 [v _testflag `b ~T0 @X0 1 e ]
 [i _testflag
 -> 0 `i
 ]
-[; ;buttonchanges.h: 69: bit testflag = 0;
+[; ;buttonchanges.h: 26: bit testflag = 0;
 [; ;ignition.h: 16: void Timer_Count(void);
 [; ;ignition.h: 17: void Check_Detonators(void);
 "24 ignition.h
@@ -7677,14 +7420,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 57 `i e ]
-[; ;display.h: 28: unsigned char pixels[57];
+[v _pixels `uc ~T0 @X0 -> 7 `i e ]
+[; ;display.h: 28: unsigned char pixels[7];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
+"30
+[v _display_counter `uc ~T0 @X0 1 e ]
+[i _display_counter
+-> -> 0 `i `uc
+]
+[; ;display.h: 30: unsigned char display_counter = 0;
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;communication.h: 18: void Write_Display(unsigned char write_data);
+[; ;communication.h: 18: void Write_Display_Byte(unsigned char write_data);
 "25 communication.h
 [v _overrun `uc ~T0 @X0 1 e ]
 [i _overrun
@@ -7697,7 +7446,264 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;main.h: 39: bit ignite_ready = 0;
-[; ;main.h: 65: void Delay_Routine(unsigned char delay_multiplyer);
+[; ;main.h: 41: typedef struct Slave_Output
+[; ;main.h: 42: {
+[; ;main.h: 43: unsigned char slave;
+[; ;main.h: 44: unsigned char output;
+[; ;main.h: 45: unsigned char address;
+[; ;main.h: 46: unsigned char led_address;
+[; ;main.h: 47: signed int time;
+[; ;main.h: 48: }sl_out;
+"50
+[v _pin `S1105 ~T0 @X0 -> 0 `x e ]
+[i _pin
+:U ..
+:U ..
+"52
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 31 `i `uc
+..
+:U ..
+"53
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 30 `i `uc
+..
+:U ..
+"54
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 29 `i `uc
+..
+:U ..
+"55
+-> -> 0 `i `uc
+-> -> 3 `i `uc
+-> -> 3 `i `uc
+-> -> 28 `i `uc
+..
+:U ..
+"56
+-> -> 0 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 27 `i `uc
+..
+:U ..
+"57
+-> -> 0 `i `uc
+-> -> 5 `i `uc
+-> -> 5 `i `uc
+-> -> 26 `i `uc
+..
+:U ..
+"58
+-> -> 0 `i `uc
+-> -> 6 `i `uc
+-> -> 6 `i `uc
+-> -> 25 `i `uc
+..
+:U ..
+"59
+-> -> 0 `i `uc
+-> -> 7 `i `uc
+-> -> 7 `i `uc
+-> -> 24 `i `uc
+..
+:U ..
+"60
+-> -> 0 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 39 `i `uc
+..
+:U ..
+"61
+-> -> 0 `i `uc
+-> -> 9 `i `uc
+-> -> 9 `i `uc
+-> -> 38 `i `uc
+..
+:U ..
+"62
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 37 `i `uc
+..
+:U ..
+"63
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 11 `i `uc
+-> -> 36 `i `uc
+..
+:U ..
+"64
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 12 `i `uc
+-> -> 35 `i `uc
+..
+:U ..
+"65
+-> -> 1 `i `uc
+-> -> 3 `i `uc
+-> -> 13 `i `uc
+-> -> 34 `i `uc
+..
+:U ..
+"66
+-> -> 1 `i `uc
+-> -> 4 `i `uc
+-> -> 14 `i `uc
+-> -> 33 `i `uc
+..
+:U ..
+"67
+-> -> 1 `i `uc
+-> -> 5 `i `uc
+-> -> 15 `i `uc
+-> -> 32 `i `uc
+..
+:U ..
+"68
+-> -> 1 `i `uc
+-> -> 6 `i `uc
+-> -> 16 `i `uc
+-> -> 47 `i `uc
+..
+:U ..
+"69
+-> -> 1 `i `uc
+-> -> 7 `i `uc
+-> -> 17 `i `uc
+-> -> 46 `i `uc
+..
+:U ..
+"70
+-> -> 1 `i `uc
+-> -> 8 `i `uc
+-> -> 18 `i `uc
+-> -> 45 `i `uc
+..
+:U ..
+"71
+-> -> 1 `i `uc
+-> -> 9 `i `uc
+-> -> 19 `i `uc
+-> -> 44 `i `uc
+..
+:U ..
+"72
+-> -> 2 `i `uc
+-> -> 0 `i `uc
+-> -> 20 `i `uc
+-> -> 43 `i `uc
+..
+:U ..
+"73
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 21 `i `uc
+-> -> 42 `i `uc
+..
+:U ..
+"74
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 22 `i `uc
+-> -> 41 `i `uc
+..
+:U ..
+"75
+-> -> 2 `i `uc
+-> -> 3 `i `uc
+-> -> 23 `i `uc
+-> -> 40 `i `uc
+..
+:U ..
+"76
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 24 `i `uc
+-> -> 53 `i `uc
+..
+:U ..
+"77
+-> -> 2 `i `uc
+-> -> 5 `i `uc
+-> -> 25 `i `uc
+-> -> 52 `i `uc
+..
+:U ..
+"78
+-> -> 2 `i `uc
+-> -> 6 `i `uc
+-> -> 26 `i `uc
+-> -> 51 `i `uc
+..
+:U ..
+"79
+-> -> 2 `i `uc
+-> -> 7 `i `uc
+-> -> 27 `i `uc
+-> -> 50 `i `uc
+..
+:U ..
+"80
+-> -> 2 `i `uc
+-> -> 8 `i `uc
+-> -> 28 `i `uc
+-> -> 49 `i `uc
+..
+:U ..
+"81
+-> -> 2 `i `uc
+-> -> 9 `i `uc
+-> -> 29 `i `uc
+-> -> 48 `i `uc
+..
+..
+]
+[; ;main.h: 50: sl_out pin[] =
+[; ;main.h: 51: {
+[; ;main.h: 52: {0, 0, 0, 31, },
+[; ;main.h: 53: {0, 1, 1, 30, },
+[; ;main.h: 54: {0, 2, 2, 29, },
+[; ;main.h: 55: {0, 3, 3, 28, },
+[; ;main.h: 56: {0, 4, 4, 27, },
+[; ;main.h: 57: {0, 5, 5, 26, },
+[; ;main.h: 58: {0, 6, 6, 25, },
+[; ;main.h: 59: {0, 7, 7, 24, },
+[; ;main.h: 60: {0, 8, 8, 39, },
+[; ;main.h: 61: {0, 9, 9, 38, },
+[; ;main.h: 62: {1, 0, 10, 37, },
+[; ;main.h: 63: {1, 1, 11, 36, },
+[; ;main.h: 64: {1, 2, 12, 35, },
+[; ;main.h: 65: {1, 3, 13, 34, },
+[; ;main.h: 66: {1, 4, 14, 33, },
+[; ;main.h: 67: {1, 5, 15, 32, },
+[; ;main.h: 68: {1, 6, 16, 47, },
+[; ;main.h: 69: {1, 7, 17, 46, },
+[; ;main.h: 70: {1, 8, 18, 45, },
+[; ;main.h: 71: {1, 9, 19, 44, },
+[; ;main.h: 72: {2, 0, 20, 43, },
+[; ;main.h: 73: {2, 1, 21, 42, },
+[; ;main.h: 74: {2, 2, 22, 41, },
+[; ;main.h: 75: {2, 3, 23, 40, },
+[; ;main.h: 76: {2, 4, 24, 53, },
+[; ;main.h: 77: {2, 5, 25, 52, },
+[; ;main.h: 78: {2, 6, 26, 51, },
+[; ;main.h: 79: {2, 7, 27, 50, },
+[; ;main.h: 80: {2, 8, 28, 49, },
+[; ;main.h: 81: {2, 9, 29, 48, },
+[; ;main.h: 82: };
+[; ;main.h: 108: void Delay_Routine(unsigned char delay_multiplyer);
 "3 init.c
 [v _Init `(v ~T0 @X0 1 ef ]
 {

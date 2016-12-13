@@ -1,5 +1,8 @@
 #include "main.h"
 
+
+
+
 /**
  * Sets the beforehand evaluated bits and finishes a byte for the
  *  output
@@ -36,7 +39,7 @@ void Set_Bits(const unsigned char *bits) {
                 break;
         }
     }
-    Write_Display(Bitoutput);
+    pixels[display_counter] = Bitoutput;
 }
 
 
@@ -47,49 +50,51 @@ void Set_Bits(const unsigned char *bits) {
  * @param evaluate  Value that should be displayed as pointer on array
  */
 void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
-    for(unsigned char counter = 0; counter < size; counter++)
-    switch (evaluate[counter]) {
-        case '0':
-            Set_Bits("ABCDEF");
-            break;
-        case '1':
-            Set_Bits("BC");
-            break;
-        case '2':
-            Set_Bits("ABDEG");
-            break;
-        case '3':
-            Set_Bits("ABCDG");
-            break;
-        case '4':
-            Set_Bits("BCFG");
-            break;
-        case '5':
-            Set_Bits("ACDFG");
-            break;
-        case '6':
-            Set_Bits("ACDEFG");
-            break;
-        case '7':
-            Set_Bits("ABC");
-            break;
-        case '8':
-            Set_Bits("ABCDEFG");
-            break;
-        case '9':
-            Set_Bits("ABCDFG");
-            break;
-        case 'E':
-            Set_Bits("ADEFG");
-            break;
-        case 'A':
-            Set_Bits("ABCEFG");
-            break;
-        case '-':
-            Set_Bits("G");
-            break;
-        default:
-            Set_Bits(0);
+    for(display_counter = 0; display_counter < size;
+            display_counter++) {
+        switch (evaluate[display_counter]) {
+            case '0':
+                Set_Bits("ABCDEF");
+                break;
+            case '1':
+                Set_Bits("BC");
+                break;
+            case '2':
+                Set_Bits("ABDEG");
+                break;
+            case '3':
+                Set_Bits("ABCDG");
+                break;
+            case '4':
+                Set_Bits("BCFG");
+                break;
+            case '5':
+                Set_Bits("ACDFG");
+                break;
+            case '6':
+                Set_Bits("ACDEFG");
+                break;
+            case '7':
+                Set_Bits("ABC");
+                break;
+            case '8':
+                Set_Bits("ABCDEFG");
+                break;
+            case '9':
+                Set_Bits("ABCDFG");
+                break;
+            case 'E':
+                Set_Bits("ADEFG");
+                break;
+            case 'A':
+                Set_Bits("ABCEFG");
+                break;
+            case '-':
+                Set_Bits("G");
+                break;
+            default:
+                Set_Bits(0);
+        }
     }
 }
 
@@ -136,8 +141,11 @@ void Set_Display(unsigned char type, unsigned char information,
             
             break;
     }
+    Write_Display_Byte(pixels);
 }
 
+
+/*
 void Display(void) {
     unsigned char write_reg = 0;
     unsigned char write_counter = 0;
@@ -155,3 +163,4 @@ void Display(void) {
         }
     }
 }
+ * */
