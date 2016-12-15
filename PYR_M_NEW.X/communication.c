@@ -1,4 +1,5 @@
 #include "main.h"
+#include "interrupt.h"
 /**
  * The different transmission and reception routines are written in
  * this file.
@@ -35,7 +36,6 @@ unsigned char Receive(void) {
         RCSTA1bits.CREN = 1;
         overrun = 1;            //Setting a status bit to react
     }
-
     return (RCREG1);
 }
 
