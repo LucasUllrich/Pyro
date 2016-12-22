@@ -9035,7 +9035,7 @@ unsigned char display_counter = 0;
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
-void Write_Display_Byte(unsigned char write_data);
+void Write_Display_Byte(unsigned char *write_data);
 
 # 25
 unsigned char overrun = 0;

@@ -5,6 +5,8 @@
 [d frameptr 4065 ]
 "3 C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 [v _Check_Buttons Check_Buttons `(v  1 e 0 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
@@ -27,8 +29,10 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"32 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+"31 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
 [v _Receive Receive `(uc  1 e 1 0 ]
+"40
+[v _Write_Display_Byte Write_Display_Byte `(v  1 e 0 0 ]
 "12 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
 [v _Set_Bits Set_Bits `(v  1 e 0 0 ]
 "52
@@ -55,7 +59,7 @@
 [v _InitTimer InitTimer `(v  1 e 0 0 ]
 "70
 [v _InitInterrupt InitInterrupt `(v  1 e 0 0 ]
-"3 C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+"4 C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
 [v _Isr Isr `II(v  1 e 0 0 ]
 "78 C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
 [v _Delay_Routine Delay_Routine `(v  1 e 0 0 ]
@@ -97,76 +101,6 @@
 [v _CCPTMRS0bits CCPTMRS0bits `VES1045  1 e 1 @3913 ]
 "6266
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
-[s S1672 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-"6354
-[s S1681 . 1 `uc 1 AN0 1 0 :1:0 
-`uc 1 AN1 1 0 :1:1 
-`uc 1 AN2 1 0 :1:2 
-`uc 1 AN3 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 AN4 1 0 :1:5 
-]
-[s S1688 . 1 `uc 1 C12IN0M 1 0 :1:0 
-`uc 1 C12IN1M 1 0 :1:1 
-`uc 1 C2INP 1 0 :1:2 
-`uc 1 C1INP 1 0 :1:3 
-`uc 1 C1OUT 1 0 :1:4 
-`uc 1 C2OUT 1 0 :1:5 
-]
-[s S1695 . 1 `uc 1 C12IN0N 1 0 :1:0 
-`uc 1 C12IN1N 1 0 :1:1 
-`uc 1 VREFM 1 0 :1:2 
-`uc 1 VREFP 1 0 :1:3 
-`uc 1 T0CKI 1 0 :1:4 
-`uc 1 SS 1 0 :1:5 
-]
-[s S1702 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 NOT_SS 1 0 :1:5 
-]
-[s S1705 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 VREFN 1 0 :1:2 
-`uc 1 . 1 0 :1:3 
-`uc 1 SRQ 1 0 :1:4 
-`uc 1 nSS 1 0 :1:5 
-]
-[s S1711 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 CVREF 1 0 :1:2 
-`uc 1 . 1 0 :1:3 
-`uc 1 CCP5 1 0 :1:4 
-`uc 1 LVDIN 1 0 :1:5 
-]
-[s S1717 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 DACOUT 1 0 :1:2 
-`uc 1 . 1 0 :2:3 
-`uc 1 HLVDIN 1 0 :1:5 
-]
-[s S1722 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 SS1 1 0 :1:5 
-]
-[s S1725 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 NOT_SS1 1 0 :1:5 
-]
-[s S1728 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 nSS1 1 0 :1:5 
-]
-[s S1731 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 SRNQ 1 0 :1:5 
-]
-[s S1734 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RJPU 1 0 :1:7 
-]
-[s S1737 . 1 `uc 1 ULPWUIN 1 0 :1:0 
-]
-[u S1739 . 1 `S1672 1 . 1 0 `S1681 1 . 1 0 `S1688 1 . 1 0 `S1695 1 . 1 0 `S1702 1 . 1 0 `S1705 1 . 1 0 `S1711 1 . 1 0 `S1717 1 . 1 0 `S1722 1 . 1 0 `S1725 1 . 1 0 `S1728 1 . 1 0 `S1731 1 . 1 0 `S1734 1 . 1 0 `S1737 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1739  1 e 1 @3968 ]
 "6558
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
 [s S229 . 1 `uc 1 RB0 1 0 :1:0 
@@ -444,6 +378,8 @@
 ]
 [u S901 . 1 `S869 1 . 1 0 `S878 1 . 1 0 `S881 1 . 1 0 `S890 1 . 1 0 `S893 1 . 1 0 `S896 1 . 1 0 `S898 1 . 1 0 ]
 [v _RCSTA1bits RCSTA1bits `VES901  1 e 1 @4011 ]
+"10099
+[v _RCSTAbits RCSTAbits `VES901  1 e 1 @4011 ]
 [s S645 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
@@ -647,12 +583,20 @@
 [v _SSP1IF SSP1IF `VEb  1 e 0 @31987 ]
 "25 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.h
 [v _overrun overrun `uc  1 e 1 0 ]
-"29 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.h
+"28 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.h
+[v _pixels pixels `[7]uc  1 e 7 0 ]
+"29
 [v _signs signs `[3]uc  1 e 3 0 ]
 "30
 [v _display_counter display_counter `uc  1 e 1 0 ]
 "24 C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.h
 [v _current_time current_time `ui  1 e 2 0 ]
+"23 C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.h
+[v _received received `[5]uc  1 e 5 0 ]
+"24
+[v _receive_counter receive_counter `uc  1 e 1 0 ]
+"25
+[v _master_addressed master_addressed `b  1 e 0 0 ]
 "39 C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.h
 [v _ignite_ready ignite_ready `b  1 e 0 0 ]
 [s S21 Slave_Output 6 `uc 1 slave 1 0 `uc 1 output 1 1 `uc 1 address 1 2 `uc 1 led_address 1 3 `i 1 time 2 4 ]
@@ -718,30 +662,39 @@
 {
 [v Set_Display@type type `uc  1 a 1 wreg ]
 [v Set_Display@type type `uc  1 a 1 wreg ]
-[v Set_Display@information information `uc  1 p 1 29 ]
+[v Set_Display@information information `uc  1 p 1 0 ]
 "127
-[v Set_Display@value value `ui  1 p 2 30 ]
+[v Set_Display@value value `ui  1 p 2 1 ]
 "126
-[v Set_Display@type type `uc  1 a 1 32 ]
-"144
+[v Set_Display@type type `uc  1 a 1 42 ]
+"145
 } 0
-"106
+"40 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+[v _Write_Display_Byte Write_Display_Byte `(v  1 e 0 0 ]
+{
+"41
+[v Write_Display_Byte@counter counter `uc  1 a 1 34 ]
+"40
+[v Write_Display_Byte@write_data write_data `*.39uc  1 p 2 28 ]
+"50
+} 0
+"106 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
 [v _Evaluate_Signs Evaluate_Signs `(v  1 e 0 0 ]
 {
 "107
-[v Evaluate_Signs@valuecounter valuecounter `uc  1 a 1 28 ]
+[v Evaluate_Signs@valuecounter valuecounter `uc  1 a 1 41 ]
 "106
-[v Evaluate_Signs@evaluation_value evaluation_value `ui  1 p 2 26 ]
+[v Evaluate_Signs@evaluation_value evaluation_value `ui  1 p 2 39 ]
 "115
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "11
-[v ___lwmod@counter counter `uc  1 a 1 19 ]
+[v ___lwmod@counter counter `uc  1 a 1 32 ]
 "8
-[v ___lwmod@dividend dividend `ui  1 p 2 15 ]
-[v ___lwmod@divisor divisor `ui  1 p 2 17 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 28 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 30 ]
 "26
 } 0
 "52 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
@@ -749,27 +702,27 @@
 {
 [v Evaluate_Display@size size `uc  1 a 1 wreg ]
 [v Evaluate_Display@size size `uc  1 a 1 wreg ]
-[v Evaluate_Display@evaluate evaluate `*.39uc  1 p 2 23 ]
-[v Evaluate_Display@size size `uc  1 a 1 25 ]
+[v Evaluate_Display@evaluate evaluate `*.39uc  1 p 2 36 ]
+[v Evaluate_Display@size size `uc  1 a 1 38 ]
 "99
 } 0
 "12
 [v _Set_Bits Set_Bits `(v  1 e 0 0 ]
 {
 "14
-[v Set_Bits@bitcount bitcount `uc  1 a 1 22 ]
+[v Set_Bits@bitcount bitcount `uc  1 a 1 34 ]
 "13
-[v Set_Bits@Bitoutput Bitoutput `uc  1 a 1 21 ]
+[v Set_Bits@Bitoutput Bitoutput `uc  1 a 1 35 ]
 "12
-[v Set_Bits@bits bits `*.33Cuc  1 p 3 15 ]
+[v Set_Bits@bits bits `*.33Cuc  1 p 3 28 ]
 "43
 } 0
 "8 C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
 [v _Save_Data Save_Data `(v  1 e 0 0 ]
 {
-[v Save_Data@store store `ui  1 p 2 15 ]
+[v Save_Data@store store `ui  1 p 2 28 ]
 "9
-[v Save_Data@store_address store_address `uc  1 p 1 17 ]
+[v Save_Data@store_address store_address `uc  1 p 1 30 ]
 "36
 } 0
 "44
@@ -777,10 +730,10 @@
 {
 [v Read_Data@read_address read_address `uc  1 a 1 wreg ]
 "45
-[v Read_Data@data_read data_read `ui  1 a 2 17 ]
+[v Read_Data@data_read data_read `ui  1 a 2 30 ]
 "44
 [v Read_Data@read_address read_address `uc  1 a 1 wreg ]
-[v Read_Data@read_address read_address `uc  1 a 1 19 ]
+[v Read_Data@read_address read_address `uc  1 a 1 32 ]
 "60
 } 0
 "78 C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
@@ -788,21 +741,38 @@
 {
 [v Delay_Routine@delay_multiplyer delay_multiplyer `uc  1 a 1 wreg ]
 "79
-[v Delay_Routine@delay_counter delay_counter `uc  1 a 1 17 ]
+[v Delay_Routine@delay_counter delay_counter `uc  1 a 1 30 ]
 "78
 [v Delay_Routine@delay_multiplyer delay_multiplyer `uc  1 a 1 wreg ]
-[v Delay_Routine@delay_multiplyer delay_multiplyer `uc  1 a 1 16 ]
+[v Delay_Routine@delay_multiplyer delay_multiplyer `uc  1 a 1 29 ]
 "84
 } 0
-"3 C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+"4 C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
 [v _Isr Isr `II(v  1 e 0 0 ]
 {
-"6
-[v Isr@received received `uc  1 a 1 14 ]
-"18
+"23
+[v Isr@search_index search_index `uc  1 a 1 27 ]
+"25
+[v Isr@pixel_index_bit pixel_index_bit `uc  1 a 1 26 ]
+"24
+[v Isr@pixel_index_array pixel_index_array `uc  1 a 1 25 ]
+"52
 } 0
-"32 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"42
+} 0
+"31 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
 [v _Receive Receive `(uc  1 e 1 0 ]
 {
-"40
+"38
 } 0

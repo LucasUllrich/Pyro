@@ -6,14 +6,17 @@ void interrupt Isr(void) {
         PIR1bits.RCIF = 0;
         if(RCSTAbits.RX9D == 1) {
             receive_counter = 0;
-            if(received[0] == 0xFF) {       /////Needs fixing, position wrong
-                master_addressed = 1;
-            }
-        }
-        if(master_addressed == 1) {
             received[receive_counter] = Receive();
             receive_counter++;
-            if(receive_counter > 3) {
+            if(received[0] == 0xFF) {
+                master_addressed = 1;
+            } else {
+                master_addressed = 0;
+            }
+        } else if(master_addressed == 1) {
+            received[receive_counter] = Receive();
+            receive_counter++;
+            if(receive_counter > 4) {
                 receive_counter = 0;
                 master_addressed = 0;
                 if(received[2] == 'T') {

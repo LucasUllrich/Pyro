@@ -8980,7 +8980,7 @@ unsigned char display_counter = 0;
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
-void Write_Display_Byte(unsigned char write_data);
+void Write_Display_Byte(unsigned char *write_data);
 
 # 25
 unsigned char overrun = 0;
@@ -9034,18 +9034,56 @@ sl_out pin[] =
 # 108
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 3 "interrupt.c"
+# 16 "interrupt.h"
+void interrupt Isr(void);
+
+# 23
+unsigned char received[5];
+unsigned char receive_counter = 0;
+bit master_addressed = 0;
+
+# 4 "interrupt.c"
 void interrupt Isr(void) {
 if(PIR1bits.RCIF == 1) {
 PIR1bits.RCIF = 0;
-unsigned char received = 0;
-received = Receive();
-__nop();
-if(received == '1' || received == 'L') {
-PORTAbits.RA0 = 1;
-}else {
-PORTAbits.RA0 = 0;
+if(RCSTAbits.RX9D == 1) {
+receive_counter = 0;
+received[receive_counter] = Receive();
+receive_counter++;
+if(received[0] == 0xFF) {
+master_addressed = 1;
+} else {
+master_addressed = 0;
 }
+} else if(master_addressed == 1) {
+received[receive_counter] = Receive();
+receive_counter++;
+if(receive_counter > 4) {
+receive_counter = 0;
+master_addressed = 0;
+if(received[2] == 'T') {
+unsigned char search_index = 0xFF;
+unsigned char pixel_index_array = 0;
+unsigned char pixel_index_bit = 0;
+search_index = (received[1] * 10);
+search_index += received[3];
+pixel_index_array =
+pin[search_index].led_address / 8;
+pixel_index_bit =
+pin[search_index].led_address % 8;
+if(received[4] == 1){
+pixels[pixel_index_array] |=
+(1 << pixel_index_bit);
+}else if(received[4] == 0) {
+pixels[pixel_index_array] &=
+~(1 << pixel_index_bit);
+}
+}
+}
+}
+__nop();
+
+# 48
 }if(PIR1bits.CCP1IF == 1) {
 PIR1bits.CCP1IF = 0;
 current_time++;

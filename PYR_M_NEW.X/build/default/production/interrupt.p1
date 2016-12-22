@@ -13,58 +13,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S529 . . . ]
 "9057
 [v _PIR1bits `VS529 ~T0 @X0 0 e@3998 ]
+"10059
+[s S583 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S583 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"10069
+[s S584 :3 `uc 1 :1 `uc 1 ]
+[n S584 . . ADEN ]
+"10073
+[s S585 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S585 . RX9D1 OERR1 FERR1 ADDEN1 CREN1 SREN1 RX91 SPEN1 ]
+"10083
+[s S586 :6 `uc 1 :1 `uc 1 ]
+[n S586 . . RC8_9 ]
+"10087
+[s S587 :6 `uc 1 :1 `uc 1 ]
+[n S587 . . RC9 ]
+"10091
+[s S588 :1 `uc 1 ]
+[n S588 . RCD8 ]
+"10094
+[s S589 :5 `uc 1 :1 `uc 1 ]
+[n S589 . . SRENA ]
+"10058
+[u S582 `S583 1 `S584 1 `S585 1 `S586 1 `S587 1 `S588 1 `S589 1 ]
+[n S582 . . . . . . . . ]
+"10099
+[v _RCSTAbits `VS582 ~T0 @X0 0 e@4011 ]
 "17 communication.h
 [v _Receive `(uc ~T0 @X0 0 ef ]
 "43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"6272 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
-[s S397 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S397 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"6282
-[s S398 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S398 . AN0 AN1 AN2 AN3 . AN4 ]
-"6290
-[s S399 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S399 . C12IN0M C12IN1M C2INP C1INP C1OUT C2OUT ]
-"6298
-[s S400 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S400 . C12IN0N C12IN1N VREFM VREFP T0CKI SS ]
-"6306
-[s S401 :5 `uc 1 :1 `uc 1 ]
-[n S401 . . NOT_SS ]
-"6310
-[s S402 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S402 . . VREFN . SRQ nSS ]
-"6317
-[s S403 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S403 . . CVREF . CCP5 LVDIN ]
-"6324
-[s S404 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S404 . . DACOUT . HLVDIN ]
-"6330
-[s S405 :5 `uc 1 :1 `uc 1 ]
-[n S405 . . SS1 ]
-"6334
-[s S406 :5 `uc 1 :1 `uc 1 ]
-[n S406 . . NOT_SS1 ]
-"6338
-[s S407 :5 `uc 1 :1 `uc 1 ]
-[n S407 . . nSS1 ]
-"6342
-[s S408 :5 `uc 1 :1 `uc 1 ]
-[n S408 . . SRNQ ]
-"6346
-[s S409 :7 `uc 1 :1 `uc 1 ]
-[n S409 . . RJPU ]
-"6350
-[s S410 :1 `uc 1 ]
-[n S410 . ULPWUIN ]
-"6271
-[u S396 `S397 1 `S398 1 `S399 1 `S400 1 `S401 1 `S402 1 `S403 1 `S404 1 `S405 1 `S406 1 `S407 1 `S408 1 `S409 1 `S410 1 ]
-[n S396 . . . . . . . . . . . . . . . ]
-"6354
-[v _PORTAbits `VS396 ~T0 @X0 0 e@3968 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7252,7 +7231,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 30: unsigned char display_counter = 0;
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;communication.h: 18: void Write_Display_Byte(unsigned char write_data);
+[; ;communication.h: 18: void Write_Display_Byte(unsigned char *write_data);
 "25 communication.h
 [v _overrun `uc ~T0 @X0 1 e ]
 [i _overrun
@@ -7523,67 +7502,179 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.h: 81: {2, 9, 29, 48, },
 [; ;main.h: 82: };
 [; ;main.h: 108: void Delay_Routine(unsigned char delay_multiplyer);
+[; ;interrupt.h: 16: void interrupt Isr(void);
+"23 interrupt.h
+[v _received `uc ~T0 @X0 -> 5 `i e ]
+[; ;interrupt.h: 23: unsigned char received[5];
+"24
+[v _receive_counter `uc ~T0 @X0 1 e ]
+[i _receive_counter
+-> -> 0 `i `uc
+]
+[; ;interrupt.h: 24: unsigned char receive_counter = 0;
+"25
+[v _master_addressed `b ~T0 @X0 1 e ]
+[i _master_addressed
+-> 0 `i
+]
+[; ;interrupt.h: 25: bit master_addressed = 0;
 [v F7559 `(v ~T0 @X0 1 tf ]
-"3 interrupt.c
+"4 interrupt.c
 [v _Isr `IF7559 ~T0 @X0 1 e ]
 {
-[; ;interrupt.c: 3: void interrupt Isr(void) {
+[; ;interrupt.c: 4: void interrupt Isr(void) {
 [e :U _Isr ]
 [f ]
-[; ;interrupt.c: 4: if(PIR1bits.RCIF == 1) {
-"4
+[; ;interrupt.c: 5: if(PIR1bits.RCIF == 1) {
+"5
 [e $ ! == -> . . _PIR1bits 1 3 `i -> 1 `i 1107  ]
 {
-[; ;interrupt.c: 5: PIR1bits.RCIF = 0;
-"5
-[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
+[; ;interrupt.c: 6: PIR1bits.RCIF = 0;
 "6
-[v _received `uc ~T0 @X0 1 a ]
-[; ;interrupt.c: 6: unsigned char received = 0;
-[e = _received -> -> 0 `i `uc ]
-[; ;interrupt.c: 7: received = Receive();
+[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
+[; ;interrupt.c: 7: if(RCSTAbits.RX9D == 1) {
 "7
-[e = _received ( _Receive ..  ]
-[; ;interrupt.c: 8: __nop();
+[e $ ! == -> . . _RCSTAbits 0 0 `i -> 1 `i 1108  ]
+{
+[; ;interrupt.c: 8: receive_counter = 0;
 "8
-[e ( ___nop ..  ]
-[; ;interrupt.c: 9: if(received == '1' || received == 'L') {
+[e = _receive_counter -> -> 0 `i `uc ]
+[; ;interrupt.c: 9: received[receive_counter] = Receive();
 "9
-[e $ ! || == -> _received `ui -> 49 `ui == -> _received `ui -> 76 `ui 1108  ]
-{
-[; ;interrupt.c: 10: PORTAbits.RA0 = 1;
+[e = *U + &U _received * -> _receive_counter `ux -> -> # *U &U _received `ui `ux ( _Receive ..  ]
+[; ;interrupt.c: 10: receive_counter++;
 "10
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[e ++ _receive_counter -> -> 1 `i `uc ]
+[; ;interrupt.c: 11: if(received[0] == 0xFF) {
 "11
-}
-[; ;interrupt.c: 11: }else {
-[e $U 1109  ]
-[e :U 1108 ]
+[e $ ! == -> *U + &U _received * -> -> -> 0 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 255 `i 1109  ]
 {
-[; ;interrupt.c: 12: PORTAbits.RA0 = 0;
+[; ;interrupt.c: 12: master_addressed = 1;
 "12
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[e = _master_addressed -> -> 1 `i `b ]
 "13
 }
+[; ;interrupt.c: 13: } else {
+[e $U 1110  ]
 [e :U 1109 ]
-"14
-}
-[e :U 1107 ]
-[; ;interrupt.c: 13: }
-[; ;interrupt.c: 14: }if(PIR1bits.CCP1IF == 1) {
-[e $ ! == -> . . _PIR1bits 0 2 `i -> 1 `i 1110  ]
 {
-[; ;interrupt.c: 15: PIR1bits.CCP1IF = 0;
+[; ;interrupt.c: 14: master_addressed = 0;
+"14
+[e = _master_addressed -> -> 0 `i `b ]
 "15
-[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
-[; ;interrupt.c: 16: current_time++;
-"16
-[e ++ _current_time -> -> 1 `i `ui ]
-"17
 }
 [e :U 1110 ]
-[; ;interrupt.c: 17: }
-[; ;interrupt.c: 18: }
+"16
+}
+[; ;interrupt.c: 15: }
+[; ;interrupt.c: 16: } else if(master_addressed == 1) {
+[e $U 1111  ]
+[e :U 1108 ]
+[e $ ! == -> _master_addressed `i -> 1 `i 1112  ]
+{
+[; ;interrupt.c: 17: received[receive_counter] = Receive();
+"17
+[e = *U + &U _received * -> _receive_counter `ux -> -> # *U &U _received `ui `ux ( _Receive ..  ]
+[; ;interrupt.c: 18: receive_counter++;
 "18
+[e ++ _receive_counter -> -> 1 `i `uc ]
+[; ;interrupt.c: 19: if(receive_counter > 4) {
+"19
+[e $ ! > -> _receive_counter `i -> 4 `i 1113  ]
+{
+[; ;interrupt.c: 20: receive_counter = 0;
+"20
+[e = _receive_counter -> -> 0 `i `uc ]
+[; ;interrupt.c: 21: master_addressed = 0;
+"21
+[e = _master_addressed -> -> 0 `i `b ]
+[; ;interrupt.c: 22: if(received[2] == 'T') {
+"22
+[e $ ! == -> *U + &U _received * -> -> -> 2 `i `ui `ux -> -> # *U &U _received `ui `ux `ui -> 84 `ui 1114  ]
+{
+"23
+[v _search_index `uc ~T0 @X0 1 a ]
+[; ;interrupt.c: 23: unsigned char search_index = 0xFF;
+[e = _search_index -> -> 255 `i `uc ]
+"24
+[v _pixel_index_array `uc ~T0 @X0 1 a ]
+[; ;interrupt.c: 24: unsigned char pixel_index_array = 0;
+[e = _pixel_index_array -> -> 0 `i `uc ]
+"25
+[v _pixel_index_bit `uc ~T0 @X0 1 a ]
+[; ;interrupt.c: 25: unsigned char pixel_index_bit = 0;
+[e = _pixel_index_bit -> -> 0 `i `uc ]
+[; ;interrupt.c: 26: search_index = (received[1] * 10);
+"26
+[e = _search_index -> * -> *U + &U _received * -> -> -> 1 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 10 `i `uc ]
+[; ;interrupt.c: 27: search_index += received[3];
+"27
+[e =+ _search_index *U + &U _received * -> -> -> 3 `i `ui `ux -> -> # *U &U _received `ui `ux ]
+[; ;interrupt.c: 28: pixel_index_array =
+[; ;interrupt.c: 29: pin[search_index].led_address / 8;
+"29
+[e = _pixel_index_array -> / -> . *U + &U _pin * -> _search_index `ux -> -> # *U &U _pin `ui `ux 3 `i -> 8 `i `uc ]
+[; ;interrupt.c: 30: pixel_index_bit =
+[; ;interrupt.c: 31: pin[search_index].led_address % 8;
+"31
+[e = _pixel_index_bit -> % -> . *U + &U _pin * -> _search_index `ux -> -> # *U &U _pin `ui `ux 3 `i -> 8 `i `uc ]
+[; ;interrupt.c: 32: if(received[4] == 1){
+"32
+[e $ ! == -> *U + &U _received * -> -> -> 4 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 1 `i 1115  ]
+{
+[; ;interrupt.c: 33: pixels[pixel_index_array] |=
+[; ;interrupt.c: 34: (1 << pixel_index_bit);
+"34
+[e =| *U + &U _pixels * -> _pixel_index_array `ux -> -> # *U &U _pixels `ui `ux -> << -> 1 `i _pixel_index_bit `uc ]
+"35
+}
+[; ;interrupt.c: 35: }else if(received[4] == 0) {
+[e $U 1116  ]
+[e :U 1115 ]
+[e $ ! == -> *U + &U _received * -> -> -> 4 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 0 `i 1117  ]
+{
+[; ;interrupt.c: 36: pixels[pixel_index_array] &=
+[; ;interrupt.c: 37: ~(1 << pixel_index_bit);
+"37
+[e =& *U + &U _pixels * -> _pixel_index_array `ux -> -> # *U &U _pixels `ui `ux -> ~ << -> 1 `i _pixel_index_bit `uc ]
+"38
+}
+[e :U 1117 ]
+"39
+[e :U 1116 ]
+}
+[e :U 1114 ]
+"40
+}
+[e :U 1113 ]
+"41
+}
+[e :U 1112 ]
+"42
+[e :U 1111 ]
+[; ;interrupt.c: 38: }
+[; ;interrupt.c: 39: }
+[; ;interrupt.c: 40: }
+[; ;interrupt.c: 41: }
+[; ;interrupt.c: 42: __nop();
+[e ( ___nop ..  ]
+"48
+}
+[e :U 1107 ]
+[; ;interrupt.c: 48: }if(PIR1bits.CCP1IF == 1) {
+[e $ ! == -> . . _PIR1bits 0 2 `i -> 1 `i 1118  ]
+{
+[; ;interrupt.c: 49: PIR1bits.CCP1IF = 0;
+"49
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+[; ;interrupt.c: 50: current_time++;
+"50
+[e ++ _current_time -> -> 1 `i `ui ]
+"51
+}
+[e :U 1118 ]
+[; ;interrupt.c: 51: }
+[; ;interrupt.c: 52: }
+"52
 [e :UE 1106 ]
 }

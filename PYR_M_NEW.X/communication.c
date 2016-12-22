@@ -11,15 +11,13 @@
  * @param slave
  * @param trans_data
  */
-
-
 void Transmit(unsigned char slave, unsigned char trans_data) {
     Transmit_En = 1;            //Enable RS485 module
     RCSTA1bits.CREN = 0;        //Disable receive to counteract
                                 //wrong receptions (RCIF)
     NOP();                      //Debugging
     while(PIR1bits.TXIF == 0);  //Checking for a clear TXREG
-    TXSTA1bits.TX9D = 1;        //9-Bit transmission enabled
+    TXSTA1bits.TX9D = 1;        //9th-Bit transmitted as 1 -> Address
     TXREG1 = slave;             //Transmitting slave address
     while(PIR1bits.TXIF == 0);  //Checking for a clear TXREG
     TXREG1 = trans_data;        //Transmitting actual data

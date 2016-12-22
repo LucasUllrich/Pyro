@@ -8980,7 +8980,7 @@ unsigned char display_counter = 0;
 # 16 "communication.h"
 void Transmit(unsigned char slave, unsigned char trans_data);
 unsigned char Receive(void);
-void Write_Display_Byte(unsigned char write_data);
+void Write_Display_Byte(unsigned char *write_data);
 
 # 25
 unsigned char overrun = 0;
@@ -9034,7 +9034,15 @@ sl_out pin[] =
 # 108
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 15 "communication.c"
+# 16 "interrupt.h"
+void interrupt Isr(void);
+
+# 23
+unsigned char received[5];
+unsigned char receive_counter = 0;
+bit master_addressed = 0;
+
+# 14 "communication.c"
 void Transmit(unsigned char slave, unsigned char trans_data) {
 PORTBbits.RB5 = 1;
 RCSTA1bits.CREN = 0;
@@ -9058,15 +9066,17 @@ RCSTA1bits.CREN = 0;
 RCSTA1bits.CREN = 1;
 overrun = 1;
 }
-
 return (RCREG1);
 }
 
-void Write_Display_Byte(unsigned char write_data) {
+void Write_Display_Byte(unsigned char *write_data) {
+for(unsigned char counter = sizeof(pixels); counter > 0;
+counter--) {
 if(SSP1IF = 1) {
 SSP1IF = 0;
 }
-SSP1BUF = write_data;
+SSP1BUF = write_data[counter - 1];
 while (SSP1IF == 0);
 SSP1IF = 0;
+}
 }

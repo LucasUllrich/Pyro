@@ -7245,7 +7245,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 30: unsigned char display_counter = 0;
 [; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
 [; ;communication.h: 17: unsigned char Receive(void);
-[; ;communication.h: 18: void Write_Display_Byte(unsigned char write_data);
+[; ;communication.h: 18: void Write_Display_Byte(unsigned char *write_data);
 "25 communication.h
 [v _overrun `uc ~T0 @X0 1 e ]
 [i _overrun
