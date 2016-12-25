@@ -1,5 +1,28 @@
 #include "main.h"
 
+
+/**
+ * 6 Buttons are available to press
+ *  - Ignite    -> Starts the timer and ignition of the detonators
+ *  - Slave_Up  -> Increases the currently selected slave, 3 available
+ *  - Port_Up   -> Increases the currently selected port, 10 available
+ *  - Time_Up   -> Increases the time for the selected port on the
+ *                  selected slave
+ *  - Time_Down -> Decreases the time for the selected port on the
+ *                  selected slave
+ *  - Time_Upup -> Increases the time for the selected port on the
+ *                  selected slave by 10
+ * 
+ * Functions accessed by combinations
+ *  - Connection-test
+ *      Port_Up + Slave_Up
+ *      -> Tests if a connection to the detonators is available and
+ *          displays the result on the LED matrix
+ *  - Clear Storage
+ *      TimeUp + TimeDown
+ *      -> Clears the whole EEPROM register by wirting 0 to all
+ *          accessed addresses
+ */
 void Check_Buttons(void) {
     if(Ignite == 1) {
         Delay_Routine(3);

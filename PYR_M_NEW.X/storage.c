@@ -58,3 +58,12 @@ unsigned int Read_Data(unsigned char read_address) {
     data_read |= EEDATA;
     return data_read;
 }
+
+/**
+ * Initial data retrievement from storage
+ */
+void Load_Data(void) {
+    for(unsigned char counter = 0; counter < 30; counter++) {
+        pin[counter].time = Read_Data(counter);
+    }
+}

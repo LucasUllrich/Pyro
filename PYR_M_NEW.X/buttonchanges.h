@@ -23,7 +23,8 @@ void Check_Buttons(void);
 //#define COM_TEST
 unsigned char slave_selected = 0;
 unsigned char pin_selected = 0;
-bit testflag = 0;
+bit testflag = 0;                   // If set -> con. test of
+                                    // dettonators is running
 // </editor-fold>
 
 #endif	/* BUTTONCHANGES_H */

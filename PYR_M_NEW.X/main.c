@@ -85,6 +85,7 @@ void Delay_Routine(unsigned char delay_multiplyer) {
 
 void main(void) {
     Init();
+    Load_Data();
     while(1) {
         Check_Buttons();
         if(testflag == 1) {
