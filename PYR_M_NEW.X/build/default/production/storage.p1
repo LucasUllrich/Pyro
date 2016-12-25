@@ -53,6 +53,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S539 . . . . ]
 "9298
 [v _PIR2bits `VS539 ~T0 @X0 0 e@4001 ]
+"17 display.h
+[v _Evaluate_Display `(v ~T0 @X0 0 ef2`uc`*Cuc ]
+"108 main.h
+[v _Delay_Routine `(v ~T0 @X0 0 ef1`uc ]
+"19 display.h
+[v _Set_Display `(v ~T0 @X0 0 ef3`uc`uc`ui ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7221,8 +7227,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ignition.h: 24: unsigned int current_time = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
+[; ;storage.h: 18: void Load_Data(void);
+[; ;storage.h: 19: void Del_Data(void);
 [; ;display.h: 16: void Display(void);
-[; ;display.h: 17: void Evaluate_Display(unsigned char size, unsigned char *evaluate);
+[; ;display.h: 17: void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
 [; ;display.h: 18: void Evaluate_Signs(unsigned int evaluation_value);
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
@@ -7671,3 +7679,106 @@ Version 3.2 HI-TECH Software Intermediate Code
 "60
 [e :UE 1113 ]
 }
+"65
+[v _Load_Data `(v ~T0 @X0 1 ef ]
+{
+[; ;storage.c: 65: void Load_Data(void) {
+[e :U _Load_Data ]
+[f ]
+[; ;storage.c: 66: Evaluate_Display(3, "LOA");
+"66
+[e ( _Evaluate_Display (2 , -> -> 3 `i `uc :s 1C ]
+[; ;storage.c: 67: Delay_Routine(3);
+"67
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;storage.c: 68: for(unsigned char counter = 0; counter < 30; counter++) {
+"68
+{
+[v _counter `uc ~T0 @X0 1 a ]
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 30 `i 1115  ]
+[e $U 1116  ]
+[e :U 1115 ]
+{
+[; ;storage.c: 69: pin[counter].time = Read_Data(counter);
+"69
+[e = . *U + &U _pin * -> _counter `ux -> -> # *U &U _pin `ui `ux 4 -> ( _Read_Data (1 _counter `i ]
+"70
+}
+"68
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 30 `i 1115  ]
+[e :U 1116 ]
+"70
+}
+[; ;storage.c: 70: }
+[; ;storage.c: 71: slave_selected = 0;
+"71
+[e = _slave_selected -> -> 0 `i `uc ]
+[; ;storage.c: 72: pin_selected = 0;
+"72
+[e = _pin_selected -> -> 0 `i `uc ]
+[; ;storage.c: 73: Set_Display('7', 'E', pin[pin_selected].slave);
+"73
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 69 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 0 `ui ]
+[; ;storage.c: 75: Delay_Routine(20);
+"75
+[e ( _Delay_Routine (1 -> -> 20 `i `uc ]
+[; ;storage.c: 76: Set_Display('7', 'A', pin[pin_selected].output);
+"76
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 65 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 1 `ui ]
+[; ;storage.c: 77: Delay_Routine(20);
+"77
+[e ( _Delay_Routine (1 -> -> 20 `i `uc ]
+[; ;storage.c: 78: Set_Display('7', '-', pin[pin_selected].time);
+"78
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
+[; ;storage.c: 79: Delay_Routine(20);
+"79
+[e ( _Delay_Routine (1 -> -> 20 `i `uc ]
+[; ;storage.c: 80: }
+"80
+[e :UE 1114 ]
+}
+"85
+[v _Del_Data `(v ~T0 @X0 1 ef ]
+{
+[; ;storage.c: 85: void Del_Data(void) {
+[e :U _Del_Data ]
+[f ]
+[; ;storage.c: 86: Evaluate_Display(3, "DEL");
+"86
+[e ( _Evaluate_Display (2 , -> -> 3 `i `uc :s 2C ]
+[; ;storage.c: 87: Delay_Routine(3);
+"87
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;storage.c: 88: for(unsigned char counter = 0; counter < 30; counter++) {
+"88
+{
+[v _counter `uc ~T0 @X0 1 a ]
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 30 `i 1119  ]
+[e $U 1120  ]
+[e :U 1119 ]
+{
+[; ;storage.c: 89: Save_Data(0, counter);
+"89
+[e ( _Save_Data (2 , -> -> 0 `i `ui _counter ]
+"90
+}
+"88
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 30 `i 1119  ]
+[e :U 1120 ]
+"90
+}
+[; ;storage.c: 90: }
+[; ;storage.c: 91: Load_Data();
+"91
+[e ( _Load_Data ..  ]
+[; ;storage.c: 92: }
+"92
+[e :UE 1118 ]
+}
+[a 2C 68 69 76 0 ]
+[a 1C 76 79 65 0 ]

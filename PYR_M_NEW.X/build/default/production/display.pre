@@ -8964,10 +8964,12 @@ unsigned int current_time = 0;
 # 16 "storage.h"
 void Save_Data(unsigned int store, unsigned char store_address);
 unsigned int Read_Data(unsigned char read_address);
+void Load_Data(void);
+void Del_Data(void);
 
 # 16 "display.h"
 void Display(void);
-void Evaluate_Display(unsigned char size, unsigned char *evaluate);
+void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
 void Evaluate_Signs(unsigned int evaluation_value);
 void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
@@ -9069,7 +9071,7 @@ pixels[display_counter] = Bitoutput;
 }
 
 # 52
-void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
+void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
 for(display_counter = 0; display_counter < size;
 display_counter++) {
 switch (evaluate[display_counter]) {
@@ -9109,6 +9111,15 @@ break;
 case 'A':
 Set_Bits("ABCEFG");
 break;
+case 'D':
+Set_Bits("ABCDEF");
+break;
+case 'O':
+Set_Bits("ABCDEF");
+break;
+case 'L':
+Set_Bits("DEF");
+break;
 case '-':
 Set_Bits("G");
 break;
@@ -9118,7 +9129,7 @@ Set_Bits(0);
 }
 }
 
-# 106
+# 115
 void Evaluate_Signs(unsigned int evaluation_value) {
 for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
 valuecounter++) {
@@ -9130,7 +9141,7 @@ __nop();
 Evaluate_Display(sizeof(signs), signs);
 }
 
-# 126
+# 135
 void Set_Display(unsigned char type, unsigned char information,
 unsigned int value) {
 switch (type) {

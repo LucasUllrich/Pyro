@@ -8964,10 +8964,12 @@ unsigned int current_time = 0;
 # 16 "storage.h"
 void Save_Data(unsigned int store, unsigned char store_address);
 unsigned int Read_Data(unsigned char read_address);
+void Load_Data(void);
+void Del_Data(void);
 
 # 16 "display.h"
 void Display(void);
-void Evaluate_Display(unsigned char size, unsigned char *evaluate);
+void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
 void Evaluate_Signs(unsigned int evaluation_value);
 void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
@@ -9034,7 +9036,7 @@ sl_out pin[] =
 # 108
 void Delay_Routine(unsigned char delay_multiplyer);
 
-# 3 "buttonchanges.c"
+# 26 "buttonchanges.c"
 void Check_Buttons(void) {
 if(PORTCbits.RC1 == 1) {
 Delay_Routine(3);
@@ -9048,6 +9050,14 @@ return;
 } else if(PORTBbits.RB2 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB2 == 1) {
+if(PORTBbits.RB3 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB3 == 1) {
+Del_Data();
+return;
+
+}
+}
 pin[pin_selected].time++;
 if(pin[pin_selected].time > 999) {
 pin[pin_selected].time = 0;
@@ -9059,6 +9069,14 @@ __nop();
 } else if(PORTBbits.RB3 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB3 == 1) {
+if(PORTBbits.RB2 == 1) {
+Delay_Routine(3);
+if(PORTBbits.RB2 == 1) {
+Del_Data();
+return;
+
+}
+}
 pin[pin_selected].time--;
 if(pin[pin_selected].time < 0) {
 pin[pin_selected].time = 999;
@@ -9085,6 +9103,8 @@ if(PORTBbits.RB0 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB0 == 1) {
 testflag = 1;
+return;
+
 }
 }
 Save_Data(pin[pin_selected].time, pin[pin_selected].address);
@@ -9121,6 +9141,8 @@ if(PORTBbits.RB1 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB1 == 1) {
 testflag = 1;
+return;
+
 }
 }
 Save_Data(pin[pin_selected].time, pin[pin_selected].address);

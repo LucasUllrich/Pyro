@@ -49,7 +49,7 @@ void Set_Bits(const unsigned char *bits) {
  * @param size      number of segments (7-segment)
  * @param evaluate  Value that should be displayed as pointer on array
  */
-void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
+void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
     for(display_counter = 0; display_counter < size;
             display_counter++) {
         switch (evaluate[display_counter]) {
@@ -88,6 +88,15 @@ void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
                 break;
             case 'A':
                 Set_Bits("ABCEFG");
+                break;
+            case 'D':
+                Set_Bits("ABCDEF");
+                break;
+            case 'O':
+                Set_Bits("ABCDEF");
+                break;
+            case 'L':
+                Set_Bits("DEF");
                 break;
             case '-':
                 Set_Bits("G");

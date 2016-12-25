@@ -2,8 +2,8 @@
 
 /**
  * 
- * @param store
- * @param store_address
+ * @param store         Data to be stored
+ * @param store_address Address where the data should be stored
  */
 void Save_Data(unsigned int store, 
             unsigned char store_address) {
@@ -63,7 +63,30 @@ unsigned int Read_Data(unsigned char read_address) {
  * Initial data retrievement from storage
  */
 void Load_Data(void) {
+    Evaluate_Display(3, "LOA");
+    Delay_Routine(3);
     for(unsigned char counter = 0; counter < 30; counter++) {
         pin[counter].time = Read_Data(counter);
     }
+    slave_selected = 0;
+    pin_selected = 0;
+    Set_Display('7', 'E', pin[pin_selected].slave);
+    //Displays 'E' = Empfänger and selected receiver
+    Delay_Routine(20);
+    Set_Display('7', 'A', pin[pin_selected].output);
+    Delay_Routine(20);
+    Set_Display('7', '-', pin[pin_selected].time);
+    Delay_Routine(20);
+}
+
+/**
+ * Erasing data from the storage to get a fresh start at 0
+ */
+void Del_Data(void) {
+    Evaluate_Display(3, "DEL");
+    Delay_Routine(3);
+    for(unsigned char counter = 0; counter < 30; counter++) {
+        Save_Data(0, counter);
+    }
+    Load_Data();
 }

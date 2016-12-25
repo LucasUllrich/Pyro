@@ -36,6 +36,14 @@ void Check_Buttons(void) {
     } else if(Time_Up == 1) {
         Delay_Routine(3);
         if(Time_Up == 1) {
+            if(Time_Down == 1) {
+                Delay_Routine(3);
+                if(Time_Down == 1) {
+                    Del_Data();
+                    return;             // End of function due to other
+                                        // desired operation
+                }
+            }
             pin[pin_selected].time++;
             if(pin[pin_selected].time > 999) {
                 pin[pin_selected].time = 0;
@@ -47,6 +55,14 @@ void Check_Buttons(void) {
     } else if(Time_Down == 1) {
         Delay_Routine(3);
         if(Time_Down == 1) {
+            if(Time_Up == 1) {
+                Delay_Routine(3);
+                if(Time_Up == 1) {
+                    Del_Data();
+                    return;             // End of function due to other
+                                        // desired operation
+                }
+            }
             pin[pin_selected].time--;
             if(pin[pin_selected].time < 0) {
                 pin[pin_selected].time = 999;
@@ -73,6 +89,8 @@ void Check_Buttons(void) {
                 Delay_Routine(3);
                 if(Slave_Up == 1) {
                     testflag = 1;
+                    return;             // End of function due to other
+                                        // desired operation
                 }
             }
             Save_Data(pin[pin_selected].time, pin[pin_selected].address);
@@ -109,6 +127,8 @@ void Check_Buttons(void) {
                 Delay_Routine(3);
                 if(Port_Up == 1) {
                     testflag = 1;
+                    return;             // End of function due to other
+                                        // desired operation
                 }
             }
             Save_Data(pin[pin_selected].time, pin[pin_selected].address);
