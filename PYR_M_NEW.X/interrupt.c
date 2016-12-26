@@ -8,7 +8,7 @@ void interrupt Isr(void) {
             receive_counter = 0;
             received[receive_counter] = Receive();
             receive_counter++;
-            if(received[0] == 0xFF) {
+            if(received[0] == 0xAA) {
                 master_addressed = 1;
             } else {
                 master_addressed = 0;
@@ -23,8 +23,10 @@ void interrupt Isr(void) {
                     unsigned char search_index = 0xFF;
                     unsigned char pixel_index_array = 0;
                     unsigned char pixel_index_bit = 0;
-                    search_index = (received[1] * 10);
-                    search_index += received[3];
+                    search_index = (received[1] * 10);  
+                            // To address the slave
+                    search_index += received[3];        
+                            // To address the port
                     pixel_index_array = 
                             pin[search_index].led_address / 8;
                     pixel_index_bit = 
@@ -48,5 +50,6 @@ void interrupt Isr(void) {
     }if(PIR1bits.CCP1IF == 1) {
         PIR1bits.CCP1IF = 0;
         current_time++;
+        Check_Detonators();
     }
 }

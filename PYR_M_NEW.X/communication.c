@@ -8,23 +8,29 @@
  * 
  * One routine for the reception, receiving only one byte and the
  *  possibillity to react on an overrun.
- * @param slave
- * @param trans_data
+ * @param slave         contains the address of the recepient
+ * @param trans_data0   
+ * @param trans_data1
  */
-void Transmit(unsigned char slave, unsigned char trans_data) {
-    Transmit_En = 1;            //Enable RS485 module
-    RCSTA1bits.CREN = 0;        //Disable receive to counteract
-                                //wrong receptions (RCIF)
-    NOP();                      //Debugging
-    while(PIR1bits.TXIF == 0);  //Checking for a clear TXREG
-    TXSTA1bits.TX9D = 1;        //9th-Bit transmitted as 1 -> Address
-    TXREG1 = slave;             //Transmitting slave address
-    while(PIR1bits.TXIF == 0);  //Checking for a clear TXREG
-    TXREG1 = trans_data;        //Transmitting actual data
-    while(TXSTA1bits.TRMT == 0);//Checking for a clear TSR
-    Transmit_En = 0;            //Disable RS485 module for transmission
-    RCSTA1bits.CREN = 1;        //Enabling receiver again
-    NOP();                      //Debugging
+void Transmit(unsigned char receiver, unsigned char operation, 
+        unsigned char port) {
+    Transmit_En = 1;             //Enable RS485 module
+    RCSTA1bits.CREN = 0;         //Disable receive to counteract
+                                 //wrong receptions (RCIF)
+    NOP();                       //Debugging
+    while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG
+    TXSTA1bits.TX9D = 1;         //9th-Bit transmitted as 1 -> Address
+    TXREG1 = receiver;              //Transmitting slave address
+    while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG
+    TXREG1 = TRANSMITTER;        //Transmitting actual data
+    while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG    
+    TXREG1 = operation;        //Transmitting actual data
+    while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG    
+    TXREG1 = port;        //Transmitting actual data
+    while(TXSTA1bits.TRMT == 0); //Checking for a clear TSR    
+    Transmit_En = 0;             //Disable RS485 module for transmission
+    RCSTA1bits.CREN = 1;         //Enabling receiver again
+    NOP();                       //Debugging
 }
 
 

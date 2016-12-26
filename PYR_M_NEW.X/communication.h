@@ -13,7 +13,8 @@
  * Functionprototypes
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
-void Transmit(unsigned char slave, unsigned char trans_data);
+void Transmit(unsigned char receiver, unsigned char operation, 
+        unsigned char port);
 unsigned char Receive(void);
 void Write_Display_Byte(unsigned char *write_data);
 // </editor-fold>

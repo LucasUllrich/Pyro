@@ -23,5 +23,9 @@ void Timer_Count(void) {
 }
 
 void Check_Detonators(void) {
-    
+    for(unsigned char counter = 0; counter < 30; counter++) {
+        if(pin[counter].time == current_time) {
+            Transmit(pin[counter].slave, 'I', pin[counter].output);
+        }
+    }
 }

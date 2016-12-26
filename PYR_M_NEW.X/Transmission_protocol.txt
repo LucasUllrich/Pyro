@@ -7,7 +7,7 @@ Byte Zero:
 
 First Byte:
     Transmitter
-        0xFF: Master
+        0xAA Master
         0x00: Slave 1
         0x01: Slave 2
         0x02: Slave 3
