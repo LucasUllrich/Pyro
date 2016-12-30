@@ -20,6 +20,18 @@ void Timer_Count(void) {
     T3CONbits.TMR3ON = 1;
     T1CONbits.TMR1ON = 0;
     /* 1 s is now signaled by an interrupt of the compare unit! */
+    
+    TMR1L = 0;
+    TMR1H = 0;
+    TMR3L = 0;
+    TMR3H = 0;
+    PIR1bits.TMR1IF = 0;
+    PIR2bits.TMR3IF = 0;
+    T1CONbits.TMR1ON = 1;           //Starting first period
+    
+    while(PIR1bits.TMR1IF == 0);    //Polling till TMR1 runs over
+    T3CONbits.TMR3ON = 1;
+    /* 1 s is now signaled by an interrupt of the compare unit! */
 }
 
 void Check_Detonators(void) {

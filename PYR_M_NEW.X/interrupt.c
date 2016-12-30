@@ -2,6 +2,14 @@
 #include "interrupt.h"
 
 void interrupt Isr(void) {
+    if(PIR1bits.CCP1IF == 1) {
+        PIR1bits.CCP1IF = 0;
+        current_time++;
+        Check_Detonators();
+    }if(PIR1bits.TMR1IF == 1) {
+        T3CONbits.TMR3ON = 1;
+        T1CONbits.TMR1ON = 0;
+    }
     if(PIR1bits.RCIF == 1) {
         PIR1bits.RCIF = 0;
         if(RCSTAbits.RX9D == 1) {
@@ -47,9 +55,5 @@ void interrupt Isr(void) {
 //        }else {
 //            Led = 0;
 //        }
-    }if(PIR1bits.CCP1IF == 1) {
-        PIR1bits.CCP1IF = 0;
-        current_time++;
-        Check_Detonators();
     }
 }
