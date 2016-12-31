@@ -63,8 +63,7 @@ void InitTimer(void) {
     T3CONbits.T3CKPS = 0b11;    //Prescaler 1:8
     T3CONbits.nT3SYNC = 0;      //Synchron
 //Comp1
-    CCP1CONbits.CCP1M = 0b1011; //Software interrupt, special event
-                                    // -> TMR3 cleared
+    CCP1CONbits.CCP1M = 0b1010; //Software interrupt, no special event
     CCPTMRS0bits.C1TSEL = 0b01; //TMR3 as source
     CCPR1L = 72;                //Setting values for second timing
     CCPR1H = 232;                   //period

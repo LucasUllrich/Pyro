@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"41 main.h
+"42 main.h
 [s S1105 `uc 1 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address led_address time ]
 "6936 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
@@ -37,8 +37,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S422 . . . . . . . . . . . ]
 "7014
 [v _PORTCbits `VS422 ~T0 @X0 0 e@3970 ]
-"108 main.h
+"109 main.h
 [v _Delay_Routine `(v ~T0 @X0 0 ef1`uc ]
+"16 ignition.h
+[v _Start_Timer `(v ~T0 @X0 0 ef ]
 "43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -7243,14 +7245,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;buttonchanges.h: 26: bit testflag = 0;
-[; ;ignition.h: 16: void Timer_Count(void);
+[; ;ignition.h: 16: void Start_Timer(void);
 [; ;ignition.h: 17: void Check_Detonators(void);
-"24 ignition.h
+[; ;ignition.h: 18: void Ignite_Detonators(void);
+"25 ignition.h
 [v _current_time `ui ~T0 @X0 1 e ]
 [i _current_time
 -> -> 0 `i `ui
 ]
-[; ;ignition.h: 24: unsigned int current_time = 0;
+[; ;ignition.h: 25: unsigned int current_time = 0;
+"26
+[v _check_counter `uc ~T0 @X0 1 e ]
+[i _check_counter
+-> -> 0 `i `uc
+]
+[; ;ignition.h: 26: unsigned char check_counter = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;storage.h: 18: void Load_Data(void);
@@ -7272,238 +7281,239 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;display.h: 30: unsigned char display_counter = 0;
-[; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
-[; ;communication.h: 17: unsigned char Receive(void);
-[; ;communication.h: 18: void Write_Display_Byte(unsigned char *write_data);
-"25 communication.h
+[; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.h: 17: unsigned char port);
+[; ;communication.h: 18: unsigned char Receive(void);
+[; ;communication.h: 19: void Write_Display_Byte(unsigned char *write_data);
+"26 communication.h
 [v _overrun `uc ~T0 @X0 1 e ]
 [i _overrun
 -> -> 0 `i `uc
 ]
-[; ;communication.h: 25: unsigned char overrun = 0;
-"39 main.h
+[; ;communication.h: 26: unsigned char overrun = 0;
+"40 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready
 -> 0 `i
 ]
-[; ;main.h: 39: bit ignite_ready = 0;
-[; ;main.h: 41: typedef struct Slave_Output
-[; ;main.h: 42: {
-[; ;main.h: 43: unsigned char slave;
-[; ;main.h: 44: unsigned char output;
-[; ;main.h: 45: unsigned char address;
-[; ;main.h: 46: unsigned char led_address;
-[; ;main.h: 47: signed int time;
-[; ;main.h: 48: }sl_out;
-"50
+[; ;main.h: 40: bit ignite_ready = 0;
+[; ;main.h: 42: typedef struct Slave_Output
+[; ;main.h: 43: {
+[; ;main.h: 44: unsigned char slave;
+[; ;main.h: 45: unsigned char output;
+[; ;main.h: 46: unsigned char address;
+[; ;main.h: 47: unsigned char led_address;
+[; ;main.h: 48: signed int time;
+[; ;main.h: 49: }sl_out;
+"51
 [v _pin `S1105 ~T0 @X0 -> 0 `x e ]
 [i _pin
 :U ..
 :U ..
-"52
+"53
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 31 `i `uc
 ..
 :U ..
-"53
+"54
 -> -> 0 `i `uc
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 30 `i `uc
 ..
 :U ..
-"54
+"55
 -> -> 0 `i `uc
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 29 `i `uc
 ..
 :U ..
-"55
+"56
 -> -> 0 `i `uc
 -> -> 3 `i `uc
 -> -> 3 `i `uc
 -> -> 28 `i `uc
 ..
 :U ..
-"56
+"57
 -> -> 0 `i `uc
 -> -> 4 `i `uc
 -> -> 4 `i `uc
 -> -> 27 `i `uc
 ..
 :U ..
-"57
+"58
 -> -> 0 `i `uc
 -> -> 5 `i `uc
 -> -> 5 `i `uc
 -> -> 26 `i `uc
 ..
 :U ..
-"58
+"59
 -> -> 0 `i `uc
 -> -> 6 `i `uc
 -> -> 6 `i `uc
 -> -> 25 `i `uc
 ..
 :U ..
-"59
+"60
 -> -> 0 `i `uc
 -> -> 7 `i `uc
 -> -> 7 `i `uc
 -> -> 24 `i `uc
 ..
 :U ..
-"60
+"61
 -> -> 0 `i `uc
 -> -> 8 `i `uc
 -> -> 8 `i `uc
 -> -> 39 `i `uc
 ..
 :U ..
-"61
+"62
 -> -> 0 `i `uc
 -> -> 9 `i `uc
 -> -> 9 `i `uc
 -> -> 38 `i `uc
 ..
 :U ..
-"62
+"63
 -> -> 1 `i `uc
 -> -> 0 `i `uc
 -> -> 10 `i `uc
 -> -> 37 `i `uc
 ..
 :U ..
-"63
+"64
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 11 `i `uc
 -> -> 36 `i `uc
 ..
 :U ..
-"64
+"65
 -> -> 1 `i `uc
 -> -> 2 `i `uc
 -> -> 12 `i `uc
 -> -> 35 `i `uc
 ..
 :U ..
-"65
+"66
 -> -> 1 `i `uc
 -> -> 3 `i `uc
 -> -> 13 `i `uc
 -> -> 34 `i `uc
 ..
 :U ..
-"66
+"67
 -> -> 1 `i `uc
 -> -> 4 `i `uc
 -> -> 14 `i `uc
 -> -> 33 `i `uc
 ..
 :U ..
-"67
+"68
 -> -> 1 `i `uc
 -> -> 5 `i `uc
 -> -> 15 `i `uc
 -> -> 32 `i `uc
 ..
 :U ..
-"68
+"69
 -> -> 1 `i `uc
 -> -> 6 `i `uc
 -> -> 16 `i `uc
 -> -> 47 `i `uc
 ..
 :U ..
-"69
+"70
 -> -> 1 `i `uc
 -> -> 7 `i `uc
 -> -> 17 `i `uc
 -> -> 46 `i `uc
 ..
 :U ..
-"70
+"71
 -> -> 1 `i `uc
 -> -> 8 `i `uc
 -> -> 18 `i `uc
 -> -> 45 `i `uc
 ..
 :U ..
-"71
+"72
 -> -> 1 `i `uc
 -> -> 9 `i `uc
 -> -> 19 `i `uc
 -> -> 44 `i `uc
 ..
 :U ..
-"72
+"73
 -> -> 2 `i `uc
 -> -> 0 `i `uc
 -> -> 20 `i `uc
 -> -> 43 `i `uc
 ..
 :U ..
-"73
+"74
 -> -> 2 `i `uc
 -> -> 1 `i `uc
 -> -> 21 `i `uc
 -> -> 42 `i `uc
 ..
 :U ..
-"74
+"75
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 22 `i `uc
 -> -> 41 `i `uc
 ..
 :U ..
-"75
+"76
 -> -> 2 `i `uc
 -> -> 3 `i `uc
 -> -> 23 `i `uc
 -> -> 40 `i `uc
 ..
 :U ..
-"76
+"77
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> 24 `i `uc
 -> -> 53 `i `uc
 ..
 :U ..
-"77
+"78
 -> -> 2 `i `uc
 -> -> 5 `i `uc
 -> -> 25 `i `uc
 -> -> 52 `i `uc
 ..
 :U ..
-"78
+"79
 -> -> 2 `i `uc
 -> -> 6 `i `uc
 -> -> 26 `i `uc
 -> -> 51 `i `uc
 ..
 :U ..
-"79
+"80
 -> -> 2 `i `uc
 -> -> 7 `i `uc
 -> -> 27 `i `uc
 -> -> 50 `i `uc
 ..
 :U ..
-"80
+"81
 -> -> 2 `i `uc
 -> -> 8 `i `uc
 -> -> 28 `i `uc
 -> -> 49 `i `uc
 ..
 :U ..
-"81
+"82
 -> -> 2 `i `uc
 -> -> 9 `i `uc
 -> -> 29 `i `uc
@@ -7511,40 +7521,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;main.h: 50: sl_out pin[] =
-[; ;main.h: 51: {
-[; ;main.h: 52: {0, 0, 0, 31, },
-[; ;main.h: 53: {0, 1, 1, 30, },
-[; ;main.h: 54: {0, 2, 2, 29, },
-[; ;main.h: 55: {0, 3, 3, 28, },
-[; ;main.h: 56: {0, 4, 4, 27, },
-[; ;main.h: 57: {0, 5, 5, 26, },
-[; ;main.h: 58: {0, 6, 6, 25, },
-[; ;main.h: 59: {0, 7, 7, 24, },
-[; ;main.h: 60: {0, 8, 8, 39, },
-[; ;main.h: 61: {0, 9, 9, 38, },
-[; ;main.h: 62: {1, 0, 10, 37, },
-[; ;main.h: 63: {1, 1, 11, 36, },
-[; ;main.h: 64: {1, 2, 12, 35, },
-[; ;main.h: 65: {1, 3, 13, 34, },
-[; ;main.h: 66: {1, 4, 14, 33, },
-[; ;main.h: 67: {1, 5, 15, 32, },
-[; ;main.h: 68: {1, 6, 16, 47, },
-[; ;main.h: 69: {1, 7, 17, 46, },
-[; ;main.h: 70: {1, 8, 18, 45, },
-[; ;main.h: 71: {1, 9, 19, 44, },
-[; ;main.h: 72: {2, 0, 20, 43, },
-[; ;main.h: 73: {2, 1, 21, 42, },
-[; ;main.h: 74: {2, 2, 22, 41, },
-[; ;main.h: 75: {2, 3, 23, 40, },
-[; ;main.h: 76: {2, 4, 24, 53, },
-[; ;main.h: 77: {2, 5, 25, 52, },
-[; ;main.h: 78: {2, 6, 26, 51, },
-[; ;main.h: 79: {2, 7, 27, 50, },
-[; ;main.h: 80: {2, 8, 28, 49, },
-[; ;main.h: 81: {2, 9, 29, 48, },
-[; ;main.h: 82: };
-[; ;main.h: 108: void Delay_Routine(unsigned char delay_multiplyer);
+[; ;main.h: 51: sl_out pin[] =
+[; ;main.h: 52: {
+[; ;main.h: 53: {0, 0, 0, 31, },
+[; ;main.h: 54: {0, 1, 1, 30, },
+[; ;main.h: 55: {0, 2, 2, 29, },
+[; ;main.h: 56: {0, 3, 3, 28, },
+[; ;main.h: 57: {0, 4, 4, 27, },
+[; ;main.h: 58: {0, 5, 5, 26, },
+[; ;main.h: 59: {0, 6, 6, 25, },
+[; ;main.h: 60: {0, 7, 7, 24, },
+[; ;main.h: 61: {0, 8, 8, 39, },
+[; ;main.h: 62: {0, 9, 9, 38, },
+[; ;main.h: 63: {1, 0, 10, 37, },
+[; ;main.h: 64: {1, 1, 11, 36, },
+[; ;main.h: 65: {1, 2, 12, 35, },
+[; ;main.h: 66: {1, 3, 13, 34, },
+[; ;main.h: 67: {1, 4, 14, 33, },
+[; ;main.h: 68: {1, 5, 15, 32, },
+[; ;main.h: 69: {1, 6, 16, 47, },
+[; ;main.h: 70: {1, 7, 17, 46, },
+[; ;main.h: 71: {1, 8, 18, 45, },
+[; ;main.h: 72: {1, 9, 19, 44, },
+[; ;main.h: 73: {2, 0, 20, 43, },
+[; ;main.h: 74: {2, 1, 21, 42, },
+[; ;main.h: 75: {2, 2, 22, 41, },
+[; ;main.h: 76: {2, 3, 23, 40, },
+[; ;main.h: 77: {2, 4, 24, 53, },
+[; ;main.h: 78: {2, 5, 25, 52, },
+[; ;main.h: 79: {2, 6, 26, 51, },
+[; ;main.h: 80: {2, 7, 27, 50, },
+[; ;main.h: 81: {2, 8, 28, 49, },
+[; ;main.h: 82: {2, 9, 29, 48, },
+[; ;main.h: 83: };
+[; ;main.h: 109: void Delay_Routine(unsigned char delay_multiplyer);
 "26 buttonchanges.c
 [v _Check_Buttons `(v ~T0 @X0 1 ef ]
 {
@@ -7565,426 +7575,429 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;buttonchanges.c: 30: ignite_ready = 1;
 "30
 [e = _ignite_ready -> -> 1 `i `b ]
-[; ;buttonchanges.c: 31: __nop();
+[; ;buttonchanges.c: 31: Start_Timer();
 "31
-[e ( ___nop ..  ]
-[; ;buttonchanges.c: 32: return;
+[e ( _Start_Timer ..  ]
+[; ;buttonchanges.c: 32: __nop();
 "32
+[e ( ___nop ..  ]
+[; ;buttonchanges.c: 33: return;
+"33
 [e $UE 1106  ]
-"35
-}
-[e :U 1108 ]
 "36
 }
-[; ;buttonchanges.c: 35: }
-[; ;buttonchanges.c: 36: } else if(PORTBbits.RB2 == 1) {
+[e :U 1108 ]
+"37
+}
+[; ;buttonchanges.c: 36: }
+[; ;buttonchanges.c: 37: } else if(PORTBbits.RB2 == 1) {
 [e $U 1109  ]
 [e :U 1107 ]
 [e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 1110  ]
 {
-[; ;buttonchanges.c: 37: Delay_Routine(3);
-"37
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 38: if(PORTBbits.RB2 == 1) {
+[; ;buttonchanges.c: 38: Delay_Routine(3);
 "38
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 39: if(PORTBbits.RB2 == 1) {
+"39
 [e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 1111  ]
 {
-[; ;buttonchanges.c: 39: if(PORTBbits.RB3 == 1) {
-"39
+[; ;buttonchanges.c: 40: if(PORTBbits.RB3 == 1) {
+"40
 [e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1112  ]
 {
-[; ;buttonchanges.c: 40: Delay_Routine(3);
-"40
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 41: if(PORTBbits.RB3 == 1) {
+[; ;buttonchanges.c: 41: Delay_Routine(3);
 "41
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 42: if(PORTBbits.RB3 == 1) {
+"42
 [e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1113  ]
 {
-[; ;buttonchanges.c: 42: Del_Data();
-"42
-[e ( _Del_Data ..  ]
-[; ;buttonchanges.c: 43: return;
+[; ;buttonchanges.c: 43: Del_Data();
 "43
+[e ( _Del_Data ..  ]
+[; ;buttonchanges.c: 44: return;
+"44
 [e $UE 1106  ]
-"45
-}
-[e :U 1113 ]
 "46
 }
-[e :U 1112 ]
-[; ;buttonchanges.c: 45: }
-[; ;buttonchanges.c: 46: }
-[; ;buttonchanges.c: 47: pin[pin_selected].time++;
+[e :U 1113 ]
 "47
-[e ++ . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 1 `i ]
-[; ;buttonchanges.c: 48: if(pin[pin_selected].time > 999) {
+}
+[e :U 1112 ]
+[; ;buttonchanges.c: 46: }
+[; ;buttonchanges.c: 47: }
+[; ;buttonchanges.c: 48: pin[pin_selected].time++;
 "48
+[e ++ . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 1 `i ]
+[; ;buttonchanges.c: 49: if(pin[pin_selected].time > 999) {
+"49
 [e $ ! > . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 999 `i 1114  ]
 {
-[; ;buttonchanges.c: 49: pin[pin_selected].time = 0;
-"49
-[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 0 `i ]
+[; ;buttonchanges.c: 50: pin[pin_selected].time = 0;
 "50
+[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 0 `i ]
+"51
 }
 [e :U 1114 ]
-[; ;buttonchanges.c: 50: }
-[; ;buttonchanges.c: 51: __nop();
-"51
-[e ( ___nop ..  ]
-[; ;buttonchanges.c: 52: Set_Display('7', '-', pin[pin_selected].time);
+[; ;buttonchanges.c: 51: }
+[; ;buttonchanges.c: 52: __nop();
 "52
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
-[; ;buttonchanges.c: 53: __nop();
-"53
 [e ( ___nop ..  ]
+[; ;buttonchanges.c: 53: Set_Display('7', '-', pin[pin_selected].time);
+"53
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
+[; ;buttonchanges.c: 54: __nop();
 "54
-}
-[e :U 1111 ]
+[e ( ___nop ..  ]
 "55
 }
-[; ;buttonchanges.c: 54: }
-[; ;buttonchanges.c: 55: } else if(PORTBbits.RB3 == 1) {
+[e :U 1111 ]
+"56
+}
+[; ;buttonchanges.c: 55: }
+[; ;buttonchanges.c: 56: } else if(PORTBbits.RB3 == 1) {
 [e $U 1115  ]
 [e :U 1110 ]
 [e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1116  ]
 {
-[; ;buttonchanges.c: 56: Delay_Routine(3);
-"56
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 57: if(PORTBbits.RB3 == 1) {
+[; ;buttonchanges.c: 57: Delay_Routine(3);
 "57
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 58: if(PORTBbits.RB3 == 1) {
+"58
 [e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1117  ]
 {
-[; ;buttonchanges.c: 58: if(PORTBbits.RB2 == 1) {
-"58
+[; ;buttonchanges.c: 59: if(PORTBbits.RB2 == 1) {
+"59
 [e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 1118  ]
 {
-[; ;buttonchanges.c: 59: Delay_Routine(3);
-"59
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 60: if(PORTBbits.RB2 == 1) {
+[; ;buttonchanges.c: 60: Delay_Routine(3);
 "60
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 61: if(PORTBbits.RB2 == 1) {
+"61
 [e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 1119  ]
 {
-[; ;buttonchanges.c: 61: Del_Data();
-"61
-[e ( _Del_Data ..  ]
-[; ;buttonchanges.c: 62: return;
+[; ;buttonchanges.c: 62: Del_Data();
 "62
+[e ( _Del_Data ..  ]
+[; ;buttonchanges.c: 63: return;
+"63
 [e $UE 1106  ]
-"64
-}
-[e :U 1119 ]
 "65
 }
-[e :U 1118 ]
-[; ;buttonchanges.c: 64: }
-[; ;buttonchanges.c: 65: }
-[; ;buttonchanges.c: 66: pin[pin_selected].time--;
+[e :U 1119 ]
 "66
-[e -- . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 1 `i ]
-[; ;buttonchanges.c: 67: if(pin[pin_selected].time < 0) {
+}
+[e :U 1118 ]
+[; ;buttonchanges.c: 65: }
+[; ;buttonchanges.c: 66: }
+[; ;buttonchanges.c: 67: pin[pin_selected].time--;
 "67
+[e -- . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 1 `i ]
+[; ;buttonchanges.c: 68: if(pin[pin_selected].time < 0) {
+"68
 [e $ ! < . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 0 `i 1120  ]
 {
-[; ;buttonchanges.c: 68: pin[pin_selected].time = 999;
-"68
-[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 999 `i ]
+[; ;buttonchanges.c: 69: pin[pin_selected].time = 999;
 "69
+[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 999 `i ]
+"70
 }
 [e :U 1120 ]
-[; ;buttonchanges.c: 69: }
-[; ;buttonchanges.c: 70: __nop();
-"70
-[e ( ___nop ..  ]
-[; ;buttonchanges.c: 71: Set_Display('7', '-', pin[pin_selected].time);
+[; ;buttonchanges.c: 70: }
+[; ;buttonchanges.c: 71: __nop();
 "71
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
-[; ;buttonchanges.c: 72: __nop();
-"72
 [e ( ___nop ..  ]
+[; ;buttonchanges.c: 72: Set_Display('7', '-', pin[pin_selected].time);
+"72
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
+[; ;buttonchanges.c: 73: __nop();
 "73
-}
-[e :U 1117 ]
+[e ( ___nop ..  ]
 "74
 }
-[; ;buttonchanges.c: 73: }
-[; ;buttonchanges.c: 74: } else if(PORTBbits.RB4 == 1) {
+[e :U 1117 ]
+"75
+}
+[; ;buttonchanges.c: 74: }
+[; ;buttonchanges.c: 75: } else if(PORTBbits.RB4 == 1) {
 [e $U 1121  ]
 [e :U 1116 ]
 [e $ ! == -> . . _PORTBbits 0 4 `i -> 1 `i 1122  ]
 {
-[; ;buttonchanges.c: 75: Delay_Routine(3);
-"75
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 76: if(PORTBbits.RB4 == 1) {
+[; ;buttonchanges.c: 76: Delay_Routine(3);
 "76
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 77: if(PORTBbits.RB4 == 1) {
+"77
 [e $ ! == -> . . _PORTBbits 0 4 `i -> 1 `i 1123  ]
 {
-[; ;buttonchanges.c: 77: pin[pin_selected].time += 10;
-"77
-[e =+ . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 10 `i ]
-[; ;buttonchanges.c: 78: if(pin[pin_selected].time > 999) {
+[; ;buttonchanges.c: 78: pin[pin_selected].time += 10;
 "78
+[e =+ . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 10 `i ]
+[; ;buttonchanges.c: 79: if(pin[pin_selected].time > 999) {
+"79
 [e $ ! > . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 999 `i 1124  ]
 {
-[; ;buttonchanges.c: 79: pin[pin_selected].time = 0;
-"79
-[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 0 `i ]
+[; ;buttonchanges.c: 80: pin[pin_selected].time = 0;
 "80
+[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> 0 `i ]
+"81
 }
 [e :U 1124 ]
-[; ;buttonchanges.c: 80: }
-[; ;buttonchanges.c: 81: __nop();
-"81
-[e ( ___nop ..  ]
-[; ;buttonchanges.c: 82: Set_Display('7', '-', pin[pin_selected].time);
+[; ;buttonchanges.c: 81: }
+[; ;buttonchanges.c: 82: __nop();
 "82
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
-[; ;buttonchanges.c: 83: __nop();
-"83
 [e ( ___nop ..  ]
+[; ;buttonchanges.c: 83: Set_Display('7', '-', pin[pin_selected].time);
+"83
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
+[; ;buttonchanges.c: 84: __nop();
 "84
-}
-[e :U 1123 ]
+[e ( ___nop ..  ]
 "85
 }
-[; ;buttonchanges.c: 84: }
-[; ;buttonchanges.c: 85: } else if(PORTBbits.RB1 == 1) {
+[e :U 1123 ]
+"86
+}
+[; ;buttonchanges.c: 85: }
+[; ;buttonchanges.c: 86: } else if(PORTBbits.RB1 == 1) {
 [e $U 1125  ]
 [e :U 1122 ]
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 1126  ]
 {
-[; ;buttonchanges.c: 86: Delay_Routine(3);
-"86
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 87: if(PORTBbits.RB1 == 1) {
+[; ;buttonchanges.c: 87: Delay_Routine(3);
 "87
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 88: if(PORTBbits.RB1 == 1) {
+"88
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 1127  ]
 {
-[; ;buttonchanges.c: 88: if(PORTBbits.RB0 == 1) {
-"88
+[; ;buttonchanges.c: 89: if(PORTBbits.RB0 == 1) {
+"89
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 1128  ]
 {
-[; ;buttonchanges.c: 89: Delay_Routine(3);
-"89
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 90: if(PORTBbits.RB0 == 1) {
+[; ;buttonchanges.c: 90: Delay_Routine(3);
 "90
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 91: if(PORTBbits.RB0 == 1) {
+"91
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 1129  ]
 {
-[; ;buttonchanges.c: 91: testflag = 1;
-"91
-[e = _testflag -> -> 1 `i `b ]
-[; ;buttonchanges.c: 92: return;
+[; ;buttonchanges.c: 92: testflag = 1;
 "92
+[e = _testflag -> -> 1 `i `b ]
+[; ;buttonchanges.c: 93: return;
+"93
 [e $UE 1106  ]
-"94
-}
-[e :U 1129 ]
 "95
 }
-[e :U 1128 ]
-[; ;buttonchanges.c: 94: }
-[; ;buttonchanges.c: 95: }
-[; ;buttonchanges.c: 96: Save_Data(pin[pin_selected].time, pin[pin_selected].address);
+[e :U 1129 ]
 "96
-[e ( _Save_Data (2 , -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 ]
-[; ;buttonchanges.c: 97: pin_selected++;
+}
+[e :U 1128 ]
+[; ;buttonchanges.c: 95: }
+[; ;buttonchanges.c: 96: }
+[; ;buttonchanges.c: 97: Save_Data(pin[pin_selected].time, pin[pin_selected].address);
 "97
-[e ++ _pin_selected -> -> 1 `i `uc ]
-[; ;buttonchanges.c: 98: switch (slave_selected) {
+[e ( _Save_Data (2 , -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 ]
+[; ;buttonchanges.c: 98: pin_selected++;
 "98
+[e ++ _pin_selected -> -> 1 `i `uc ]
+[; ;buttonchanges.c: 99: switch (slave_selected) {
+"99
 [e $U 1131  ]
 {
-[; ;buttonchanges.c: 99: case 0:
-"99
-[e :U 1132 ]
-[; ;buttonchanges.c: 100: if(pin_selected > 9) {
+[; ;buttonchanges.c: 100: case 0:
 "100
+[e :U 1132 ]
+[; ;buttonchanges.c: 101: if(pin_selected > 9) {
+"101
 [e $ ! > -> _pin_selected `i -> 9 `i 1133  ]
 {
-[; ;buttonchanges.c: 101: pin_selected = 0;
-"101
-[e = _pin_selected -> -> 0 `i `uc ]
+[; ;buttonchanges.c: 102: pin_selected = 0;
 "102
+[e = _pin_selected -> -> 0 `i `uc ]
+"103
 }
 [e :U 1133 ]
-[; ;buttonchanges.c: 102: }
-[; ;buttonchanges.c: 103: break;
-"103
-[e $U 1130  ]
-[; ;buttonchanges.c: 104: case 1:
+[; ;buttonchanges.c: 103: }
+[; ;buttonchanges.c: 104: break;
 "104
-[e :U 1134 ]
-[; ;buttonchanges.c: 105: if(pin_selected > 19) {
+[e $U 1130  ]
+[; ;buttonchanges.c: 105: case 1:
 "105
+[e :U 1134 ]
+[; ;buttonchanges.c: 106: if(pin_selected > 19) {
+"106
 [e $ ! > -> _pin_selected `i -> 19 `i 1135  ]
 {
-[; ;buttonchanges.c: 106: pin_selected = 10;
-"106
-[e = _pin_selected -> -> 10 `i `uc ]
+[; ;buttonchanges.c: 107: pin_selected = 10;
 "107
+[e = _pin_selected -> -> 10 `i `uc ]
+"108
 }
 [e :U 1135 ]
-[; ;buttonchanges.c: 107: }
-[; ;buttonchanges.c: 108: break;
-"108
-[e $U 1130  ]
-[; ;buttonchanges.c: 109: case 2:
+[; ;buttonchanges.c: 108: }
+[; ;buttonchanges.c: 109: break;
 "109
-[e :U 1136 ]
-[; ;buttonchanges.c: 110: if(pin_selected > 29) {
+[e $U 1130  ]
+[; ;buttonchanges.c: 110: case 2:
 "110
+[e :U 1136 ]
+[; ;buttonchanges.c: 111: if(pin_selected > 29) {
+"111
 [e $ ! > -> _pin_selected `i -> 29 `i 1137  ]
 {
-[; ;buttonchanges.c: 111: pin_selected = 20;
-"111
-[e = _pin_selected -> -> 20 `i `uc ]
+[; ;buttonchanges.c: 112: pin_selected = 20;
 "112
+[e = _pin_selected -> -> 20 `i `uc ]
+"113
 }
 [e :U 1137 ]
-[; ;buttonchanges.c: 112: }
-[; ;buttonchanges.c: 113: break;
-"113
-[e $U 1130  ]
+[; ;buttonchanges.c: 113: }
+[; ;buttonchanges.c: 114: break;
 "114
-}
-[; ;buttonchanges.c: 114: }
 [e $U 1130  ]
-"98
+"115
+}
+[; ;buttonchanges.c: 115: }
+[e $U 1130  ]
+"99
 [e :U 1131 ]
 [e [\ _slave_selected , $ -> -> 0 `i `uc 1132
  , $ -> -> 1 `i `uc 1134
  , $ -> -> 2 `i `uc 1136
  1130 ]
-"114
-[e :U 1130 ]
-[; ;buttonchanges.c: 115: pin[pin_selected].time = Read_Data(pin[pin_selected].address);
 "115
-[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> ( _Read_Data (1 . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 `i ]
-[; ;buttonchanges.c: 116: __nop();
+[e :U 1130 ]
+[; ;buttonchanges.c: 116: pin[pin_selected].time = Read_Data(pin[pin_selected].address);
 "116
-[e ( ___nop ..  ]
-[; ;buttonchanges.c: 117: Set_Display('7', 'A', pin[pin_selected].output);
+[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> ( _Read_Data (1 . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 `i ]
+[; ;buttonchanges.c: 117: __nop();
 "117
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 65 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 1 `ui ]
-[; ;buttonchanges.c: 118: Delay_Routine(30);
-"118
-[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
-[; ;buttonchanges.c: 119: Set_Display('7', '-', pin[pin_selected].time);
-"119
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
-[; ;buttonchanges.c: 120: Delay_Routine(30);
-"120
-[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
-[; ;buttonchanges.c: 121: __nop();
-"121
 [e ( ___nop ..  ]
+[; ;buttonchanges.c: 118: Set_Display('7', 'A', pin[pin_selected].output);
+"118
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 65 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 1 `ui ]
+[; ;buttonchanges.c: 119: Delay_Routine(30);
+"119
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
+[; ;buttonchanges.c: 120: Set_Display('7', '-', pin[pin_selected].time);
+"120
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
+[; ;buttonchanges.c: 121: Delay_Routine(30);
+"121
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
+[; ;buttonchanges.c: 122: __nop();
 "122
-}
-[e :U 1127 ]
+[e ( ___nop ..  ]
 "123
 }
-[; ;buttonchanges.c: 122: }
-[; ;buttonchanges.c: 123: } else if(PORTBbits.RB0 == 1) {
+[e :U 1127 ]
+"124
+}
+[; ;buttonchanges.c: 123: }
+[; ;buttonchanges.c: 124: } else if(PORTBbits.RB0 == 1) {
 [e $U 1138  ]
 [e :U 1126 ]
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 1139  ]
 {
-[; ;buttonchanges.c: 124: Delay_Routine(3);
-"124
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 125: if(PORTBbits.RB0 == 1) {
+[; ;buttonchanges.c: 125: Delay_Routine(3);
 "125
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 126: if(PORTBbits.RB0 == 1) {
+"126
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 1140  ]
 {
-[; ;buttonchanges.c: 126: if(PORTBbits.RB1 == 1) {
-"126
+[; ;buttonchanges.c: 127: if(PORTBbits.RB1 == 1) {
+"127
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 1141  ]
 {
-[; ;buttonchanges.c: 127: Delay_Routine(3);
-"127
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;buttonchanges.c: 128: if(PORTBbits.RB1 == 1) {
+[; ;buttonchanges.c: 128: Delay_Routine(3);
 "128
+[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[; ;buttonchanges.c: 129: if(PORTBbits.RB1 == 1) {
+"129
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 1142  ]
 {
-[; ;buttonchanges.c: 129: testflag = 1;
-"129
-[e = _testflag -> -> 1 `i `b ]
-[; ;buttonchanges.c: 130: return;
+[; ;buttonchanges.c: 130: testflag = 1;
 "130
+[e = _testflag -> -> 1 `i `b ]
+[; ;buttonchanges.c: 131: return;
+"131
 [e $UE 1106  ]
-"132
-}
-[e :U 1142 ]
 "133
 }
-[e :U 1141 ]
-[; ;buttonchanges.c: 132: }
-[; ;buttonchanges.c: 133: }
-[; ;buttonchanges.c: 134: Save_Data(pin[pin_selected].time, pin[pin_selected].address);
+[e :U 1142 ]
 "134
-[e ( _Save_Data (2 , -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 ]
-[; ;buttonchanges.c: 135: slave_selected++;
+}
+[e :U 1141 ]
+[; ;buttonchanges.c: 133: }
+[; ;buttonchanges.c: 134: }
+[; ;buttonchanges.c: 135: Save_Data(pin[pin_selected].time, pin[pin_selected].address);
 "135
-[e ++ _slave_selected -> -> 1 `i `uc ]
-[; ;buttonchanges.c: 136: if(slave_selected > 2) {
+[e ( _Save_Data (2 , -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 ]
+[; ;buttonchanges.c: 136: slave_selected++;
 "136
+[e ++ _slave_selected -> -> 1 `i `uc ]
+[; ;buttonchanges.c: 137: if(slave_selected > 2) {
+"137
 [e $ ! > -> _slave_selected `i -> 2 `i 1143  ]
 {
-[; ;buttonchanges.c: 137: slave_selected = 0;
-"137
-[e = _slave_selected -> -> 0 `i `uc ]
+[; ;buttonchanges.c: 138: slave_selected = 0;
 "138
+[e = _slave_selected -> -> 0 `i `uc ]
+"139
 }
 [e :U 1143 ]
-[; ;buttonchanges.c: 138: }
-[; ;buttonchanges.c: 139: pin_selected = slave_selected * 10;
-"139
-[e = _pin_selected -> * -> _slave_selected `i -> 10 `i `uc ]
-[; ;buttonchanges.c: 140: pin[pin_selected].time = Read_Data(pin[pin_selected].address);
+[; ;buttonchanges.c: 139: }
+[; ;buttonchanges.c: 140: pin_selected = slave_selected * 10;
 "140
-[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> ( _Read_Data (1 . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 `i ]
-[; ;buttonchanges.c: 141: __nop();
+[e = _pin_selected -> * -> _slave_selected `i -> 10 `i `uc ]
+[; ;buttonchanges.c: 141: pin[pin_selected].time = Read_Data(pin[pin_selected].address);
 "141
-[e ( ___nop ..  ]
-[; ;buttonchanges.c: 142: Set_Display('7', 'E', pin[pin_selected].slave);
+[e = . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 -> ( _Read_Data (1 . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 2 `i ]
+[; ;buttonchanges.c: 142: __nop();
 "142
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 69 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 0 `ui ]
-[; ;buttonchanges.c: 144: Delay_Routine(30);
-"144
-[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
-[; ;buttonchanges.c: 145: Set_Display('7', 'A', pin[pin_selected].output);
-"145
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 65 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 1 `ui ]
-[; ;buttonchanges.c: 146: Delay_Routine(30);
-"146
-[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
-[; ;buttonchanges.c: 147: Set_Display('7', '-', pin[pin_selected].time);
-"147
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
-[; ;buttonchanges.c: 148: Delay_Routine(30);
-"148
-[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
-[; ;buttonchanges.c: 149: __nop();
-"149
 [e ( ___nop ..  ]
+[; ;buttonchanges.c: 143: Set_Display('7', 'E', pin[pin_selected].slave);
+"143
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 69 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 0 `ui ]
+[; ;buttonchanges.c: 145: Delay_Routine(30);
+"145
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
+[; ;buttonchanges.c: 146: Set_Display('7', 'A', pin[pin_selected].output);
+"146
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 65 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 1 `ui ]
+[; ;buttonchanges.c: 147: Delay_Routine(30);
+"147
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
+[; ;buttonchanges.c: 148: Set_Display('7', '-', pin[pin_selected].time);
+"148
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
+[; ;buttonchanges.c: 149: Delay_Routine(30);
+"149
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
+[; ;buttonchanges.c: 150: __nop();
 "150
-}
-[e :U 1140 ]
+[e ( ___nop ..  ]
 "151
 }
-[e :U 1139 ]
+[e :U 1140 ]
 "152
+}
+[e :U 1139 ]
+"153
 [e :U 1138 ]
 [e :U 1125 ]
 [e :U 1121 ]
 [e :U 1115 ]
 [e :U 1109 ]
-[; ;buttonchanges.c: 150: }
 [; ;buttonchanges.c: 151: }
 [; ;buttonchanges.c: 152: }
+[; ;buttonchanges.c: 153: }
 [e :UE 1106 ]
 }

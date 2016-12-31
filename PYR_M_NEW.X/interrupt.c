@@ -3,12 +3,20 @@
 
 void interrupt Isr(void) {
     if(PIR1bits.CCP1IF == 1) {
+        // TMR3 is NOT reset by special event of the CCP unit
         PIR1bits.CCP1IF = 0;
+        T1CONbits.TMR1ON = 1;
+        T3CONbits.TMR3ON = 0;
+        TMR3L = 0;
+        TMR3H = 0;
         current_time++;
-        Check_Detonators();
+        Ignite_Detonators();
     }if(PIR1bits.TMR1IF == 1) {
+        PIR1bits.TMR1IF = 0;
         T3CONbits.TMR3ON = 1;
         T1CONbits.TMR1ON = 0;
+        TMR1L = 0;
+        TMR1H = 0;
     }
     if(PIR1bits.RCIF == 1) {
         PIR1bits.RCIF = 0;
@@ -50,6 +58,13 @@ void interrupt Isr(void) {
             }
         }
         NOP();
+        if(check_counter < 30 && testflag == 1) {
+            check_counter++;
+            Check_Detonators();
+        }else {
+            check_counter = 0;
+            testflag = 0;
+        }
 //        if(received == '1' || received == 'L') {
 //            Led = 1;
 //        }else {

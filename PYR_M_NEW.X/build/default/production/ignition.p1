@@ -1,11 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"41 main.h
+"42 main.h
 [s S1105 `uc 1 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address led_address time ]
 "15702 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
 [v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
 "15721
 [v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
+"11159
+[v _TMR3L `Vuc ~T0 @X0 0 e@4018 ]
+"11178
+[v _TMR3H `Vuc ~T0 @X0 0 e@4019 ]
 "9041
 [s S530 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S530 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
@@ -17,6 +21,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S529 . . . ]
 "9057
 [v _PIR1bits `VS529 ~T0 @X0 0 e@3998 ]
+"9278
+[s S540 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S540 . CCP2IF TMR3IF HLVDIF BCL1IF EEIF C2IF C1IF OSCFIF ]
+"9288
+[s S541 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S541 . . LVDIF BCLIF ]
+"9293
+[s S542 :6 `uc 1 :1 `uc 1 ]
+[n S542 . . CMIF ]
+"9277
+[u S539 `S540 1 `S541 1 `S542 1 ]
+[n S539 . . . . ]
+"9298
+[v _PIR2bits `VS539 ~T0 @X0 0 e@4001 ]
 "15590
 [s S990 :2 `uc 1 :1 `uc 1 ]
 [n S990 . . NOT_T1SYNC ]
@@ -34,30 +52,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S989 . . . . . ]
 "15617
 [v _T1CONbits `VS989 ~T0 @X0 0 e@4045 ]
-"13082
-[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
-"13101
-[v _CCPR1H `Vuc ~T0 @X0 0 e@4031 ]
-"11050
-[s S650 :2 `uc 1 :1 `uc 1 ]
-[n S650 . . NOT_T3SYNC ]
-"11054
-[s S651 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S651 . TMR3ON T3RD16 nT3SYNC T3SOSCEN T3CKPS TMR3CS ]
-"11062
-[s S652 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S652 . . T3OSCEN T3CKPS0 T3CKPS1 TMR3CS0 TMR3CS1 ]
-"11070
-[s S653 :7 `uc 1 :1 `uc 1 ]
-[n S653 . . RD163 ]
-"11074
-[s S654 :3 `uc 1 :1 `uc 1 ]
-[n S654 . . SOSCEN3 ]
-"11049
-[u S649 `S650 1 `S651 1 `S652 1 `S653 1 `S654 1 ]
-[n S649 . . . . . . ]
-"11079
-[v _T3CONbits `VS649 ~T0 @X0 0 e@4017 ]
+"16 communication.h
+[v _Transmit `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7216,14 +7212,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;buttonchanges.h: 26: bit testflag = 0;
-[; ;ignition.h: 16: void Timer_Count(void);
+[; ;ignition.h: 16: void Start_Timer(void);
 [; ;ignition.h: 17: void Check_Detonators(void);
-"24 ignition.h
+[; ;ignition.h: 18: void Ignite_Detonators(void);
+"25 ignition.h
 [v _current_time `ui ~T0 @X0 1 e ]
 [i _current_time
 -> -> 0 `i `ui
 ]
-[; ;ignition.h: 24: unsigned int current_time = 0;
+[; ;ignition.h: 25: unsigned int current_time = 0;
+"26
+[v _check_counter `uc ~T0 @X0 1 e ]
+[i _check_counter
+-> -> 0 `i `uc
+]
+[; ;ignition.h: 26: unsigned char check_counter = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;storage.h: 18: void Load_Data(void);
@@ -7245,238 +7248,239 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;display.h: 30: unsigned char display_counter = 0;
-[; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
-[; ;communication.h: 17: unsigned char Receive(void);
-[; ;communication.h: 18: void Write_Display_Byte(unsigned char *write_data);
-"25 communication.h
+[; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.h: 17: unsigned char port);
+[; ;communication.h: 18: unsigned char Receive(void);
+[; ;communication.h: 19: void Write_Display_Byte(unsigned char *write_data);
+"26 communication.h
 [v _overrun `uc ~T0 @X0 1 e ]
 [i _overrun
 -> -> 0 `i `uc
 ]
-[; ;communication.h: 25: unsigned char overrun = 0;
-"39 main.h
+[; ;communication.h: 26: unsigned char overrun = 0;
+"40 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready
 -> 0 `i
 ]
-[; ;main.h: 39: bit ignite_ready = 0;
-[; ;main.h: 41: typedef struct Slave_Output
-[; ;main.h: 42: {
-[; ;main.h: 43: unsigned char slave;
-[; ;main.h: 44: unsigned char output;
-[; ;main.h: 45: unsigned char address;
-[; ;main.h: 46: unsigned char led_address;
-[; ;main.h: 47: signed int time;
-[; ;main.h: 48: }sl_out;
-"50
+[; ;main.h: 40: bit ignite_ready = 0;
+[; ;main.h: 42: typedef struct Slave_Output
+[; ;main.h: 43: {
+[; ;main.h: 44: unsigned char slave;
+[; ;main.h: 45: unsigned char output;
+[; ;main.h: 46: unsigned char address;
+[; ;main.h: 47: unsigned char led_address;
+[; ;main.h: 48: signed int time;
+[; ;main.h: 49: }sl_out;
+"51
 [v _pin `S1105 ~T0 @X0 -> 0 `x e ]
 [i _pin
 :U ..
 :U ..
-"52
+"53
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 31 `i `uc
 ..
 :U ..
-"53
+"54
 -> -> 0 `i `uc
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 30 `i `uc
 ..
 :U ..
-"54
+"55
 -> -> 0 `i `uc
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 29 `i `uc
 ..
 :U ..
-"55
+"56
 -> -> 0 `i `uc
 -> -> 3 `i `uc
 -> -> 3 `i `uc
 -> -> 28 `i `uc
 ..
 :U ..
-"56
+"57
 -> -> 0 `i `uc
 -> -> 4 `i `uc
 -> -> 4 `i `uc
 -> -> 27 `i `uc
 ..
 :U ..
-"57
+"58
 -> -> 0 `i `uc
 -> -> 5 `i `uc
 -> -> 5 `i `uc
 -> -> 26 `i `uc
 ..
 :U ..
-"58
+"59
 -> -> 0 `i `uc
 -> -> 6 `i `uc
 -> -> 6 `i `uc
 -> -> 25 `i `uc
 ..
 :U ..
-"59
+"60
 -> -> 0 `i `uc
 -> -> 7 `i `uc
 -> -> 7 `i `uc
 -> -> 24 `i `uc
 ..
 :U ..
-"60
+"61
 -> -> 0 `i `uc
 -> -> 8 `i `uc
 -> -> 8 `i `uc
 -> -> 39 `i `uc
 ..
 :U ..
-"61
+"62
 -> -> 0 `i `uc
 -> -> 9 `i `uc
 -> -> 9 `i `uc
 -> -> 38 `i `uc
 ..
 :U ..
-"62
+"63
 -> -> 1 `i `uc
 -> -> 0 `i `uc
 -> -> 10 `i `uc
 -> -> 37 `i `uc
 ..
 :U ..
-"63
+"64
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 11 `i `uc
 -> -> 36 `i `uc
 ..
 :U ..
-"64
+"65
 -> -> 1 `i `uc
 -> -> 2 `i `uc
 -> -> 12 `i `uc
 -> -> 35 `i `uc
 ..
 :U ..
-"65
+"66
 -> -> 1 `i `uc
 -> -> 3 `i `uc
 -> -> 13 `i `uc
 -> -> 34 `i `uc
 ..
 :U ..
-"66
+"67
 -> -> 1 `i `uc
 -> -> 4 `i `uc
 -> -> 14 `i `uc
 -> -> 33 `i `uc
 ..
 :U ..
-"67
+"68
 -> -> 1 `i `uc
 -> -> 5 `i `uc
 -> -> 15 `i `uc
 -> -> 32 `i `uc
 ..
 :U ..
-"68
+"69
 -> -> 1 `i `uc
 -> -> 6 `i `uc
 -> -> 16 `i `uc
 -> -> 47 `i `uc
 ..
 :U ..
-"69
+"70
 -> -> 1 `i `uc
 -> -> 7 `i `uc
 -> -> 17 `i `uc
 -> -> 46 `i `uc
 ..
 :U ..
-"70
+"71
 -> -> 1 `i `uc
 -> -> 8 `i `uc
 -> -> 18 `i `uc
 -> -> 45 `i `uc
 ..
 :U ..
-"71
+"72
 -> -> 1 `i `uc
 -> -> 9 `i `uc
 -> -> 19 `i `uc
 -> -> 44 `i `uc
 ..
 :U ..
-"72
+"73
 -> -> 2 `i `uc
 -> -> 0 `i `uc
 -> -> 20 `i `uc
 -> -> 43 `i `uc
 ..
 :U ..
-"73
+"74
 -> -> 2 `i `uc
 -> -> 1 `i `uc
 -> -> 21 `i `uc
 -> -> 42 `i `uc
 ..
 :U ..
-"74
+"75
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 22 `i `uc
 -> -> 41 `i `uc
 ..
 :U ..
-"75
+"76
 -> -> 2 `i `uc
 -> -> 3 `i `uc
 -> -> 23 `i `uc
 -> -> 40 `i `uc
 ..
 :U ..
-"76
+"77
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> 24 `i `uc
 -> -> 53 `i `uc
 ..
 :U ..
-"77
+"78
 -> -> 2 `i `uc
 -> -> 5 `i `uc
 -> -> 25 `i `uc
 -> -> 52 `i `uc
 ..
 :U ..
-"78
+"79
 -> -> 2 `i `uc
 -> -> 6 `i `uc
 -> -> 26 `i `uc
 -> -> 51 `i `uc
 ..
 :U ..
-"79
+"80
 -> -> 2 `i `uc
 -> -> 7 `i `uc
 -> -> 27 `i `uc
 -> -> 50 `i `uc
 ..
 :U ..
-"80
+"81
 -> -> 2 `i `uc
 -> -> 8 `i `uc
 -> -> 28 `i `uc
 -> -> 49 `i `uc
 ..
 :U ..
-"81
+"82
 -> -> 2 `i `uc
 -> -> 9 `i `uc
 -> -> 29 `i `uc
@@ -7484,77 +7488,75 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;main.h: 50: sl_out pin[] =
-[; ;main.h: 51: {
-[; ;main.h: 52: {0, 0, 0, 31, },
-[; ;main.h: 53: {0, 1, 1, 30, },
-[; ;main.h: 54: {0, 2, 2, 29, },
-[; ;main.h: 55: {0, 3, 3, 28, },
-[; ;main.h: 56: {0, 4, 4, 27, },
-[; ;main.h: 57: {0, 5, 5, 26, },
-[; ;main.h: 58: {0, 6, 6, 25, },
-[; ;main.h: 59: {0, 7, 7, 24, },
-[; ;main.h: 60: {0, 8, 8, 39, },
-[; ;main.h: 61: {0, 9, 9, 38, },
-[; ;main.h: 62: {1, 0, 10, 37, },
-[; ;main.h: 63: {1, 1, 11, 36, },
-[; ;main.h: 64: {1, 2, 12, 35, },
-[; ;main.h: 65: {1, 3, 13, 34, },
-[; ;main.h: 66: {1, 4, 14, 33, },
-[; ;main.h: 67: {1, 5, 15, 32, },
-[; ;main.h: 68: {1, 6, 16, 47, },
-[; ;main.h: 69: {1, 7, 17, 46, },
-[; ;main.h: 70: {1, 8, 18, 45, },
-[; ;main.h: 71: {1, 9, 19, 44, },
-[; ;main.h: 72: {2, 0, 20, 43, },
-[; ;main.h: 73: {2, 1, 21, 42, },
-[; ;main.h: 74: {2, 2, 22, 41, },
-[; ;main.h: 75: {2, 3, 23, 40, },
-[; ;main.h: 76: {2, 4, 24, 53, },
-[; ;main.h: 77: {2, 5, 25, 52, },
-[; ;main.h: 78: {2, 6, 26, 51, },
-[; ;main.h: 79: {2, 7, 27, 50, },
-[; ;main.h: 80: {2, 8, 28, 49, },
-[; ;main.h: 81: {2, 9, 29, 48, },
-[; ;main.h: 82: };
-[; ;main.h: 108: void Delay_Routine(unsigned char delay_multiplyer);
+[; ;main.h: 51: sl_out pin[] =
+[; ;main.h: 52: {
+[; ;main.h: 53: {0, 0, 0, 31, },
+[; ;main.h: 54: {0, 1, 1, 30, },
+[; ;main.h: 55: {0, 2, 2, 29, },
+[; ;main.h: 56: {0, 3, 3, 28, },
+[; ;main.h: 57: {0, 4, 4, 27, },
+[; ;main.h: 58: {0, 5, 5, 26, },
+[; ;main.h: 59: {0, 6, 6, 25, },
+[; ;main.h: 60: {0, 7, 7, 24, },
+[; ;main.h: 61: {0, 8, 8, 39, },
+[; ;main.h: 62: {0, 9, 9, 38, },
+[; ;main.h: 63: {1, 0, 10, 37, },
+[; ;main.h: 64: {1, 1, 11, 36, },
+[; ;main.h: 65: {1, 2, 12, 35, },
+[; ;main.h: 66: {1, 3, 13, 34, },
+[; ;main.h: 67: {1, 4, 14, 33, },
+[; ;main.h: 68: {1, 5, 15, 32, },
+[; ;main.h: 69: {1, 6, 16, 47, },
+[; ;main.h: 70: {1, 7, 17, 46, },
+[; ;main.h: 71: {1, 8, 18, 45, },
+[; ;main.h: 72: {1, 9, 19, 44, },
+[; ;main.h: 73: {2, 0, 20, 43, },
+[; ;main.h: 74: {2, 1, 21, 42, },
+[; ;main.h: 75: {2, 2, 22, 41, },
+[; ;main.h: 76: {2, 3, 23, 40, },
+[; ;main.h: 77: {2, 4, 24, 53, },
+[; ;main.h: 78: {2, 5, 25, 52, },
+[; ;main.h: 79: {2, 6, 26, 51, },
+[; ;main.h: 80: {2, 7, 27, 50, },
+[; ;main.h: 81: {2, 8, 28, 49, },
+[; ;main.h: 82: {2, 9, 29, 48, },
+[; ;main.h: 83: };
+[; ;main.h: 109: void Delay_Routine(unsigned char delay_multiplyer);
 "12 ignition.c
-[v _Timer_Count `(v ~T0 @X0 1 ef ]
+[v _Start_Timer `(v ~T0 @X0 1 ef ]
 {
-[; ;ignition.c: 12: void Timer_Count(void) {
-[e :U _Timer_Count ]
+[; ;ignition.c: 12: void Start_Timer(void) {
+[e :U _Start_Timer ]
 [f ]
-[; ;ignition.c: 13: TMR1L = 0;
+[; ;ignition.c: 13: if(ignite_ready == 1) {
 "13
-[e = _TMR1L -> -> 0 `i `uc ]
-[; ;ignition.c: 14: TMR1H = 0;
+[e $ ! == -> _ignite_ready `i -> 1 `i 1107  ]
+{
+[; ;ignition.c: 14: TMR1L = 0;
 "14
-[e = _TMR1H -> -> 0 `i `uc ]
-[; ;ignition.c: 15: PIR1bits.TMR1IF = 0;
+[e = _TMR1L -> -> 0 `i `uc ]
+[; ;ignition.c: 15: TMR1H = 0;
 "15
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;ignition.c: 16: T1CONbits.TMR1ON = 1;
+[e = _TMR1H -> -> 0 `i `uc ]
+[; ;ignition.c: 16: TMR3L = 0;
 "16
-[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-[; ;ignition.c: 17: CCPR1L = 72;
+[e = _TMR3L -> -> 0 `i `uc ]
+[; ;ignition.c: 17: TMR3H = 0;
 "17
-[e = _CCPR1L -> -> 72 `i `uc ]
-[; ;ignition.c: 18: CCPR1H = 232;
+[e = _TMR3H -> -> 0 `i `uc ]
+[; ;ignition.c: 18: PIR1bits.TMR1IF = 0;
 "18
-[e = _CCPR1H -> -> 232 `i `uc ]
-[; ;ignition.c: 19: while(PIR1bits.TMR1IF == 0);
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;ignition.c: 19: PIR2bits.TMR3IF = 0;
 "19
-[e $U 1107  ]
-[e :U 1108 ]
-[e :U 1107 ]
-[e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1108  ]
-[e :U 1109 ]
-[; ;ignition.c: 20: T3CONbits.TMR3ON = 1;
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+[; ;ignition.c: 20: T1CONbits.TMR1ON = 1;
 "20
-[e = . . _T3CONbits 1 0 -> -> 1 `i `uc ]
-[; ;ignition.c: 21: T1CONbits.TMR1ON = 0;
-"21
-[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+"22
+}
+[e :U 1107 ]
+[; ;ignition.c: 22: }
 [; ;ignition.c: 23: }
 "23
 [e :UE 1106 ]
@@ -7565,7 +7567,49 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ignition.c: 25: void Check_Detonators(void) {
 [e :U _Check_Detonators ]
 [f ]
+[; ;ignition.c: 26: Transmit(pin[check_counter].slave, 'T', pin[check_counter].output);
+"26
+[e ( _Transmit (3 , , . *U + &U _pin * -> _check_counter `ux -> -> # *U &U _pin `ui `ux 0 -> -> 84 `ui `uc . *U + &U _pin * -> _check_counter `ux -> -> # *U &U _pin `ui `ux 1 ]
 [; ;ignition.c: 27: }
 "27
-[e :UE 1110 ]
+[e :UE 1108 ]
+}
+"29
+[v _Ignite_Detonators `(v ~T0 @X0 1 ef ]
+{
+[; ;ignition.c: 29: void Ignite_Detonators(void) {
+[e :U _Ignite_Detonators ]
+[f ]
+[; ;ignition.c: 30: for(unsigned char counter = 0; counter < 30; counter++) {
+"30
+{
+[v _counter `uc ~T0 @X0 1 a ]
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 30 `i 1110  ]
+[e $U 1111  ]
+[e :U 1110 ]
+{
+[; ;ignition.c: 31: if(pin[counter].time == current_time) {
+"31
+[e $ ! == -> . *U + &U _pin * -> _counter `ux -> -> # *U &U _pin `ui `ux 4 `ui _current_time 1113  ]
+{
+[; ;ignition.c: 32: Transmit(pin[counter].slave, 'I', pin[counter].output);
+"32
+[e ( _Transmit (3 , , . *U + &U _pin * -> _counter `ux -> -> # *U &U _pin `ui `ux 0 -> -> 73 `ui `uc . *U + &U _pin * -> _counter `ux -> -> # *U &U _pin `ui `ux 1 ]
+"33
+}
+[e :U 1113 ]
+"34
+}
+"30
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 30 `i 1110  ]
+[e :U 1111 ]
+"34
+}
+[; ;ignition.c: 33: }
+[; ;ignition.c: 34: }
+[; ;ignition.c: 35: }
+"35
+[e :UE 1109 ]
 }

@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"41 main.h
+"42 main.h
 [s S1105 `uc 1 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address led_address time ]
 "6564 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
@@ -7260,14 +7260,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;buttonchanges.h: 26: bit testflag = 0;
-[; ;ignition.h: 16: void Timer_Count(void);
+[; ;ignition.h: 16: void Start_Timer(void);
 [; ;ignition.h: 17: void Check_Detonators(void);
-"24 ignition.h
+[; ;ignition.h: 18: void Ignite_Detonators(void);
+"25 ignition.h
 [v _current_time `ui ~T0 @X0 1 e ]
 [i _current_time
 -> -> 0 `i `ui
 ]
-[; ;ignition.h: 24: unsigned int current_time = 0;
+[; ;ignition.h: 25: unsigned int current_time = 0;
+"26
+[v _check_counter `uc ~T0 @X0 1 e ]
+[i _check_counter
+-> -> 0 `i `uc
+]
+[; ;ignition.h: 26: unsigned char check_counter = 0;
 [; ;storage.h: 16: void Save_Data(unsigned int store, unsigned char store_address);
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;storage.h: 18: void Load_Data(void);
@@ -7289,238 +7296,239 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;display.h: 30: unsigned char display_counter = 0;
-[; ;communication.h: 16: void Transmit(unsigned char slave, unsigned char trans_data);
-[; ;communication.h: 17: unsigned char Receive(void);
-[; ;communication.h: 18: void Write_Display_Byte(unsigned char *write_data);
-"25 communication.h
+[; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.h: 17: unsigned char port);
+[; ;communication.h: 18: unsigned char Receive(void);
+[; ;communication.h: 19: void Write_Display_Byte(unsigned char *write_data);
+"26 communication.h
 [v _overrun `uc ~T0 @X0 1 e ]
 [i _overrun
 -> -> 0 `i `uc
 ]
-[; ;communication.h: 25: unsigned char overrun = 0;
-"39 main.h
+[; ;communication.h: 26: unsigned char overrun = 0;
+"40 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready
 -> 0 `i
 ]
-[; ;main.h: 39: bit ignite_ready = 0;
-[; ;main.h: 41: typedef struct Slave_Output
-[; ;main.h: 42: {
-[; ;main.h: 43: unsigned char slave;
-[; ;main.h: 44: unsigned char output;
-[; ;main.h: 45: unsigned char address;
-[; ;main.h: 46: unsigned char led_address;
-[; ;main.h: 47: signed int time;
-[; ;main.h: 48: }sl_out;
-"50
+[; ;main.h: 40: bit ignite_ready = 0;
+[; ;main.h: 42: typedef struct Slave_Output
+[; ;main.h: 43: {
+[; ;main.h: 44: unsigned char slave;
+[; ;main.h: 45: unsigned char output;
+[; ;main.h: 46: unsigned char address;
+[; ;main.h: 47: unsigned char led_address;
+[; ;main.h: 48: signed int time;
+[; ;main.h: 49: }sl_out;
+"51
 [v _pin `S1105 ~T0 @X0 -> 0 `x e ]
 [i _pin
 :U ..
 :U ..
-"52
+"53
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 31 `i `uc
 ..
 :U ..
-"53
+"54
 -> -> 0 `i `uc
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 30 `i `uc
 ..
 :U ..
-"54
+"55
 -> -> 0 `i `uc
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 29 `i `uc
 ..
 :U ..
-"55
+"56
 -> -> 0 `i `uc
 -> -> 3 `i `uc
 -> -> 3 `i `uc
 -> -> 28 `i `uc
 ..
 :U ..
-"56
+"57
 -> -> 0 `i `uc
 -> -> 4 `i `uc
 -> -> 4 `i `uc
 -> -> 27 `i `uc
 ..
 :U ..
-"57
+"58
 -> -> 0 `i `uc
 -> -> 5 `i `uc
 -> -> 5 `i `uc
 -> -> 26 `i `uc
 ..
 :U ..
-"58
+"59
 -> -> 0 `i `uc
 -> -> 6 `i `uc
 -> -> 6 `i `uc
 -> -> 25 `i `uc
 ..
 :U ..
-"59
+"60
 -> -> 0 `i `uc
 -> -> 7 `i `uc
 -> -> 7 `i `uc
 -> -> 24 `i `uc
 ..
 :U ..
-"60
+"61
 -> -> 0 `i `uc
 -> -> 8 `i `uc
 -> -> 8 `i `uc
 -> -> 39 `i `uc
 ..
 :U ..
-"61
+"62
 -> -> 0 `i `uc
 -> -> 9 `i `uc
 -> -> 9 `i `uc
 -> -> 38 `i `uc
 ..
 :U ..
-"62
+"63
 -> -> 1 `i `uc
 -> -> 0 `i `uc
 -> -> 10 `i `uc
 -> -> 37 `i `uc
 ..
 :U ..
-"63
+"64
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 11 `i `uc
 -> -> 36 `i `uc
 ..
 :U ..
-"64
+"65
 -> -> 1 `i `uc
 -> -> 2 `i `uc
 -> -> 12 `i `uc
 -> -> 35 `i `uc
 ..
 :U ..
-"65
+"66
 -> -> 1 `i `uc
 -> -> 3 `i `uc
 -> -> 13 `i `uc
 -> -> 34 `i `uc
 ..
 :U ..
-"66
+"67
 -> -> 1 `i `uc
 -> -> 4 `i `uc
 -> -> 14 `i `uc
 -> -> 33 `i `uc
 ..
 :U ..
-"67
+"68
 -> -> 1 `i `uc
 -> -> 5 `i `uc
 -> -> 15 `i `uc
 -> -> 32 `i `uc
 ..
 :U ..
-"68
+"69
 -> -> 1 `i `uc
 -> -> 6 `i `uc
 -> -> 16 `i `uc
 -> -> 47 `i `uc
 ..
 :U ..
-"69
+"70
 -> -> 1 `i `uc
 -> -> 7 `i `uc
 -> -> 17 `i `uc
 -> -> 46 `i `uc
 ..
 :U ..
-"70
+"71
 -> -> 1 `i `uc
 -> -> 8 `i `uc
 -> -> 18 `i `uc
 -> -> 45 `i `uc
 ..
 :U ..
-"71
+"72
 -> -> 1 `i `uc
 -> -> 9 `i `uc
 -> -> 19 `i `uc
 -> -> 44 `i `uc
 ..
 :U ..
-"72
+"73
 -> -> 2 `i `uc
 -> -> 0 `i `uc
 -> -> 20 `i `uc
 -> -> 43 `i `uc
 ..
 :U ..
-"73
+"74
 -> -> 2 `i `uc
 -> -> 1 `i `uc
 -> -> 21 `i `uc
 -> -> 42 `i `uc
 ..
 :U ..
-"74
+"75
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 22 `i `uc
 -> -> 41 `i `uc
 ..
 :U ..
-"75
+"76
 -> -> 2 `i `uc
 -> -> 3 `i `uc
 -> -> 23 `i `uc
 -> -> 40 `i `uc
 ..
 :U ..
-"76
+"77
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> 24 `i `uc
 -> -> 53 `i `uc
 ..
 :U ..
-"77
+"78
 -> -> 2 `i `uc
 -> -> 5 `i `uc
 -> -> 25 `i `uc
 -> -> 52 `i `uc
 ..
 :U ..
-"78
+"79
 -> -> 2 `i `uc
 -> -> 6 `i `uc
 -> -> 26 `i `uc
 -> -> 51 `i `uc
 ..
 :U ..
-"79
+"80
 -> -> 2 `i `uc
 -> -> 7 `i `uc
 -> -> 27 `i `uc
 -> -> 50 `i `uc
 ..
 :U ..
-"80
+"81
 -> -> 2 `i `uc
 -> -> 8 `i `uc
 -> -> 28 `i `uc
 -> -> 49 `i `uc
 ..
 :U ..
-"81
+"82
 -> -> 2 `i `uc
 -> -> 9 `i `uc
 -> -> 29 `i `uc
@@ -7528,40 +7536,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;main.h: 50: sl_out pin[] =
-[; ;main.h: 51: {
-[; ;main.h: 52: {0, 0, 0, 31, },
-[; ;main.h: 53: {0, 1, 1, 30, },
-[; ;main.h: 54: {0, 2, 2, 29, },
-[; ;main.h: 55: {0, 3, 3, 28, },
-[; ;main.h: 56: {0, 4, 4, 27, },
-[; ;main.h: 57: {0, 5, 5, 26, },
-[; ;main.h: 58: {0, 6, 6, 25, },
-[; ;main.h: 59: {0, 7, 7, 24, },
-[; ;main.h: 60: {0, 8, 8, 39, },
-[; ;main.h: 61: {0, 9, 9, 38, },
-[; ;main.h: 62: {1, 0, 10, 37, },
-[; ;main.h: 63: {1, 1, 11, 36, },
-[; ;main.h: 64: {1, 2, 12, 35, },
-[; ;main.h: 65: {1, 3, 13, 34, },
-[; ;main.h: 66: {1, 4, 14, 33, },
-[; ;main.h: 67: {1, 5, 15, 32, },
-[; ;main.h: 68: {1, 6, 16, 47, },
-[; ;main.h: 69: {1, 7, 17, 46, },
-[; ;main.h: 70: {1, 8, 18, 45, },
-[; ;main.h: 71: {1, 9, 19, 44, },
-[; ;main.h: 72: {2, 0, 20, 43, },
-[; ;main.h: 73: {2, 1, 21, 42, },
-[; ;main.h: 74: {2, 2, 22, 41, },
-[; ;main.h: 75: {2, 3, 23, 40, },
-[; ;main.h: 76: {2, 4, 24, 53, },
-[; ;main.h: 77: {2, 5, 25, 52, },
-[; ;main.h: 78: {2, 6, 26, 51, },
-[; ;main.h: 79: {2, 7, 27, 50, },
-[; ;main.h: 80: {2, 8, 28, 49, },
-[; ;main.h: 81: {2, 9, 29, 48, },
-[; ;main.h: 82: };
-[; ;main.h: 108: void Delay_Routine(unsigned char delay_multiplyer);
+[; ;main.h: 51: sl_out pin[] =
+[; ;main.h: 52: {
+[; ;main.h: 53: {0, 0, 0, 31, },
+[; ;main.h: 54: {0, 1, 1, 30, },
+[; ;main.h: 55: {0, 2, 2, 29, },
+[; ;main.h: 56: {0, 3, 3, 28, },
+[; ;main.h: 57: {0, 4, 4, 27, },
+[; ;main.h: 58: {0, 5, 5, 26, },
+[; ;main.h: 59: {0, 6, 6, 25, },
+[; ;main.h: 60: {0, 7, 7, 24, },
+[; ;main.h: 61: {0, 8, 8, 39, },
+[; ;main.h: 62: {0, 9, 9, 38, },
+[; ;main.h: 63: {1, 0, 10, 37, },
+[; ;main.h: 64: {1, 1, 11, 36, },
+[; ;main.h: 65: {1, 2, 12, 35, },
+[; ;main.h: 66: {1, 3, 13, 34, },
+[; ;main.h: 67: {1, 4, 14, 33, },
+[; ;main.h: 68: {1, 5, 15, 32, },
+[; ;main.h: 69: {1, 6, 16, 47, },
+[; ;main.h: 70: {1, 7, 17, 46, },
+[; ;main.h: 71: {1, 8, 18, 45, },
+[; ;main.h: 72: {1, 9, 19, 44, },
+[; ;main.h: 73: {2, 0, 20, 43, },
+[; ;main.h: 74: {2, 1, 21, 42, },
+[; ;main.h: 75: {2, 2, 22, 41, },
+[; ;main.h: 76: {2, 3, 23, 40, },
+[; ;main.h: 77: {2, 4, 24, 53, },
+[; ;main.h: 78: {2, 5, 25, 52, },
+[; ;main.h: 79: {2, 6, 26, 51, },
+[; ;main.h: 80: {2, 7, 27, 50, },
+[; ;main.h: 81: {2, 8, 28, 49, },
+[; ;main.h: 82: {2, 9, 29, 48, },
+[; ;main.h: 83: };
+[; ;main.h: 109: void Delay_Routine(unsigned char delay_multiplyer);
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
 [v _received `uc ~T0 @X0 -> 5 `i e ]
@@ -7578,150 +7586,175 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;interrupt.h: 25: bit master_addressed = 0;
-"14 communication.c
-[v _Transmit `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[; ;communication.c: 14: void Transmit(unsigned char slave, unsigned char trans_data) {
-[e :U _Transmit ]
-[v _slave `uc ~T0 @X0 1 r1 ]
-[v _trans_data `uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;communication.c: 15: PORTBbits.RB5 = 1;
-"15
-[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
-[; ;communication.c: 16: RCSTA1bits.CREN = 0;
+"15 communication.c
+[v _Transmit `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 "16
-[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;communication.c: 18: __nop();
+{
+[; ;communication.c: 15: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.c: 16: unsigned char port) {
+[e :U _Transmit ]
+"15
+[v _receiver `uc ~T0 @X0 1 r1 ]
+[v _operation `uc ~T0 @X0 1 r2 ]
+"16
+[v _port `uc ~T0 @X0 1 r3 ]
+[f ]
+[; ;communication.c: 17: PORTBbits.RB5 = 1;
+"17
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+[; ;communication.c: 18: RCSTA1bits.CREN = 0;
 "18
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;communication.c: 20: __nop();
+"20
 [e ( ___nop ..  ]
-[; ;communication.c: 19: while(PIR1bits.TXIF == 0);
-"19
+[; ;communication.c: 21: while(PIR1bits.TXIF == 0);
+"21
 [e $U 1107  ]
 [e :U 1108 ]
 [e :U 1107 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1108  ]
 [e :U 1109 ]
-[; ;communication.c: 20: TXSTA1bits.TX9D = 1;
-"20
-[e = . . _TXSTA1bits 0 0 -> -> 1 `i `uc ]
-[; ;communication.c: 21: TXREG1 = slave;
-"21
-[e = _TXREG1 _slave ]
-[; ;communication.c: 22: while(PIR1bits.TXIF == 0);
+[; ;communication.c: 22: TXSTA1bits.TX9D = 1;
 "22
+[e = . . _TXSTA1bits 0 0 -> -> 1 `i `uc ]
+[; ;communication.c: 23: TXREG1 = receiver;
+"23
+[e = _TXREG1 _receiver ]
+[; ;communication.c: 24: while(PIR1bits.TXIF == 0);
+"24
 [e $U 1110  ]
 [e :U 1111 ]
 [e :U 1110 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1111  ]
 [e :U 1112 ]
-[; ;communication.c: 23: TXREG1 = trans_data;
-"23
-[e = _TXREG1 _trans_data ]
-[; ;communication.c: 24: while(TXSTA1bits.TRMT == 0);
-"24
+[; ;communication.c: 25: TXREG1 = 0xAA;
+"25
+[e = _TXREG1 -> -> 170 `i `uc ]
+[; ;communication.c: 26: while(PIR1bits.TXIF == 0);
+"26
 [e $U 1113  ]
 [e :U 1114 ]
 [e :U 1113 ]
-[e $ == -> . . _TXSTA1bits 0 1 `i -> 0 `i 1114  ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1114  ]
 [e :U 1115 ]
-[; ;communication.c: 25: PORTBbits.RB5 = 0;
-"25
-[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;communication.c: 26: RCSTA1bits.CREN = 1;
-"26
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 27: __nop();
+[; ;communication.c: 27: TXREG1 = operation;
 "27
-[e ( ___nop ..  ]
-[; ;communication.c: 28: }
+[e = _TXREG1 _operation ]
+[; ;communication.c: 28: while(PIR1bits.TXIF == 0);
 "28
+[e $U 1116  ]
+[e :U 1117 ]
+[e :U 1116 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1117  ]
+[e :U 1118 ]
+[; ;communication.c: 29: TXREG1 = port;
+"29
+[e = _TXREG1 _port ]
+[; ;communication.c: 30: while(TXSTA1bits.TRMT == 0);
+"30
+[e $U 1119  ]
+[e :U 1120 ]
+[e :U 1119 ]
+[e $ == -> . . _TXSTA1bits 0 1 `i -> 0 `i 1120  ]
+[e :U 1121 ]
+[; ;communication.c: 31: PORTBbits.RB5 = 0;
+"31
+[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+[; ;communication.c: 32: RCSTA1bits.CREN = 1;
+"32
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;communication.c: 33: __nop();
+"33
+[e ( ___nop ..  ]
+[; ;communication.c: 34: }
+"34
 [e :UE 1106 ]
 }
-"31
+"37
 [v _Receive `(uc ~T0 @X0 1 ef ]
 {
-[; ;communication.c: 31: unsigned char Receive(void) {
+[; ;communication.c: 37: unsigned char Receive(void) {
 [e :U _Receive ]
 [f ]
-[; ;communication.c: 32: if(RCSTA1bits.OERR == 1) {
-"32
-[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1117  ]
-{
-[; ;communication.c: 33: RCSTA1bits.CREN = 0;
-"33
-[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;communication.c: 34: RCSTA1bits.CREN = 1;
-"34
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 35: overrun = 1;
-"35
-[e = _overrun -> -> 1 `i `uc ]
-"36
-}
-[e :U 1117 ]
-[; ;communication.c: 36: }
-[; ;communication.c: 37: return (RCREG1);
-"37
-[e ) _RCREG1 ]
-[e $UE 1116  ]
-[; ;communication.c: 38: }
+[; ;communication.c: 38: if(RCSTA1bits.OERR == 1) {
 "38
-[e :UE 1116 ]
-}
+[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1123  ]
+{
+[; ;communication.c: 39: RCSTA1bits.CREN = 0;
+"39
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;communication.c: 40: RCSTA1bits.CREN = 1;
 "40
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;communication.c: 41: overrun = 1;
+"41
+[e = _overrun -> -> 1 `i `uc ]
+"42
+}
+[e :U 1123 ]
+[; ;communication.c: 42: }
+[; ;communication.c: 43: return (RCREG1);
+"43
+[e ) _RCREG1 ]
+[e $UE 1122  ]
+[; ;communication.c: 44: }
+"44
+[e :UE 1122 ]
+}
+"46
 [v _Write_Display_Byte `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;communication.c: 40: void Write_Display_Byte(unsigned char *write_data) {
+[; ;communication.c: 46: void Write_Display_Byte(unsigned char *write_data) {
 [e :U _Write_Display_Byte ]
 [v _write_data `*uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;communication.c: 41: for(unsigned char counter = sizeof(pixels); counter > 0;
-"41
+[; ;communication.c: 47: for(unsigned char counter = sizeof(pixels); counter > 0;
+"47
 {
 [v _counter `uc ~T0 @X0 1 a ]
 [e = _counter -> -> # _pixels `ui `uc ]
-[; ;communication.c: 42: counter--) {
-[e $ > -> _counter `i -> 0 `i 1119  ]
-[e $U 1120  ]
-"42
-[e :U 1119 ]
-{
-[; ;communication.c: 43: if(SSP1IF = 1) {
-"43
-[e $ ! = _SSP1IF -> -> 1 `i `b 1122  ]
-{
-[; ;communication.c: 44: SSP1IF = 0;
-"44
-[e = _SSP1IF -> -> 0 `i `b ]
-"45
-}
-[e :U 1122 ]
-[; ;communication.c: 45: }
-[; ;communication.c: 46: SSP1BUF = write_data[counter - 1];
-"46
-[e = _SSP1BUF *U + _write_data * -> - -> _counter `i -> 1 `i `x -> -> # *U _write_data `i `x ]
-[; ;communication.c: 47: while (SSP1IF == 0);
-"47
-[e $U 1123  ]
-[e :U 1124 ]
-[e :U 1123 ]
-[e $ == -> _SSP1IF `i -> 0 `i 1124  ]
-[e :U 1125 ]
-[; ;communication.c: 48: SSP1IF = 0;
+[; ;communication.c: 48: counter--) {
+[e $ > -> _counter `i -> 0 `i 1125  ]
+[e $U 1126  ]
 "48
-[e = _SSP1IF -> -> 0 `i `b ]
+[e :U 1125 ]
+{
+[; ;communication.c: 49: if(SSP1IF = 1) {
 "49
-}
-"42
-[e -- _counter -> -> 1 `i `uc ]
-"41
-[e $ > -> _counter `i -> 0 `i 1119  ]
-[e :U 1120 ]
-"49
-}
-[; ;communication.c: 49: }
-[; ;communication.c: 50: }
+[e $ ! = _SSP1IF -> -> 1 `i `b 1128  ]
+{
+[; ;communication.c: 50: SSP1IF = 0;
 "50
-[e :UE 1118 ]
+[e = _SSP1IF -> -> 0 `i `b ]
+"51
+}
+[e :U 1128 ]
+[; ;communication.c: 51: }
+[; ;communication.c: 52: SSP1BUF = write_data[counter - 1];
+"52
+[e = _SSP1BUF *U + _write_data * -> - -> _counter `i -> 1 `i `x -> -> # *U _write_data `i `x ]
+[; ;communication.c: 53: while (SSP1IF == 0);
+"53
+[e $U 1129  ]
+[e :U 1130 ]
+[e :U 1129 ]
+[e $ == -> _SSP1IF `i -> 0 `i 1130  ]
+[e :U 1131 ]
+[; ;communication.c: 54: SSP1IF = 0;
+"54
+[e = _SSP1IF -> -> 0 `i `b ]
+"55
+}
+"48
+[e -- _counter -> -> 1 `i `uc ]
+"47
+[e $ > -> _counter `i -> 0 `i 1125  ]
+[e :U 1126 ]
+"55
+}
+[; ;communication.c: 55: }
+[; ;communication.c: 56: }
+"56
+[e :UE 1124 ]
 }

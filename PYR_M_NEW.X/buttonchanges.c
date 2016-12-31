@@ -28,6 +28,7 @@ void Check_Buttons(void) {
         Delay_Routine(3);
         if(Ignite == 1) {
             ignite_ready = 1;
+            Start_Timer();
             NOP();
             return;             //End of Subroutine! No further actions
                                 // need to be possible and ignition is

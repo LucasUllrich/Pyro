@@ -13,8 +13,9 @@
  * Functionprototypes
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
-void Timer_Count(void);
+void Start_Timer(void);
 void Check_Detonators(void);
+void Ignite_Detonators(void);
 // </editor-fold>
 
 /***************************************************
@@ -22,6 +23,7 @@ void Check_Detonators(void);
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="variables">
 unsigned int current_time = 0;
+unsigned char check_counter = 0;
 // </editor-fold>
 #endif	/* IGNITION_H */
 
