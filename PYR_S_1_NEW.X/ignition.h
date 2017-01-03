@@ -13,7 +13,7 @@
  * Functionprototypes
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
-
+void Evaluate_Reception(void);
 // </editor-fold>
 
 #endif	/* IGNITION_H */

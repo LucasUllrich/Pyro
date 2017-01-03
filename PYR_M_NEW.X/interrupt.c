@@ -11,30 +11,37 @@ void interrupt Isr(void) {
         TMR3H = 0;
         current_time++;
         Ignite_Detonators();
-    }if(PIR1bits.TMR1IF == 1) {
+    }
+    if(PIR1bits.TMR1IF == 1) {
         PIR1bits.TMR1IF = 0;
         T3CONbits.TMR3ON = 1;
         T1CONbits.TMR1ON = 0;
         TMR1L = 0;
         TMR1H = 0;
     }
-    if(PIR1bits.RCIF == 1) {
+    if(PIR1bits.RCIF == 1) {            // detecting reception over UART
         PIR1bits.RCIF = 0;
-        if(RCSTAbits.RX9D == 1) {
-            receive_counter = 0;
-            received[receive_counter] = Receive();
-            receive_counter++;
-            if(received[0] == 0xAA) {
-                master_addressed = 1;
+        if(RCSTAbits.RX9D == 1) {       // an address is sent
+            receive_counter = 0;        // restart counting of reception
+                                        // bytes
+            received[receive_counter] = // store the received data in
+                    Receive();          // the corresponding array
+            receive_counter++;          // address next position in 
+                                        // array for the upcoming data
+            if(received[0] == ADDRESS) {// the device is addressed
+                master_addressed = 1;   // set flag bit to acknowledge
             } else {
-                master_addressed = 0;
+                master_addressed = 0;   // clear flag bit
             }
         } else if(master_addressed == 1) {
-            received[receive_counter] = Receive();
-            receive_counter++;
-            if(receive_counter > 4) {
-                receive_counter = 0;
-                master_addressed = 0;
+            received[receive_counter] = // Receive further data to
+                    Receive();          // process
+            receive_counter++;          // address next position in 
+                                        // array for the upcoming data
+            if(receive_counter > 4) {   // end of data string reached
+                receive_counter = 0;    // clear counter
+                master_addressed = 0;   // terminate addressing of
+                                        // device
                 if(received[2] == 'T') {
                     unsigned char search_index = 0xFF;
                     unsigned char pixel_index_array = 0;

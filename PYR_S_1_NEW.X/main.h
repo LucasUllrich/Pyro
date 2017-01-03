@@ -25,6 +25,7 @@
 // <editor-fold defaultstate="collapsed" desc="variables">
 #define _XTAL_FREQ  4000000
 #define ADDRESS     '1'
+bit slave_addressed = 0;
 // </editor-fold>
 
 /***************************************************

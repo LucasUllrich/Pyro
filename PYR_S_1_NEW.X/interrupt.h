@@ -20,7 +20,8 @@ void interrupt Isr(void);
  * Variables and constants
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Variables">
-unsigned char addressed = 0;
+unsigned char received[4];
+unsigned char receive_counter = 0;
 // </editor-fold>
 
 #endif	/* INTERRUPT_H */

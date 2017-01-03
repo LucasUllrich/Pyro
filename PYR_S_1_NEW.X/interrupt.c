@@ -1,17 +1,31 @@
 #include "main.h"
 
 void interrupt Isr(void) {
-    unsigned char received = 0;
+    
     if(PIR1bits.RCIF == 1) {
         PIR1bits.RCIF = 0;
-    received = Receive();
         if(RCSTA1bits.RX9D == 1) {
-            addressed = 1;
-            if(Receive() != ADDRESS) {
-                addressed = 0;
+            receive_counter = 0;        // restart counting of reception
+                                        // bytes
+            received[receive_counter] = // store the received data in
+                    Receive();          // the corresponding array
+            receive_counter++;          // address next position in 
+                                        // array for the upcoming data
+            if(received[0] == ADDRESS) {// the device is addressed
+                slave_addressed = 1;    // set flag bit to acknowledge
+            } else {
+                slave_addressed = 0;    // clear flag bit
             }
-        }else if(RCSTA1bits.RX9D != 1 && addressed == 1) {
-            Led ^= 1;
+        } else if(slave_addressed == 1) {
+            received[receive_counter] = // Receive further data to
+                    Receive();          // process
+            receive_counter++;          // address next position in 
+                                        // array for the upcoming data
+            if(receive_counter > 3) {   // end of data string reached
+                receive_counter = 0;    // clear counter
+                slave_addressed = 0;    // terminate addressing of
+                                        // device
+                Evaluate_Reception();
         }
     }
 }
