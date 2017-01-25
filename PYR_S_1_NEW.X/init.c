@@ -7,6 +7,7 @@ void Init(void) {
     InitMiscellaneous();
     InitTransmission();
     InitInterrupt();
+    InitMiscellaneos();
 }
 
 void InitPort(void) {
@@ -53,9 +54,25 @@ void InitTransmission(void) {
     TRISCbits.RC6 = 0;
 }
 
+void InitADC(void) {
+    //FVR
+    VREFCON0bits.FVREN = 1;
+    VREFCON0bits.FVRS = 0b10;   //10 = 2,048V; 01 = 1,024V; 11 = 4,096V
+    //ADC-Module
+    ADCON0 = 0b00110001;    //AN12 as source, ADC on
+    ADCON1 = 0b00001000;    //FVR as positive supply
+    ADCON2 = 0b00000011;    //Left justify, dedicated osc.
+}
+
 void InitInterrupt(void) {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     PIE1bits.RCIE = 1;
     PIR1bits.RCIF= 0;
+}
+
+void InitMiscellaneos(void) {
+    for(unsigned char c = 0; c < 10; c++) {
+        Marker[c] = 0;
+    }
 }

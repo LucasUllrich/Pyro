@@ -29,3 +29,7 @@ Fourth Byte: Reception by Master only
     Status of tested pin
         0x00: no connection
         0x01: connected
+
+Fifth Byte: Reception by Master only
+    Power status
+        

@@ -14,7 +14,7 @@
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
 void Transmit(unsigned char receiver, unsigned char operation, 
-        unsigned char port, unsigned char status)
+        unsigned char port, unsigned char con_status);
 unsigned char Receive(void);
 // </editor-fold>
 
@@ -22,7 +22,7 @@ unsigned char Receive(void);
  * Variables and constants
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Variables">
-unsigned char overrun = 0;
+bit overrun = 0;
 // </editor-fold>
 
 

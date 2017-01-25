@@ -20,6 +20,7 @@ void InitAnsel(void);
 void InitMiscellaneous(void);
 void InitTransmission(void);
 void InitInterrupt(void);
+void InitMiscellaneos(void);
 // </editor-fold>
 
 #endif	/* INIT_H */

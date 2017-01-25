@@ -54,10 +54,10 @@ void interrupt Isr(void) {
                             pin[search_index].led_address / 8;
                     pixel_index_bit = 
                             pin[search_index].led_address % 8;
-                    if(received[4] == 1){
+                    if(received[4] == '1'){
                         pixels[pixel_index_array] |= 
                                 (1 << pixel_index_bit);
-                    }else if(received[4] == 0) {
+                    }else if(received[4] == '0') {
                         pixels[pixel_index_array] &= 
                                 ~(1 << pixel_index_bit);
                     }

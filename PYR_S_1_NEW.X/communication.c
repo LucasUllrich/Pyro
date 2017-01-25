@@ -16,7 +16,7 @@
  *          1   == Connection
  */
 void Transmit(unsigned char receiver, unsigned char operation, 
-        unsigned char port, unsigned char status) {
+        unsigned char port, unsigned char con_status) {
     Transmit_En = 1;             //Enable RS485 module
     RCSTA1bits.CREN = 0;         //Disable receive to counteract
                                  //wrong receptions (RCIF)
@@ -31,7 +31,9 @@ void Transmit(unsigned char receiver, unsigned char operation,
     while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG    
     TXREG1 = port;               //Transmitting actual data
     while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG    
-    TXREG1 = status;             //Transmitting actual data
+    TXREG1 = con_status;         //Transmitting actual data
+    while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG    
+    TXREG1 = p_status;           //Transmitting actual data
     while(TXSTA1bits.TRMT == 0); //Checking for a clear TSR    
     Transmit_En = 0;             //Disable RS485 module for transmission
     RCSTA1bits.CREN = 1;         //Enabling receiver again

@@ -23,7 +23,7 @@ void Write_Display_Byte(unsigned char *write_data);
  * Variables and constants
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Variables">
-unsigned char overrun = 0;
+bit overrun = 0;
 // </editor-fold>
 
 

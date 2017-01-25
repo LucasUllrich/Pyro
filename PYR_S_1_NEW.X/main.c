@@ -74,6 +74,8 @@
 void main(void) {
     Init();
     while(1) {
+        Check_Ignition();
+        Check_Power();
         NOP();
     }
     return;
