@@ -125,7 +125,20 @@ void Mark_Ignite(void) {
 }
 
 void Check_Power(void) {
-    
+    ADCON0bits.GO_nDONE = 1;
+    while (ADCON0bits.GO_nDONE == 1);
+    // U = Upart * R / Rpart
+    // U = Upart * 42 / 12         !!!!!! Check resistor value
+    // Upart = U_FVR * ADRESH / 255
+    float power = 0;
+    float voltage = 0;
+    voltage = (U_FVR * (ADRESH / 255));
+    power = (ADRESH * 3.5);
+    if (power < MIN_VOLTAGE) {
+        p_status = "0";
+    } else if (power >= MIN_VOLTAGE) {
+        p_status = "1";
+    }
 }
 
 void Evaluate_Reception(void) {
@@ -134,9 +147,10 @@ void Evaluate_Reception(void) {
      *  2nd: Operation T || I
      *  3rd: Port 0 to 9
      */
-    if(received[OPERATION] == 'T') {
+    if (received[OPERATION] == 'T') {
+        Check_Power();
         Test_Port();
-    }else if(received[OPERATION] == 'I') {
+    } else if (received[OPERATION] == 'I') {
         Mark_Ignite();
     }
 }

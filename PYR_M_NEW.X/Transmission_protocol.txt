@@ -32,4 +32,6 @@ Fourth Byte: Reception by Master only
 
 Fifth Byte: Reception by Master only
     Power status
+        '0': low power
+        '1': power OK
         

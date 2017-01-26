@@ -10,9 +10,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S564 . . . ]
 "9851
 [v _PIR1bits `VS564 ~T0 @X0 0 e@3998 ]
-"17 communication.h
-[v _Receive `(uc ~T0 @X0 0 ef ]
-"10704 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
+"10704
 [s S610 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S610 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
 "10714
@@ -38,35 +36,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S609 . . . . . . . . ]
 "10744
 [v _RCSTA1bits `VS609 ~T0 @X0 0 e@4011 ]
-"6662
-[s S416 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S416 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"6672
-[s S417 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S417 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
-"6682
-[s S418 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S418 . AN12 AN10 AN8 AN9 AN11 AN13 PGC PGD ]
-"6692
-[s S419 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S419 . FLT0 C12IN3M . C12IN2M T5G T1G ]
-"6700
-[s S420 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S420 . SRI C12IN3N . C12IN2N . CCP3 ]
-"6708
-[s S421 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S421 . . CTED1 CTED2 . T3CKI ]
-"6715
-[s S422 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S422 . . P2A . P3A ]
-"6721
-[s S423 :3 `uc 1 :1 `uc 1 ]
-[n S423 . . CCP2_PA2 ]
-"6661
-[u S415 `S416 1 `S417 1 `S418 1 `S419 1 `S420 1 `S421 1 `S422 1 `S423 1 ]
-[n S415 . . . . . . . . . ]
-"6726
-[v _PORTBbits `VS415 ~T0 @X0 0 e@3969 ]
+"18 communication.h
+[v _Receive `(uc ~T0 @X0 0 ef ]
+"20 ignition.h
+[v _Evaluate_Reception `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7500,77 +7473,135 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 20: void InitMiscellaneous(void);
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitInterrupt(void);
-[; ;communication.h: 16: void Transmit(unsigned char trans_data);
-[; ;communication.h: 17: unsigned char Receive(void);
-"24 communication.h
-[v _overrun `uc ~T0 @X0 1 e ]
-[i _overrun
--> -> 0 `i `uc
+[; ;init.h: 23: void InitMiscellaneos(void);
+[; ;ignition.h: 16: void Ignite_Port(unsigned char ignite_number);
+[; ;ignition.h: 17: void Check_Ignition(void);
+[; ;ignition.h: 18: void Mark_Ignite(void);
+[; ;ignition.h: 19: void Check_Power(void);
+[; ;ignition.h: 20: void Evaluate_Reception(void);
+"27 ignition.h
+[v _Marker `uc ~T0 @X0 -> 10 `i e ]
+[; ;ignition.h: 27: unsigned char Marker[10];
+"28
+[v _p_status `uc ~T0 @X0 1 e ]
+[i _p_status
+-> -> 21 `i `uc
 ]
-[; ;communication.h: 24: unsigned char overrun = 0;
+[; ;ignition.h: 28: unsigned char p_status = 0x15;
+[; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.h: 17: unsigned char port, unsigned char con_status);
+[; ;communication.h: 18: unsigned char Receive(void);
+"25 communication.h
+[v _overrun `b ~T0 @X0 1 e ]
+[i _overrun
+-> 0 `i
+]
+[; ;communication.h: 25: bit overrun = 0;
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
-[v _addressed `uc ~T0 @X0 1 e ]
-[i _addressed
+[v _received `uc ~T0 @X0 -> 4 `i e ]
+[; ;interrupt.h: 23: unsigned char received[4];
+"24
+[v _receive_counter `uc ~T0 @X0 1 e ]
+[i _receive_counter
 -> -> 0 `i `uc
 ]
-[; ;interrupt.h: 23: unsigned char addressed = 0;
-[v F7846 `(v ~T0 @X0 1 tf ]
+[; ;interrupt.h: 24: unsigned char receive_counter = 0;
+"31 main.h
+[v _slave_addressed `b ~T0 @X0 1 e ]
+[i _slave_addressed
+-> 0 `i
+]
+[; ;main.h: 31: bit slave_addressed = 0;
+[v F7863 `(v ~T0 @X0 1 tf ]
 "3 interrupt.c
-[v _Isr `IF7846 ~T0 @X0 1 e ]
+[v _Isr `IF7863 ~T0 @X0 1 e ]
 {
 [; ;interrupt.c: 3: void interrupt Isr(void) {
 [e :U _Isr ]
 [f ]
-"4
-[v _received `uc ~T0 @X0 1 a ]
-[; ;interrupt.c: 4: unsigned char received = 0;
-[e = _received -> -> 0 `i `uc ]
 [; ;interrupt.c: 5: if(PIR1bits.RCIF == 1) {
 "5
 [e $ ! == -> . . _PIR1bits 1 3 `i -> 1 `i 1141  ]
 {
-[; ;interrupt.c: 6: received = Receive();
+[; ;interrupt.c: 6: PIR1bits.RCIF = 0;
 "6
-[e = _received ( _Receive ..  ]
+[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
 [; ;interrupt.c: 7: if(RCSTA1bits.RX9D == 1) {
 "7
 [e $ ! == -> . . _RCSTA1bits 0 0 `i -> 1 `i 1142  ]
 {
-[; ;interrupt.c: 8: addressed = 1;
+[; ;interrupt.c: 8: receive_counter = 0;
 "8
-[e = _addressed -> -> 1 `i `uc ]
-[; ;interrupt.c: 9: if(Receive() != 1) {
-"9
-[e $ ! != -> ( _Receive ..  `i -> 1 `i 1143  ]
-{
-[; ;interrupt.c: 10: addressed = 0;
-"10
-[e = _addressed -> -> 0 `i `uc ]
+[e = _receive_counter -> -> 0 `i `uc ]
+[; ;interrupt.c: 10: received[receive_counter] =
+[; ;interrupt.c: 11: Receive();
 "11
-}
-[e :U 1143 ]
+[e = *U + &U _received * -> _receive_counter `ux -> -> # *U &U _received `ui `ux ( _Receive ..  ]
+[; ;interrupt.c: 12: receive_counter++;
 "12
-}
-[; ;interrupt.c: 11: }
-[; ;interrupt.c: 12: }else if(RCSTA1bits.RX9D != 1 && addressed == 1) {
-[e $U 1144  ]
-[e :U 1142 ]
-[e $ ! && != -> . . _RCSTA1bits 0 0 `i -> 1 `i == -> _addressed `i -> 1 `i 1145  ]
-{
-[; ;interrupt.c: 13: PORTBbits.RB3 ^= 1;
-"13
-[e =^ . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+[e ++ _receive_counter -> -> 1 `i `uc ]
+[; ;interrupt.c: 14: if(received[0] == 0x01) {
 "14
-}
-[e :U 1145 ]
+[e $ ! == -> *U + &U _received * -> -> -> 0 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 1 `i 1143  ]
+{
+[; ;interrupt.c: 15: slave_addressed = 1;
 "15
+[e = _slave_addressed -> -> 1 `i `b ]
+"16
+}
+[; ;interrupt.c: 16: } else {
+[e $U 1144  ]
+[e :U 1143 ]
+{
+[; ;interrupt.c: 17: slave_addressed = 0;
+"17
+[e = _slave_addressed -> -> 0 `i `b ]
+"18
+}
 [e :U 1144 ]
+"19
+}
+[; ;interrupt.c: 18: }
+[; ;interrupt.c: 19: } else if(slave_addressed == 1) {
+[e $U 1145  ]
+[e :U 1142 ]
+[e $ ! == -> _slave_addressed `i -> 1 `i 1146  ]
+{
+[; ;interrupt.c: 20: received[receive_counter] =
+[; ;interrupt.c: 21: Receive();
+"21
+[e = *U + &U _received * -> _receive_counter `ux -> -> # *U &U _received `ui `ux ( _Receive ..  ]
+[; ;interrupt.c: 22: receive_counter++;
+"22
+[e ++ _receive_counter -> -> 1 `i `uc ]
+[; ;interrupt.c: 24: if(receive_counter > 3) {
+"24
+[e $ ! > -> _receive_counter `i -> 3 `i 1147  ]
+{
+[; ;interrupt.c: 25: receive_counter = 0;
+"25
+[e = _receive_counter -> -> 0 `i `uc ]
+[; ;interrupt.c: 26: slave_addressed = 0;
+"26
+[e = _slave_addressed -> -> 0 `i `b ]
+[; ;interrupt.c: 28: Evaluate_Reception();
+"28
+[e ( _Evaluate_Reception ..  ]
+"29
+}
+[e :U 1147 ]
+"30
+}
+[e :U 1146 ]
+"31
+[e :U 1145 ]
 }
 [e :U 1141 ]
-[; ;interrupt.c: 14: }
-[; ;interrupt.c: 15: }
-[; ;interrupt.c: 16: }
-"16
+[; ;interrupt.c: 29: }
+[; ;interrupt.c: 30: }
+[; ;interrupt.c: 31: }
+[; ;interrupt.c: 32: }
+"32
 [e :UE 1140 ]
 }

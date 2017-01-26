@@ -28,6 +28,8 @@
 #define TRANSMITTER 0x01
 #define OPERATION   2
 #define PORT        3
+#define U_FVR       2.048
+#define MIN_VOLTAGE 12
 bit slave_addressed = 0;
 // </editor-fold>
 

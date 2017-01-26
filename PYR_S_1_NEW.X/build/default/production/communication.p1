@@ -1,5 +1,31 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"10704 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
+"7240 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
+[s S434 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S434 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"7250
+[s S435 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S435 . . P2B P2C P2D P1B P1C P1D ]
+"7259
+[s S436 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S436 . . CCP4 . TX2 RX2 ]
+"7266
+[s S437 :3 `uc 1 :1 `uc 1 ]
+[n S437 . . NOT_SS2 ]
+"7270
+[s S438 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S438 . SCK2 SDI2 . nSS2 SDO2 . CK2 DT2 ]
+"7280
+[s S439 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S439 . SCL2 SDA2 . SS2 ]
+"7286
+[s S440 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S440 . AN20 AN21 AN22 AN23 AN24 AN25 AN26 AN27 ]
+"7239
+[u S433 `S434 1 `S435 1 `S436 1 `S437 1 `S438 1 `S439 1 `S440 1 ]
+[n S433 . . . . . . . . ]
+"7297
+[v _PORTDbits `VS433 ~T0 @X0 0 e@3971 ]
+"10704
 [s S610 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S610 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
 "10714
@@ -25,6 +51,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S609 . . . . . . . . ]
 "10744
 [v _RCSTA1bits `VS609 ~T0 @X0 0 e@4011 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"9835 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
+[s S565 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S565 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
+"9844
+[s S566 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S566 . . SSPIF TXIF RCIF ]
+"9834
+[u S564 `S565 1 `S566 1 ]
+[n S564 . . . ]
+"9851
+[v _PIR1bits `VS564 ~T0 @X0 0 e@3998 ]
+"11165
+[s S634 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S634 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"11175
+[s S635 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S635 . TX9D1 TRMT1 BRGH1 SENDB1 SYNC1 TXEN1 TX91 CSRC1 ]
+"11185
+[s S636 :6 `uc 1 :1 `uc 1 ]
+[n S636 . . TX8_9 ]
+"11189
+[s S637 :1 `uc 1 ]
+[n S637 . TXD8 ]
+"11164
+[u S633 `S634 1 `S635 1 `S636 1 `S637 1 ]
+[n S633 . . . . . ]
+"11193
+[v _TXSTA1bits `VS633 ~T0 @X0 0 e@4012 ]
+"11530
+[v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 "11607
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -7460,60 +7519,180 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 20: void InitMiscellaneous(void);
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitInterrupt(void);
-[; ;communication.h: 16: void Transmit(unsigned char trans_data);
-[; ;communication.h: 17: unsigned char Receive(void);
-"24 communication.h
-[v _overrun `uc ~T0 @X0 1 e ]
-[i _overrun
--> -> 0 `i `uc
+[; ;init.h: 23: void InitMiscellaneos(void);
+[; ;ignition.h: 16: void Ignite_Port(unsigned char ignite_number);
+[; ;ignition.h: 17: void Check_Ignition(void);
+[; ;ignition.h: 18: void Mark_Ignite(void);
+[; ;ignition.h: 19: void Check_Power(void);
+[; ;ignition.h: 20: void Evaluate_Reception(void);
+"27 ignition.h
+[v _Marker `uc ~T0 @X0 -> 10 `i e ]
+[; ;ignition.h: 27: unsigned char Marker[10];
+"28
+[v _p_status `uc ~T0 @X0 1 e ]
+[i _p_status
+-> -> 21 `i `uc
 ]
-[; ;communication.h: 24: unsigned char overrun = 0;
+[; ;ignition.h: 28: unsigned char p_status = 0x15;
+[; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.h: 17: unsigned char port, unsigned char con_status);
+[; ;communication.h: 18: unsigned char Receive(void);
+"25 communication.h
+[v _overrun `b ~T0 @X0 1 e ]
+[i _overrun
+-> 0 `i
+]
+[; ;communication.h: 25: bit overrun = 0;
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
-[v _addressed `uc ~T0 @X0 1 e ]
-[i _addressed
+[v _received `uc ~T0 @X0 -> 4 `i e ]
+[; ;interrupt.h: 23: unsigned char received[4];
+"24
+[v _receive_counter `uc ~T0 @X0 1 e ]
+[i _receive_counter
 -> -> 0 `i `uc
 ]
-[; ;interrupt.h: 23: unsigned char addressed = 0;
-"3 communication.c
-[v _Transmit `(v ~T0 @X0 1 ef1`uc ]
+[; ;interrupt.h: 24: unsigned char receive_counter = 0;
+"31 main.h
+[v _slave_addressed `b ~T0 @X0 1 e ]
+[i _slave_addressed
+-> 0 `i
+]
+[; ;main.h: 31: bit slave_addressed = 0;
+"18 communication.c
+[v _Transmit `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
+"19
 {
-[; ;communication.c: 3: void Transmit(unsigned char trans_data) {
+[; ;communication.c: 18: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.c: 19: unsigned char port, unsigned char con_status) {
 [e :U _Transmit ]
-[v _trans_data `uc ~T0 @X0 1 r1 ]
+"18
+[v _receiver `uc ~T0 @X0 1 r1 ]
+[v _operation `uc ~T0 @X0 1 r2 ]
+"19
+[v _port `uc ~T0 @X0 1 r3 ]
+[v _con_status `uc ~T0 @X0 1 r4 ]
 [f ]
-[; ;communication.c: 5: }
-"5
+[; ;communication.c: 20: PORTDbits.RD4 = 1;
+"20
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
+[; ;communication.c: 21: RCSTA1bits.CREN = 0;
+"21
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;communication.c: 23: __nop();
+"23
+[e ( ___nop ..  ]
+[; ;communication.c: 24: while(PIR1bits.TXIF == 0);
+"24
+[e $U 1141  ]
+[e :U 1142 ]
+[e :U 1141 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1142  ]
+[e :U 1143 ]
+[; ;communication.c: 25: TXSTA1bits.TX9D = 1;
+"25
+[e = . . _TXSTA1bits 0 0 -> -> 1 `i `uc ]
+[; ;communication.c: 26: TXREG1 = receiver;
+"26
+[e = _TXREG1 _receiver ]
+[; ;communication.c: 27: while(PIR1bits.TXIF == 0);
+"27
+[e $U 1144  ]
+[e :U 1145 ]
+[e :U 1144 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1145  ]
+[e :U 1146 ]
+[; ;communication.c: 28: TXREG1 = 0x01;
+"28
+[e = _TXREG1 -> -> 1 `i `uc ]
+[; ;communication.c: 29: while(PIR1bits.TXIF == 0);
+"29
+[e $U 1147  ]
+[e :U 1148 ]
+[e :U 1147 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1148  ]
+[e :U 1149 ]
+[; ;communication.c: 30: TXREG1 = operation;
+"30
+[e = _TXREG1 _operation ]
+[; ;communication.c: 31: while(PIR1bits.TXIF == 0);
+"31
+[e $U 1150  ]
+[e :U 1151 ]
+[e :U 1150 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1151  ]
+[e :U 1152 ]
+[; ;communication.c: 32: TXREG1 = port;
+"32
+[e = _TXREG1 _port ]
+[; ;communication.c: 33: while(PIR1bits.TXIF == 0);
+"33
+[e $U 1153  ]
+[e :U 1154 ]
+[e :U 1153 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1154  ]
+[e :U 1155 ]
+[; ;communication.c: 34: TXREG1 = con_status;
+"34
+[e = _TXREG1 _con_status ]
+[; ;communication.c: 35: while(PIR1bits.TXIF == 0);
+"35
+[e $U 1156  ]
+[e :U 1157 ]
+[e :U 1156 ]
+[e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1157  ]
+[e :U 1158 ]
+[; ;communication.c: 36: TXREG1 = p_status;
+"36
+[e = _TXREG1 _p_status ]
+[; ;communication.c: 37: while(TXSTA1bits.TRMT == 0);
+"37
+[e $U 1159  ]
+[e :U 1160 ]
+[e :U 1159 ]
+[e $ == -> . . _TXSTA1bits 0 1 `i -> 0 `i 1160  ]
+[e :U 1161 ]
+[; ;communication.c: 38: PORTDbits.RD4 = 0;
+"38
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
+[; ;communication.c: 39: RCSTA1bits.CREN = 1;
+"39
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;communication.c: 40: __nop();
+"40
+[e ( ___nop ..  ]
+[; ;communication.c: 41: }
+"41
 [e :UE 1140 ]
 }
-"8
+"44
 [v _Receive `(uc ~T0 @X0 1 ef ]
 {
-[; ;communication.c: 8: unsigned char Receive(void) {
+[; ;communication.c: 44: unsigned char Receive(void) {
 [e :U _Receive ]
 [f ]
-[; ;communication.c: 9: if(RCSTA1bits.OERR == 1) {
-"9
-[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1142  ]
+[; ;communication.c: 45: if(RCSTA1bits.OERR == 1) {
+"45
+[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1163  ]
 {
-[; ;communication.c: 10: RCSTA1bits.CREN = 0;
-"10
+[; ;communication.c: 46: RCSTA1bits.CREN = 0;
+"46
 [e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;communication.c: 11: RCSTA1bits.CREN = 1;
-"11
+[; ;communication.c: 47: RCSTA1bits.CREN = 1;
+"47
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 12: overrun = 1;
-"12
-[e = _overrun -> -> 1 `i `uc ]
-"13
+[; ;communication.c: 48: overrun = 1;
+"48
+[e = _overrun -> -> 1 `i `b ]
+"49
 }
-[e :U 1142 ]
-[; ;communication.c: 13: }
-[; ;communication.c: 14: return (RCREG1);
-"14
+[e :U 1163 ]
+[; ;communication.c: 49: }
+[; ;communication.c: 50: return (RCREG1);
+"50
 [e ) _RCREG1 ]
-[e $UE 1141  ]
-[; ;communication.c: 15: }
-"15
-[e :UE 1141 ]
+[e $UE 1162  ]
+[; ;communication.c: 51: }
+"51
+[e :UE 1162 ]
 }

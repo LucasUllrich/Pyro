@@ -9324,19 +9324,36 @@ void InitAnsel(void);
 void InitMiscellaneous(void);
 void InitTransmission(void);
 void InitInterrupt(void);
+void InitMiscellaneos(void);
+
+# 16 "ignition.h"
+void Ignite_Port(unsigned char ignite_number);
+void Check_Ignition(void);
+void Mark_Ignite(void);
+void Check_Power(void);
+void Evaluate_Reception(void);
+
+# 27
+unsigned char Marker[10];
+unsigned char p_status = 0x15;
 
 # 16 "communication.h"
-void Transmit(unsigned char trans_data);
+void Transmit(unsigned char receiver, unsigned char operation,
+unsigned char port, unsigned char con_status);
 unsigned char Receive(void);
 
-# 24
-unsigned char overrun = 0;
+# 25
+bit overrun = 0;
 
 # 16 "interrupt.h"
 void interrupt Isr(void);
 
 # 23
-unsigned char addressed = 0;
+unsigned char received[4];
+unsigned char receive_counter = 0;
+
+# 31 "main.h"
+bit slave_addressed = 0;
 
 # 3 "init.c"
 void Init(void) {
@@ -9346,6 +9363,7 @@ InitAnsel();
 InitMiscellaneous();
 InitTransmission();
 InitInterrupt();
+InitMiscellaneos();
 }
 
 void InitPort(void) {
@@ -9392,9 +9410,25 @@ RCSTA1bits.CREN = 1;
 TRISCbits.RC6 = 0;
 }
 
+void InitADC(void) {
+
+VREFCON0bits.FVREN = 1;
+VREFCON0bits.FVRS = 0b10;
+
+ADCON0 = 0b00110001;
+ADCON1 = 0b00001000;
+ADCON2 = 0b00000011;
+}
+
 void InitInterrupt(void) {
 INTCONbits.GIE = 1;
 INTCONbits.PEIE = 1;
 PIE1bits.RCIE = 1;
 PIR1bits.RCIF= 0;
+}
+
+void InitMiscellaneos(void) {
+for(unsigned char c = 0; c < 10; c++) {
+Marker[c] = 0;
+}
 }

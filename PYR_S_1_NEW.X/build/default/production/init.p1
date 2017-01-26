@@ -11,6 +11,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _InitTransmission `(v ~T0 @X0 0 ef ]
 "22
 [v _InitInterrupt `(v ~T0 @X0 0 ef ]
+"23
+[v _InitMiscellaneos `(v ~T0 @X0 0 ef ]
 "6370 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
 [v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
 "6656
@@ -155,6 +157,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S609 . . . . . . . . ]
 "10744
 [v _RCSTA1bits `VS609 ~T0 @X0 0 e@4011 ]
+"695
+[s S33 :4 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S33 . . FVRS FVRST FVREN ]
+"701
+[s S34 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . . FVRS0 FVRS1 ]
+"694
+[u S32 `S33 1 `S34 1 ]
+[n S32 . . . ]
+"707
+[v _VREFCON0bits `VS32 ~T0 @X0 0 e@3906 ]
+"14051
+[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
+"13984
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"13914
+[v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
 "17609
 [s S1110 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1110 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -7630,21 +7649,46 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 20: void InitMiscellaneous(void);
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitInterrupt(void);
-[; ;communication.h: 16: void Transmit(unsigned char trans_data);
-[; ;communication.h: 17: unsigned char Receive(void);
-"24 communication.h
-[v _overrun `uc ~T0 @X0 1 e ]
-[i _overrun
--> -> 0 `i `uc
+[; ;init.h: 23: void InitMiscellaneos(void);
+[; ;ignition.h: 16: void Ignite_Port(unsigned char ignite_number);
+[; ;ignition.h: 17: void Check_Ignition(void);
+[; ;ignition.h: 18: void Mark_Ignite(void);
+[; ;ignition.h: 19: void Check_Power(void);
+[; ;ignition.h: 20: void Evaluate_Reception(void);
+"27 ignition.h
+[v _Marker `uc ~T0 @X0 -> 10 `i e ]
+[; ;ignition.h: 27: unsigned char Marker[10];
+"28
+[v _p_status `uc ~T0 @X0 1 e ]
+[i _p_status
+-> -> 21 `i `uc
 ]
-[; ;communication.h: 24: unsigned char overrun = 0;
+[; ;ignition.h: 28: unsigned char p_status = 0x15;
+[; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.h: 17: unsigned char port, unsigned char con_status);
+[; ;communication.h: 18: unsigned char Receive(void);
+"25 communication.h
+[v _overrun `b ~T0 @X0 1 e ]
+[i _overrun
+-> 0 `i
+]
+[; ;communication.h: 25: bit overrun = 0;
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
-[v _addressed `uc ~T0 @X0 1 e ]
-[i _addressed
+[v _received `uc ~T0 @X0 -> 4 `i e ]
+[; ;interrupt.h: 23: unsigned char received[4];
+"24
+[v _receive_counter `uc ~T0 @X0 1 e ]
+[i _receive_counter
 -> -> 0 `i `uc
 ]
-[; ;interrupt.h: 23: unsigned char addressed = 0;
+[; ;interrupt.h: 24: unsigned char receive_counter = 0;
+"31 main.h
+[v _slave_addressed `b ~T0 @X0 1 e ]
+[i _slave_addressed
+-> 0 `i
+]
+[; ;main.h: 31: bit slave_addressed = 0;
 "3 init.c
 [v _Init `(v ~T0 @X0 1 ef ]
 {
@@ -7669,163 +7713,222 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.c: 9: InitInterrupt();
 "9
 [e ( _InitInterrupt ..  ]
-[; ;init.c: 10: }
+[; ;init.c: 10: InitMiscellaneos();
 "10
+[e ( _InitMiscellaneos ..  ]
+[; ;init.c: 11: }
+"11
 [e :UE 1140 ]
 }
-"12
+"13
 [v _InitPort `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 12: void InitPort(void) {
+[; ;init.c: 13: void InitPort(void) {
 [e :U _InitPort ]
 [f ]
-[; ;init.c: 13: PORTA = 0b00000000;
-"13
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;init.c: 14: PORTB = 0b00000000;
+[; ;init.c: 14: PORTA = 0b00000000;
 "14
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;init.c: 15: PORTC = 0b00000000;
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;init.c: 15: PORTB = 0b00000000;
 "15
-[e = _PORTC -> -> 0 `i `uc ]
-[; ;init.c: 16: PORTD = 0b00000000;
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;init.c: 16: PORTC = 0b00000000;
 "16
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;init.c: 17: PORTE = 0b00000000;
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;init.c: 17: PORTD = 0b00000000;
 "17
-[e = _PORTE -> -> 0 `i `uc ]
-[; ;init.c: 18: }
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;init.c: 18: PORTE = 0b00000000;
 "18
+[e = _PORTE -> -> 0 `i `uc ]
+[; ;init.c: 19: }
+"19
 [e :UE 1141 ]
 }
-"20
+"21
 [v _InitTris `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 20: void InitTris(void) {
+[; ;init.c: 21: void InitTris(void) {
 [e :U _InitTris ]
 [f ]
-[; ;init.c: 21: TRISA = 0b00010101;
-"21
-[e = _TRISA -> -> 21 `i `uc ]
-[; ;init.c: 22: TRISB = 0b00010001;
+[; ;init.c: 22: TRISA = 0b00010101;
 "22
-[e = _TRISB -> -> 17 `i `uc ]
-[; ;init.c: 23: TRISC = 0b00010100;
+[e = _TRISA -> -> 21 `i `uc ]
+[; ;init.c: 23: TRISB = 0b00010001;
 "23
-[e = _TRISC -> -> 20 `i `uc ]
-[; ;init.c: 24: TRISD = 0b00000101;
+[e = _TRISB -> -> 17 `i `uc ]
+[; ;init.c: 24: TRISC = 0b00010100;
 "24
-[e = _TRISD -> -> 5 `i `uc ]
-[; ;init.c: 25: TRISE = 0b00000101;
+[e = _TRISC -> -> 20 `i `uc ]
+[; ;init.c: 25: TRISD = 0b00000101;
 "25
-[e = _TRISE -> -> 5 `i `uc ]
-[; ;init.c: 26: }
+[e = _TRISD -> -> 5 `i `uc ]
+[; ;init.c: 26: TRISE = 0b00000101;
 "26
+[e = _TRISE -> -> 5 `i `uc ]
+[; ;init.c: 27: }
+"27
 [e :UE 1142 ]
 }
-"28
+"29
 [v _InitAnsel `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 28: void InitAnsel(void) {
+[; ;init.c: 29: void InitAnsel(void) {
 [e :U _InitAnsel ]
 [f ]
-[; ;init.c: 29: ANSELA = 0b00000000;
-"29
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;init.c: 30: ANSELB = 0b00000001;
+[; ;init.c: 30: ANSELA = 0b00000000;
 "30
-[e = _ANSELB -> -> 1 `i `uc ]
-[; ;init.c: 31: ANSELC = 0b00000000;
+[e = _ANSELA -> -> 0 `i `uc ]
+[; ;init.c: 31: ANSELB = 0b00000001;
 "31
-[e = _ANSELC -> -> 0 `i `uc ]
-[; ;init.c: 32: ANSELD = 0b00000000;
+[e = _ANSELB -> -> 1 `i `uc ]
+[; ;init.c: 32: ANSELC = 0b00000000;
 "32
-[e = _ANSELD -> -> 0 `i `uc ]
-[; ;init.c: 33: ANSELE = 0b00000000;
+[e = _ANSELC -> -> 0 `i `uc ]
+[; ;init.c: 33: ANSELD = 0b00000000;
 "33
-[e = _ANSELE -> -> 0 `i `uc ]
-[; ;init.c: 34: }
+[e = _ANSELD -> -> 0 `i `uc ]
+[; ;init.c: 34: ANSELE = 0b00000000;
 "34
+[e = _ANSELE -> -> 0 `i `uc ]
+[; ;init.c: 35: }
+"35
 [e :UE 1143 ]
 }
-"36
+"37
 [v _InitMiscellaneous `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 36: void InitMiscellaneous(void) {
+[; ;init.c: 37: void InitMiscellaneous(void) {
 [e :U _InitMiscellaneous ]
 [f ]
-[; ;init.c: 37: OSCCON = 0b01010011;
-"37
-[e = _OSCCON -> -> 83 `i `uc ]
-[; ;init.c: 38: }
+[; ;init.c: 38: OSCCON = 0b01010011;
 "38
+[e = _OSCCON -> -> 83 `i `uc ]
+[; ;init.c: 39: }
+"39
 [e :UE 1144 ]
 }
-"40
+"41
 [v _InitTransmission `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 40: void InitTransmission(void) {
+[; ;init.c: 41: void InitTransmission(void) {
 [e :U _InitTransmission ]
 [f ]
-[; ;init.c: 42: TXSTA1bits.SYNC = 0;
-"42
-[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;init.c: 43: TXSTA1bits.BRGH = 1;
+[; ;init.c: 43: TXSTA1bits.SYNC = 0;
 "43
-[e = . . _TXSTA1bits 0 2 -> -> 1 `i `uc ]
-[; ;init.c: 44: BAUDCON1bits.BRG16 = 0;
+[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;init.c: 44: TXSTA1bits.BRGH = 1;
 "44
-[e = . . _BAUDCON1bits 0 3 -> -> 0 `i `uc ]
-[; ;init.c: 45: SPBRG1 = 25;
+[e = . . _TXSTA1bits 0 2 -> -> 1 `i `uc ]
+[; ;init.c: 45: BAUDCON1bits.BRG16 = 0;
 "45
-[e = _SPBRG1 -> -> 25 `i `uc ]
-[; ;init.c: 46: TRISCbits.RC6 = 1;
+[e = . . _BAUDCON1bits 0 3 -> -> 0 `i `uc ]
+[; ;init.c: 46: SPBRG1 = 25;
 "46
-[e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
-[; ;init.c: 47: TRISCbits.RC7 = 1;
+[e = _SPBRG1 -> -> 25 `i `uc ]
+[; ;init.c: 47: TRISCbits.RC6 = 1;
 "47
-[e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
-[; ;init.c: 48: RCSTA1bits.SPEN = 1;
+[e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
+[; ;init.c: 48: TRISCbits.RC7 = 1;
 "48
-[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-[; ;init.c: 49: TXSTA1bits.TX9 = 1;
+[e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
+[; ;init.c: 49: RCSTA1bits.SPEN = 1;
 "49
-[e = . . _TXSTA1bits 0 6 -> -> 1 `i `uc ]
-[; ;init.c: 50: TXSTA1bits.TXEN = 1;
+[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
+[; ;init.c: 50: TXSTA1bits.TX9 = 1;
 "50
-[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
-[; ;init.c: 51: RCSTA1bits.RC9 = 1;
+[e = . . _TXSTA1bits 0 6 -> -> 1 `i `uc ]
+[; ;init.c: 51: TXSTA1bits.TXEN = 1;
 "51
-[e = . . _RCSTA1bits 4 1 -> -> 1 `i `uc ]
-[; ;init.c: 52: RCSTA1bits.CREN = 1;
+[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
+[; ;init.c: 52: RCSTA1bits.RC9 = 1;
 "52
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;init.c: 53: TRISCbits.RC6 = 0;
+[e = . . _RCSTA1bits 4 1 -> -> 1 `i `uc ]
+[; ;init.c: 53: RCSTA1bits.CREN = 1;
 "53
-[e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
-[; ;init.c: 54: }
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;init.c: 54: TRISCbits.RC6 = 0;
 "54
+[e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
+[; ;init.c: 55: }
+"55
 [e :UE 1145 ]
 }
-"56
+"57
+[v _InitADC `(v ~T0 @X0 1 ef ]
+{
+[; ;init.c: 57: void InitADC(void) {
+[e :U _InitADC ]
+[f ]
+[; ;init.c: 59: VREFCON0bits.FVREN = 1;
+"59
+[e = . . _VREFCON0bits 0 3 -> -> 1 `i `uc ]
+[; ;init.c: 60: VREFCON0bits.FVRS = 0b10;
+"60
+[e = . . _VREFCON0bits 0 1 -> -> 2 `i `uc ]
+[; ;init.c: 62: ADCON0 = 0b00110001;
+"62
+[e = _ADCON0 -> -> 49 `i `uc ]
+[; ;init.c: 63: ADCON1 = 0b00001000;
+"63
+[e = _ADCON1 -> -> 8 `i `uc ]
+[; ;init.c: 64: ADCON2 = 0b00000011;
+"64
+[e = _ADCON2 -> -> 3 `i `uc ]
+[; ;init.c: 65: }
+"65
+[e :UE 1146 ]
+}
+"67
 [v _InitInterrupt `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 56: void InitInterrupt(void) {
+[; ;init.c: 67: void InitInterrupt(void) {
 [e :U _InitInterrupt ]
 [f ]
-[; ;init.c: 57: INTCONbits.GIE = 1;
-"57
+[; ;init.c: 68: INTCONbits.GIE = 1;
+"68
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;init.c: 58: INTCONbits.PEIE = 1;
-"58
+[; ;init.c: 69: INTCONbits.PEIE = 1;
+"69
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;init.c: 59: PIE1bits.RCIE = 1;
-"59
+[; ;init.c: 70: PIE1bits.RCIE = 1;
+"70
 [e = . . _PIE1bits 1 3 -> -> 1 `i `uc ]
-[; ;init.c: 60: PIR1bits.RCIF= 0;
-"60
+[; ;init.c: 71: PIR1bits.RCIF= 0;
+"71
 [e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
-[; ;init.c: 61: }
-"61
-[e :UE 1146 ]
+[; ;init.c: 72: }
+"72
+[e :UE 1147 ]
+}
+"74
+[v _InitMiscellaneos `(v ~T0 @X0 1 ef ]
+{
+[; ;init.c: 74: void InitMiscellaneos(void) {
+[e :U _InitMiscellaneos ]
+[f ]
+[; ;init.c: 75: for(unsigned char c = 0; c < 10; c++) {
+"75
+{
+[v _c `uc ~T0 @X0 1 a ]
+[e = _c -> -> 0 `i `uc ]
+[e $ < -> _c `i -> 10 `i 1149  ]
+[e $U 1150  ]
+[e :U 1149 ]
+{
+[; ;init.c: 76: Marker[c] = 0;
+"76
+[e = *U + &U _Marker * -> _c `ux -> -> # *U &U _Marker `ui `ux -> -> 0 `i `uc ]
+"77
+}
+"75
+[e ++ _c -> -> 1 `i `uc ]
+[e $ < -> _c `i -> 10 `i 1149  ]
+[e :U 1150 ]
+"77
+}
+[; ;init.c: 77: }
+[; ;init.c: 78: }
+"78
+[e :UE 1148 ]
 }

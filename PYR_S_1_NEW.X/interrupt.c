@@ -9,7 +9,7 @@ void interrupt Isr(void) {
                                         // bytes
             received[receive_counter] = // store the received data in
                     Receive();          // the corresponding array
-            receive_counter++;          // address next position in 
+            receive_counter++;          // address next position in
                                         // array for the upcoming data
             if(received[0] == ADDRESS) {// the device is addressed
                 slave_addressed = 1;    // set flag bit to acknowledge
@@ -26,6 +26,7 @@ void interrupt Isr(void) {
                 slave_addressed = 0;    // terminate addressing of
                                         // device
                 Evaluate_Reception();
+            }
         }
     }
 }

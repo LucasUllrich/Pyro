@@ -83,20 +83,23 @@ void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
             case '9':
                 Set_Bits("ABCDFG");
                 break;
-            case 'E':
-                Set_Bits("ADEFG");
-                break;
             case 'A':
                 Set_Bits("ABCEFG");
                 break;
             case 'D':
                 Set_Bits("ABCDEF");
                 break;
-            case 'O':
-                Set_Bits("ABCDEF");
+            case 'E':
+                Set_Bits("ADEFG");
                 break;
             case 'L':
                 Set_Bits("DEF");
+                break;
+            case 'O':
+                Set_Bits("ABCDEF");
+                break;
+            case 'P':
+                Set_Bits("ABEFG");
                 break;
             case '-':
                 Set_Bits("G");

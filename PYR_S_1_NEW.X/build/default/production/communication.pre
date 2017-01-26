@@ -9324,23 +9324,61 @@ void InitAnsel(void);
 void InitMiscellaneous(void);
 void InitTransmission(void);
 void InitInterrupt(void);
+void InitMiscellaneos(void);
+
+# 16 "ignition.h"
+void Ignite_Port(unsigned char ignite_number);
+void Check_Ignition(void);
+void Mark_Ignite(void);
+void Check_Power(void);
+void Evaluate_Reception(void);
+
+# 27
+unsigned char Marker[10];
+unsigned char p_status = 0x15;
 
 # 16 "communication.h"
-void Transmit(unsigned char trans_data);
+void Transmit(unsigned char receiver, unsigned char operation,
+unsigned char port, unsigned char con_status);
 unsigned char Receive(void);
 
-# 24
-unsigned char overrun = 0;
+# 25
+bit overrun = 0;
 
 # 16 "interrupt.h"
 void interrupt Isr(void);
 
 # 23
-unsigned char addressed = 0;
+unsigned char received[4];
+unsigned char receive_counter = 0;
 
-# 3 "communication.c"
-void Transmit(unsigned char trans_data) {
+# 31 "main.h"
+bit slave_addressed = 0;
 
+# 18 "communication.c"
+void Transmit(unsigned char receiver, unsigned char operation,
+unsigned char port, unsigned char con_status) {
+PORTDbits.RD4 = 1;
+RCSTA1bits.CREN = 0;
+
+__nop();
+while(PIR1bits.TXIF == 0);
+TXSTA1bits.TX9D = 1;
+TXREG1 = receiver;
+while(PIR1bits.TXIF == 0);
+TXREG1 = 0x01;
+while(PIR1bits.TXIF == 0);
+TXREG1 = operation;
+while(PIR1bits.TXIF == 0);
+TXREG1 = port;
+while(PIR1bits.TXIF == 0);
+TXREG1 = con_status;
+while(PIR1bits.TXIF == 0);
+TXREG1 = p_status;
+while(TXSTA1bits.TRMT == 0);
+PORTDbits.RD4 = 0;
+RCSTA1bits.CREN = 1;
+__nop();
 }
 
 

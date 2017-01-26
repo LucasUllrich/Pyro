@@ -9379,24 +9379,43 @@ void InitAnsel(void);
 void InitMiscellaneous(void);
 void InitTransmission(void);
 void InitInterrupt(void);
+void InitMiscellaneos(void);
+
+# 16 "ignition.h"
+void Ignite_Port(unsigned char ignite_number);
+void Check_Ignition(void);
+void Mark_Ignite(void);
+void Check_Power(void);
+void Evaluate_Reception(void);
+
+# 27
+unsigned char Marker[10];
+unsigned char p_status = 0x15;
 
 # 16 "communication.h"
-void Transmit(unsigned char trans_data);
+void Transmit(unsigned char receiver, unsigned char operation,
+unsigned char port, unsigned char con_status);
 unsigned char Receive(void);
 
-# 24
-unsigned char overrun = 0;
+# 25
+bit overrun = 0;
 
 # 16 "interrupt.h"
 void interrupt Isr(void);
 
 # 23
-unsigned char addressed = 0;
+unsigned char received[4];
+unsigned char receive_counter = 0;
+
+# 31 "main.h"
+bit slave_addressed = 0;
 
 # 74 "main.c"
 void main(void) {
 Init();
 while(1) {
+Check_Ignition();
+Check_Power();
 __nop();
 }
 return;

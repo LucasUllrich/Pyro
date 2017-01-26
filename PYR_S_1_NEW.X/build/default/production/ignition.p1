@@ -1,4 +1,224 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"6931 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
+[s S425 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S425 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"6941
+[s S426 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S426 . T1OSO T1OSI T5CKI SCK SDI SDO TX RX ]
+"6951
+[s S427 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S427 . P2B P2A P1A SCL SDA . CK DT ]
+"6961
+[s S428 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S428 . T1CKI CCP2 CCP1 SCK1 SDI1 SDO1 TX1 RX1 ]
+"6971
+[s S429 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S429 . T3CKI . CTPLS SCL1 SDA1 . CK1 DT1 ]
+"6981
+[s S430 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S430 . T3G . AN14 AN15 AN16 AN17 AN18 AN19 ]
+"6991
+[s S431 :2 `uc 1 :1 `uc 1 ]
+[n S431 . . PA1 ]
+"6995
+[s S432 :1 `uc 1 :1 `uc 1 ]
+[n S432 . . PA2 ]
+"6930
+[u S424 `S425 1 `S426 1 `S427 1 `S428 1 `S429 1 `S430 1 `S431 1 `S432 1 ]
+[n S424 . . . . . . . . . ]
+"7000
+[v _PORTCbits `VS424 ~T0 @X0 0 e@3970 ]
+"16 communication.h
+[v _Transmit `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"7240 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
+[s S434 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S434 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"7250
+[s S435 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S435 . . P2B P2C P2D P1B P1C P1D ]
+"7259
+[s S436 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S436 . . CCP4 . TX2 RX2 ]
+"7266
+[s S437 :3 `uc 1 :1 `uc 1 ]
+[n S437 . . NOT_SS2 ]
+"7270
+[s S438 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S438 . SCK2 SDI2 . nSS2 SDO2 . CK2 DT2 ]
+"7280
+[s S439 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S439 . SCL2 SDA2 . SS2 ]
+"7286
+[s S440 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S440 . AN20 AN21 AN22 AN23 AN24 AN25 AN26 AN27 ]
+"7239
+[u S433 `S434 1 `S435 1 `S436 1 `S437 1 `S438 1 `S439 1 `S440 1 ]
+[n S433 . . . . . . . . ]
+"7297
+[v _PORTDbits `VS433 ~T0 @X0 0 e@3971 ]
+"7482
+[s S442 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S442 . RE0 RE1 RE2 RE3 ]
+"7488
+[s S443 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S443 . AN5 AN6 AN7 MCLR ]
+"7494
+[s S444 :3 `uc 1 :1 `uc 1 ]
+[n S444 . . NOT_MCLR ]
+"7498
+[s S445 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S445 . P3A P3B CCP5 nMCLR ]
+"7504
+[s S446 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S446 . CCP3 . VPP ]
+"7509
+[s S447 :2 `uc 1 :1 `uc 1 ]
+[n S447 . . CCP10 ]
+"7513
+[s S448 :7 `uc 1 :1 `uc 1 ]
+[n S448 . . CCP2E ]
+"7517
+[s S449 :6 `uc 1 :1 `uc 1 ]
+[n S449 . . CCP6E ]
+"7521
+[s S450 :5 `uc 1 :1 `uc 1 ]
+[n S450 . . CCP7E ]
+"7525
+[s S451 :4 `uc 1 :1 `uc 1 ]
+[n S451 . . CCP8E ]
+"7529
+[s S452 :3 `uc 1 :1 `uc 1 ]
+[n S452 . . CCP9E ]
+"7533
+[s S453 :2 `uc 1 :1 `uc 1 ]
+[n S453 . . CS ]
+"7537
+[s S454 :7 `uc 1 :1 `uc 1 ]
+[n S454 . . PA2E ]
+"7541
+[s S455 :6 `uc 1 :1 `uc 1 ]
+[n S455 . . PB1E ]
+"7545
+[s S456 :2 `uc 1 :1 `uc 1 ]
+[n S456 . . PB2 ]
+"7549
+[s S457 :4 `uc 1 :1 `uc 1 ]
+[n S457 . . PB3E ]
+"7553
+[s S458 :5 `uc 1 :1 `uc 1 ]
+[n S458 . . PC1E ]
+"7557
+[s S459 :1 `uc 1 :1 `uc 1 ]
+[n S459 . . PC2 ]
+"7561
+[s S460 :3 `uc 1 :1 `uc 1 ]
+[n S460 . . PC3E ]
+"7565
+[s S461 :1 `uc 1 ]
+[n S461 . PD2 ]
+"7568
+[s S462 :1 `uc 1 ]
+[n S462 . RDE ]
+"7571
+[s S463 :4 `uc 1 :1 `uc 1 ]
+[n S463 . . RE4 ]
+"7575
+[s S464 :5 `uc 1 :1 `uc 1 ]
+[n S464 . . RE5 ]
+"7579
+[s S465 :6 `uc 1 :1 `uc 1 ]
+[n S465 . . RE6 ]
+"7583
+[s S466 :7 `uc 1 :1 `uc 1 ]
+[n S466 . . RE7 ]
+"7587
+[s S467 :1 `uc 1 :1 `uc 1 ]
+[n S467 . . WRE ]
+"7481
+[u S441 `S442 1 `S443 1 `S444 1 `S445 1 `S446 1 `S447 1 `S448 1 `S449 1 `S450 1 `S451 1 `S452 1 `S453 1 `S454 1 `S455 1 `S456 1 `S457 1 `S458 1 `S459 1 `S460 1 `S461 1 `S462 1 `S463 1 `S464 1 `S465 1 `S466 1 `S467 1 ]
+[n S441 . . . . . . . . . . . . . . . . . . . . . . . . . . . ]
+"7592
+[v _PORTEbits `VS441 ~T0 @X0 0 e@3972 ]
+"6376
+[s S401 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S401 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"6386
+[s S402 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S402 . AN0 AN1 AN2 AN3 . AN4 ]
+"6394
+[s S403 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S403 . C12IN0M C12IN1M C2INP C1INP C1OUT C2OUT ]
+"6402
+[s S404 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S404 . C12IN0N C12IN1N VREFM VREFP T0CKI SS ]
+"6410
+[s S405 :5 `uc 1 :1 `uc 1 ]
+[n S405 . . NOT_SS ]
+"6414
+[s S406 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S406 . . VREFN . SRQ nSS ]
+"6421
+[s S407 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S407 . . CVREF . LVDIN ]
+"6427
+[s S408 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S408 . . DACOUT . HLVDIN ]
+"6433
+[s S409 :5 `uc 1 :1 `uc 1 ]
+[n S409 . . SS1 ]
+"6437
+[s S410 :5 `uc 1 :1 `uc 1 ]
+[n S410 . . NOT_SS1 ]
+"6441
+[s S411 :5 `uc 1 :1 `uc 1 ]
+[n S411 . . nSS1 ]
+"6445
+[s S412 :5 `uc 1 :1 `uc 1 ]
+[n S412 . . SRNQ ]
+"6449
+[s S413 :7 `uc 1 :1 `uc 1 ]
+[n S413 . . RJPU ]
+"6453
+[s S414 :1 `uc 1 ]
+[n S414 . ULPWUIN ]
+"6375
+[u S400 `S401 1 `S402 1 `S403 1 `S404 1 `S405 1 `S406 1 `S407 1 `S408 1 `S409 1 `S410 1 `S411 1 `S412 1 `S413 1 `S414 1 ]
+[n S400 . . . . . . . . . . . . . . . ]
+"6457
+[v _PORTAbits `VS400 ~T0 @X0 0 e@3968 ]
+"6662
+[s S416 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S416 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"6672
+[s S417 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S417 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"6682
+[s S418 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S418 . AN12 AN10 AN8 AN9 AN11 AN13 PGC PGD ]
+"6692
+[s S419 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S419 . FLT0 C12IN3M . C12IN2M T5G T1G ]
+"6700
+[s S420 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S420 . SRI C12IN3N . C12IN2N . CCP3 ]
+"6708
+[s S421 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S421 . . CTED1 CTED2 . T3CKI ]
+"6715
+[s S422 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S422 . . P2A . P3A ]
+"6721
+[s S423 :3 `uc 1 :1 `uc 1 ]
+[n S423 . . CCP2_PA2 ]
+"6661
+[u S415 `S416 1 `S417 1 `S418 1 `S419 1 `S420 1 `S421 1 `S422 1 `S423 1 ]
+[n S415 . . . . . . . . . ]
+"6726
+[v _PORTBbits `VS415 ~T0 @X0 0 e@3969 ]
+[v F7818 `(v ~T0 @X0 1 tf1`ul ]
+"152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v __delay `JF7818 ~T0 @X0 0 e ]
+[p i __delay ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7432,18 +7652,580 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 20: void InitMiscellaneous(void);
 [; ;init.h: 21: void InitTransmission(void);
 [; ;init.h: 22: void InitInterrupt(void);
-[; ;communication.h: 16: void Transmit(unsigned char trans_data);
-[; ;communication.h: 17: unsigned char Receive(void);
-"24 communication.h
-[v _overrun `uc ~T0 @X0 1 e ]
-[i _overrun
--> -> 0 `i `uc
+[; ;init.h: 23: void InitMiscellaneos(void);
+[; ;ignition.h: 16: void Ignite_Port(unsigned char ignite_number);
+[; ;ignition.h: 17: void Check_Ignition(void);
+[; ;ignition.h: 18: void Mark_Ignite(void);
+[; ;ignition.h: 19: void Check_Power(void);
+[; ;ignition.h: 20: void Evaluate_Reception(void);
+"27 ignition.h
+[v _Marker `uc ~T0 @X0 -> 10 `i e ]
+[; ;ignition.h: 27: unsigned char Marker[10];
+"28
+[v _p_status `uc ~T0 @X0 1 e ]
+[i _p_status
+-> -> 21 `i `uc
 ]
-[; ;communication.h: 24: unsigned char overrun = 0;
+[; ;ignition.h: 28: unsigned char p_status = 0x15;
+[; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
+[; ;communication.h: 17: unsigned char port, unsigned char con_status);
+[; ;communication.h: 18: unsigned char Receive(void);
+"25 communication.h
+[v _overrun `b ~T0 @X0 1 e ]
+[i _overrun
+-> 0 `i
+]
+[; ;communication.h: 25: bit overrun = 0;
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
-[v _addressed `uc ~T0 @X0 1 e ]
-[i _addressed
+[v _received `uc ~T0 @X0 -> 4 `i e ]
+[; ;interrupt.h: 23: unsigned char received[4];
+"24
+[v _receive_counter `uc ~T0 @X0 1 e ]
+[i _receive_counter
 -> -> 0 `i `uc
 ]
-[; ;interrupt.h: 23: unsigned char addressed = 0;
+[; ;interrupt.h: 24: unsigned char receive_counter = 0;
+"31 main.h
+[v _slave_addressed `b ~T0 @X0 1 e ]
+[i _slave_addressed
+-> 0 `i
+]
+[; ;main.h: 31: bit slave_addressed = 0;
+"3 ignition.c
+[v _Test_Port `(v ~T0 @X0 1 ef ]
+{
+[; ;ignition.c: 3: void Test_Port(void) {
+[e :U _Test_Port ]
+[f ]
+[; ;ignition.c: 4: switch(received[3]) {
+"4
+[e $U 1142  ]
+{
+[; ;ignition.c: 5: case 0:
+"5
+[e :U 1143 ]
+[; ;ignition.c: 6: if(PORTCbits.RC4 == 1) {
+"6
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 1 `i 1144  ]
+{
+[; ;ignition.c: 7: Transmit(0xAA, 'T', 0, '1');
+"7
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 0 `i `uc -> -> 49 `ui `uc ]
+"8
+}
+[; ;ignition.c: 8: }else if(PORTCbits.RC4 == 0) {
+[e $U 1145  ]
+[e :U 1144 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1146  ]
+{
+[; ;ignition.c: 9: Transmit(0xAA, 'T', 0, '0');
+"9
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 0 `i `uc -> -> 48 `ui `uc ]
+"10
+}
+[e :U 1146 ]
+"11
+[e :U 1145 ]
+[; ;ignition.c: 10: }
+[; ;ignition.c: 11: break;
+[e $U 1141  ]
+[; ;ignition.c: 12: case 1:
+"12
+[e :U 1147 ]
+[; ;ignition.c: 13: if(PORTDbits.RD2 == 1) {
+"13
+[e $ ! == -> . . _PORTDbits 0 2 `i -> 1 `i 1148  ]
+{
+[; ;ignition.c: 14: Transmit(0xAA, 'T', 1, '1');
+"14
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 1 `i `uc -> -> 49 `ui `uc ]
+"15
+}
+[; ;ignition.c: 15: }else if(PORTCbits.RC4 == 0) {
+[e $U 1149  ]
+[e :U 1148 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1150  ]
+{
+[; ;ignition.c: 16: Transmit(0xAA, 'T', 1, '0');
+"16
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 1 `i `uc -> -> 48 `ui `uc ]
+"17
+}
+[e :U 1150 ]
+"18
+[e :U 1149 ]
+[; ;ignition.c: 17: }
+[; ;ignition.c: 18: break;
+[e $U 1141  ]
+[; ;ignition.c: 19: case 2:
+"19
+[e :U 1151 ]
+[; ;ignition.c: 20: if(PORTDbits.RD0 == 1) {
+"20
+[e $ ! == -> . . _PORTDbits 0 0 `i -> 1 `i 1152  ]
+{
+[; ;ignition.c: 21: Transmit(0xAA, 'T', 2, '1');
+"21
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 2 `i `uc -> -> 49 `ui `uc ]
+"22
+}
+[; ;ignition.c: 22: }else if(PORTCbits.RC4 == 0) {
+[e $U 1153  ]
+[e :U 1152 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1154  ]
+{
+[; ;ignition.c: 23: Transmit(0xAA, 'T', 2, '0');
+"23
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 2 `i `uc -> -> 48 `ui `uc ]
+"24
+}
+[e :U 1154 ]
+"25
+[e :U 1153 ]
+[; ;ignition.c: 24: }
+[; ;ignition.c: 25: break;
+[e $U 1141  ]
+[; ;ignition.c: 26: case 3:
+"26
+[e :U 1155 ]
+[; ;ignition.c: 27: if(PORTCbits.RC2 == 1) {
+"27
+[e $ ! == -> . . _PORTCbits 0 2 `i -> 1 `i 1156  ]
+{
+[; ;ignition.c: 28: Transmit(0xAA, 'T', 3, '1');
+"28
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 3 `i `uc -> -> 49 `ui `uc ]
+"29
+}
+[; ;ignition.c: 29: }else if(PORTCbits.RC4 == 0) {
+[e $U 1157  ]
+[e :U 1156 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1158  ]
+{
+[; ;ignition.c: 30: Transmit(0xAA, 'T', 3, '0');
+"30
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 3 `i `uc -> -> 48 `ui `uc ]
+"31
+}
+[e :U 1158 ]
+"32
+[e :U 1157 ]
+[; ;ignition.c: 31: }
+[; ;ignition.c: 32: break;
+[e $U 1141  ]
+[; ;ignition.c: 33: case 4:
+"33
+[e :U 1159 ]
+[; ;ignition.c: 34: if(PORTEbits.RE2 == 1) {
+"34
+[e $ ! == -> . . _PORTEbits 0 2 `i -> 1 `i 1160  ]
+{
+[; ;ignition.c: 35: Transmit(0xAA, 'T', 4, '1');
+"35
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 4 `i `uc -> -> 49 `ui `uc ]
+"36
+}
+[; ;ignition.c: 36: }else if(PORTCbits.RC4 == 0) {
+[e $U 1161  ]
+[e :U 1160 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1162  ]
+{
+[; ;ignition.c: 37: Transmit(0xAA, 'T', 4, '0');
+"37
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 4 `i `uc -> -> 48 `ui `uc ]
+"38
+}
+[e :U 1162 ]
+"39
+[e :U 1161 ]
+[; ;ignition.c: 38: }
+[; ;ignition.c: 39: break;
+[e $U 1141  ]
+[; ;ignition.c: 40: case 5:
+"40
+[e :U 1163 ]
+[; ;ignition.c: 41: if(PORTEbits.RE0 == 1) {
+"41
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 1 `i 1164  ]
+{
+[; ;ignition.c: 42: Transmit(0xAA, 'T', 5, '1');
+"42
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 5 `i `uc -> -> 49 `ui `uc ]
+"43
+}
+[; ;ignition.c: 43: }else if(PORTCbits.RC4 == 0) {
+[e $U 1165  ]
+[e :U 1164 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1166  ]
+{
+[; ;ignition.c: 44: Transmit(0xAA, 'T', 5, '0');
+"44
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 5 `i `uc -> -> 48 `ui `uc ]
+"45
+}
+[e :U 1166 ]
+"46
+[e :U 1165 ]
+[; ;ignition.c: 45: }
+[; ;ignition.c: 46: break;
+[e $U 1141  ]
+[; ;ignition.c: 47: case 6:
+"47
+[e :U 1167 ]
+[; ;ignition.c: 48: if(PORTAbits.RA4 == 1) {
+"48
+[e $ ! == -> . . _PORTAbits 0 4 `i -> 1 `i 1168  ]
+{
+[; ;ignition.c: 49: Transmit(0xAA, 'T', 6, '1');
+"49
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 6 `i `uc -> -> 49 `ui `uc ]
+"50
+}
+[; ;ignition.c: 50: }else if(PORTCbits.RC4 == 0) {
+[e $U 1169  ]
+[e :U 1168 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1170  ]
+{
+[; ;ignition.c: 51: Transmit(0xAA, 'T', 6, '0');
+"51
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 6 `i `uc -> -> 48 `ui `uc ]
+"52
+}
+[e :U 1170 ]
+"53
+[e :U 1169 ]
+[; ;ignition.c: 52: }
+[; ;ignition.c: 53: break;
+[e $U 1141  ]
+[; ;ignition.c: 54: case 7:
+"54
+[e :U 1171 ]
+[; ;ignition.c: 55: if(PORTBbits.RB4 == 1) {
+"55
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 1 `i 1172  ]
+{
+[; ;ignition.c: 56: Transmit(0xAA, 'T', 7, '1');
+"56
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 7 `i `uc -> -> 49 `ui `uc ]
+"57
+}
+[; ;ignition.c: 57: }else if(PORTCbits.RC4 == 0) {
+[e $U 1173  ]
+[e :U 1172 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1174  ]
+{
+[; ;ignition.c: 58: Transmit(0xAA, 'T', 7, '0');
+"58
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 7 `i `uc -> -> 48 `ui `uc ]
+"59
+}
+[e :U 1174 ]
+"60
+[e :U 1173 ]
+[; ;ignition.c: 59: }
+[; ;ignition.c: 60: break;
+[e $U 1141  ]
+[; ;ignition.c: 61: case 8:
+"61
+[e :U 1175 ]
+[; ;ignition.c: 62: if(PORTAbits.RA2 == 1) {
+"62
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 1176  ]
+{
+[; ;ignition.c: 63: Transmit(0xAA, 'T', 8, '1');
+"63
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 8 `i `uc -> -> 49 `ui `uc ]
+"64
+}
+[; ;ignition.c: 64: }else if(PORTCbits.RC4 == 0) {
+[e $U 1177  ]
+[e :U 1176 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1178  ]
+{
+[; ;ignition.c: 65: Transmit(0xAA, 'T', 8, '0');
+"65
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 8 `i `uc -> -> 48 `ui `uc ]
+"66
+}
+[e :U 1178 ]
+"67
+[e :U 1177 ]
+[; ;ignition.c: 66: }
+[; ;ignition.c: 67: break;
+[e $U 1141  ]
+[; ;ignition.c: 68: case 9:
+"68
+[e :U 1179 ]
+[; ;ignition.c: 69: if(PORTAbits.RA0 == 1) {
+"69
+[e $ ! == -> . . _PORTAbits 0 0 `i -> 1 `i 1180  ]
+{
+[; ;ignition.c: 70: Transmit(0xAA, 'T', 9, '1');
+"70
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 9 `i `uc -> -> 49 `ui `uc ]
+"71
+}
+[; ;ignition.c: 71: }else if(PORTCbits.RC4 == 0) {
+[e $U 1181  ]
+[e :U 1180 ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1182  ]
+{
+[; ;ignition.c: 72: Transmit(0xAA, 'T', 9, '0');
+"72
+[e ( _Transmit (4 , , , -> -> 170 `i `uc -> -> 84 `ui `uc -> -> 9 `i `uc -> -> 48 `ui `uc ]
+"73
+}
+[e :U 1182 ]
+"74
+[e :U 1181 ]
+[; ;ignition.c: 73: }
+[; ;ignition.c: 74: break;
+[e $U 1141  ]
+"75
+}
+[; ;ignition.c: 75: }
+[e $U 1141  ]
+"4
+[e :U 1142 ]
+[e [\ *U + &U _received * -> -> -> 3 `i `ui `ux -> -> # *U &U _received `ui `ux , $ -> -> 0 `i `uc 1143
+ , $ -> -> 1 `i `uc 1147
+ , $ -> -> 2 `i `uc 1151
+ , $ -> -> 3 `i `uc 1155
+ , $ -> -> 4 `i `uc 1159
+ , $ -> -> 5 `i `uc 1163
+ , $ -> -> 6 `i `uc 1167
+ , $ -> -> 7 `i `uc 1171
+ , $ -> -> 8 `i `uc 1175
+ , $ -> -> 9 `i `uc 1179
+ 1141 ]
+"75
+[e :U 1141 ]
+[; ;ignition.c: 76: }
+"76
+[e :UE 1140 ]
+}
+"78
+[v _Ignite_Port `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;ignition.c: 78: void Ignite_Port(unsigned char ignite_number) {
+[e :U _Ignite_Port ]
+[v _ignite_number `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;ignition.c: 79: switch(Marker[ignite_number]) {
+"79
+[e $U 1185  ]
+{
+[; ;ignition.c: 80: case 0:
+"80
+[e :U 1186 ]
+[; ;ignition.c: 81: PORTCbits.RC5 = 1;
+"81
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+[; ;ignition.c: 82: break;
+"82
+[e $U 1184  ]
+[; ;ignition.c: 83: case 1:
+"83
+[e :U 1187 ]
+[; ;ignition.c: 84: PORTDbits.RD3 = 1;
+"84
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
+[; ;ignition.c: 85: break;
+"85
+[e $U 1184  ]
+[; ;ignition.c: 86: case 2:
+"86
+[e :U 1188 ]
+[; ;ignition.c: 87: PORTDbits.RD1 = 1;
+"87
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+[; ;ignition.c: 88: break;
+"88
+[e $U 1184  ]
+[; ;ignition.c: 89: case 3:
+"89
+[e :U 1189 ]
+[; ;ignition.c: 90: PORTCbits.RC3 = 1;
+"90
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+[; ;ignition.c: 91: break;
+"91
+[e $U 1184  ]
+[; ;ignition.c: 92: case 4:
+"92
+[e :U 1190 ]
+[; ;ignition.c: 93: PORTCbits.RC1 = 1;
+"93
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+[; ;ignition.c: 94: break;
+"94
+[e $U 1184  ]
+[; ;ignition.c: 95: case 5:
+"95
+[e :U 1191 ]
+[; ;ignition.c: 96: PORTEbits.RE1 = 1;
+"96
+[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
+[; ;ignition.c: 97: break;
+"97
+[e $U 1184  ]
+[; ;ignition.c: 98: case 6:
+"98
+[e :U 1192 ]
+[; ;ignition.c: 99: PORTAbits.RA5 = 1;
+"99
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+[; ;ignition.c: 100: break;
+"100
+[e $U 1184  ]
+[; ;ignition.c: 101: case 7:
+"101
+[e :U 1193 ]
+[; ;ignition.c: 102: PORTBbits.RB5 = 1;
+"102
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+[; ;ignition.c: 103: break;
+"103
+[e $U 1184  ]
+[; ;ignition.c: 104: case 8:
+"104
+[e :U 1194 ]
+[; ;ignition.c: 105: PORTAbits.RA3 = 1;
+"105
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+[; ;ignition.c: 106: break;
+"106
+[e $U 1184  ]
+[; ;ignition.c: 107: case 9:
+"107
+[e :U 1195 ]
+[; ;ignition.c: 108: PORTAbits.RA1 = 1;
+"108
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[; ;ignition.c: 109: break;
+"109
+[e $U 1184  ]
+"110
+}
+[; ;ignition.c: 110: }
+[e $U 1184  ]
+"79
+[e :U 1185 ]
+[e [\ *U + &U _Marker * -> _ignite_number `ux -> -> # *U &U _Marker `ui `ux , $ -> -> 0 `i `uc 1186
+ , $ -> -> 1 `i `uc 1187
+ , $ -> -> 2 `i `uc 1188
+ , $ -> -> 3 `i `uc 1189
+ , $ -> -> 4 `i `uc 1190
+ , $ -> -> 5 `i `uc 1191
+ , $ -> -> 6 `i `uc 1192
+ , $ -> -> 7 `i `uc 1193
+ , $ -> -> 8 `i `uc 1194
+ , $ -> -> 9 `i `uc 1195
+ 1184 ]
+"110
+[e :U 1184 ]
+[; ;ignition.c: 111: }
+"111
+[e :UE 1183 ]
+}
+"113
+[v _Check_Ignition `(v ~T0 @X0 1 ef ]
+{
+[; ;ignition.c: 113: void Check_Ignition(void) {
+[e :U _Check_Ignition ]
+[f ]
+[; ;ignition.c: 114: for(unsigned char c = 0; c < 10; c++) {
+"114
+{
+[v _c `uc ~T0 @X0 1 a ]
+[e = _c -> -> 0 `i `uc ]
+[e $ < -> _c `i -> 10 `i 1197  ]
+[e $U 1198  ]
+[e :U 1197 ]
+{
+[; ;ignition.c: 115: if(Marker[c] == 1) {
+"115
+[e $ ! == -> *U + &U _Marker * -> _c `ux -> -> # *U &U _Marker `ui `ux `i -> 1 `i 1200  ]
+{
+[; ;ignition.c: 116: Ignite_Port(c);
+"116
+[e ( _Ignite_Port (1 _c ]
+[; ;ignition.c: 117: _delay((unsigned long)((15)*(4000000/4000.0)));
+"117
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;ignition.c: 118: Marker[c] = 0;
+"118
+[e = *U + &U _Marker * -> _c `ux -> -> # *U &U _Marker `ui `ux -> -> 0 `i `uc ]
+"119
+}
+[e :U 1200 ]
+"120
+}
+"114
+[e ++ _c -> -> 1 `i `uc ]
+[e $ < -> _c `i -> 10 `i 1197  ]
+[e :U 1198 ]
+"120
+}
+[; ;ignition.c: 119: }
+[; ;ignition.c: 120: }
+[; ;ignition.c: 121: }
+"121
+[e :UE 1196 ]
+}
+"123
+[v _Mark_Ignite `(v ~T0 @X0 1 ef ]
+{
+[; ;ignition.c: 123: void Mark_Ignite(void) {
+[e :U _Mark_Ignite ]
+[f ]
+[; ;ignition.c: 124: Marker[received[3]] = 1;
+"124
+[e = *U + &U _Marker * -> *U + &U _received * -> -> -> 3 `i `ui `ux -> -> # *U &U _received `ui `ux `ux -> -> # *U &U _Marker `ui `ux -> -> 1 `i `uc ]
+[; ;ignition.c: 125: }
+"125
+[e :UE 1201 ]
+}
+"127
+[v _Check_Power `(v ~T0 @X0 1 ef ]
+{
+[; ;ignition.c: 127: void Check_Power(void) {
+[e :U _Check_Power ]
+[f ]
+[; ;ignition.c: 129: }
+"129
+[e :UE 1202 ]
+}
+"131
+[v _Evaluate_Reception `(v ~T0 @X0 1 ef ]
+{
+[; ;ignition.c: 131: void Evaluate_Reception(void) {
+[e :U _Evaluate_Reception ]
+[f ]
+[; ;ignition.c: 137: if(received[2] == 'T') {
+"137
+[e $ ! == -> *U + &U _received * -> -> -> 2 `i `ui `ux -> -> # *U &U _received `ui `ux `ui -> 84 `ui 1204  ]
+{
+[; ;ignition.c: 138: Test_Port();
+"138
+[e ( _Test_Port ..  ]
+"139
+}
+[; ;ignition.c: 139: }else if(received[2] == 'I') {
+[e $U 1205  ]
+[e :U 1204 ]
+[e $ ! == -> *U + &U _received * -> -> -> 2 `i `ui `ux -> -> # *U &U _received `ui `ux `ui -> 73 `ui 1206  ]
+{
+[; ;ignition.c: 140: Mark_Ignite();
+"140
+[e ( _Mark_Ignite ..  ]
+"141
+}
+[e :U 1206 ]
+"142
+[e :U 1205 ]
+[; ;ignition.c: 141: }
+[; ;ignition.c: 142: }
+[e :UE 1203 ]
+}

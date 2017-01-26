@@ -38,7 +38,7 @@ void interrupt Isr(void) {
                     Receive();          // process
             receive_counter++;          // address next position in 
                                         // array for the upcoming data
-            if(receive_counter > 4) {   // end of data string reached
+            if(receive_counter > 5) {   // end of data string reached
                 receive_counter = 0;    // clear counter
                 master_addressed = 0;   // terminate addressing of
                                         // device
@@ -61,6 +61,9 @@ void interrupt Isr(void) {
                         pixels[pixel_index_array] &= 
                                 ~(1 << pixel_index_bit);
                     }
+                    if(received[5] == "1") {
+                        Set_Display('7', 'P', (received[1] + 1));
+                    }
                 }
             }
         }
@@ -72,10 +75,5 @@ void interrupt Isr(void) {
             check_counter = 0;
             testflag = 0;
         }
-//        if(received == '1' || received == 'L') {
-//            Led = 1;
-//        }else {
-//            Led = 0;
-//        }
     }
 }
