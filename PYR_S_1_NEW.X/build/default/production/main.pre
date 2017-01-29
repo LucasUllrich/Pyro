@@ -9390,7 +9390,7 @@ void Evaluate_Reception(void);
 
 # 27
 unsigned char Marker[10];
-unsigned char p_status = 0x15;
+unsigned char p_status = '0';
 
 # 16 "communication.h"
 void Transmit(unsigned char receiver, unsigned char operation,
@@ -9407,7 +9407,7 @@ void interrupt Isr(void);
 unsigned char received[4];
 unsigned char receive_counter = 0;
 
-# 31 "main.h"
+# 33 "main.h"
 bit slave_addressed = 0;
 
 # 74 "main.c"

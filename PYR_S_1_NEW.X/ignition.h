@@ -25,7 +25,7 @@ void Evaluate_Reception(void);
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Variables">
 unsigned char Marker[10];
-unsigned char p_status = 0x15;      // NAK
+unsigned char p_status = '0';
 // </editor-fold>
 
 #endif	/* IGNITION_H */

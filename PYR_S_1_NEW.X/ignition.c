@@ -1,3 +1,5 @@
+#include <pic18f44k22.h>
+
 #include "main.h"
 
 void Test_Port(void) {
@@ -125,19 +127,30 @@ void Mark_Ignite(void) {
 }
 
 void Check_Power(void) {
+    // U = Upart * R / Rpart
+    // U = Upart * 22 / 6.8
+    // Upart = U_FVR * ADRESH / 255
+    float source_power = 0;
+    float voltage = 0;
+    float DAC_out = 1.024;
+    float supply = 0;
+    //*******DAC-Module
+    ADCON0bits.CHS = 0b11110;
     ADCON0bits.GO_nDONE = 1;
     while (ADCON0bits.GO_nDONE == 1);
-    // U = Upart * R / Rpart
-    // U = Upart * 42 / 12         !!!!!! Check resistor value
-    // Upart = U_FVR * ADRESH / 255
-    float power = 0;
-    float voltage = 0;
-    voltage = (U_FVR * (ADRESH / 255));
-    power = (ADRESH * 3.5);
-    if (power < MIN_VOLTAGE) {
-        p_status = "0";
-    } else if (power >= MIN_VOLTAGE) {
-        p_status = "1";
+    supply = ((DAC_out * 255) / ADRESH);
+    
+    //*******AN12
+    ADCON0bits.CHS = 0b01100;
+    ADCON0bits.GO_nDONE = 1;
+    while (ADCON0bits.GO_nDONE == 1);
+    voltage = ((ADRESH * supply) / 255);
+    source_power = (4.2353 * voltage);
+    
+    if (source_power < MIN_VOLTAGE) {
+        p_status = '0';
+    } else if (source_power >= MIN_VOLTAGE) {
+        p_status = '1';
     }
 }
 

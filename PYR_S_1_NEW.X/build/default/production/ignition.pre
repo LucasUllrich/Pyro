@@ -1,16 +1,6 @@
 
 # 1 "ignition.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
 # 49 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h"
 extern volatile unsigned char ANSELA @ 0xF38;
 
@@ -9298,6 +9288,16 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+
 # 18 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
@@ -9335,7 +9335,7 @@ void Evaluate_Reception(void);
 
 # 27
 unsigned char Marker[10];
-unsigned char p_status = 0x15;
+unsigned char p_status = '0';
 
 # 16 "communication.h"
 void Transmit(unsigned char receiver, unsigned char operation,
@@ -9352,10 +9352,10 @@ void interrupt Isr(void);
 unsigned char received[4];
 unsigned char receive_counter = 0;
 
-# 31 "main.h"
+# 33 "main.h"
 bit slave_addressed = 0;
 
-# 3 "ignition.c"
+# 5 "ignition.c"
 void Test_Port(void) {
 switch(received[3]) {
 case 0:
@@ -9482,14 +9482,39 @@ Marker[received[3]] = 1;
 
 void Check_Power(void) {
 
+
+
+float source_power = 0;
+float voltage = 0;
+float DAC_out = 1.024;
+float supply = 0;
+
+ADCON0bits.CHS = 0b11110;
+ADCON0bits.GO_nDONE = 1;
+while (ADCON0bits.GO_nDONE == 1);
+supply = ((DAC_out * 255) / ADRESH);
+
+
+ADCON0bits.CHS = 0b01100;
+ADCON0bits.GO_nDONE = 1;
+while (ADCON0bits.GO_nDONE == 1);
+voltage = ((ADRESH * supply) / 255);
+source_power = (4.2353 * voltage);
+
+if (source_power < 16.8) {
+p_status = '0';
+} else if (source_power >= 16.8) {
+p_status = '1';
+}
 }
 
 void Evaluate_Reception(void) {
 
-# 137
-if(received[2] == 'T') {
+# 163
+if (received[2] == 'T') {
+Check_Power();
 Test_Port();
-}else if(received[2] == 'I') {
+} else if (received[2] == 'I') {
 Mark_Ignite();
 }
 }

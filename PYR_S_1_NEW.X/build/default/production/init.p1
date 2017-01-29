@@ -157,17 +157,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S609 . . . . . . . . ]
 "10744
 [v _RCSTA1bits `VS609 ~T0 @X0 0 e@4011 ]
-"695
-[s S33 :4 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . . FVRS FVRST FVREN ]
-"701
-[s S34 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . . FVRS0 FVRS1 ]
-"694
-[u S32 `S33 1 `S34 1 ]
-[n S32 . . . ]
-"707
-[v _VREFCON0bits `VS32 ~T0 @X0 0 e@3906 ]
+"684
+[v _VREFCON0 `Vuc ~T0 @X0 0 e@3906 ]
+"565
+[v _VREFCON1 `Vuc ~T0 @X0 0 e@3905 ]
+"475
+[s S21 :5 `uc 1 ]
+[n S21 . DACR ]
+"478
+[s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S22 . DACR0 DACR1 DACR2 DACR3 DACR4 ]
+"474
+[u S20 `S21 1 `S22 1 ]
+[n S20 . . . ]
+"486
+[v _VREFCON2bits `VS20 ~T0 @X0 0 e@3904 ]
 "14051
 [v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
 "13984
@@ -216,9 +220,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S564 . . . ]
 "9851
 [v _PIR1bits `VS564 ~T0 @X0 0 e@3998 ]
-[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
-[; ;htc.h: 28: extern double __fpnormalize(double);
-[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f44k22.h: 49: extern volatile unsigned char ANSELA @ 0xF38;
 "51 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
 [; ;pic18f44k22.h: 51: asm("ANSELA equ 0F38h");
@@ -7636,6 +7637,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18f44k22.h: 20365: extern volatile __bit nTO @ (((unsigned) &RCON)*8) + 3;
 [; ;pic18f44k22.h: 20367: extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 [; ;pic18f44k22.h: 20369: extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18.h: 18: __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 [; ;pic18.h: 19: __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 [; ;pic18.h: 43: extern void __nop(void);
@@ -7661,9 +7665,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "28
 [v _p_status `uc ~T0 @X0 1 e ]
 [i _p_status
--> -> 21 `i `uc
+-> -> 48 `ui `uc
 ]
-[; ;ignition.h: 28: unsigned char p_status = 0x15;
+[; ;ignition.h: 28: unsigned char p_status = '0';
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port, unsigned char con_status);
 [; ;communication.h: 18: unsigned char Receive(void);
@@ -7683,232 +7687,235 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;interrupt.h: 24: unsigned char receive_counter = 0;
-"31 main.h
+"33 main.h
 [v _slave_addressed `b ~T0 @X0 1 e ]
 [i _slave_addressed
 -> 0 `i
 ]
-[; ;main.h: 31: bit slave_addressed = 0;
-"3 init.c
+[; ;main.h: 33: bit slave_addressed = 0;
+"5 init.c
 [v _Init `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 3: void Init(void) {
+[; ;init.c: 5: void Init(void) {
 [e :U _Init ]
 [f ]
-[; ;init.c: 4: InitPort();
-"4
-[e ( _InitPort ..  ]
-[; ;init.c: 5: InitTris();
-"5
-[e ( _InitTris ..  ]
-[; ;init.c: 6: InitAnsel();
+[; ;init.c: 6: InitPort();
 "6
-[e ( _InitAnsel ..  ]
-[; ;init.c: 7: InitMiscellaneous();
+[e ( _InitPort ..  ]
+[; ;init.c: 7: InitTris();
 "7
-[e ( _InitMiscellaneous ..  ]
-[; ;init.c: 8: InitTransmission();
+[e ( _InitTris ..  ]
+[; ;init.c: 8: InitAnsel();
 "8
-[e ( _InitTransmission ..  ]
-[; ;init.c: 9: InitInterrupt();
+[e ( _InitAnsel ..  ]
+[; ;init.c: 9: InitMiscellaneous();
 "9
-[e ( _InitInterrupt ..  ]
-[; ;init.c: 10: InitMiscellaneos();
+[e ( _InitMiscellaneous ..  ]
+[; ;init.c: 10: InitTransmission();
 "10
-[e ( _InitMiscellaneos ..  ]
-[; ;init.c: 11: }
+[e ( _InitTransmission ..  ]
+[; ;init.c: 11: InitInterrupt();
 "11
+[e ( _InitInterrupt ..  ]
+[; ;init.c: 12: InitMiscellaneos();
+"12
+[e ( _InitMiscellaneos ..  ]
+[; ;init.c: 13: }
+"13
 [e :UE 1140 ]
 }
-"13
+"15
 [v _InitPort `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 13: void InitPort(void) {
+[; ;init.c: 15: void InitPort(void) {
 [e :U _InitPort ]
 [f ]
-[; ;init.c: 14: PORTA = 0b00000000;
-"14
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;init.c: 15: PORTB = 0b00000000;
-"15
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;init.c: 16: PORTC = 0b00000000;
+[; ;init.c: 16: PORTA = 0b00000000;
 "16
-[e = _PORTC -> -> 0 `i `uc ]
-[; ;init.c: 17: PORTD = 0b00000000;
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;init.c: 17: PORTB = 0b00000000;
 "17
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;init.c: 18: PORTE = 0b00000000;
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;init.c: 18: PORTC = 0b00000000;
 "18
-[e = _PORTE -> -> 0 `i `uc ]
-[; ;init.c: 19: }
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;init.c: 19: PORTD = 0b00000000;
 "19
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;init.c: 20: PORTE = 0b00000000;
+"20
+[e = _PORTE -> -> 0 `i `uc ]
+[; ;init.c: 21: }
+"21
 [e :UE 1141 ]
 }
-"21
+"23
 [v _InitTris `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 21: void InitTris(void) {
+[; ;init.c: 23: void InitTris(void) {
 [e :U _InitTris ]
 [f ]
-[; ;init.c: 22: TRISA = 0b00010101;
-"22
-[e = _TRISA -> -> 21 `i `uc ]
-[; ;init.c: 23: TRISB = 0b00010001;
-"23
-[e = _TRISB -> -> 17 `i `uc ]
-[; ;init.c: 24: TRISC = 0b00010100;
+[; ;init.c: 24: TRISA = 0b00010101;
 "24
-[e = _TRISC -> -> 20 `i `uc ]
-[; ;init.c: 25: TRISD = 0b00000101;
+[e = _TRISA -> -> 21 `i `uc ]
+[; ;init.c: 25: TRISB = 0b00010001;
 "25
-[e = _TRISD -> -> 5 `i `uc ]
-[; ;init.c: 26: TRISE = 0b00000101;
+[e = _TRISB -> -> 17 `i `uc ]
+[; ;init.c: 26: TRISC = 0b00010100;
 "26
-[e = _TRISE -> -> 5 `i `uc ]
-[; ;init.c: 27: }
+[e = _TRISC -> -> 20 `i `uc ]
+[; ;init.c: 27: TRISD = 0b00000101;
 "27
+[e = _TRISD -> -> 5 `i `uc ]
+[; ;init.c: 28: TRISE = 0b00000101;
+"28
+[e = _TRISE -> -> 5 `i `uc ]
+[; ;init.c: 29: }
+"29
 [e :UE 1142 ]
 }
-"29
+"31
 [v _InitAnsel `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 29: void InitAnsel(void) {
+[; ;init.c: 31: void InitAnsel(void) {
 [e :U _InitAnsel ]
 [f ]
-[; ;init.c: 30: ANSELA = 0b00000000;
-"30
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;init.c: 31: ANSELB = 0b00000001;
-"31
-[e = _ANSELB -> -> 1 `i `uc ]
-[; ;init.c: 32: ANSELC = 0b00000000;
+[; ;init.c: 32: ANSELA = 0b00000000;
 "32
-[e = _ANSELC -> -> 0 `i `uc ]
-[; ;init.c: 33: ANSELD = 0b00000000;
+[e = _ANSELA -> -> 0 `i `uc ]
+[; ;init.c: 33: ANSELB = 0b00000001;
 "33
-[e = _ANSELD -> -> 0 `i `uc ]
-[; ;init.c: 34: ANSELE = 0b00000000;
+[e = _ANSELB -> -> 1 `i `uc ]
+[; ;init.c: 34: ANSELC = 0b00000000;
 "34
-[e = _ANSELE -> -> 0 `i `uc ]
-[; ;init.c: 35: }
+[e = _ANSELC -> -> 0 `i `uc ]
+[; ;init.c: 35: ANSELD = 0b00000000;
 "35
+[e = _ANSELD -> -> 0 `i `uc ]
+[; ;init.c: 36: ANSELE = 0b00000000;
+"36
+[e = _ANSELE -> -> 0 `i `uc ]
+[; ;init.c: 37: }
+"37
 [e :UE 1143 ]
 }
-"37
+"39
 [v _InitMiscellaneous `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 37: void InitMiscellaneous(void) {
+[; ;init.c: 39: void InitMiscellaneous(void) {
 [e :U _InitMiscellaneous ]
 [f ]
-[; ;init.c: 38: OSCCON = 0b01010011;
-"38
+[; ;init.c: 40: OSCCON = 0b01010011;
+"40
 [e = _OSCCON -> -> 83 `i `uc ]
-[; ;init.c: 39: }
-"39
+[; ;init.c: 41: }
+"41
 [e :UE 1144 ]
 }
-"41
+"43
 [v _InitTransmission `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 41: void InitTransmission(void) {
+[; ;init.c: 43: void InitTransmission(void) {
 [e :U _InitTransmission ]
 [f ]
-[; ;init.c: 43: TXSTA1bits.SYNC = 0;
-"43
-[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;init.c: 44: TXSTA1bits.BRGH = 1;
-"44
-[e = . . _TXSTA1bits 0 2 -> -> 1 `i `uc ]
-[; ;init.c: 45: BAUDCON1bits.BRG16 = 0;
+[; ;init.c: 45: TXSTA1bits.SYNC = 0;
 "45
-[e = . . _BAUDCON1bits 0 3 -> -> 0 `i `uc ]
-[; ;init.c: 46: SPBRG1 = 25;
+[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;init.c: 46: TXSTA1bits.BRGH = 1;
 "46
-[e = _SPBRG1 -> -> 25 `i `uc ]
-[; ;init.c: 47: TRISCbits.RC6 = 1;
+[e = . . _TXSTA1bits 0 2 -> -> 1 `i `uc ]
+[; ;init.c: 47: BAUDCON1bits.BRG16 = 0;
 "47
-[e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
-[; ;init.c: 48: TRISCbits.RC7 = 1;
+[e = . . _BAUDCON1bits 0 3 -> -> 0 `i `uc ]
+[; ;init.c: 48: SPBRG1 = 25;
 "48
-[e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
-[; ;init.c: 49: RCSTA1bits.SPEN = 1;
+[e = _SPBRG1 -> -> 25 `i `uc ]
+[; ;init.c: 49: TRISCbits.RC6 = 1;
 "49
-[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-[; ;init.c: 50: TXSTA1bits.TX9 = 1;
+[e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
+[; ;init.c: 50: TRISCbits.RC7 = 1;
 "50
-[e = . . _TXSTA1bits 0 6 -> -> 1 `i `uc ]
-[; ;init.c: 51: TXSTA1bits.TXEN = 1;
+[e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
+[; ;init.c: 51: RCSTA1bits.SPEN = 1;
 "51
-[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
-[; ;init.c: 52: RCSTA1bits.RC9 = 1;
+[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
+[; ;init.c: 52: TXSTA1bits.TX9 = 1;
 "52
-[e = . . _RCSTA1bits 4 1 -> -> 1 `i `uc ]
-[; ;init.c: 53: RCSTA1bits.CREN = 1;
+[e = . . _TXSTA1bits 0 6 -> -> 1 `i `uc ]
+[; ;init.c: 53: TXSTA1bits.TXEN = 1;
 "53
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;init.c: 54: TRISCbits.RC6 = 0;
+[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
+[; ;init.c: 54: RCSTA1bits.RC9 = 1;
 "54
-[e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
-[; ;init.c: 55: }
+[e = . . _RCSTA1bits 4 1 -> -> 1 `i `uc ]
+[; ;init.c: 55: RCSTA1bits.CREN = 1;
 "55
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;init.c: 56: TRISCbits.RC6 = 0;
+"56
+[e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
+[; ;init.c: 57: }
+"57
 [e :UE 1145 ]
 }
-"57
+"59
 [v _InitADC `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 57: void InitADC(void) {
+[; ;init.c: 59: void InitADC(void) {
 [e :U _InitADC ]
 [f ]
-[; ;init.c: 59: VREFCON0bits.FVREN = 1;
-"59
-[e = . . _VREFCON0bits 0 3 -> -> 1 `i `uc ]
-[; ;init.c: 60: VREFCON0bits.FVRS = 0b10;
-"60
-[e = . . _VREFCON0bits 0 1 -> -> 2 `i `uc ]
-[; ;init.c: 62: ADCON0 = 0b00110001;
-"62
-[e = _ADCON0 -> -> 49 `i `uc ]
-[; ;init.c: 63: ADCON1 = 0b00001000;
+[; ;init.c: 61: VREFCON0 = 0b10100000;
+"61
+[e = _VREFCON0 -> -> 160 `i `uc ]
+[; ;init.c: 63: VREFCON1 = 0b10001000;
 "63
-[e = _ADCON1 -> -> 8 `i `uc ]
-[; ;init.c: 64: ADCON2 = 0b00000011;
+[e = _VREFCON1 -> -> 136 `i `uc ]
+[; ;init.c: 64: VREFCON2bits.DACR = 16;
 "64
+[e = . . _VREFCON2bits 0 0 -> -> 16 `i `uc ]
+[; ;init.c: 66: ADCON0 = 0b01111001;
+"66
+[e = _ADCON0 -> -> 121 `i `uc ]
+[; ;init.c: 67: ADCON1 = 0b00000000;
+"67
+[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;init.c: 68: ADCON2 = 0b00000011;
+"68
 [e = _ADCON2 -> -> 3 `i `uc ]
-[; ;init.c: 65: }
-"65
+[; ;init.c: 69: }
+"69
 [e :UE 1146 ]
 }
-"67
+"71
 [v _InitInterrupt `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 67: void InitInterrupt(void) {
+[; ;init.c: 71: void InitInterrupt(void) {
 [e :U _InitInterrupt ]
 [f ]
-[; ;init.c: 68: INTCONbits.GIE = 1;
-"68
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;init.c: 69: INTCONbits.PEIE = 1;
-"69
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;init.c: 70: PIE1bits.RCIE = 1;
-"70
-[e = . . _PIE1bits 1 3 -> -> 1 `i `uc ]
-[; ;init.c: 71: PIR1bits.RCIF= 0;
-"71
-[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
-[; ;init.c: 72: }
+[; ;init.c: 72: INTCONbits.GIE = 1;
 "72
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;init.c: 73: INTCONbits.PEIE = 1;
+"73
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;init.c: 74: PIE1bits.RCIE = 1;
+"74
+[e = . . _PIE1bits 1 3 -> -> 1 `i `uc ]
+[; ;init.c: 75: PIR1bits.RCIF= 0;
+"75
+[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
+[; ;init.c: 76: }
+"76
 [e :UE 1147 ]
 }
-"74
+"78
 [v _InitMiscellaneos `(v ~T0 @X0 1 ef ]
 {
-[; ;init.c: 74: void InitMiscellaneos(void) {
+[; ;init.c: 78: void InitMiscellaneos(void) {
 [e :U _InitMiscellaneos ]
 [f ]
-[; ;init.c: 75: for(unsigned char c = 0; c < 10; c++) {
-"75
+[; ;init.c: 79: for(unsigned char c = 0; c < 10; c++) {
+"79
 {
 [v _c `uc ~T0 @X0 1 a ]
 [e = _c -> -> 0 `i `uc ]
@@ -7916,19 +7923,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1150  ]
 [e :U 1149 ]
 {
-[; ;init.c: 76: Marker[c] = 0;
-"76
+[; ;init.c: 80: Marker[c] = 0;
+"80
 [e = *U + &U _Marker * -> _c `ux -> -> # *U &U _Marker `ui `ux -> -> 0 `i `uc ]
-"77
+"81
 }
-"75
+"79
 [e ++ _c -> -> 1 `i `uc ]
 [e $ < -> _c `i -> 10 `i 1149  ]
 [e :U 1150 ]
-"77
+"81
 }
-[; ;init.c: 77: }
-[; ;init.c: 78: }
-"78
+[; ;init.c: 81: }
+[; ;init.c: 82: }
+"82
 [e :UE 1148 ]
 }

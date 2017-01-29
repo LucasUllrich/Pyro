@@ -7485,9 +7485,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "28
 [v _p_status `uc ~T0 @X0 1 e ]
 [i _p_status
--> -> 21 `i `uc
+-> -> 48 `ui `uc
 ]
-[; ;ignition.h: 28: unsigned char p_status = 0x15;
+[; ;ignition.h: 28: unsigned char p_status = '0';
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port, unsigned char con_status);
 [; ;communication.h: 18: unsigned char Receive(void);
@@ -7507,12 +7507,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;interrupt.h: 24: unsigned char receive_counter = 0;
-"31 main.h
+"33 main.h
 [v _slave_addressed `b ~T0 @X0 1 e ]
 [i _slave_addressed
 -> 0 `i
 ]
-[; ;main.h: 31: bit slave_addressed = 0;
+[; ;main.h: 33: bit slave_addressed = 0;
 [v F7863 `(v ~T0 @X0 1 tf ]
 "3 interrupt.c
 [v _Isr `IF7863 ~T0 @X0 1 e ]

@@ -1,3 +1,5 @@
+#include <pic18f44k22.h>
+
 #include "main.h"
 
 void Init(void) {
@@ -56,12 +58,14 @@ void InitTransmission(void) {
 
 void InitADC(void) {
     //FVR
-    VREFCON0bits.FVREN = 1;
-    VREFCON0bits.FVRS = 0b10;   //10 = 2,048V; 01 = 1,024V; 11 = 4,096V
+    VREFCON0 =  0b10100000;     //Enabled, 2.048 V
+    //DAC
+    VREFCON1 =  0b10001000;     //DAC on; no output; FVR and VSS
+    VREFCON2bits.DACR = 16;     //With 2.048 V ref. output == 1.024 V
     //ADC-Module
-    ADCON0 = 0b00110001;    //AN12 as source, ADC on
-    ADCON1 = 0b00001000;    //FVR as positive supply
-    ADCON2 = 0b00000011;    //Left justify, dedicated osc.
+    ADCON0 =    0b01111001;     //DAC as source, ADC on
+    ADCON1 =    0b00000000;     //FVR as positive supply
+    ADCON2 =    0b00000011;     //Left justify, dedicated osc.
 }
 
 void InitInterrupt(void) {
