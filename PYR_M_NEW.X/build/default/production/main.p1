@@ -14,6 +14,53 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Init `(v ~T0 @X0 0 ef ]
 "18 storage.h
 [v _Load_Data `(v ~T0 @X0 0 ef ]
+"6272 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
+[s S397 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S397 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"6282
+[s S398 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S398 . AN0 AN1 AN2 AN3 . AN4 ]
+"6290
+[s S399 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S399 . C12IN0M C12IN1M C2INP C1INP C1OUT C2OUT ]
+"6298
+[s S400 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S400 . C12IN0N C12IN1N VREFM VREFP T0CKI SS ]
+"6306
+[s S401 :5 `uc 1 :1 `uc 1 ]
+[n S401 . . NOT_SS ]
+"6310
+[s S402 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S402 . . VREFN . SRQ nSS ]
+"6317
+[s S403 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S403 . . CVREF . CCP5 LVDIN ]
+"6324
+[s S404 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S404 . . DACOUT . HLVDIN ]
+"6330
+[s S405 :5 `uc 1 :1 `uc 1 ]
+[n S405 . . SS1 ]
+"6334
+[s S406 :5 `uc 1 :1 `uc 1 ]
+[n S406 . . NOT_SS1 ]
+"6338
+[s S407 :5 `uc 1 :1 `uc 1 ]
+[n S407 . . nSS1 ]
+"6342
+[s S408 :5 `uc 1 :1 `uc 1 ]
+[n S408 . . SRNQ ]
+"6346
+[s S409 :7 `uc 1 :1 `uc 1 ]
+[n S409 . . RJPU ]
+"6350
+[s S410 :1 `uc 1 ]
+[n S410 . ULPWUIN ]
+"6271
+[u S396 `S397 1 `S398 1 `S399 1 `S400 1 `S401 1 `S402 1 `S403 1 `S404 1 `S405 1 `S406 1 `S407 1 `S408 1 `S409 1 `S410 1 ]
+[n S396 . . . . . . . . . . . . . . . ]
+"6354
+[v _PORTAbits `VS396 ~T0 @X0 0 e@3968 ]
 "16 buttonchanges.h
 [v _Check_Buttons `(v ~T0 @X0 0 ef ]
 "19 display.h
@@ -7602,38 +7649,41 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 88: Load_Data();
 "88
 [e ( _Load_Data ..  ]
-[; ;main.c: 89: while(1) {
+[; ;main.c: 89: PORTAbits.RA0 = 1;
 "89
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 90: while(1) {
+"90
 [e :U 1113 ]
 {
-[; ;main.c: 90: Check_Buttons();
-"90
-[e ( _Check_Buttons ..  ]
-[; ;main.c: 91: if(testflag == 1) {
+[; ;main.c: 91: Check_Buttons();
 "91
+[e ( _Check_Buttons ..  ]
+[; ;main.c: 92: if(testflag == 1) {
+"92
 [e $ ! == -> _testflag `i -> 1 `i 1115  ]
 {
-[; ;main.c: 92: Set_Display('7', 'T',0);
-"92
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 84 `ui `uc -> -> 0 `i `ui ]
-[; ;main.c: 93: Check_Detonators();
+[; ;main.c: 93: Set_Display('7', 'T',0);
 "93
-[e ( _Check_Detonators ..  ]
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 84 `ui `uc -> -> 0 `i `ui ]
+[; ;main.c: 94: Check_Detonators();
 "94
-}
-[e :U 1115 ]
+[e ( _Check_Detonators ..  ]
 "95
 }
+[e :U 1115 ]
+"96
+}
 [e :U 1112 ]
-"89
+"90
 [e $U 1113  ]
 [e :U 1114 ]
-[; ;main.c: 94: }
 [; ;main.c: 95: }
-[; ;main.c: 96: return;
-"96
-[e $UE 1111  ]
-[; ;main.c: 97: }
+[; ;main.c: 96: }
+[; ;main.c: 97: return;
 "97
+[e $UE 1111  ]
+[; ;main.c: 98: }
+"98
 [e :UE 1111 ]
 }

@@ -9075,9 +9075,10 @@ pixels[display_counter] = Bitoutput;
 
 # 52
 void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
-for(display_counter = 0; display_counter < size;
-display_counter++) {
-switch (evaluate[display_counter]) {
+for(display_counter = (size + 1); display_counter > 0;
+display_counter--) {
+__nop();
+switch (evaluate[(display_counter - 1)]) {
 case '0':
 Set_Bits("ABCDEF");
 break;
@@ -9135,7 +9136,7 @@ Set_Bits(0);
 }
 }
 
-# 118
+# 119
 void Evaluate_Signs(unsigned int evaluation_value) {
 for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
 valuecounter++) {
@@ -9147,7 +9148,7 @@ __nop();
 Evaluate_Display(sizeof(signs), signs);
 }
 
-# 138
+# 139
 void Set_Display(unsigned char type, unsigned char information,
 unsigned int value) {
 switch (type) {

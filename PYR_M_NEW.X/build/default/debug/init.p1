@@ -7761,9 +7761,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.c: 15: PORTB = 0b00000000;
 "15
 [e = _PORTB -> -> 0 `i `uc ]
-[; ;init.c: 16: PORTC = 0b00000001;
+[; ;init.c: 16: PORTC = 0b00000100;
 "16
-[e = _PORTC -> -> 1 `i `uc ]
+[e = _PORTC -> -> 4 `i `uc ]
 [; ;init.c: 17: PORTE = 0;
 "17
 [e = _PORTE -> -> 0 `i `uc ]

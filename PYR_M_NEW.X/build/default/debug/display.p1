@@ -7611,185 +7611,188 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _size `uc ~T0 @X0 1 r1 ]
 [v _evaluate `*Cuc ~T0 @X0 1 r2 ]
 [f ]
-[; ;display.c: 53: for(display_counter = 0; display_counter < size;
+[; ;display.c: 53: for(display_counter = (size + 1); display_counter > 0;
 "53
 {
-[e = _display_counter -> -> 0 `i `uc ]
-[; ;display.c: 54: display_counter++) {
+[e = _display_counter -> + -> _size `i -> 1 `i `uc ]
+[; ;display.c: 54: display_counter--) {
 [e $U 1125  ]
 "54
 [e :U 1122 ]
 {
-[; ;display.c: 55: switch (evaluate[display_counter]) {
+[; ;display.c: 55: __nop();
 "55
+[e ( ___nop ..  ]
+[; ;display.c: 56: switch (evaluate[(display_counter - 1)]) {
+"56
 [e $U 1127  ]
 {
-[; ;display.c: 56: case '0':
-"56
-[e :U 1128 ]
-[; ;display.c: 57: Set_Bits("ABCDEF");
+[; ;display.c: 57: case '0':
 "57
-[e ( _Set_Bits (1 :s 1C ]
-[; ;display.c: 58: break;
+[e :U 1128 ]
+[; ;display.c: 58: Set_Bits("ABCDEF");
 "58
-[e $U 1126  ]
-[; ;display.c: 59: case '1':
+[e ( _Set_Bits (1 :s 1C ]
+[; ;display.c: 59: break;
 "59
-[e :U 1129 ]
-[; ;display.c: 60: Set_Bits("BC");
+[e $U 1126  ]
+[; ;display.c: 60: case '1':
 "60
-[e ( _Set_Bits (1 :s 2C ]
-[; ;display.c: 61: break;
+[e :U 1129 ]
+[; ;display.c: 61: Set_Bits("BC");
 "61
-[e $U 1126  ]
-[; ;display.c: 62: case '2':
+[e ( _Set_Bits (1 :s 2C ]
+[; ;display.c: 62: break;
 "62
-[e :U 1130 ]
-[; ;display.c: 63: Set_Bits("ABDEG");
+[e $U 1126  ]
+[; ;display.c: 63: case '2':
 "63
-[e ( _Set_Bits (1 :s 3C ]
-[; ;display.c: 64: break;
+[e :U 1130 ]
+[; ;display.c: 64: Set_Bits("ABDEG");
 "64
-[e $U 1126  ]
-[; ;display.c: 65: case '3':
+[e ( _Set_Bits (1 :s 3C ]
+[; ;display.c: 65: break;
 "65
-[e :U 1131 ]
-[; ;display.c: 66: Set_Bits("ABCDG");
+[e $U 1126  ]
+[; ;display.c: 66: case '3':
 "66
-[e ( _Set_Bits (1 :s 4C ]
-[; ;display.c: 67: break;
+[e :U 1131 ]
+[; ;display.c: 67: Set_Bits("ABCDG");
 "67
-[e $U 1126  ]
-[; ;display.c: 68: case '4':
+[e ( _Set_Bits (1 :s 4C ]
+[; ;display.c: 68: break;
 "68
-[e :U 1132 ]
-[; ;display.c: 69: Set_Bits("BCFG");
+[e $U 1126  ]
+[; ;display.c: 69: case '4':
 "69
-[e ( _Set_Bits (1 :s 5C ]
-[; ;display.c: 70: break;
+[e :U 1132 ]
+[; ;display.c: 70: Set_Bits("BCFG");
 "70
-[e $U 1126  ]
-[; ;display.c: 71: case '5':
+[e ( _Set_Bits (1 :s 5C ]
+[; ;display.c: 71: break;
 "71
-[e :U 1133 ]
-[; ;display.c: 72: Set_Bits("ACDFG");
+[e $U 1126  ]
+[; ;display.c: 72: case '5':
 "72
-[e ( _Set_Bits (1 :s 6C ]
-[; ;display.c: 73: break;
+[e :U 1133 ]
+[; ;display.c: 73: Set_Bits("ACDFG");
 "73
-[e $U 1126  ]
-[; ;display.c: 74: case '6':
+[e ( _Set_Bits (1 :s 6C ]
+[; ;display.c: 74: break;
 "74
-[e :U 1134 ]
-[; ;display.c: 75: Set_Bits("ACDEFG");
+[e $U 1126  ]
+[; ;display.c: 75: case '6':
 "75
-[e ( _Set_Bits (1 :s 7C ]
-[; ;display.c: 76: break;
+[e :U 1134 ]
+[; ;display.c: 76: Set_Bits("ACDEFG");
 "76
-[e $U 1126  ]
-[; ;display.c: 77: case '7':
+[e ( _Set_Bits (1 :s 7C ]
+[; ;display.c: 77: break;
 "77
-[e :U 1135 ]
-[; ;display.c: 78: Set_Bits("ABC");
+[e $U 1126  ]
+[; ;display.c: 78: case '7':
 "78
-[e ( _Set_Bits (1 :s 8C ]
-[; ;display.c: 79: break;
+[e :U 1135 ]
+[; ;display.c: 79: Set_Bits("ABC");
 "79
-[e $U 1126  ]
-[; ;display.c: 80: case '8':
+[e ( _Set_Bits (1 :s 8C ]
+[; ;display.c: 80: break;
 "80
-[e :U 1136 ]
-[; ;display.c: 81: Set_Bits("ABCDEFG");
+[e $U 1126  ]
+[; ;display.c: 81: case '8':
 "81
-[e ( _Set_Bits (1 :s 9C ]
-[; ;display.c: 82: break;
+[e :U 1136 ]
+[; ;display.c: 82: Set_Bits("ABCDEFG");
 "82
-[e $U 1126  ]
-[; ;display.c: 83: case '9':
+[e ( _Set_Bits (1 :s 9C ]
+[; ;display.c: 83: break;
 "83
-[e :U 1137 ]
-[; ;display.c: 84: Set_Bits("ABCDFG");
+[e $U 1126  ]
+[; ;display.c: 84: case '9':
 "84
-[e ( _Set_Bits (1 :s 10C ]
-[; ;display.c: 85: break;
+[e :U 1137 ]
+[; ;display.c: 85: Set_Bits("ABCDFG");
 "85
-[e $U 1126  ]
-[; ;display.c: 86: case 'A':
+[e ( _Set_Bits (1 :s 10C ]
+[; ;display.c: 86: break;
 "86
-[e :U 1138 ]
-[; ;display.c: 87: Set_Bits("ABCEFG");
+[e $U 1126  ]
+[; ;display.c: 87: case 'A':
 "87
-[e ( _Set_Bits (1 :s 11C ]
-[; ;display.c: 88: break;
+[e :U 1138 ]
+[; ;display.c: 88: Set_Bits("ABCEFG");
 "88
-[e $U 1126  ]
-[; ;display.c: 89: case 'D':
+[e ( _Set_Bits (1 :s 11C ]
+[; ;display.c: 89: break;
 "89
-[e :U 1139 ]
-[; ;display.c: 90: Set_Bits("ABCDEF");
+[e $U 1126  ]
+[; ;display.c: 90: case 'D':
 "90
-[e ( _Set_Bits (1 :s 12C ]
-[; ;display.c: 91: break;
+[e :U 1139 ]
+[; ;display.c: 91: Set_Bits("ABCDEF");
 "91
-[e $U 1126  ]
-[; ;display.c: 92: case 'E':
+[e ( _Set_Bits (1 :s 12C ]
+[; ;display.c: 92: break;
 "92
-[e :U 1140 ]
-[; ;display.c: 93: Set_Bits("ADEFG");
+[e $U 1126  ]
+[; ;display.c: 93: case 'E':
 "93
-[e ( _Set_Bits (1 :s 13C ]
-[; ;display.c: 94: break;
+[e :U 1140 ]
+[; ;display.c: 94: Set_Bits("ADEFG");
 "94
-[e $U 1126  ]
-[; ;display.c: 95: case 'L':
+[e ( _Set_Bits (1 :s 13C ]
+[; ;display.c: 95: break;
 "95
-[e :U 1141 ]
-[; ;display.c: 96: Set_Bits("DEF");
+[e $U 1126  ]
+[; ;display.c: 96: case 'L':
 "96
-[e ( _Set_Bits (1 :s 14C ]
-[; ;display.c: 97: break;
+[e :U 1141 ]
+[; ;display.c: 97: Set_Bits("DEF");
 "97
-[e $U 1126  ]
-[; ;display.c: 98: case 'O':
+[e ( _Set_Bits (1 :s 14C ]
+[; ;display.c: 98: break;
 "98
-[e :U 1142 ]
-[; ;display.c: 99: Set_Bits("ABCDEF");
+[e $U 1126  ]
+[; ;display.c: 99: case 'O':
 "99
-[e ( _Set_Bits (1 :s 15C ]
-[; ;display.c: 100: break;
+[e :U 1142 ]
+[; ;display.c: 100: Set_Bits("ABCDEF");
 "100
-[e $U 1126  ]
-[; ;display.c: 101: case 'P':
+[e ( _Set_Bits (1 :s 15C ]
+[; ;display.c: 101: break;
 "101
-[e :U 1143 ]
-[; ;display.c: 102: Set_Bits("ABEFG");
+[e $U 1126  ]
+[; ;display.c: 102: case 'P':
 "102
-[e ( _Set_Bits (1 :s 16C ]
-[; ;display.c: 103: break;
+[e :U 1143 ]
+[; ;display.c: 103: Set_Bits("ABEFG");
 "103
-[e $U 1126  ]
-[; ;display.c: 104: case '-':
+[e ( _Set_Bits (1 :s 16C ]
+[; ;display.c: 104: break;
 "104
-[e :U 1144 ]
-[; ;display.c: 105: Set_Bits("G");
+[e $U 1126  ]
+[; ;display.c: 105: case '-':
 "105
-[e ( _Set_Bits (1 :s 17C ]
-[; ;display.c: 106: break;
+[e :U 1144 ]
+[; ;display.c: 106: Set_Bits("G");
 "106
-[e $U 1126  ]
-[; ;display.c: 107: default:
+[e ( _Set_Bits (1 :s 17C ]
+[; ;display.c: 107: break;
 "107
-[e :U 1145 ]
-[; ;display.c: 108: Set_Bits(0);
-"108
-[e ( _Set_Bits (1 -> -> 0 `i `*Cuc ]
-"109
-}
-[; ;display.c: 109: }
 [e $U 1126  ]
-"55
+[; ;display.c: 108: default:
+"108
+[e :U 1145 ]
+[; ;display.c: 109: Set_Bits(0);
+"109
+[e ( _Set_Bits (1 -> -> 0 `i `*Cuc ]
+"110
+}
+[; ;display.c: 110: }
+[e $U 1126  ]
+"56
 [e :U 1127 ]
-[e [\ *U + _evaluate * -> _display_counter `ux -> -> # *U _evaluate `ui `ux , $ -> -> 48 `ui `uc 1128
+[e [\ *U + _evaluate * -> - -> _display_counter `i -> 1 `i `x -> -> # *U _evaluate `i `x , $ -> -> 48 `ui `uc 1128
  , $ -> -> 49 `ui `uc 1129
  , $ -> -> 50 `ui `uc 1130
  , $ -> -> 51 `ui `uc 1131
@@ -7807,147 +7810,147 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 80 `ui `uc 1143
  , $ -> -> 45 `ui `uc 1144
  1145 ]
-"109
-[e :U 1126 ]
 "110
+[e :U 1126 ]
+"111
 }
 "54
-[e ++ _display_counter -> -> 1 `i `uc ]
+[e -- _display_counter -> -> 1 `i `uc ]
 "53
 [e :U 1125 ]
-[e $ < -> _display_counter `i -> _size `i 1122  ]
+[e $ > -> _display_counter `i -> 0 `i 1122  ]
 [e :U 1123 ]
-"110
-}
-[; ;display.c: 110: }
-[; ;display.c: 111: }
 "111
+}
+[; ;display.c: 111: }
+[; ;display.c: 112: }
+"112
 [e :UE 1121 ]
 }
-"118
+"119
 [v _Evaluate_Signs `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;display.c: 118: void Evaluate_Signs(unsigned int evaluation_value) {
+[; ;display.c: 119: void Evaluate_Signs(unsigned int evaluation_value) {
 [e :U _Evaluate_Signs ]
 [v _evaluation_value `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;display.c: 119: for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
-"119
+[; ;display.c: 120: for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
+"120
 {
 [v _valuecounter `uc ~T0 @X0 1 a ]
 [e = _valuecounter -> -> 0 `i `uc ]
-[; ;display.c: 120: valuecounter++) {
+[; ;display.c: 121: valuecounter++) {
 [e $ < -> _valuecounter `ui -> # _signs `ui 1147  ]
 [e $U 1148  ]
-"120
+"121
 [e :U 1147 ]
 {
-[; ;display.c: 121: signs[valuecounter] = evaluation_value % 10;
-"121
-[e = *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
-[; ;display.c: 122: signs[valuecounter] += 0x30;
+[; ;display.c: 122: signs[valuecounter] = evaluation_value % 10;
 "122
-[e =+ *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
-[; ;display.c: 123: evaluation_value >>= 1;
+[e = *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
+[; ;display.c: 123: signs[valuecounter] += 0x30;
 "123
-[e =>> _evaluation_value -> 1 `i ]
+[e =+ *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[; ;display.c: 124: evaluation_value >>= 1;
 "124
+[e =>> _evaluation_value -> 1 `i ]
+"125
 }
-"120
+"121
 [e ++ _valuecounter -> -> 1 `i `uc ]
-"119
+"120
 [e $ < -> _valuecounter `ui -> # _signs `ui 1147  ]
 [e :U 1148 ]
-"124
-}
-[; ;display.c: 124: }
-[; ;display.c: 125: __nop();
 "125
-[e ( ___nop ..  ]
-[; ;display.c: 126: Evaluate_Display(sizeof(signs), signs);
+}
+[; ;display.c: 125: }
+[; ;display.c: 126: __nop();
 "126
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc -> &U _signs `*Cuc ]
-[; ;display.c: 127: }
+[e ( ___nop ..  ]
+[; ;display.c: 127: Evaluate_Display(sizeof(signs), signs);
 "127
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc -> &U _signs `*Cuc ]
+[; ;display.c: 128: }
+"128
 [e :UE 1146 ]
 }
-"138
-[v _Set_Display `(v ~T0 @X0 1 ef3`uc`uc`ui ]
 "139
+[v _Set_Display `(v ~T0 @X0 1 ef3`uc`uc`ui ]
+"140
 {
-[; ;display.c: 138: void Set_Display(unsigned char type, unsigned char information,
-[; ;display.c: 139: unsigned int value) {
+[; ;display.c: 139: void Set_Display(unsigned char type, unsigned char information,
+[; ;display.c: 140: unsigned int value) {
 [e :U _Set_Display ]
-"138
+"139
 [v _type `uc ~T0 @X0 1 r1 ]
 [v _information `uc ~T0 @X0 1 r2 ]
-"139
+"140
 [v _value `ui ~T0 @X0 1 r3 ]
 [f ]
-[; ;display.c: 140: switch (type) {
-"140
+[; ;display.c: 141: switch (type) {
+"141
 [e $U 1152  ]
 {
-[; ;display.c: 141: case '7':
-"141
-[e :U 1153 ]
-[; ;display.c: 142: if(information != '-') {
+[; ;display.c: 142: case '7':
 "142
+[e :U 1153 ]
+[; ;display.c: 143: if(information != '-') {
+"143
 [e $ ! != -> _information `ui -> 45 `ui 1154  ]
 {
-[; ;display.c: 143: signs[0] = value;
-"143
-[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
-[; ;display.c: 144: signs[0] += 0x30;
+[; ;display.c: 144: signs[0] = value;
 "144
-[e =+ *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
-[; ;display.c: 145: signs[1] = '-';
+[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
+[; ;display.c: 145: signs[0] += 0x30;
 "145
-[e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
-[; ;display.c: 146: signs[2] = information;
+[e =+ *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[; ;display.c: 146: signs[1] = '-';
 "146
-[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
-[; ;display.c: 147: Evaluate_Display(sizeof(signs), signs);
+[e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
+[; ;display.c: 147: signs[2] = information;
 "147
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc -> &U _signs `*Cuc ]
+[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
+[; ;display.c: 148: Evaluate_Display(sizeof(signs), signs);
 "148
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc -> &U _signs `*Cuc ]
+"149
 }
-[; ;display.c: 148: } else {
+[; ;display.c: 149: } else {
 [e $U 1155  ]
 [e :U 1154 ]
 {
-[; ;display.c: 149: Evaluate_Signs(value);
-"149
-[e ( _Evaluate_Signs (1 _value ]
+[; ;display.c: 150: Evaluate_Signs(value);
 "150
+[e ( _Evaluate_Signs (1 _value ]
+"151
 }
 [e :U 1155 ]
-[; ;display.c: 150: }
-[; ;display.c: 151: break;
-"151
-[e $U 1151  ]
-[; ;display.c: 152: case 'L':
+[; ;display.c: 151: }
+[; ;display.c: 152: break;
 "152
+[e $U 1151  ]
+[; ;display.c: 153: case 'L':
+"153
 [e :U 1156 ]
-[; ;display.c: 154: break;
-"154
-[e $U 1151  ]
+[; ;display.c: 155: break;
 "155
-}
-[; ;display.c: 155: }
 [e $U 1151  ]
-"140
+"156
+}
+[; ;display.c: 156: }
+[e $U 1151  ]
+"141
 [e :U 1152 ]
 [e [\ _type , $ -> -> 55 `ui `uc 1153
  , $ -> -> 76 `ui `uc 1156
  1151 ]
-"155
-[e :U 1151 ]
-[; ;display.c: 156: Write_Display_Byte(pixels);
 "156
-[e ( _Write_Display_Byte (1 &U _pixels ]
-[; ;display.c: 157: }
+[e :U 1151 ]
+[; ;display.c: 157: Write_Display_Byte(pixels);
 "157
+[e ( _Write_Display_Byte (1 &U _pixels ]
+[; ;display.c: 158: }
+"158
 [e :UE 1150 ]
 }
 [a 9C 65 66 67 68 69 70 71 0 ]

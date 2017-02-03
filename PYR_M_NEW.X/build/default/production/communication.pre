@@ -9088,5 +9088,8 @@ SSP1IF = 0;
 SSP1BUF = write_data[counter - 1];
 while (SSP1IF == 0);
 SSP1IF = 0;
+PORTCbits.RC0 = 0;
+PORTCbits.RC0 = 1;
+PORTCbits.RC0 = 0;
 }
 }

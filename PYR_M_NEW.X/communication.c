@@ -50,7 +50,10 @@ void Write_Display_Byte(unsigned char *write_data) {
             SSP1IF = 0;
         }
         SSP1BUF = write_data[counter - 1];
-        while (SSP1IF == 0);
+//        while (SSP1IF == 0);      !!!!!!!!!!!!!!!!!!!!!!!!!!!!! remove comment when not in sim
         SSP1IF = 0;
+        Show_Write = 0;
+        Show_Write = 1;
+        Show_Write = 0;
     }
 }

@@ -50,9 +50,10 @@ void Set_Bits(const unsigned char *bits) {
  * @param evaluate  Value that should be displayed as pointer on array
  */
 void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
-    for(display_counter = 0; display_counter < size;
-            display_counter++) {
-        switch (evaluate[display_counter]) {
+    for(display_counter = (size + 1); display_counter > 0;
+            display_counter--) {
+        NOP();
+        switch (evaluate[(display_counter - 1)]) {
             case '0':
                 Set_Bits("ABCDEF");
                 break;
