@@ -3,14 +3,14 @@ Microchip MPLAB XC8 Compiler V1.35 ()
 Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
-  -h+dist/default/production\PYR_M_NEW.X.production.sym \
-  --cmf=dist/default/production\PYR_M_NEW.X.production.cmf -z -Q18F23K22 \
-  -oC:\Users\Lucas\AppData\Local\Temp\s938.2 \
-  -Mdist/default/production/PYR_M_NEW.X.production.map -E1 -ver=XC8 \
-  -ASTACK=07Eh-0ffh -pstack=STACK -ACODE=00h-01FFFh -ACONST=00h-01FFFh \
+  -h+dist/default/debug\PYR_M_NEW.X.debug.sym \
+  --cmf=dist/default/debug\PYR_M_NEW.X.debug.cmf -z -Q18F23K22 \
+  -oC:\Users\Lucas\AppData\Local\Temp\sb8.2 \
+  -Mdist/default/debug/PYR_M_NEW.X.debug.map -E1 -ver=XC8 -ASTACK=07Eh-0ffh \
+  -pstack=STACK -ACODE=00h-01FFFh -ACONST=00h-01FFFh \
   -ASMALLCONST=0200h-02FFhx30 -AMEDIUMCONST=0200h-01FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-01FFh -ABIGRAM=01h-01FFh -ARAM=060h-0FFh,0100h-01FFh \
-  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ASFR=0F38h-0F5Fh,0F60h-0FFFh \
+  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ASFR=0F38h-0F5Fh,0F60h-0FFCh \
   -preset_vec=00h,intcode=08h,intcodelo,powerup,init,end_init \
   -pramtop=0200h -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST \
   -pconst=CONST -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
@@ -20,8 +20,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Lucas\AppData\Local\Temp\s938.obj \
-  dist/default/production\PYR_M_NEW.X.production.obj 
+  C:\Users\Lucas\AppData\Local\Temp\sb8.obj \
+  dist/default/debug\PYR_M_NEW.X.debug.obj 
 
 Object code version is 3.11
 
@@ -33,12 +33,12 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Lucas\AppData\Local\Temp\s938.obj
+C:\Users\Lucas\AppData\Local\Temp\sb8.obj
                 end_init                            216      216        4        4       0
-                reset_vec                             0        0        4        0       0
+                reset_vec                             0        0        6        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/default/production\PYR_M_NEW.X.production.obj
+dist/default/debug\PYR_M_NEW.X.debug.obj
                 intcode                               8        8      20E        4       0
                 temp                                 3C       3C        1        1       1
                 smallconst                          21A      21A       56      10D       0
@@ -92,7 +92,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                            216      216        4         0
                 intcode                               8        8      20E         0
-                reset_vec                             0        0        4         0
+                reset_vec                             0        0        6         0
                 text35                             15C2     15C2       36         0
                 text34                             1118     1118       6C         0
                 text33                             171A     171A        E         0
@@ -173,7 +173,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
-                reset_vec                      000000  000004  000004         0       0  CODE    
+                reset_vec                      000000  000006  000006         0       0  CODE    
                 cstackCOMRAM                   000001  00003C  00003D         1       1  COMRAM  
                 intcode                        000008  000212  00021A         4       0  CODE    
                 cstackBANK0                    000060  00001E  00007E        60       1  BANK0   
@@ -192,16 +192,16 @@ UNUSED ADDRESS RANGES
         BIGRAM           00003D-00005F               23
                          00007E-0000FF               82
                          0001B4-0001FF               4C
-        CODE             000004-000007                4
+        CODE             000006-000007                2
                          00173A-001FFF              8C6
         COMRAM           00003D-00005F               23
-        CONST            000004-000007                4
+        CONST            000006-000007                2
                          00173A-001FFF              8C6
         EEDATA           F00000-F000FF              100
         MEDIUMCONST      00173A-001FFF              8C6
         RAM              00007E-0000FF               82
                          0001B4-0001FF               4C
-        SFR              000F38-000FFF               28
+        SFR              000F38-000FFC               28
         SMALLCONST       00173A-001FFF              100
         STACK            00007E-0000FF               82
 
@@ -387,7 +387,7 @@ __Hramtop                         ramtop       000200
 __Hrbit                           rbit         000000
 __Hrbss                           rbss         000000
 __Hrdata                          rdata        000000
-__Hreset_vec                      reset_vec    000004
+__Hreset_vec                      reset_vec    000006
 __Hrparam                         rparam       000000
 __Hsfr                            sfr          000000
 __Hsmallconst                     smallconst   000270

@@ -61,7 +61,7 @@ void interrupt Isr(void) {
                         pixels[pixel_index_array] &= 
                                 ~(1 << pixel_index_bit);
                     }
-                    if(received[5] == "1") {
+                    if(received[5] == '1') {
                         Set_Display('7', 'P', (received[1] + 1));
                     }
                 }

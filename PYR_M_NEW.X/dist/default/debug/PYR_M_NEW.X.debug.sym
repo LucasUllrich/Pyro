@@ -462,7 +462,7 @@ __CFG_CP0$OFF 0 0 ABS 0
 __smallconst 21A 0 SMALLCONST 0
 __CFG_CP1$OFF 0 0 ABS 0
 i2_Transmit 15C2 0 CODE 0
-__Hreset_vec 4 0 CODE 0
+__Hreset_vec 6 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __CFG_BORV$190 0 0 ABS 0
 __accesstop 60 0 ABS 0
@@ -513,7 +513,7 @@ __size_of_Evaluate_Display 0 0 ABS 0
 __end_of_Delay_Routine 1658 0 CODE 0
 ___awdiv@dividend 1 0 COMRAM 1
 %segments
-reset_vec 0 3 CODE 0 0
+reset_vec 0 5 CODE 0 0
 intcode 8 219 CODE 8 0
 smallconst 21A 26F SMALLCONST 21A 0
 config 300000 30000D CONFIG 300000 0
@@ -523,9 +523,9 @@ cstackBANK0 60 7D BANK0 60 1
 dataBANK1 100 1B3 BANK1 100 1
 text11 270 1739 CODE 270 0
 %locals
-dist/default/production\PYR_M_NEW.X.production.obj
+dist/default/debug\PYR_M_NEW.X.debug.obj
 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
-C:\Users\Lucas\AppData\Local\Temp\s938.
+C:\Users\Lucas\AppData\Local\Temp\sb8.
 4579 1406 0 CODE 0
 4581 1406 0 CODE 0
 4584 1406 0 CODE 0
