@@ -7,13 +7,13 @@ void Init(void) {
     InitMiscellaneous();
     InitTransmission();
     InitTimer();
-    InitInterrupt();
+    //InitInterrupt();
 }
 
 void InitPort(void) {
     PORTA = 0b00000000;
     PORTB = 0b00000000;
-    PORTC = 0b00000001;
+    PORTC = 0b00000100;
     PORTE = 0;
 }
 

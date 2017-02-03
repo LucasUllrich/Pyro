@@ -85,13 +85,16 @@ void Delay_Routine(unsigned char delay_multiplyer) {
 
 void main(void) {
     Init();
-    Load_Data();
+//    Load_Data();
     while(1) {
-        Check_Buttons();
-        if(testflag == 1) {
-            Set_Display('7', 'T',0);
-            Check_Detonators();
-        }
+        Led = 1;
+        Disp_Res = 1;
+        Write_Display_Byte("e");
+//        Check_Buttons();
+//        if(testflag == 1) {
+//            Set_Display('7', 'T',0);
+//            Check_Detonators();
+//        }
     }
     return;
 }

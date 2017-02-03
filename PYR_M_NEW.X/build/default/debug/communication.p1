@@ -102,6 +102,41 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SSP1IF `Vb ~T0 @X0 0 e@31987 ]
 "15195
 [v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
+"6936
+[s S423 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S423 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"6946
+[s S424 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S424 . T1OSO T1OSI T5CKI SCK SDI SDO TX RX ]
+"6956
+[s S425 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S425 . P2B P2A P1A SCL SDA . CK DT ]
+"6966
+[s S426 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S426 . T1CKI CCP2 CCP1 SCK1 SDI1 SDO1 TX1 RX1 ]
+"6976
+[s S427 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S427 . T3CKI . CTPLS SCL1 SDA1 . CK1 DT1 ]
+"6986
+[s S428 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S428 . T3G . AN14 AN15 AN16 AN17 AN18 AN19 ]
+"6996
+[s S429 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S429 . . CCP3 P3B ]
+"7001
+[s S430 :6 `uc 1 :1 `uc 1 ]
+[n S430 . . P3A ]
+"7005
+[s S431 :2 `uc 1 :1 `uc 1 ]
+[n S431 . . PA1 ]
+"7009
+[s S432 :1 `uc 1 :1 `uc 1 ]
+[n S432 . . PA2 ]
+"6935
+[u S422 `S423 1 `S424 1 `S425 1 `S426 1 `S427 1 `S428 1 `S429 1 `S430 1 `S431 1 `S432 1 ]
+[n S422 . . . . . . . . . . . ]
+"7014
+[v _PORTCbits `VS422 ~T0 @X0 0 e@3970 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7702,59 +7737,68 @@ Version 3.2 HI-TECH Software Intermediate Code
 "44
 [e :UE 1122 ]
 }
-"46
+"49
 [v _Write_Display_Byte `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;communication.c: 46: void Write_Display_Byte(unsigned char *write_data) {
+[; ;communication.c: 49: void Write_Display_Byte(unsigned char *write_data) {
 [e :U _Write_Display_Byte ]
 [v _write_data `*uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;communication.c: 47: for(unsigned char counter = sizeof(pixels); counter > 0;
-"47
+[; ;communication.c: 50: for(unsigned char counter = sizeof(pixels); counter > 0;
+"50
 {
 [v _counter `uc ~T0 @X0 1 a ]
 [e = _counter -> -> # _pixels `ui `uc ]
-[; ;communication.c: 48: counter--) {
+[; ;communication.c: 51: counter--) {
 [e $ > -> _counter `i -> 0 `i 1125  ]
 [e $U 1126  ]
-"48
+"51
 [e :U 1125 ]
 {
-[; ;communication.c: 49: if(SSP1IF = 1) {
-"49
+[; ;communication.c: 52: if(SSP1IF = 1) {
+"52
 [e $ ! = _SSP1IF -> -> 1 `i `b 1128  ]
 {
-[; ;communication.c: 50: SSP1IF = 0;
-"50
+[; ;communication.c: 53: SSP1IF = 0;
+"53
 [e = _SSP1IF -> -> 0 `i `b ]
-"51
+"54
 }
 [e :U 1128 ]
-[; ;communication.c: 51: }
-[; ;communication.c: 52: SSP1BUF = write_data[counter - 1];
-"52
+[; ;communication.c: 54: }
+[; ;communication.c: 55: SSP1BUF = write_data[counter - 1];
+"55
 [e = _SSP1BUF *U + _write_data * -> - -> _counter `i -> 1 `i `x -> -> # *U _write_data `i `x ]
-[; ;communication.c: 53: while (SSP1IF == 0);
-"53
+[; ;communication.c: 56: while (SSP1IF == 0);
+"56
 [e $U 1129  ]
 [e :U 1130 ]
 [e :U 1129 ]
 [e $ == -> _SSP1IF `i -> 0 `i 1130  ]
 [e :U 1131 ]
-[; ;communication.c: 54: SSP1IF = 0;
-"54
+[; ;communication.c: 57: SSP1IF = 0;
+"57
 [e = _SSP1IF -> -> 0 `i `b ]
-"55
+[; ;communication.c: 58: PORTCbits.RC0 = 0;
+"58
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+[; ;communication.c: 59: PORTCbits.RC0 = 1;
+"59
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;communication.c: 60: PORTCbits.RC0 = 0;
+"60
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+"61
 }
-"48
+"51
 [e -- _counter -> -> 1 `i `uc ]
-"47
+"50
 [e $ > -> _counter `i -> 0 `i 1125  ]
 [e :U 1126 ]
-"55
+"61
 }
-[; ;communication.c: 55: }
-[; ;communication.c: 56: }
-"56
+[; ;communication.c: 61: }
+[; ;communication.c: 62: }
+"62
 [e :UE 1124 ]
 }

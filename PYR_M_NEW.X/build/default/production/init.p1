@@ -14,8 +14,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _InitTransmission `(v ~T0 @X0 0 ef ]
 "22
 [v _InitTimer `(v ~T0 @X0 0 ef ]
-"23
-[v _InitInterrupt `(v ~T0 @X0 0 ef ]
 "6266 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
 [v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
 "6558
@@ -7742,9 +7740,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.c: 9: InitTimer();
 "9
 [e ( _InitTimer ..  ]
-[; ;init.c: 10: InitInterrupt();
-"10
-[e ( _InitInterrupt ..  ]
 [; ;init.c: 11: }
 "11
 [e :UE 1106 ]
@@ -7761,9 +7756,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.c: 15: PORTB = 0b00000000;
 "15
 [e = _PORTB -> -> 0 `i `uc ]
-[; ;init.c: 16: PORTC = 0b00000001;
+[; ;init.c: 16: PORTC = 0b00000100;
 "16
-[e = _PORTC -> -> 1 `i `uc ]
+[e = _PORTC -> -> 4 `i `uc ]
 [; ;init.c: 17: PORTE = 0;
 "17
 [e = _PORTE -> -> 0 `i `uc ]

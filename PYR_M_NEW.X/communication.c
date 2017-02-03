@@ -43,6 +43,9 @@ unsigned char Receive(void) {
     return (RCREG1);
 }
 
+/**
+ * Old version with SPI-Reg
+ */
 void Write_Display_Byte(unsigned char *write_data) {
     for(unsigned char counter = sizeof(pixels); counter > 0;
             counter--) {
@@ -52,5 +55,8 @@ void Write_Display_Byte(unsigned char *write_data) {
         SSP1BUF = write_data[counter - 1];
         while (SSP1IF == 0);
         SSP1IF = 0;
+        Show_Write = 0;
+        Show_Write = 1;
+        Show_Write = 0;
     }
 }

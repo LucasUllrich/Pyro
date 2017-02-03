@@ -9105,13 +9105,11 @@ __nop();
 
 void main(void) {
 Init();
-Load_Data();
+
 while(1) {
-Check_Buttons();
-if(testflag == 1) {
-Set_Display('7', 'T',0);
-Check_Detonators();
-}
+Write_Display_Byte(0b01010011);
+
+# 96
 }
 return;
 }
