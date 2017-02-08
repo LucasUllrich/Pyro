@@ -16,6 +16,7 @@
 void Transmit(unsigned char receiver, unsigned char operation, 
         unsigned char port);
 unsigned char Receive(void);
+void Receive_Dump(void);
 void Write_Display_Byte(unsigned char *write_data);
 // </editor-fold>
 

@@ -19,8 +19,9 @@ void InitTris(void);
 void InitAnsel(void);
 void InitMiscellaneous(void);
 void InitTransmission(void);
+void InitADC(void);
+void InitVar(void);
 void InitInterrupt(void);
-void InitMiscellaneos(void);
 // </editor-fold>
 
 #endif	/* INIT_H */

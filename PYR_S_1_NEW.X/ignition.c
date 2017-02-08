@@ -135,6 +135,7 @@ void Check_Power(void) {
     float DAC_out = 1.024;
     float supply = 0;
     //*******DAC-Module
+//    ADCON0bits.ADON = 1;
     ADCON0bits.CHS = 0b11110;
     ADCON0bits.GO_nDONE = 1;
     while (ADCON0bits.GO_nDONE == 1);

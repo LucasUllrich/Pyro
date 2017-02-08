@@ -16,6 +16,7 @@
 void Transmit(unsigned char receiver, unsigned char operation, 
         unsigned char port, unsigned char con_status);
 unsigned char Receive(void);
+void Receive_Dump(void);
 // </editor-fold>
 
 /***************************************************

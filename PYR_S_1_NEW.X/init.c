@@ -8,8 +8,9 @@ void Init(void) {
     InitAnsel();
     InitMiscellaneous();
     InitTransmission();
+    InitADC();
+    InitVar();
     InitInterrupt();
-    InitMiscellaneos();
 }
 
 void InitPort(void) {
@@ -63,9 +64,9 @@ void InitADC(void) {
     VREFCON1 =  0b10001000;     //DAC on; no output; FVR and VSS
     VREFCON2bits.DACR = 16;     //With 2.048 V ref. output == 1.024 V
     //ADC-Module
-    ADCON0 =    0b01111001;     //DAC as source, ADC on
     ADCON1 =    0b00000000;     //FVR as positive supply
     ADCON2 =    0b00000011;     //Left justify, dedicated osc.
+    ADCON0 =    0b01111001;     //DAC as source, ADC on
 }
 
 void InitInterrupt(void) {
@@ -75,7 +76,7 @@ void InitInterrupt(void) {
     PIR1bits.RCIF= 0;
 }
 
-void InitMiscellaneos(void) {
+void InitVar(void) {
     for(unsigned char c = 0; c < 10; c++) {
         Marker[c] = 0;
     }

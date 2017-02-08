@@ -20,7 +20,6 @@ void interrupt Isr(void) {
         TMR1H = 0;
     }
     if(PIR1bits.RCIF == 1) {            // detecting reception over UART
-        PIR1bits.RCIF = 0;
         if(RCSTAbits.RX9D == 1) {       // an address is sent
             receive_counter = 0;        // restart counting of reception
                                         // bytes
@@ -66,6 +65,8 @@ void interrupt Isr(void) {
                     }
                 }
             }
+        } else {
+            Receive_Dump();
         }
         NOP();
         if(check_counter < 30 && testflag == 1) {

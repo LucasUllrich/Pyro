@@ -22,9 +22,9 @@
 // </editor-fold>
 
 /***************************************************
- * Defenitions
+ * Definitions
  ***************************************************/
-// <editor-fold defaultstate="collapsed" desc="Defenitions">
+// <editor-fold defaultstate="collapsed" desc="Definitions">
 #define ELEMENTS(x) (sizeof(x) / sizeof(x[0]))
 #define TRANSMITTER 0xAA
 #define ADDRESS 0xAA

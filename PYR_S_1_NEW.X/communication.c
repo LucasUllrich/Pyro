@@ -49,3 +49,13 @@ unsigned char Receive(void) {
     }
     return (RCREG1);
 }
+
+void Receive_Dump(void) {
+    unsigned char dump;
+    if(RCSTA1bits.OERR == 1) {     //Overrun-Error! Restart
+        RCSTA1bits.CREN = 0;
+        RCSTA1bits.CREN = 1;
+        overrun = 1;
+    }
+    dump = RCREG1;
+}

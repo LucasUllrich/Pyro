@@ -24,7 +24,7 @@
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="variables">
 #define _XTAL_FREQ  4000000
-#define ADDRESS     0x01
+#define ADDRESS     0x00
 #define TRANSMITTER 0x01
 #define OPERATION   2
 #define PORT        3

@@ -1,9 +1,8 @@
 #include "main.h"
 
 void interrupt Isr(void) {
-    
+    NOP();
     if(PIR1bits.RCIF == 1) {
-        PIR1bits.RCIF = 0;
         if(RCSTA1bits.RX9D == 1) {
             receive_counter = 0;        // restart counting of reception
                                         // bytes
@@ -27,6 +26,8 @@ void interrupt Isr(void) {
                                         // device
                 Evaluate_Reception();
             }
+        } else {
+            Receive_Dump();
         }
     }
 }
