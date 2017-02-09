@@ -30,4 +30,13 @@ void interrupt Isr(void) {
             Receive_Dump();
         }
     }
+    if (PIR1bits.CCP1IF == 1) {
+        PIR1bits.CCP1IF = 0;
+        T1CONbits.TMR1ON = 0;
+        TMR1H = 0;
+        TMR1L = 0;
+        for (unsigned char c = 0; c < 10; c++) {
+            Marker[c] = 0;
+        }
+    }
 }

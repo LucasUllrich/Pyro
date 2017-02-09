@@ -69,11 +69,20 @@ void InitADC(void) {
     ADCON0 =    0b01111001;     //DAC as source, ADC on
 }
 
+void InitTimer(void) {
+    CCP1CON = 0b00001011;       // Compare, special event, ADC is
+                                // unaffected sincs CCP1 is used
+    CCPTMRS0bits.C1TSEL = 0b00;
+    T1CON = 0b00110000;         // FOSC/4, 1:8
+    CCPR1H = 0b00000111;        // 15 ms
+    CCPR1L = 0b01010011;
+}
+
 void InitInterrupt(void) {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     PIE1bits.RCIE = 1;
-    PIR1bits.RCIF= 0;
+    PIE1bits.CCP1IE = 1;
 }
 
 void InitVar(void) {

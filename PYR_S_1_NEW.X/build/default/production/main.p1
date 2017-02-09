@@ -2,10 +2,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "16 init.h
 [v _Init `(v ~T0 @X0 0 ef ]
-"17 ignition.h
+"18 ignition.h
 [v _Check_Ignition `(v ~T0 @X0 0 ef ]
-"19
-[v _Check_Power `(v ~T0 @X0 0 ef ]
 "43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -7505,31 +7503,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 19: void InitAnsel(void);
 [; ;init.h: 20: void InitMiscellaneous(void);
 [; ;init.h: 21: void InitTransmission(void);
-[; ;init.h: 22: void InitInterrupt(void);
-[; ;init.h: 23: void InitMiscellaneos(void);
+[; ;init.h: 22: void InitADC(void);
+[; ;init.h: 23: void InitVar(void);
+[; ;init.h: 24: void InitInterrupt(void);
 [; ;ignition.h: 16: void Ignite_Port(unsigned char ignite_number);
-[; ;ignition.h: 17: void Check_Ignition(void);
-[; ;ignition.h: 18: void Mark_Ignite(void);
-[; ;ignition.h: 19: void Check_Power(void);
-[; ;ignition.h: 20: void Evaluate_Reception(void);
-"27 ignition.h
+[; ;ignition.h: 17: void Disable_Port(unsigned char disable_number);
+[; ;ignition.h: 18: void Check_Ignition(void);
+[; ;ignition.h: 19: void Mark_Ignite(void);
+[; ;ignition.h: 20: void Check_Power(void);
+[; ;ignition.h: 21: void Evaluate_Reception(void);
+[; ;ignition.h: 22: void On_Timer(void);
+"29 ignition.h
 [v _Marker `uc ~T0 @X0 -> 10 `i e ]
-[; ;ignition.h: 27: unsigned char Marker[10];
-"28
+[; ;ignition.h: 29: unsigned char Marker[10];
+"30
 [v _p_status `uc ~T0 @X0 1 e ]
 [i _p_status
 -> -> 48 `ui `uc
 ]
-[; ;ignition.h: 28: unsigned char p_status = '0';
+[; ;ignition.h: 30: unsigned char p_status = '0';
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port, unsigned char con_status);
 [; ;communication.h: 18: unsigned char Receive(void);
-"25 communication.h
+[; ;communication.h: 19: void Receive_Dump(void);
+"26 communication.h
 [v _overrun `b ~T0 @X0 1 e ]
 [i _overrun
 -> 0 `i
 ]
-[; ;communication.h: 25: bit overrun = 0;
+[; ;communication.h: 26: bit overrun = 0;
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
 [v _received `uc ~T0 @X0 -> 4 `i e ]
@@ -7562,23 +7564,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 77: Check_Ignition();
 "77
 [e ( _Check_Ignition ..  ]
-[; ;main.c: 78: Check_Power();
+[; ;main.c: 78: __nop();
 "78
-[e ( _Check_Power ..  ]
-[; ;main.c: 79: __nop();
-"79
 [e ( ___nop ..  ]
-"80
+"79
 }
 [e :U 1141 ]
 "76
 [e $U 1142  ]
 [e :U 1143 ]
-[; ;main.c: 80: }
-[; ;main.c: 81: return;
-"81
+[; ;main.c: 79: }
+[; ;main.c: 80: return;
+"80
 [e $UE 1140  ]
-[; ;main.c: 82: }
-"82
+[; ;main.c: 81: }
+"81
 [e :UE 1140 ]
 }

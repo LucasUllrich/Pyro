@@ -1,4 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "9835 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
 [s S565 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S565 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
@@ -38,8 +41,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCSTA1bits `VS609 ~T0 @X0 0 e@4011 ]
 "18 communication.h
 [v _Receive `(uc ~T0 @X0 0 ef ]
-"20 ignition.h
+"21 ignition.h
 [v _Evaluate_Reception `(v ~T0 @X0 0 ef ]
+"19 communication.h
+[v _Receive_Dump `(v ~T0 @X0 0 ef ]
+"16384 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
+[s S1025 :2 `uc 1 :1 `uc 1 ]
+[n S1025 . . NOT_T1SYNC ]
+"16388
+[s S1026 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S1026 . TMR1ON T1RD16 nT1SYNC T1SOSCEN T1CKPS TMR1CS ]
+"16396
+[s S1027 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1027 . . RD16 T1SYNC T1OSCEN T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
+"16406
+[s S1028 :3 `uc 1 :1 `uc 1 ]
+[n S1028 . . SOSCEN ]
+"16383
+[u S1024 `S1025 1 `S1026 1 `S1027 1 `S1028 1 ]
+[n S1024 . . . . . ]
+"16411
+[v _T1CONbits `VS1024 ~T0 @X0 0 e@4045 ]
+"16515
+[v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
+"16496
+[v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7472,31 +7498,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 19: void InitAnsel(void);
 [; ;init.h: 20: void InitMiscellaneous(void);
 [; ;init.h: 21: void InitTransmission(void);
-[; ;init.h: 22: void InitInterrupt(void);
-[; ;init.h: 23: void InitMiscellaneos(void);
+[; ;init.h: 22: void InitADC(void);
+[; ;init.h: 23: void InitVar(void);
+[; ;init.h: 24: void InitInterrupt(void);
 [; ;ignition.h: 16: void Ignite_Port(unsigned char ignite_number);
-[; ;ignition.h: 17: void Check_Ignition(void);
-[; ;ignition.h: 18: void Mark_Ignite(void);
-[; ;ignition.h: 19: void Check_Power(void);
-[; ;ignition.h: 20: void Evaluate_Reception(void);
-"27 ignition.h
+[; ;ignition.h: 17: void Disable_Port(unsigned char disable_number);
+[; ;ignition.h: 18: void Check_Ignition(void);
+[; ;ignition.h: 19: void Mark_Ignite(void);
+[; ;ignition.h: 20: void Check_Power(void);
+[; ;ignition.h: 21: void Evaluate_Reception(void);
+[; ;ignition.h: 22: void On_Timer(void);
+"29 ignition.h
 [v _Marker `uc ~T0 @X0 -> 10 `i e ]
-[; ;ignition.h: 27: unsigned char Marker[10];
-"28
+[; ;ignition.h: 29: unsigned char Marker[10];
+"30
 [v _p_status `uc ~T0 @X0 1 e ]
 [i _p_status
 -> -> 48 `ui `uc
 ]
-[; ;ignition.h: 28: unsigned char p_status = '0';
+[; ;ignition.h: 30: unsigned char p_status = '0';
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port, unsigned char con_status);
 [; ;communication.h: 18: unsigned char Receive(void);
-"25 communication.h
+[; ;communication.h: 19: void Receive_Dump(void);
+"26 communication.h
 [v _overrun `b ~T0 @X0 1 e ]
 [i _overrun
 -> 0 `i
 ]
-[; ;communication.h: 25: bit overrun = 0;
+[; ;communication.h: 26: bit overrun = 0;
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
 [v _received `uc ~T0 @X0 -> 4 `i e ]
@@ -7513,95 +7543,145 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;main.h: 33: bit slave_addressed = 0;
-[v F7863 `(v ~T0 @X0 1 tf ]
+[v F7871 `(v ~T0 @X0 1 tf ]
 "3 interrupt.c
-[v _Isr `IF7863 ~T0 @X0 1 e ]
+[v _Isr `IF7871 ~T0 @X0 1 e ]
 {
 [; ;interrupt.c: 3: void interrupt Isr(void) {
 [e :U _Isr ]
 [f ]
+[; ;interrupt.c: 4: __nop();
+"4
+[e ( ___nop ..  ]
 [; ;interrupt.c: 5: if(PIR1bits.RCIF == 1) {
 "5
 [e $ ! == -> . . _PIR1bits 1 3 `i -> 1 `i 1141  ]
 {
-[; ;interrupt.c: 6: PIR1bits.RCIF = 0;
+[; ;interrupt.c: 6: if(RCSTA1bits.RX9D == 1) {
 "6
-[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
-[; ;interrupt.c: 7: if(RCSTA1bits.RX9D == 1) {
-"7
 [e $ ! == -> . . _RCSTA1bits 0 0 `i -> 1 `i 1142  ]
 {
-[; ;interrupt.c: 8: receive_counter = 0;
-"8
+[; ;interrupt.c: 7: receive_counter = 0;
+"7
 [e = _receive_counter -> -> 0 `i `uc ]
-[; ;interrupt.c: 10: received[receive_counter] =
-[; ;interrupt.c: 11: Receive();
-"11
+[; ;interrupt.c: 9: received[receive_counter] =
+[; ;interrupt.c: 10: Receive();
+"10
 [e = *U + &U _received * -> _receive_counter `ux -> -> # *U &U _received `ui `ux ( _Receive ..  ]
-[; ;interrupt.c: 12: receive_counter++;
-"12
+[; ;interrupt.c: 11: receive_counter++;
+"11
 [e ++ _receive_counter -> -> 1 `i `uc ]
-[; ;interrupt.c: 14: if(received[0] == 0x01) {
-"14
-[e $ ! == -> *U + &U _received * -> -> -> 0 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 1 `i 1143  ]
+[; ;interrupt.c: 13: if(received[0] == 0x00) {
+"13
+[e $ ! == -> *U + &U _received * -> -> -> 0 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 0 `i 1143  ]
 {
-[; ;interrupt.c: 15: slave_addressed = 1;
-"15
+[; ;interrupt.c: 14: slave_addressed = 1;
+"14
 [e = _slave_addressed -> -> 1 `i `b ]
-"16
+"15
 }
-[; ;interrupt.c: 16: } else {
+[; ;interrupt.c: 15: } else {
 [e $U 1144  ]
 [e :U 1143 ]
 {
-[; ;interrupt.c: 17: slave_addressed = 0;
-"17
+[; ;interrupt.c: 16: slave_addressed = 0;
+"16
 [e = _slave_addressed -> -> 0 `i `b ]
-"18
+"17
 }
 [e :U 1144 ]
-"19
+"18
 }
-[; ;interrupt.c: 18: }
-[; ;interrupt.c: 19: } else if(slave_addressed == 1) {
+[; ;interrupt.c: 17: }
+[; ;interrupt.c: 18: } else if(slave_addressed == 1) {
 [e $U 1145  ]
 [e :U 1142 ]
 [e $ ! == -> _slave_addressed `i -> 1 `i 1146  ]
 {
-[; ;interrupt.c: 20: received[receive_counter] =
-[; ;interrupt.c: 21: Receive();
-"21
+[; ;interrupt.c: 19: received[receive_counter] =
+[; ;interrupt.c: 20: Receive();
+"20
 [e = *U + &U _received * -> _receive_counter `ux -> -> # *U &U _received `ui `ux ( _Receive ..  ]
-[; ;interrupt.c: 22: receive_counter++;
-"22
+[; ;interrupt.c: 21: receive_counter++;
+"21
 [e ++ _receive_counter -> -> 1 `i `uc ]
-[; ;interrupt.c: 24: if(receive_counter > 3) {
-"24
+[; ;interrupt.c: 23: if(receive_counter > 3) {
+"23
 [e $ ! > -> _receive_counter `i -> 3 `i 1147  ]
 {
-[; ;interrupt.c: 25: receive_counter = 0;
-"25
+[; ;interrupt.c: 24: receive_counter = 0;
+"24
 [e = _receive_counter -> -> 0 `i `uc ]
-[; ;interrupt.c: 26: slave_addressed = 0;
-"26
+[; ;interrupt.c: 25: slave_addressed = 0;
+"25
 [e = _slave_addressed -> -> 0 `i `b ]
-[; ;interrupt.c: 28: Evaluate_Reception();
-"28
+[; ;interrupt.c: 27: Evaluate_Reception();
+"27
 [e ( _Evaluate_Reception ..  ]
-"29
+"28
 }
 [e :U 1147 ]
-"30
+"29
 }
+[; ;interrupt.c: 28: }
+[; ;interrupt.c: 29: } else {
+[e $U 1148  ]
 [e :U 1146 ]
+{
+[; ;interrupt.c: 30: Receive_Dump();
+"30
+[e ( _Receive_Dump ..  ]
 "31
+}
+[e :U 1148 ]
 [e :U 1145 ]
+"32
 }
 [e :U 1141 ]
-[; ;interrupt.c: 29: }
-[; ;interrupt.c: 30: }
 [; ;interrupt.c: 31: }
 [; ;interrupt.c: 32: }
-"32
+[; ;interrupt.c: 33: if (PIR1bits.CCP1IF == 1) {
+"33
+[e $ ! == -> . . _PIR1bits 0 2 `i -> 1 `i 1149  ]
+{
+[; ;interrupt.c: 34: PIR1bits.CCP1IF = 0;
+"34
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+[; ;interrupt.c: 35: T1CONbits.TMR1ON = 0;
+"35
+[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
+[; ;interrupt.c: 36: TMR1H = 0;
+"36
+[e = _TMR1H -> -> 0 `i `uc ]
+[; ;interrupt.c: 37: TMR1L = 0;
+"37
+[e = _TMR1L -> -> 0 `i `uc ]
+[; ;interrupt.c: 38: for (unsigned char c = 0; c < 10; c++) {
+"38
+{
+[v _c `uc ~T0 @X0 1 a ]
+[e = _c -> -> 0 `i `uc ]
+[e $ < -> _c `i -> 10 `i 1150  ]
+[e $U 1151  ]
+[e :U 1150 ]
+{
+[; ;interrupt.c: 39: Marker[c] = 0;
+"39
+[e = *U + &U _Marker * -> _c `ux -> -> # *U &U _Marker `ui `ux -> -> 0 `i `uc ]
+"40
+}
+"38
+[e ++ _c -> -> 1 `i `uc ]
+[e $ < -> _c `i -> 10 `i 1150  ]
+[e :U 1151 ]
+"40
+}
+"41
+}
+[e :U 1149 ]
+[; ;interrupt.c: 40: }
+[; ;interrupt.c: 41: }
+[; ;interrupt.c: 42: }
+"42
 [e :UE 1140 ]
 }

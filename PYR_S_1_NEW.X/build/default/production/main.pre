@@ -9378,17 +9378,20 @@ void InitTris(void);
 void InitAnsel(void);
 void InitMiscellaneous(void);
 void InitTransmission(void);
+void InitADC(void);
+void InitVar(void);
 void InitInterrupt(void);
-void InitMiscellaneos(void);
 
 # 16 "ignition.h"
 void Ignite_Port(unsigned char ignite_number);
+void Disable_Port(unsigned char disable_number);
 void Check_Ignition(void);
 void Mark_Ignite(void);
 void Check_Power(void);
 void Evaluate_Reception(void);
+void On_Timer(void);
 
-# 27
+# 29
 unsigned char Marker[10];
 unsigned char p_status = '0';
 
@@ -9396,8 +9399,9 @@ unsigned char p_status = '0';
 void Transmit(unsigned char receiver, unsigned char operation,
 unsigned char port, unsigned char con_status);
 unsigned char Receive(void);
+void Receive_Dump(void);
 
-# 25
+# 26
 bit overrun = 0;
 
 # 16 "interrupt.h"
@@ -9415,7 +9419,6 @@ void main(void) {
 Init();
 while(1) {
 Check_Ignition();
-Check_Power();
 __nop();
 }
 return;

@@ -9323,17 +9323,20 @@ void InitTris(void);
 void InitAnsel(void);
 void InitMiscellaneous(void);
 void InitTransmission(void);
+void InitADC(void);
+void InitVar(void);
 void InitInterrupt(void);
-void InitMiscellaneos(void);
 
 # 16 "ignition.h"
 void Ignite_Port(unsigned char ignite_number);
+void Disable_Port(unsigned char disable_number);
 void Check_Ignition(void);
 void Mark_Ignite(void);
 void Check_Power(void);
 void Evaluate_Reception(void);
+void On_Timer(void);
 
-# 27
+# 29
 unsigned char Marker[10];
 unsigned char p_status = '0';
 
@@ -9341,8 +9344,9 @@ unsigned char p_status = '0';
 void Transmit(unsigned char receiver, unsigned char operation,
 unsigned char port, unsigned char con_status);
 unsigned char Receive(void);
+void Receive_Dump(void);
 
-# 25
+# 26
 bit overrun = 0;
 
 # 16 "interrupt.h"
@@ -9356,6 +9360,12 @@ unsigned char receive_counter = 0;
 bit slave_addressed = 0;
 
 # 5 "ignition.c"
+void On_Timer(void) {
+TMR1L = 0;
+TMR1H = 0;
+T1CONbits.TMR1ON = 1;
+}
+
 void Test_Port(void) {
 switch(received[3]) {
 case 0:
@@ -9432,7 +9442,7 @@ break;
 }
 
 void Ignite_Port(unsigned char ignite_number) {
-switch(Marker[ignite_number]) {
+switch(ignite_number) {
 case 0:
 PORTCbits.RC5 = 1;
 break;
@@ -9466,12 +9476,48 @@ break;
 }
 }
 
+void Disable_Port(unsigned char disable_number) {
+switch(disable_number) {
+case 0:
+PORTCbits.RC5 = 0;
+break;
+case 1:
+PORTDbits.RD3 = 0;
+break;
+case 2:
+PORTDbits.RD1 = 0;
+break;
+case 3:
+PORTCbits.RC3 = 0;
+break;
+case 4:
+PORTCbits.RC1 = 0;
+break;
+case 5:
+PORTEbits.RE1 = 0;
+break;
+case 6:
+PORTAbits.RA5 = 0;
+break;
+case 7:
+PORTBbits.RB5 = 0;
+break;
+case 8:
+PORTAbits.RA3 = 0;
+break;
+case 9:
+PORTAbits.RA1 = 0;
+break;
+}
+}
+
 void Check_Ignition(void) {
 for(unsigned char c = 0; c < 10; c++) {
 if(Marker[c] == 1) {
 Ignite_Port(c);
-_delay((unsigned long)((15)*(4000000/4000.0)));
-Marker[c] = 0;
+On_Timer();
+} else {
+Disable_Port(c);
 }
 }
 }
@@ -9488,6 +9534,7 @@ float source_power = 0;
 float voltage = 0;
 float DAC_out = 1.024;
 float supply = 0;
+
 
 ADCON0bits.CHS = 0b11110;
 ADCON0bits.GO_nDONE = 1;
@@ -9510,7 +9557,7 @@ p_status = '1';
 
 void Evaluate_Reception(void) {
 
-# 163
+# 206
 if (received[2] == 'T') {
 Check_Power();
 Test_Port();

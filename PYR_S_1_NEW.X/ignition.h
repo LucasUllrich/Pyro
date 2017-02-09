@@ -14,10 +14,12 @@
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
 void Ignite_Port(unsigned char ignite_number);
+void Disable_Port(unsigned char disable_number);
 void Check_Ignition(void);
 void Mark_Ignite(void);
 void Check_Power(void);
 void Evaluate_Reception(void);
+void On_Timer(void);
 // </editor-fold>
 
 /***************************************************

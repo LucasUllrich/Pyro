@@ -9323,17 +9323,20 @@ void InitTris(void);
 void InitAnsel(void);
 void InitMiscellaneous(void);
 void InitTransmission(void);
+void InitADC(void);
+void InitVar(void);
 void InitInterrupt(void);
-void InitMiscellaneos(void);
 
 # 16 "ignition.h"
 void Ignite_Port(unsigned char ignite_number);
+void Disable_Port(unsigned char disable_number);
 void Check_Ignition(void);
 void Mark_Ignite(void);
 void Check_Power(void);
 void Evaluate_Reception(void);
+void On_Timer(void);
 
-# 27
+# 29
 unsigned char Marker[10];
 unsigned char p_status = '0';
 
@@ -9341,8 +9344,9 @@ unsigned char p_status = '0';
 void Transmit(unsigned char receiver, unsigned char operation,
 unsigned char port, unsigned char con_status);
 unsigned char Receive(void);
+void Receive_Dump(void);
 
-# 25
+# 26
 bit overrun = 0;
 
 # 16 "interrupt.h"
@@ -9357,9 +9361,8 @@ bit slave_addressed = 0;
 
 # 3 "interrupt.c"
 void interrupt Isr(void) {
-
+__nop();
 if(PIR1bits.RCIF == 1) {
-PIR1bits.RCIF = 0;
 if(RCSTA1bits.RX9D == 1) {
 receive_counter = 0;
 
@@ -9367,7 +9370,7 @@ received[receive_counter] =
 Receive();
 receive_counter++;
 
-if(received[0] == 0x01) {
+if(received[0] == 0x00) {
 slave_addressed = 1;
 } else {
 slave_addressed = 0;
@@ -9383,6 +9386,17 @@ slave_addressed = 0;
 
 Evaluate_Reception();
 }
+} else {
+Receive_Dump();
+}
+}
+if (PIR1bits.CCP1IF == 1) {
+PIR1bits.CCP1IF = 0;
+T1CONbits.TMR1ON = 0;
+TMR1H = 0;
+TMR1L = 0;
+for (unsigned char c = 0; c < 10; c++) {
+Marker[c] = 0;
 }
 }
 }

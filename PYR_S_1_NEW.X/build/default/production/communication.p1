@@ -7518,31 +7518,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;init.h: 19: void InitAnsel(void);
 [; ;init.h: 20: void InitMiscellaneous(void);
 [; ;init.h: 21: void InitTransmission(void);
-[; ;init.h: 22: void InitInterrupt(void);
-[; ;init.h: 23: void InitMiscellaneos(void);
+[; ;init.h: 22: void InitADC(void);
+[; ;init.h: 23: void InitVar(void);
+[; ;init.h: 24: void InitInterrupt(void);
 [; ;ignition.h: 16: void Ignite_Port(unsigned char ignite_number);
-[; ;ignition.h: 17: void Check_Ignition(void);
-[; ;ignition.h: 18: void Mark_Ignite(void);
-[; ;ignition.h: 19: void Check_Power(void);
-[; ;ignition.h: 20: void Evaluate_Reception(void);
-"27 ignition.h
+[; ;ignition.h: 17: void Disable_Port(unsigned char disable_number);
+[; ;ignition.h: 18: void Check_Ignition(void);
+[; ;ignition.h: 19: void Mark_Ignite(void);
+[; ;ignition.h: 20: void Check_Power(void);
+[; ;ignition.h: 21: void Evaluate_Reception(void);
+[; ;ignition.h: 22: void On_Timer(void);
+"29 ignition.h
 [v _Marker `uc ~T0 @X0 -> 10 `i e ]
-[; ;ignition.h: 27: unsigned char Marker[10];
-"28
+[; ;ignition.h: 29: unsigned char Marker[10];
+"30
 [v _p_status `uc ~T0 @X0 1 e ]
 [i _p_status
 -> -> 48 `ui `uc
 ]
-[; ;ignition.h: 28: unsigned char p_status = '0';
+[; ;ignition.h: 30: unsigned char p_status = '0';
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port, unsigned char con_status);
 [; ;communication.h: 18: unsigned char Receive(void);
-"25 communication.h
+[; ;communication.h: 19: void Receive_Dump(void);
+"26 communication.h
 [v _overrun `b ~T0 @X0 1 e ]
 [i _overrun
 -> 0 `i
 ]
-[; ;communication.h: 25: bit overrun = 0;
+[; ;communication.h: 26: bit overrun = 0;
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
 [v _received `uc ~T0 @X0 -> 4 `i e ]
@@ -7695,4 +7699,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;communication.c: 51: }
 "51
 [e :UE 1162 ]
+}
+"53
+[v _Receive_Dump `(v ~T0 @X0 1 ef ]
+{
+[; ;communication.c: 53: void Receive_Dump(void) {
+[e :U _Receive_Dump ]
+[f ]
+"54
+[v _dump `uc ~T0 @X0 1 a ]
+[; ;communication.c: 54: unsigned char dump;
+[; ;communication.c: 55: if(RCSTA1bits.OERR == 1) {
+"55
+[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1165  ]
+{
+[; ;communication.c: 56: RCSTA1bits.CREN = 0;
+"56
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;communication.c: 57: RCSTA1bits.CREN = 1;
+"57
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;communication.c: 58: overrun = 1;
+"58
+[e = _overrun -> -> 1 `i `b ]
+"59
+}
+[e :U 1165 ]
+[; ;communication.c: 59: }
+[; ;communication.c: 60: dump = RCREG1;
+"60
+[e = _dump _RCREG1 ]
+[; ;communication.c: 61: }
+"61
+[e :UE 1164 ]
 }

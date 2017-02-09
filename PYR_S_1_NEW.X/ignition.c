@@ -2,6 +2,12 @@
 
 #include "main.h"
 
+void On_Timer(void) {
+    TMR1L = 0;
+    TMR1H = 0;
+    T1CONbits.TMR1ON = 1;
+}
+
 void Test_Port(void) {
     switch(received[PORT]) {
         case 0:
@@ -78,7 +84,7 @@ void Test_Port(void) {
 }
 
 void Ignite_Port(unsigned char ignite_number) {
-    switch(Marker[ignite_number]) {
+    switch(ignite_number) {
         case 0:
             Nr_0 = 1;
             break;
@@ -112,12 +118,48 @@ void Ignite_Port(unsigned char ignite_number) {
     }
 }
 
+void Disable_Port(unsigned char disable_number) {
+    switch(disable_number) {
+        case 0:
+            Nr_0 = 0;
+            break;
+        case 1:
+            Nr_1 = 0;
+            break;
+        case 2:
+            Nr_2 = 0;
+            break;
+        case 3:
+            Nr_3 = 0;
+            break;
+        case 4:
+            Nr_4 = 0;
+            break;
+        case 5:
+            Nr_5 = 0;
+            break;
+        case 6:
+            Nr_6 = 0;
+            break;
+        case 7:
+            Nr_7 = 0;
+            break;
+        case 8:
+            Nr_8 = 0;
+            break;
+        case 9:
+            Nr_9 = 0;
+            break;
+    }
+}
+
 void Check_Ignition(void) {
     for(unsigned char c = 0; c < 10; c++) {
         if(Marker[c] == 1) {
             Ignite_Port(c);
-            __delay_ms(15);
-            Marker[c] = 0;
+            On_Timer();
+        } else {
+            Disable_Port(c);
         }
     }
 }
