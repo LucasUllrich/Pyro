@@ -780,7 +780,7 @@
 [v _Del_Data Del_Data `(v  1 e 0 0 ]
 {
 "97
-[v Del_Data@counter counter `uc  1 a 1 29 ]
+[v Del_Data@counter counter `uc  1 a 1 28 ]
 "102
 } 0
 "8
@@ -795,7 +795,7 @@
 [v _Load_Data Load_Data `(v  1 e 0 0 ]
 {
 "73
-[v Load_Data@counter counter `uc  1 a 1 28 ]
+[v Load_Data@counter counter `uc  1 a 1 27 ]
 "85
 } 0
 "139 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
@@ -803,11 +803,11 @@
 {
 [v Set_Display@type type `uc  1 a 1 wreg ]
 [v Set_Display@type type `uc  1 a 1 wreg ]
-[v Set_Display@information information `uc  1 p 1 23 ]
+[v Set_Display@information information `uc  1 p 1 22 ]
 "140
-[v Set_Display@value value `ui  1 p 2 24 ]
+[v Set_Display@value value `ui  1 p 2 23 ]
 "139
-[v Set_Display@type type `uc  1 a 1 26 ]
+[v Set_Display@type type `uc  1 a 1 25 ]
 "158
 } 0
 "56 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
@@ -823,9 +823,9 @@
 [v _Evaluate_Signs Evaluate_Signs `(v  1 e 0 0 ]
 {
 "120
-[v Evaluate_Signs@valuecounter valuecounter `uc  1 a 1 22 ]
+[v Evaluate_Signs@valuecounter valuecounter `uc  1 a 1 21 ]
 "119
-[v Evaluate_Signs@evaluation_value evaluation_value `ui  1 p 2 16 ]
+[v Evaluate_Signs@evaluation_value evaluation_value `ui  1 p 2 15 ]
 "128
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
@@ -855,19 +855,19 @@
 {
 [v Evaluate_Display@size size `uc  1 a 1 wreg ]
 [v Evaluate_Display@size size `uc  1 a 1 wreg ]
-[v Evaluate_Display@evaluate evaluate `*.39uc  1 p 2 9 ]
-[v Evaluate_Display@size size `uc  1 a 1 15 ]
+[v Evaluate_Display@evaluate evaluate `*.39uc  1 p 2 8 ]
+[v Evaluate_Display@size size `uc  1 a 1 14 ]
 "112
 } 0
 "12
 [v _Set_Bits Set_Bits `(v  1 e 0 0 ]
 {
 "14
-[v Set_Bits@bitcount bitcount `uc  1 a 1 7 ]
+[v Set_Bits@bitcount bitcount `uc  1 a 1 6 ]
 "13
-[v Set_Bits@Bitoutput Bitoutput `uc  1 a 1 8 ]
+[v Set_Bits@Bitoutput Bitoutput `uc  1 a 1 7 ]
 "12
-[v Set_Bits@bits bits `*.33Cuc  1 p 3 0 ]
+[v Set_Bits@bits bits `*.25Cuc  1 p 2 0 ]
 "43
 } 0
 "45 C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
@@ -896,11 +896,11 @@
 [v _Isr Isr `II(v  1 e 0 0 ]
 {
 "45
-[v Isr@search_index search_index `uc  1 a 1 46 ]
+[v Isr@search_index search_index `uc  1 a 1 45 ]
 "47
-[v Isr@pixel_index_bit pixel_index_bit `uc  1 a 1 45 ]
+[v Isr@pixel_index_bit pixel_index_bit `uc  1 a 1 44 ]
 "46
-[v Isr@pixel_index_array pixel_index_array `uc  1 a 1 44 ]
+[v Isr@pixel_index_array pixel_index_array `uc  1 a 1 43 ]
 "80
 } 0
 "139 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
@@ -908,11 +908,11 @@
 {
 [v i2Set_Display@type type `uc  1 a 1 wreg ]
 [v i2Set_Display@type type `uc  1 a 1 wreg ]
-[v i2Set_Display@information information `uc  1 p 1 23 ]
+[v i2Set_Display@information information `uc  1 p 1 22 ]
 "140
-[v i2Set_Display@value value `ui  1 p 2 24 ]
+[v i2Set_Display@value value `ui  1 p 2 23 ]
 "139
-[v i2Set_Display@type type `uc  1 a 1 26 ]
+[v i2Set_Display@type type `uc  1 a 1 25 ]
 "158
 } 0
 "56 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
@@ -925,8 +925,8 @@
 "119 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
 [v i2_Evaluate_Signs Evaluate_Signs `(v  1 e 0 0 ]
 {
-[v i2Evaluate_Signs@valuecounter Evaluate_Signs `uc  1 a 1 22 ]
-[v i2Evaluate_Signs@evaluation_value evaluation_value `ui  1 p 2 16 ]
+[v i2Evaluate_Signs@valuecounter Evaluate_Signs `uc  1 a 1 21 ]
+[v i2Evaluate_Signs@evaluation_value evaluation_value `ui  1 p 2 15 ]
 "128
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
@@ -951,16 +951,16 @@
 {
 [v i2Evaluate_Display@size size `uc  1 a 1 wreg ]
 [v i2Evaluate_Display@size size `uc  1 a 1 wreg ]
-[v i2Evaluate_Display@evaluate evaluate `*.39uc  1 p 2 9 ]
-[v i2Evaluate_Display@size size `uc  1 a 1 15 ]
+[v i2Evaluate_Display@evaluate evaluate `*.39uc  1 p 2 8 ]
+[v i2Evaluate_Display@size size `uc  1 a 1 14 ]
 "112
 } 0
 "12
 [v i2_Set_Bits Set_Bits `(v  1 e 0 0 ]
 {
-[v i2Set_Bits@Bitoutput Set_Bits `uc  1 a 1 8 ]
-[v i2Set_Bits@bitcount Set_Bits `uc  1 a 1 7 ]
-[v i2Set_Bits@bits bits `*.33Cuc  1 p 3 0 ]
+[v i2Set_Bits@Bitoutput Set_Bits `uc  1 a 1 7 ]
+[v i2Set_Bits@bitcount Set_Bits `uc  1 a 1 6 ]
+[v i2Set_Bits@bits bits `*.25Cuc  1 p 2 0 ]
 "43
 } 0
 "25 C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c

@@ -8981,7 +8981,7 @@ void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
 
 # 28
-unsigned char pixels[7];
+unsigned char pixels[8];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 
@@ -9049,6 +9049,7 @@ void Check_Buttons(void) {
 if(PORTCbits.RC1 == 1) {
 Delay_Routine(3);
 if(PORTCbits.RC1 == 1) {
+__nop();
 ignite_ready = 1;
 Start_Timer();
 __nop();
@@ -9059,6 +9060,7 @@ return;
 } else if(PORTBbits.RB2 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB2 == 1) {
+__nop();
 if(PORTBbits.RB3 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB3 == 1) {
@@ -9078,6 +9080,7 @@ __nop();
 } else if(PORTBbits.RB3 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB3 == 1) {
+__nop();
 if(PORTBbits.RB2 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB2 == 1) {
@@ -9097,6 +9100,7 @@ __nop();
 } else if(PORTBbits.RB4 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB4 == 1) {
+__nop();
 pin[pin_selected].time += 10;
 if(pin[pin_selected].time > 999) {
 pin[pin_selected].time = 0;
@@ -9108,6 +9112,7 @@ __nop();
 } else if(PORTBbits.RB1 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB1 == 1) {
+__nop();
 if(PORTBbits.RB0 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB0 == 1) {
@@ -9146,6 +9151,7 @@ __nop();
 } else if(PORTBbits.RB0 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB0 == 1) {
+__nop();
 if(PORTBbits.RB1 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB1 == 1) {
@@ -9171,5 +9177,7 @@ Set_Display('7', '-', pin[pin_selected].time);
 Delay_Routine(30);
 __nop();
 }
+} else {
+__nop();
 }
 }

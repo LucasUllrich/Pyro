@@ -7718,9 +7718,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;storage.c: 71: Evaluate_Display(3, string_load);
 "71
 [e ( _Evaluate_Display (2 , -> -> 3 `i `uc &U _string_load ]
-[; ;storage.c: 72: Delay_Routine(3);
+[; ;storage.c: 72: Delay_Routine(30);
 "72
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
 [; ;storage.c: 73: for(unsigned char counter = 0; counter < 30; counter++) {
 "73
 {
@@ -7788,9 +7788,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;storage.c: 95: Evaluate_Display(3, string_delete);
 "95
 [e ( _Evaluate_Display (2 , -> -> 3 `i `uc &U _string_delete ]
-[; ;storage.c: 96: Delay_Routine(3);
+[; ;storage.c: 96: Delay_Routine(30);
 "96
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
 [; ;storage.c: 97: for(unsigned char counter = 0; counter < 30; counter++) {
 "97
 {

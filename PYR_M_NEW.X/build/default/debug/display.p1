@@ -7790,9 +7790,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.c: 108: default:
 "108
 [e :U 1145 ]
-[; ;display.c: 109: Set_Bits('0');
+[; ;display.c: 109: Set_Bits("0");
 "109
-[e ( _Set_Bits (1 -> -> 48 `ui `*Cuc ]
+[e ( _Set_Bits (1 :s 18C ]
 "110
 }
 [; ;display.c: 110: }
@@ -7905,18 +7905,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 "143
 [e $ ! != -> _information `ui -> 45 `ui 1154  ]
 {
-[; ;display.c: 144: signs[0] = value;
+[; ;display.c: 144: signs[2] = value;
 "144
-[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
-[; ;display.c: 145: signs[0] += 0x30;
+[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
+[; ;display.c: 145: signs[2] += 0x30;
 "145
-[e =+ *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[e =+ *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
 [; ;display.c: 146: signs[1] = '-';
 "146
 [e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
-[; ;display.c: 147: signs[2] = information;
+[; ;display.c: 147: signs[0] = information;
 "147
-[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
+[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
 [; ;display.c: 148: Evaluate_Display(sizeof(signs), signs);
 "148
 [e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
@@ -7977,3 +7977,4 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 14C 68 69 70 0 ]
 [a 8C 65 66 67 0 ]
 [a 2C 66 67 0 ]
+[a 18C 48 0 ]

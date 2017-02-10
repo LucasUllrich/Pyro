@@ -7439,8 +7439,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 7 `i e ]
-[; ;display.h: 28: unsigned char pixels[7];
+[v _pixels `uc ~T0 @X0 -> 8 `i e ]
+[; ;display.h: 28: unsigned char pixels[8];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];

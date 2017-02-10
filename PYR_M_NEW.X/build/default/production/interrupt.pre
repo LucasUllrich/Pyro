@@ -8981,7 +8981,7 @@ void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
 
 # 28
-unsigned char pixels[7];
+unsigned char pixels[8];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 

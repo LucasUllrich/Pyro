@@ -106,7 +106,7 @@ void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
                 Set_Bits("G");
                 break;
             default:
-                Set_Bits('0');
+                Set_Bits("0");
         }
     }
 }
@@ -141,10 +141,10 @@ void Set_Display(unsigned char type, unsigned char information,
     switch (type) {
         case '7':       //The 7-segment displays should be addressed
             if(information != '-') {
-                signs[0] = value;
-                signs[0] += 0x30;
+                signs[2] = value;
+                signs[2] += 0x30;
                 signs[1] = '-';
-                signs[2] = information;
+                signs[0] = information;
                 Evaluate_Display(sizeof(signs), signs);
             } else {
                 Evaluate_Signs(value);

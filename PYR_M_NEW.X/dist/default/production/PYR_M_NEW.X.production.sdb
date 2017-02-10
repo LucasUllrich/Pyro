@@ -17,6 +17,9 @@
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 "20 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+[v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 [v i2___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -83,11 +86,11 @@
 [v _main main `(v  1 e 0 0 ]
 "8 C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
 [v _Save_Data Save_Data `(v  1 e 0 0 ]
-"44
+"45
 [v _Read_Data Read_Data `(ui  1 e 2 0 ]
-"65
+"66
 [v _Load_Data Load_Data `(v  1 e 0 0 ]
-"89
+"90
 [v _Del_Data Del_Data `(v  1 e 0 0 ]
 "24 C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.h
 [v _slave_selected slave_selected `uc  1 e 1 0 ]
@@ -678,7 +681,7 @@
 "27 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.h
 [v _overrun overrun `b  1 e 0 0 ]
 "28 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.h
-[v _pixels pixels `[7]uc  1 e 7 0 ]
+[v _pixels pixels `[8]uc  1 e 8 0 ]
 "29
 [v _signs signs `[3]uc  1 e 3 0 ]
 "30
@@ -766,19 +769,19 @@
 "26 C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 [v _Check_Buttons Check_Buttons `(v  1 e 0 0 ]
 {
-"153
+"161
 } 0
 "12 C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
 [v _Start_Timer Start_Timer `(v  1 e 0 0 ]
 {
 "23
 } 0
-"89 C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+"90 C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
 [v _Del_Data Del_Data `(v  1 e 0 0 ]
 {
-"96
-[v Del_Data@counter counter `uc  1 a 1 24 ]
-"100
+"97
+[v Del_Data@counter counter `uc  1 a 1 28 ]
+"102
 } 0
 "8
 [v _Save_Data Save_Data `(v  1 e 0 0 ]
@@ -786,25 +789,25 @@
 [v Save_Data@store store `ui  1 p 2 0 ]
 "9
 [v Save_Data@store_address store_address `uc  1 p 1 2 ]
-"36
+"37
 } 0
-"65
+"66
 [v _Load_Data Load_Data `(v  1 e 0 0 ]
 {
-"72
-[v Load_Data@counter counter `uc  1 a 1 23 ]
-"84
+"73
+[v Load_Data@counter counter `uc  1 a 1 27 ]
+"85
 } 0
 "139 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
 [v _Set_Display Set_Display `(v  1 e 0 0 ]
 {
 [v Set_Display@type type `uc  1 a 1 wreg ]
 [v Set_Display@type type `uc  1 a 1 wreg ]
-[v Set_Display@information information `uc  1 p 1 18 ]
+[v Set_Display@information information `uc  1 p 1 22 ]
 "140
-[v Set_Display@value value `ui  1 p 2 19 ]
+[v Set_Display@value value `ui  1 p 2 23 ]
 "139
-[v Set_Display@type type `uc  1 a 1 21 ]
+[v Set_Display@type type `uc  1 a 1 25 ]
 "158
 } 0
 "56 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
@@ -820,7 +823,7 @@
 [v _Evaluate_Signs Evaluate_Signs `(v  1 e 0 0 ]
 {
 "120
-[v Evaluate_Signs@valuecounter valuecounter `uc  1 a 1 17 ]
+[v Evaluate_Signs@valuecounter valuecounter `uc  1 a 1 21 ]
 "119
 [v Evaluate_Signs@evaluation_value evaluation_value `ui  1 p 2 15 ]
 "128
@@ -834,6 +837,18 @@
 [v ___lwmod@dividend dividend `ui  1 p 2 0 ]
 [v ___lwmod@divisor divisor `ui  1 p 2 2 ]
 "26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 4 ]
+"8
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"31
 } 0
 "52 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
 [v _Evaluate_Display Evaluate_Display `(v  1 e 0 0 ]
@@ -852,19 +867,19 @@
 "13
 [v Set_Bits@Bitoutput Bitoutput `uc  1 a 1 7 ]
 "12
-[v Set_Bits@bits bits `*.33Cuc  1 p 3 0 ]
+[v Set_Bits@bits bits `*.25Cuc  1 p 2 0 ]
 "43
 } 0
-"44 C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+"45 C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
 [v _Read_Data Read_Data `(ui  1 e 2 0 ]
 {
 [v Read_Data@read_address read_address `uc  1 a 1 wreg ]
-"45
+"46
 [v Read_Data@data_read data_read `ui  1 a 2 2 ]
-"44
+"45
 [v Read_Data@read_address read_address `uc  1 a 1 wreg ]
 [v Read_Data@read_address read_address `uc  1 a 1 4 ]
-"60
+"61
 } 0
 "78 C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
 [v _Delay_Routine Delay_Routine `(v  1 e 0 0 ]
@@ -881,11 +896,11 @@
 [v _Isr Isr `II(v  1 e 0 0 ]
 {
 "45
-[v Isr@search_index search_index `uc  1 a 1 41 ]
+[v Isr@search_index search_index `uc  1 a 1 45 ]
 "47
-[v Isr@pixel_index_bit pixel_index_bit `uc  1 a 1 40 ]
+[v Isr@pixel_index_bit pixel_index_bit `uc  1 a 1 44 ]
 "46
-[v Isr@pixel_index_array pixel_index_array `uc  1 a 1 39 ]
+[v Isr@pixel_index_array pixel_index_array `uc  1 a 1 43 ]
 "80
 } 0
 "139 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
@@ -893,11 +908,11 @@
 {
 [v i2Set_Display@type type `uc  1 a 1 wreg ]
 [v i2Set_Display@type type `uc  1 a 1 wreg ]
-[v i2Set_Display@information information `uc  1 p 1 18 ]
+[v i2Set_Display@information information `uc  1 p 1 22 ]
 "140
-[v i2Set_Display@value value `ui  1 p 2 19 ]
+[v i2Set_Display@value value `ui  1 p 2 23 ]
 "139
-[v i2Set_Display@type type `uc  1 a 1 21 ]
+[v i2Set_Display@type type `uc  1 a 1 25 ]
 "158
 } 0
 "56 C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
@@ -910,7 +925,7 @@
 "119 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
 [v i2_Evaluate_Signs Evaluate_Signs `(v  1 e 0 0 ]
 {
-[v i2Evaluate_Signs@valuecounter Evaluate_Signs `uc  1 a 1 17 ]
+[v i2Evaluate_Signs@valuecounter Evaluate_Signs `uc  1 a 1 21 ]
 [v i2Evaluate_Signs@evaluation_value evaluation_value `ui  1 p 2 15 ]
 "128
 } 0
@@ -921,6 +936,15 @@
 [v i2___lwmod@dividend dividend `ui  1 p 2 0 ]
 [v i2___lwmod@divisor divisor `ui  1 p 2 2 ]
 "26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+[v i2___lwdiv@quotient __lwdiv `ui  1 a 2 4 ]
+[v i2___lwdiv@counter __lwdiv `uc  1 a 1 6 ]
+[v i2___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v i2___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"31
 } 0
 "52 C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
 [v i2_Evaluate_Display Evaluate_Display `(v  1 e 0 0 ]
@@ -936,7 +960,7 @@
 {
 [v i2Set_Bits@Bitoutput Set_Bits `uc  1 a 1 7 ]
 [v i2Set_Bits@bitcount Set_Bits `uc  1 a 1 6 ]
-[v i2Set_Bits@bits bits `*.33Cuc  1 p 3 0 ]
+[v i2Set_Bits@bits bits `*.25Cuc  1 p 2 0 ]
 "43
 } 0
 "25 C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c

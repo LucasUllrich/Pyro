@@ -8981,7 +8981,7 @@ void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
 
 # 28
-unsigned char pixels[7];
+unsigned char pixels[8];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 
@@ -9075,12 +9075,12 @@ default:
 break;
 }
 }
-pixels[display_counter] = Bitoutput;
+pixels[(display_counter - 1)] = Bitoutput;
 }
 
 # 52
 void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
-for(display_counter = (size + 1); display_counter > 0;
+for(display_counter = size; display_counter > 0;
 display_counter--) {
 __nop();
 switch (evaluate[(display_counter - 1)]) {
@@ -9136,18 +9136,18 @@ case '-':
 Set_Bits("G");
 break;
 default:
-Set_Bits(0);
+Set_Bits("0");
 }
 }
 }
 
 # 119
 void Evaluate_Signs(unsigned int evaluation_value) {
-for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
-valuecounter++) {
-signs[valuecounter] = evaluation_value % 10;
-signs[valuecounter] += 0x30;
-evaluation_value >>= 1;
+for(unsigned char valuecounter = sizeof(signs); valuecounter > 0;
+valuecounter--) {
+signs[(valuecounter - 1)] = evaluation_value % 10;
+signs[(valuecounter - 1)] += 0x30;
+evaluation_value = evaluation_value / 10;
 }
 __nop();
 Evaluate_Display(sizeof(signs), signs);
@@ -9159,10 +9159,10 @@ unsigned int value) {
 switch (type) {
 case '7':
 if(information != '-') {
-signs[0] = value;
-signs[0] += 0x30;
+signs[2] = value;
+signs[2] += 0x30;
 signs[1] = '-';
-signs[2] = information;
+signs[0] = information;
 Evaluate_Display(sizeof(signs), signs);
 } else {
 Evaluate_Signs(value);

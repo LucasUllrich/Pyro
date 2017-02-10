@@ -7326,8 +7326,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 7 `i e ]
-[; ;display.h: 28: unsigned char pixels[7];
+[v _pixels `uc ~T0 @X0 -> 8 `i e ]
+[; ;display.h: 28: unsigned char pixels[8];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
@@ -7809,6 +7809,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;communication.c: 62: SSP1BUF = write_data[counter - 1];
 "62
 [e = _SSP1BUF *U + _write_data * -> - -> _counter `i -> 1 `i `x -> -> # *U _write_data `i `x ]
+[; ;communication.c: 63: while (SSP1IF == 0);
+"63
+[e $U 1131  ]
+[e :U 1132 ]
+[e :U 1131 ]
+[e $ == -> _SSP1IF `i -> 0 `i 1132  ]
+[e :U 1133 ]
 [; ;communication.c: 64: SSP1IF = 0;
 "64
 [e = _SSP1IF -> -> 0 `i `b ]

@@ -72,6 +72,34 @@ Pulse High
 Ignite
 3
 --
+Pin
+RB2
+Set High
+
+
+-1
+--
+Pin
+RB2
+Set Low
+
+
+-1
+--
+Pin
+RB3
+Set High
+
+
+-1
+--
+Pin
+RB3
+Set Low
+
+
+-1
+--
 &
 ## ADVANCEDSCL
 

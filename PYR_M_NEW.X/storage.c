@@ -69,7 +69,7 @@ void Load_Data(void) {
     string_load[2] = 'A';
     
     Evaluate_Display(3, string_load);
-    Delay_Routine(3);
+    Delay_Routine(30);
     for(unsigned char counter = 0; counter < 30; counter++) {
         pin[counter].time = Read_Data(counter);
     }
@@ -93,7 +93,7 @@ void Del_Data(void) {
     string_delete[2] = 'L';
     
     Evaluate_Display(3, string_delete);
-    Delay_Routine(3);
+    Delay_Routine(30);
     for(unsigned char counter = 0; counter < 30; counter++) {
         Save_Data(0, counter);
     }

@@ -53,6 +53,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S539 . . . . ]
 "9298
 [v _PIR2bits `VS539 ~T0 @X0 0 e@4001 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "17 display.h
 [v _Evaluate_Display `(v ~T0 @X0 0 ef2`uc`*uc ]
 "110 main.h
@@ -7248,8 +7251,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 7 `i e ]
-[; ;display.h: 28: unsigned char pixels[7];
+[v _pixels `uc ~T0 @X0 -> 8 `i e ]
+[; ;display.h: 28: unsigned char pixels[8];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
@@ -7632,91 +7635,94 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;storage.c: 35: INTCONbits.GIE = 1;
 "35
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;storage.c: 36: }
+[; ;storage.c: 36: __nop();
 "36
+[e ( ___nop ..  ]
+[; ;storage.c: 37: }
+"37
 [e :UE 1106 ]
 }
-"44
+"45
 [v _Read_Data `(ui ~T0 @X0 1 ef1`uc ]
 {
-[; ;storage.c: 44: unsigned int Read_Data(unsigned char read_address) {
+[; ;storage.c: 45: unsigned int Read_Data(unsigned char read_address) {
 [e :U _Read_Data ]
 [v _read_address `uc ~T0 @X0 1 r1 ]
 [f ]
-"45
-[v _data_read `ui ~T0 @X0 1 a ]
-[; ;storage.c: 45: unsigned int data_read = 0;
-[e = _data_read -> -> 0 `i `ui ]
-[; ;storage.c: 46: read_address += 50;
 "46
-[e =+ _read_address -> -> 50 `i `uc ]
-[; ;storage.c: 47: EEADR = read_address;
+[v _data_read `ui ~T0 @X0 1 a ]
+[; ;storage.c: 46: unsigned int data_read = 0;
+[e = _data_read -> -> 0 `i `ui ]
+[; ;storage.c: 47: read_address += 50;
 "47
-[e = _EEADR _read_address ]
-[; ;storage.c: 48: EECON1bits.EEPGD = 0;
+[e =+ _read_address -> -> 50 `i `uc ]
+[; ;storage.c: 48: EEADR = read_address;
 "48
-[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-[; ;storage.c: 49: EECON1bits.CFGS = 0;
-"49
-[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-[; ;storage.c: 50: EECON1bits.RD = 1;
-"50
-[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-[; ;storage.c: 51: data_read = EEDATA;
-"51
-[e = _data_read -> _EEDATA `ui ]
-[; ;storage.c: 52: read_address -= 50;
-"52
-[e =- _read_address -> -> 50 `i `uc ]
-[; ;storage.c: 53: data_read <<= 8;
-"53
-[e =<< _data_read -> 8 `i ]
-[; ;storage.c: 54: EEADR = read_address;
-"54
 [e = _EEADR _read_address ]
-[; ;storage.c: 55: EECON1bits.EEPGD = 0;
-"55
+[; ;storage.c: 49: EECON1bits.EEPGD = 0;
+"49
 [e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-[; ;storage.c: 56: EECON1bits.CFGS = 0;
-"56
+[; ;storage.c: 50: EECON1bits.CFGS = 0;
+"50
 [e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-[; ;storage.c: 57: EECON1bits.RD = 1;
-"57
+[; ;storage.c: 51: EECON1bits.RD = 1;
+"51
 [e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-[; ;storage.c: 58: data_read |= EEDATA;
+[; ;storage.c: 52: data_read = EEDATA;
+"52
+[e = _data_read -> _EEDATA `ui ]
+[; ;storage.c: 53: read_address -= 50;
+"53
+[e =- _read_address -> -> 50 `i `uc ]
+[; ;storage.c: 54: data_read <<= 8;
+"54
+[e =<< _data_read -> 8 `i ]
+[; ;storage.c: 55: EEADR = read_address;
+"55
+[e = _EEADR _read_address ]
+[; ;storage.c: 56: EECON1bits.EEPGD = 0;
+"56
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+[; ;storage.c: 57: EECON1bits.CFGS = 0;
+"57
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;storage.c: 58: EECON1bits.RD = 1;
 "58
-[e =| _data_read -> _EEDATA `ui ]
-[; ;storage.c: 59: return data_read;
+[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
+[; ;storage.c: 59: data_read |= EEDATA;
 "59
+[e =| _data_read -> _EEDATA `ui ]
+[; ;storage.c: 60: return data_read;
+"60
 [e ) _data_read ]
 [e $UE 1113  ]
-[; ;storage.c: 60: }
-"60
+[; ;storage.c: 61: }
+"61
 [e :UE 1113 ]
 }
-"65
+"66
 [v _Load_Data `(v ~T0 @X0 1 ef ]
 {
-[; ;storage.c: 65: void Load_Data(void) {
+[; ;storage.c: 66: void Load_Data(void) {
 [e :U _Load_Data ]
 [f ]
-[; ;storage.c: 66: string_load[0] = 'L';
-"66
-[e = *U + &U _string_load * -> -> -> 0 `i `ui `ux -> -> # *U &U _string_load `ui `ux -> -> 76 `ui `uc ]
-[; ;storage.c: 67: string_load[1] = 'O';
+[; ;storage.c: 67: string_load[0] = 'L';
 "67
-[e = *U + &U _string_load * -> -> -> 1 `i `ui `ux -> -> # *U &U _string_load `ui `ux -> -> 79 `ui `uc ]
-[; ;storage.c: 68: string_load[2] = 'A';
+[e = *U + &U _string_load * -> -> -> 0 `i `ui `ux -> -> # *U &U _string_load `ui `ux -> -> 76 `ui `uc ]
+[; ;storage.c: 68: string_load[1] = 'O';
 "68
+[e = *U + &U _string_load * -> -> -> 1 `i `ui `ux -> -> # *U &U _string_load `ui `ux -> -> 79 `ui `uc ]
+[; ;storage.c: 69: string_load[2] = 'A';
+"69
 [e = *U + &U _string_load * -> -> -> 2 `i `ui `ux -> -> # *U &U _string_load `ui `ux -> -> 65 `ui `uc ]
-[; ;storage.c: 70: Evaluate_Display(3, string_load);
-"70
-[e ( _Evaluate_Display (2 , -> -> 3 `i `uc &U _string_load ]
-[; ;storage.c: 71: Delay_Routine(3);
+[; ;storage.c: 71: Evaluate_Display(3, string_load);
 "71
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;storage.c: 72: for(unsigned char counter = 0; counter < 30; counter++) {
+[e ( _Evaluate_Display (2 , -> -> 3 `i `uc &U _string_load ]
+[; ;storage.c: 72: Delay_Routine(30);
 "72
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
+[; ;storage.c: 73: for(unsigned char counter = 0; counter < 30; counter++) {
+"73
 {
 [v _counter `uc ~T0 @X0 1 a ]
 [e = _counter -> -> 0 `i `uc ]
@@ -7724,69 +7730,69 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1116  ]
 [e :U 1115 ]
 {
-[; ;storage.c: 73: pin[counter].time = Read_Data(counter);
-"73
-[e = . *U + &U _pin * -> _counter `ux -> -> # *U &U _pin `ui `ux 4 -> ( _Read_Data (1 _counter `i ]
+[; ;storage.c: 74: pin[counter].time = Read_Data(counter);
 "74
+[e = . *U + &U _pin * -> _counter `ux -> -> # *U &U _pin `ui `ux 4 -> ( _Read_Data (1 _counter `i ]
+"75
 }
-"72
+"73
 [e ++ _counter -> -> 1 `i `uc ]
 [e $ < -> _counter `i -> 30 `i 1115  ]
 [e :U 1116 ]
-"74
-}
-[; ;storage.c: 74: }
-[; ;storage.c: 75: slave_selected = 0;
 "75
-[e = _slave_selected -> -> 0 `i `uc ]
-[; ;storage.c: 76: pin_selected = 0;
+}
+[; ;storage.c: 75: }
+[; ;storage.c: 76: slave_selected = 0;
 "76
-[e = _pin_selected -> -> 0 `i `uc ]
-[; ;storage.c: 77: Set_Display('7', 'E', pin[pin_selected].slave);
+[e = _slave_selected -> -> 0 `i `uc ]
+[; ;storage.c: 77: pin_selected = 0;
 "77
+[e = _pin_selected -> -> 0 `i `uc ]
+[; ;storage.c: 78: Set_Display('7', 'E', pin[pin_selected].slave);
+"78
 [e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 69 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 0 `ui ]
-[; ;storage.c: 79: Delay_Routine(20);
-"79
-[e ( _Delay_Routine (1 -> -> 20 `i `uc ]
-[; ;storage.c: 80: Set_Display('7', 'A', pin[pin_selected].output);
+[; ;storage.c: 80: Delay_Routine(20);
 "80
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 65 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 1 `ui ]
-[; ;storage.c: 81: Delay_Routine(20);
+[e ( _Delay_Routine (1 -> -> 20 `i `uc ]
+[; ;storage.c: 81: Set_Display('7', 'A', pin[pin_selected].output);
 "81
-[e ( _Delay_Routine (1 -> -> 20 `i `uc ]
-[; ;storage.c: 82: Set_Display('7', '-', pin[pin_selected].time);
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 65 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 1 `ui ]
+[; ;storage.c: 82: Delay_Routine(20);
 "82
-[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
-[; ;storage.c: 83: Delay_Routine(20);
-"83
 [e ( _Delay_Routine (1 -> -> 20 `i `uc ]
-[; ;storage.c: 84: }
+[; ;storage.c: 83: Set_Display('7', '-', pin[pin_selected].time);
+"83
+[e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 45 `ui `uc -> . *U + &U _pin * -> _pin_selected `ux -> -> # *U &U _pin `ui `ux 4 `ui ]
+[; ;storage.c: 84: Delay_Routine(20);
 "84
+[e ( _Delay_Routine (1 -> -> 20 `i `uc ]
+[; ;storage.c: 85: }
+"85
 [e :UE 1114 ]
 }
-"89
+"90
 [v _Del_Data `(v ~T0 @X0 1 ef ]
 {
-[; ;storage.c: 89: void Del_Data(void) {
+[; ;storage.c: 90: void Del_Data(void) {
 [e :U _Del_Data ]
 [f ]
-[; ;storage.c: 90: string_delete[0] = 'D';
-"90
-[e = *U + &U _string_delete * -> -> -> 0 `i `ui `ux -> -> # *U &U _string_delete `ui `ux -> -> 68 `ui `uc ]
-[; ;storage.c: 91: string_delete[1] = 'E';
+[; ;storage.c: 91: string_delete[0] = 'D';
 "91
-[e = *U + &U _string_delete * -> -> -> 1 `i `ui `ux -> -> # *U &U _string_delete `ui `ux -> -> 69 `ui `uc ]
-[; ;storage.c: 92: string_delete[2] = 'L';
+[e = *U + &U _string_delete * -> -> -> 0 `i `ui `ux -> -> # *U &U _string_delete `ui `ux -> -> 68 `ui `uc ]
+[; ;storage.c: 92: string_delete[1] = 'E';
 "92
+[e = *U + &U _string_delete * -> -> -> 1 `i `ui `ux -> -> # *U &U _string_delete `ui `ux -> -> 69 `ui `uc ]
+[; ;storage.c: 93: string_delete[2] = 'L';
+"93
 [e = *U + &U _string_delete * -> -> -> 2 `i `ui `ux -> -> # *U &U _string_delete `ui `ux -> -> 76 `ui `uc ]
-[; ;storage.c: 94: Evaluate_Display(3, string_delete);
-"94
-[e ( _Evaluate_Display (2 , -> -> 3 `i `uc &U _string_delete ]
-[; ;storage.c: 95: Delay_Routine(3);
+[; ;storage.c: 95: Evaluate_Display(3, string_delete);
 "95
-[e ( _Delay_Routine (1 -> -> 3 `i `uc ]
-[; ;storage.c: 96: for(unsigned char counter = 0; counter < 30; counter++) {
+[e ( _Evaluate_Display (2 , -> -> 3 `i `uc &U _string_delete ]
+[; ;storage.c: 96: Delay_Routine(30);
 "96
+[e ( _Delay_Routine (1 -> -> 30 `i `uc ]
+[; ;storage.c: 97: for(unsigned char counter = 0; counter < 30; counter++) {
+"97
 {
 [v _counter `uc ~T0 @X0 1 a ]
 [e = _counter -> -> 0 `i `uc ]
@@ -7794,22 +7800,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1120  ]
 [e :U 1119 ]
 {
-[; ;storage.c: 97: Save_Data(0, counter);
-"97
-[e ( _Save_Data (2 , -> -> 0 `i `ui _counter ]
+[; ;storage.c: 98: Save_Data(0, counter);
 "98
+[e ( _Save_Data (2 , -> -> 0 `i `ui _counter ]
+"99
 }
-"96
+"97
 [e ++ _counter -> -> 1 `i `uc ]
 [e $ < -> _counter `i -> 30 `i 1119  ]
 [e :U 1120 ]
-"98
-}
-[; ;storage.c: 98: }
-[; ;storage.c: 99: Load_Data();
 "99
-[e ( _Load_Data ..  ]
-[; ;storage.c: 100: }
+}
+[; ;storage.c: 99: }
+[; ;storage.c: 100: Load_Data();
 "100
+[e ( _Load_Data ..  ]
+[; ;storage.c: 101: __nop();
+"101
+[e ( ___nop ..  ]
+[; ;storage.c: 102: }
+"102
 [e :UE 1118 ]
 }
