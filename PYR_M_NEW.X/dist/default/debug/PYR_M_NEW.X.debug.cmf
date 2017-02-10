@@ -12,57 +12,60 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/debug\PYR_M_NEW.X.debug.obj
-cinit CODE 0 1442 1442 48 1
-text0 CODE 0 1696 1696 2E 1
-text1 CODE 0 16E8 16E8 1E 1
-text2 CODE 0 1736 1736 12 1
-text3 CODE 0 16C4 16C4 24 1
-text4 CODE 0 1636 1636 30 1
-text5 CODE 0 1748 1748 12 1
-text6 CODE 0 1774 1774 6 1
-text7 CODE 0 1768 1768 C 1
-text8 CODE 0 1722 1722 14 1
-text9 CODE 0 1554 1554 3C 1
-nvCOMRAM COMRAM 1 3F 3F 1 1
-text10 CODE 0 1590 1590 38 1
-text11 CODE 0 270 270 51E 1
-text12 CODE 0 1706 1706 1C 1
-text13 CODE 0 148A 148A 46 1
-text14 CODE 0 13A0 13A0 54 1
-text15 CODE 0 CF0 CF0 10E 1
-text16 CODE 0 11BE 11BE 64 1
-text17 CODE 0 1286 1286 62 1
-text18 CODE 0 10DA 10DA 78 1
-text19 CODE 0 12E8 12E8 62 1
-text20 CODE 0 78E 78E 2F4 1
-text21 CODE 0 DFE DFE EA 1
-text22 CODE 0 13F4 13F4 4E 1
-text23 CODE 0 1666 1666 30 1
-text25 CODE 0 134A 134A 56 1
-text26 CODE 0 14D0 14D0 42 1
-text27 CODE 0 1222 1222 64 1
-text28 CODE 0 1512 1512 42 1
-text29 CODE 0 A82 A82 26E 1
-text30 CODE 0 EE8 EE8 BA 1
-text31 CODE 0 15C8 15C8 38 1
-text32 CODE 0 1056 1056 84 1
-text33 CODE 0 175A 175A E 1
-text34 CODE 0 1152 1152 6C 1
-text35 CODE 0 1600 1600 36 1
-cstackCOMRAM COMRAM 1 1 1 2C 1
-cstackBANK0 BANK0 1 60 60 1D 1
-temp COMRAM 1 40 40 1 1
-bitbssCOMRAM COMRAM 1 1F0 3E 4 1
-bssBANK0 BANK0 1 7D 7D 5 1
-intcode CODE 0 8 8 20E 1
-smallconst SMALLCONST 0 21A 21A 56 1
-idataBANK1 CODE 0 FA2 FA2 B4 1
+cinit CODE 0 1622 1622 48 1
+text0 CODE 0 1838 1838 2E 1
+text1 CODE 0 188A 188A 1E 1
+text2 CODE 0 18D8 18D8 12 1
+text3 CODE 0 1866 1866 24 1
+text4 CODE 0 17D8 17D8 30 1
+text5 CODE 0 18EA 18EA 12 1
+text6 CODE 0 1926 1926 6 1
+text7 CODE 0 191A 191A C 1
+text8 CODE 0 18C4 18C4 14 1
+text9 CODE 0 16EE 16EE 40 1
+text10 CODE 0 176A 176A 38 1
+text11 CODE 0 272 272 52E 1
+text12 CODE 0 18A8 18A8 1C 1
+text13 CODE 0 147C 147C 5A 1
+text14 CODE 0 14D6 14D6 56 1
+text15 CODE 0 CC8 CC8 120 1
+text16 CODE 0 1354 1354 64 1
+text17 CODE 0 13B8 13B8 62 1
+text18 CODE 0 EF8 EF8 D6 1
+text19 CODE 0 141A 141A 62 1
+text20 CODE 0 1270 1270 78 1
+text21 CODE 0 7A0 7A0 2D6 1
+text22 CODE 0 DE8 DE8 110 1
+text23 CODE 0 15D4 15D4 4E 1
+text24 CODE 0 1808 1808 30 1
+text26 CODE 0 152C 152C 56 1
+text27 CODE 0 166A 166A 42 1
+text28 CODE 0 1150 1150 9C 1
+text29 CODE 0 16AC 16AC 42 1
+text30 CODE 0 1582 1582 52 1
+text31 CODE 0 A76 A76 252 1
+text32 CODE 0 FCE FCE CE 1
+text33 CODE 0 172E 172E 3C 1
+text34 CODE 0 11EC 11EC 84 1
+text35 CODE 0 18FC 18FC 10 1
+text36 CODE 0 190C 190C E 1
+text37 CODE 0 12E8 12E8 6C 1
+text38 CODE 0 17A2 17A2 36 1
+nvBANK0 BANK0 1 94 94 1 1
+cstackCOMRAM COMRAM 1 1 1 2F 1
+cstackBANK0 BANK0 1 60 60 20 1
+temp COMRAM 1 3A 3A 1 1
+bitbssCOMRAM COMRAM 1 1C8 39 4 1
+bssBANK0 BANK0 1 80 80 14 1
+intcode CODE 0 8 8 218 1
+smallconst SMALLCONST 0 224 224 4E 1
+idataBANK1 CODE 0 109C 109C B4 1
 dataBANK1 BANK1 1 100 100 B4 1
-bssCOMRAM COMRAM 1 2D 2D 11 1
-$C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
+bssCOMRAM COMRAM 1 30 30 9 1
+$C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
-end_init CODE 0 216 216 4 1
+end_init CODE 0 220 220 4 1
 config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -70,23 +73,23 @@ config CONFIG 0 300000 300000 E 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 82-FF 1
+RAM 95-FF 1
 RAM 1B4-1FF 1
 SFR F38-FFF 1
-BANK0 82-FF 1
+BANK0 95-FF 1
 BANK1 1B4-1FF 1
 CONST 4-7 1
-CONST 177A-1FFF 1
-STACK 82-FF 1
-SMALLCONST 177A-1FFF 1
+CONST 192C-1FFF 1
+STACK 95-FF 1
+SMALLCONST 192C-1FFF 1
 CODE 4-7 1
-CODE 177A-1FFF 1
-BIGRAM 41-5F 1
-BIGRAM 82-FF 1
+CODE 192C-1FFF 1
+BIGRAM 3B-5F 1
+BIGRAM 95-FF 1
 BIGRAM 1B4-1FF 1
-COMRAM 41-5F 1
+COMRAM 3B-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 177A-1FFF 1
+MEDIUMCONST 192C-1FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -119,635 +122,694 @@ $dist/default/debug\PYR_M_NEW.X.debug.obj
 6A intcode CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
 6E intcode CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
 72 intcode CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-74 intcode CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-78 intcode CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-7C intcode CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-92 intcode CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-94 intcode CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+76 intcode CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+7A intcode CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+90 intcode CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+92 intcode CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+9A intcode CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
 9C intcode CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
 9E intcode CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-A0 intcode CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-A2 intcode CODE >36:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-A8 intcode CODE >38:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-BE intcode CODE >39:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-C0 intcode CODE >41:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-C6 intcode CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-CA intcode CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-CC intcode CODE >45:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+A0 intcode CODE >35:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+A6 intcode CODE >37:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+BC intcode CODE >38:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+BE intcode CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+C4 intcode CODE >41:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+C8 intcode CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+CA intcode CODE >44:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+D2 intcode CODE >45:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
 D4 intcode CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-D6 intcode CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-DA intcode CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-DE intcode CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-E6 intcode CODE >51:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-EA intcode CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-11C intcode CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-13A intcode CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-142 intcode CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-16A intcode CODE >60:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-174 intcode CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1A2 intcode CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1AA intcode CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1C0 intcode CODE >70:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1C2 intcode CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1CC intcode CODE >72:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1CE intcode CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1D2 intcode CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1D4 intcode CODE >75:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1D8 intcode CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1DA intcode CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
-1600 text35 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1602 text35 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1604 text35 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1606 text35 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1608 text35 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-160C text35 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-160E text35 CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1612 text35 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1616 text35 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-161A text35 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-161E text35 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1622 text35 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1626 text35 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-162A text35 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-162E text35 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1630 text35 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1632 text35 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1634 text35 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1152 text34 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-1152 text34 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-115E text34 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-1184 text34 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-11BA text34 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-175A text33 CODE >37:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-175A text33 CODE >38:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-175E text33 CODE >39:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1760 text33 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1762 text33 CODE >41:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1764 text33 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1056 text32 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-1056 text32 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-105A text32 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-105E text32 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-1066 text32 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-106A text32 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-106E text32 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-1076 text32 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-107A text32 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-1082 text32 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-108A text32 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-108E text32 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-1090 text32 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-1096 text32 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-1098 text32 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-109C text32 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-10A2 text32 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-10AE text32 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-10B6 text32 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-10B8 text32 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-10BE text32 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-10C2 text32 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-10C8 text32 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-10D0 text32 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-15C8 text31 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-15C8 text31 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-15FE text31 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-EE8 text30 CODE >12:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EE8 text30 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EEC text30 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EF2 text30 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EF4 text30 CODE >19:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EF6 text30 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EF8 text30 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EFA text30 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EFC text30 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EFE text30 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F00 text30 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F02 text30 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F04 text30 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F06 text30 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F08 text30 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F0A text30 CODE >36:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F0C text30 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F0E text30 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F5E text30 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F60 text30 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-F8C text30 CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-FA0 text30 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-A82 text29 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-A84 text29 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-A8A text29 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-A8A text29 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-A8C text29 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-A8E text29 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-AA4 text29 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-AA6 text29 CODE >61:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-ABC text29 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-ABE text29 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-AD4 text29 CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-AD6 text29 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-AEC text29 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-AEE text29 CODE >70:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B04 text29 CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B06 text29 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B1C text29 CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B1E text29 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B34 text29 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B36 text29 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B4C text29 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B4E text29 CODE >82:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B64 text29 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B66 text29 CODE >85:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B7C text29 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B7E text29 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B94 text29 CODE >89:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-B96 text29 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-BAC text29 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-BAE text29 CODE >94:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-BC4 text29 CODE >95:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-BC6 text29 CODE >97:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-BDC text29 CODE >98:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-BDE text29 CODE >100:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-BF4 text29 CODE >101:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-BF6 text29 CODE >103:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-C0C text29 CODE >104:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-C0E text29 CODE >106:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-C24 text29 CODE >107:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-C26 text29 CODE >109:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-C36 text29 CODE >110:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-C38 text29 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-CE6 text29 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-CE8 text29 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1512 text28 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1512 text28 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-151A text28 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-151E text28 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1520 text28 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1526 text28 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1528 text28 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-152C text28 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1538 text28 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1540 text28 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1546 text28 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-154A text28 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-154A text28 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1552 text28 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1222 text27 CODE >119:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1222 text27 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-122E text27 CODE >122:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1256 text27 CODE >123:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-126A text27 CODE >124:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1270 text27 CODE >121:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1272 text27 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1274 text27 CODE >126:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1276 text27 CODE >127:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1284 text27 CODE >128:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-14D0 text26 CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-14D0 text26 CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-14DA text26 CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-14DE text26 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-14E0 text26 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1506 text26 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1508 text26 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-150A text26 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-150C text26 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-150E text26 CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1510 text26 CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-134A text25 CODE >139:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-134C text25 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-134E text25 CODE >143:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1356 text25 CODE >144:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-135A text25 CODE >145:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1360 text25 CODE >146:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1366 text25 CODE >147:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-136A text25 CODE >148:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1378 text25 CODE >149:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-137A text25 CODE >150:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1386 text25 CODE >156:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1388 text25 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1392 text25 CODE >157:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-139E text25 CODE >158:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1666 text23 CODE >78:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-166A text23 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-1672 text23 CODE >81:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-1682 text23 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-1686 text23 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-1692 text23 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-1694 text23 CODE >84:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-13F4 text22 CODE >44:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13F8 text22 CODE >45:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1402 text22 CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1408 text22 CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-140C text22 CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-140E text22 CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1410 text22 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1412 text22 CODE >51:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-141A text22 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1420 text22 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1428 text22 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-142C text22 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-142E text22 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1430 text22 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1432 text22 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1438 text22 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-DFE text21 CODE >12:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-DFE text21 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E04 text21 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E0C text21 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E10 text21 CODE >19:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E12 text21 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E16 text21 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E18 text21 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E1C text21 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E1E text21 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E22 text21 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E24 text21 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E28 text21 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E2A text21 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E2E text21 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E30 text21 CODE >36:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E34 text21 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E36 text21 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E94 text21 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-E98 text21 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-ED2 text21 CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-EE6 text21 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-78E text20 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-792 text20 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-79A text20 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-79A text20 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-79C text20 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-79E text20 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-7BA text20 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-7BC text20 CODE >61:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-7D8 text20 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-7DA text20 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-7F6 text20 CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-7F8 text20 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-814 text20 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-816 text20 CODE >70:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-832 text20 CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-834 text20 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-850 text20 CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-852 text20 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-86E text20 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-870 text20 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-88C text20 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-88E text20 CODE >82:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-8AA text20 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-8AC text20 CODE >85:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-8C8 text20 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-8CA text20 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-8E6 text20 CODE >89:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-8E8 text20 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-904 text20 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-906 text20 CODE >94:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-922 text20 CODE >95:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-924 text20 CODE >97:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-940 text20 CODE >98:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-942 text20 CODE >100:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-95E text20 CODE >101:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-960 text20 CODE >103:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-97C text20 CODE >104:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-97E text20 CODE >106:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-99A text20 CODE >107:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-99C text20 CODE >109:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-9B2 text20 CODE >110:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-9B4 text20 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-A78 text20 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-A7A text20 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-12E8 text19 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-12E8 text19 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-12F4 text19 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-12FA text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-12FC text19 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1304 text19 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1308 text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-130E text19 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1322 text19 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1332 text19 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-133A text19 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1340 text19 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1340 text19 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-1348 text19 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
-10DA text18 CODE >119:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-10DA text18 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-10EA text18 CODE >122:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1118 text18 CODE >123:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-112E text18 CODE >124:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1136 text18 CODE >121:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-113A text18 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-113C text18 CODE >126:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-113E text18 CODE >127:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1150 text18 CODE >128:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1286 text17 CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1286 text17 CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1296 text17 CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-129A text17 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-129C text17 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-12DA text17 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-12DC text17 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-12DE text17 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-12E0 text17 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-12E2 text17 CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-12E6 text17 CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-11BE text16 CODE >139:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11C2 text16 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11C4 text16 CODE >143:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11CE text16 CODE >144:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11D2 text16 CODE >145:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11D8 text16 CODE >146:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11DE text16 CODE >147:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11E2 text16 CODE >148:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11F4 text16 CODE >149:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-11F6 text16 CODE >150:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1202 text16 CODE >156:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1204 text16 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1210 text16 CODE >157:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-1220 text16 CODE >158:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
-CF0 text15 CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-CF0 text15 CODE >66:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D02 text15 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D08 text15 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D18 text15 CODE >69:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D46 text15 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D4C text15 CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D52 text15 CODE >72:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D58 text15 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D86 text15 CODE >75:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-D8C text15 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-DC2 text15 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-DC8 text15 CODE >78:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-DF6 text15 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-DFC text15 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13A0 text14 CODE >8:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13A0 text14 CODE >10:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13A4 text14 CODE >11:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13A8 text14 CODE >12:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13AA text14 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13AC text14 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13AE text14 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13B0 text14 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13B4 text14 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13B8 text14 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13BA text14 CODE >19:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13BE text14 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13C0 text14 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13C8 text14 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13CE text14 CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13D2 text14 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13D6 text14 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13D8 text14 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13DA text14 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13DC text14 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13DE text14 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13E2 text14 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13E6 text14 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13E8 text14 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13EC text14 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13EE text14 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13F0 text14 CODE >35:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-13F2 text14 CODE >36:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-148A text13 CODE >85:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-148A text13 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-149C text13 CODE >87:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-14A2 text13 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-14B2 text13 CODE >89:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-14C4 text13 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-14CA text13 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-14CE text13 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
-1706 text12 CODE >12:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-1706 text12 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-170A text12 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-170E text12 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-1712 text12 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-1716 text12 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-171A text12 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-171C text12 CODE >19:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-171E text12 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-270 text11 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-270 text11 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-274 text11 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-27A text11 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-27E text11 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-280 text11 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+D8 intcode CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+DC intcode CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+E4 intcode CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+E8 intcode CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+11A intcode CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+138 intcode CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+140 intcode CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+168 intcode CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+172 intcode CODE >61:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1A0 intcode CODE >63:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1A8 intcode CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1BE intcode CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1C0 intcode CODE >69:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1C4 intcode CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1C6 intcode CODE >72:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1D2 intcode CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1D6 intcode CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1DA intcode CODE >75:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1DC intcode CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1E2 intcode CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+1E4 intcode CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\interrupt.c
+17A2 text38 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17A4 text38 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17A6 text38 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17A8 text38 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17AA text38 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17AE text38 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17B0 text38 CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17B4 text38 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17B8 text38 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17BC text38 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17C0 text38 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17C4 text38 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17C8 text38 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17CC text38 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17D0 text38 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17D2 text38 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17D4 text38 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17D6 text38 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+12E8 text37 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+12E8 text37 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+12F4 text37 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+131A text37 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+1350 text37 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+190C text36 CODE >37:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+190C text36 CODE >38:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1910 text36 CODE >39:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1912 text36 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1914 text36 CODE >41:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1916 text36 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+18FC text35 CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+18FC text35 CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1900 text35 CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1902 text35 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1904 text35 CODE >51:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1906 text35 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1906 text35 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+190A text35 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+11EC text34 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+11EC text34 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+11F0 text34 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+11F4 text34 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+11FC text34 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1200 text34 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1204 text34 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+120C text34 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1210 text34 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1218 text34 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1220 text34 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1224 text34 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1226 text34 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+122C text34 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+122E text34 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1232 text34 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1238 text34 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1244 text34 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+124C text34 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+124E text34 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1254 text34 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1258 text34 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+125E text34 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+1266 text34 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+172E text33 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+172E text33 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+1768 text33 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+FCE text32 CODE >12:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FCE text32 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FD2 text32 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FD8 text32 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FDA text32 CODE >19:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FDC text32 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FDE text32 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FE0 text32 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FE2 text32 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FE4 text32 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FE6 text32 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FE8 text32 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FEA text32 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FEC text32 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FEE text32 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FF0 text32 CODE >36:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FF2 text32 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FF4 text32 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1044 text32 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1046 text32 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1072 text32 CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+109A text32 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A76 text31 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A78 text31 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A7E text31 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A7E text31 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A80 text31 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A82 text31 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A98 text31 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A9A text31 CODE >61:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+AB0 text31 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+AB2 text31 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+AC8 text31 CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+ACA text31 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+AE0 text31 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+AE2 text31 CODE >70:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+AF8 text31 CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+AFA text31 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B10 text31 CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B12 text31 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B28 text31 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B2A text31 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B40 text31 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B42 text31 CODE >82:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B58 text31 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B5A text31 CODE >85:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B70 text31 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B72 text31 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B88 text31 CODE >89:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+B8A text31 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+BA0 text31 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+BA2 text31 CODE >94:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+BB8 text31 CODE >95:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+BBA text31 CODE >97:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+BD0 text31 CODE >98:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+BD2 text31 CODE >100:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+BE8 text31 CODE >101:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+BEA text31 CODE >103:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+C00 text31 CODE >104:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+C02 text31 CODE >106:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+C18 text31 CODE >107:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+C1A text31 CODE >109:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+C2A text31 CODE >110:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+C2C text31 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+CBA text31 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+CBE text31 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1582 text30 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+1582 text30 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+158A text30 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+1592 text30 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+1596 text30 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+1598 text30 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+159E text30 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15A0 text30 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15A4 text30 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15AA text30 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15B6 text30 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15BE text30 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15C0 text30 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15C6 text30 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15CA text30 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15CA text30 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+15D2 text30 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+16AC text29 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16AC text29 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16B4 text29 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16B8 text29 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16BA text29 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16C0 text29 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16C2 text29 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16C6 text29 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16D2 text29 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16DA text29 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16E0 text29 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16E4 text29 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16E4 text29 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+16EC text29 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+1150 text28 CODE >119:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1150 text28 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+115A text28 CODE >122:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1194 text28 CODE >123:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+11BA text28 CODE >124:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+11D6 text28 CODE >121:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+11D8 text28 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+11DA text28 CODE >126:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+11DC text28 CODE >127:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+11EA text28 CODE >128:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+166A text27 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+166A text27 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1674 text27 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1678 text27 CODE >60:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+167A text27 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+16A0 text27 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+16A2 text27 CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+16A4 text27 CODE >66:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+16A6 text27 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+16A8 text27 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+16AA text27 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+152C text26 CODE >139:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+152E text26 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1530 text26 CODE >143:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1538 text26 CODE >144:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+153C text26 CODE >145:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1542 text26 CODE >146:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1548 text26 CODE >147:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+154C text26 CODE >148:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+155A text26 CODE >149:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+155C text26 CODE >150:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1568 text26 CODE >156:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+156A text26 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1574 text26 CODE >157:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1580 text26 CODE >158:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1808 text24 CODE >78:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+180C text24 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1814 text24 CODE >81:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1824 text24 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1828 text24 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1834 text24 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1836 text24 CODE >84:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+15D4 text23 CODE >45:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+15D8 text23 CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+15E2 text23 CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+15E8 text23 CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+15EC text23 CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+15EE text23 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+15F0 text23 CODE >51:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+15F2 text23 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+15FA text23 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1600 text23 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1608 text23 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+160C text23 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+160E text23 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1610 text23 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1612 text23 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1618 text23 CODE >60:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+DE8 text22 CODE >12:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+DE8 text22 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+DEE text22 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+DF6 text22 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+DFA text22 CODE >19:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+DFC text22 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E00 text22 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E02 text22 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E06 text22 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E08 text22 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E0C text22 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E0E text22 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E12 text22 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E14 text22 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E18 text22 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E1A text22 CODE >36:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E1E text22 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E20 text22 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E7E text22 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+E82 text22 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+EBC text22 CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+EF6 text22 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7A0 text21 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7A4 text21 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7AA text21 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7AA text21 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7AC text21 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7AE text21 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7CA text21 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7CC text21 CODE >61:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7E8 text21 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+7EA text21 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+806 text21 CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+808 text21 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+824 text21 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+826 text21 CODE >70:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+842 text21 CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+844 text21 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+860 text21 CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+862 text21 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+87E text21 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+880 text21 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+89C text21 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+89E text21 CODE >82:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+8BA text21 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+8BC text21 CODE >85:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+8D8 text21 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+8DA text21 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+8F6 text21 CODE >89:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+8F8 text21 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+914 text21 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+916 text21 CODE >94:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+932 text21 CODE >95:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+934 text21 CODE >97:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+950 text21 CODE >98:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+952 text21 CODE >100:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+96E text21 CODE >101:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+970 text21 CODE >103:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+98C text21 CODE >104:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+98E text21 CODE >106:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+9AA text21 CODE >107:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+9AC text21 CODE >109:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+9C2 text21 CODE >110:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+9C4 text21 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A68 text21 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+A6C text21 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1270 text20 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+1270 text20 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+127A text20 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+1286 text20 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+128C text20 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+128E text20 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+1296 text20 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+129A text20 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12A0 text20 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12A8 text20 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12BC text20 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12CC text20 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12D0 text20 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12D8 text20 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12DE text20 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12DE text20 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+12E6 text20 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+141A text19 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+141A text19 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+1426 text19 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+142C text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+142E text19 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+1436 text19 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+143A text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+1440 text19 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+1454 text19 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+1464 text19 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+146C text19 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+1472 text19 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+1472 text19 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+147A text19 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+EF8 text18 CODE >119:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+EF8 text18 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+F08 text18 CODE >122:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+F5A text18 CODE >123:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+F94 text18 CODE >124:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FB2 text18 CODE >121:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FB6 text18 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FB8 text18 CODE >126:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FBA text18 CODE >127:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+FCC text18 CODE >128:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+13B8 text17 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+13B8 text17 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+13C8 text17 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+13CC text17 CODE >60:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+13CE text17 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+140C text17 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+140E text17 CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1410 text17 CODE >66:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1412 text17 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1414 text17 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1418 text17 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1354 text16 CODE >139:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1358 text16 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+135A text16 CODE >143:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1364 text16 CODE >144:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1368 text16 CODE >145:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+136E text16 CODE >146:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1374 text16 CODE >147:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1378 text16 CODE >148:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+138A text16 CODE >149:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+138C text16 CODE >150:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+1398 text16 CODE >156:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+139A text16 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+13A6 text16 CODE >157:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+13B6 text16 CODE >158:C:\Pyro_Git\Pyro\PYR_M_NEW.X\display.c
+CC8 text15 CODE >66:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+CC8 text15 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+CCE text15 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+CD4 text15 CODE >69:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+CDA text15 CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+CEC text15 CODE >72:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+CF2 text15 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+D02 text15 CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+D30 text15 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+D36 text15 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+D3C text15 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+D42 text15 CODE >78:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+D70 text15 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+D76 text15 CODE >81:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+DAC text15 CODE >82:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+DB2 text15 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+DE0 text15 CODE >84:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+DE6 text15 CODE >85:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14D6 text14 CODE >8:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14D6 text14 CODE >10:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14DA text14 CODE >11:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14DE text14 CODE >12:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14E0 text14 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14E2 text14 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14E4 text14 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14E6 text14 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14EA text14 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14EE text14 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14F0 text14 CODE >19:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14F4 text14 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14F6 text14 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14FE text14 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1504 text14 CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1508 text14 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+150C text14 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+150E text14 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1510 text14 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1512 text14 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1514 text14 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1518 text14 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+151C text14 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+151E text14 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1522 text14 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1524 text14 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1526 text14 CODE >35:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1528 text14 CODE >36:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+152A text14 CODE >37:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+147C text13 CODE >90:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+147C text13 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1482 text13 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+1488 text13 CODE >93:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+148E text13 CODE >95:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14A0 text13 CODE >96:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14A6 text13 CODE >97:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14B6 text13 CODE >98:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14C8 text13 CODE >97:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14CE text13 CODE >100:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14D2 text13 CODE >101:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+14D4 text13 CODE >102:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
+18A8 text12 CODE >12:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18A8 text12 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18AC text12 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18B0 text12 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18B4 text12 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18B8 text12 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18BC text12 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18BE text12 CODE >19:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18C0 text12 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+272 text11 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+272 text11 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+276 text11 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+27C text11 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+280 text11 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+282 text11 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 284 text11 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-286 text11 CODE >37:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-28C text11 CODE >38:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-292 text11 CODE >39:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+288 text11 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+28A text11 CODE >38:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+290 text11 CODE >39:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 296 text11 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 29A text11 CODE >41:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-2A0 text11 CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-2A4 text11 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-2A8 text11 CODE >44:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-2AA text11 CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-2CA text11 CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-2F6 text11 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-318 text11 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-31A text11 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-348 text11 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-34A text11 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-350 text11 CODE >57:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-356 text11 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-35A text11 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-35E text11 CODE >60:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-364 text11 CODE >61:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-368 text11 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-36C text11 CODE >63:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-36E text11 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-38E text11 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-3AE text11 CODE >69:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-3D0 text11 CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-3D2 text11 CODE >72:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-400 text11 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-402 text11 CODE >75:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+29C text11 CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+2A0 text11 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+2A6 text11 CODE >44:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+2AA text11 CODE >45:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+2AE text11 CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+2B0 text11 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+2D0 text11 CODE >51:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+2FC text11 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+31E text11 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+320 text11 CODE >55:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+34E text11 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+350 text11 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+356 text11 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+35C text11 CODE >60:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+360 text11 CODE >61:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+362 text11 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+366 text11 CODE >63:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+36C text11 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+370 text11 CODE >65:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+374 text11 CODE >66:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+376 text11 CODE >70:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+396 text11 CODE >71:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+3B6 text11 CODE >72:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+3D8 text11 CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+3DA text11 CODE >75:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 408 text11 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-40E text11 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-412 text11 CODE >78:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-434 text11 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-460 text11 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-482 text11 CODE >82:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-484 text11 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4B2 text11 CODE >84:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4B4 text11 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4BA text11 CODE >87:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4C0 text11 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4C4 text11 CODE >89:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4C8 text11 CODE >90:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4CE text11 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4D2 text11 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4D4 text11 CODE >93:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-4D6 text11 CODE >97:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-51C text11 CODE >98:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-520 text11 CODE >99:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-522 text11 CODE >101:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-52A text11 CODE >102:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+40A text11 CODE >78:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+410 text11 CODE >79:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+416 text11 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+41A text11 CODE >81:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+41C text11 CODE >82:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+43E text11 CODE >83:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+46A text11 CODE >84:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+48C text11 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+48E text11 CODE >87:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4BC text11 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4BE text11 CODE >90:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4C4 text11 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4CA text11 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4CE text11 CODE >93:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4D0 text11 CODE >94:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4D4 text11 CODE >95:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4DA text11 CODE >96:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4DE text11 CODE >97:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4E0 text11 CODE >98:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+4E2 text11 CODE >102:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+528 text11 CODE >103:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+52C text11 CODE >104:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 52E text11 CODE >106:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 536 text11 CODE >107:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 53A text11 CODE >111:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
 542 text11 CODE >112:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-548 text11 CODE >115:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-54A text11 CODE >99:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-560 text11 CODE >116:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-5A6 text11 CODE >117:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-5A8 text11 CODE >118:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-5DE text11 CODE >119:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-5E4 text11 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-612 text11 CODE >121:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-618 text11 CODE >122:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-61A text11 CODE >124:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-620 text11 CODE >125:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-626 text11 CODE >126:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-62A text11 CODE >127:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-62E text11 CODE >128:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-634 text11 CODE >129:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-638 text11 CODE >130:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-63A text11 CODE >131:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-63C text11 CODE >135:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-682 text11 CODE >136:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-686 text11 CODE >137:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-68E text11 CODE >138:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-694 text11 CODE >140:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-69E text11 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-6E4 text11 CODE >142:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-6E6 text11 CODE >143:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-714 text11 CODE >145:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-71A text11 CODE >146:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-750 text11 CODE >147:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-756 text11 CODE >148:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-784 text11 CODE >149:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-78A text11 CODE >150:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-78C text11 CODE >153:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
-1590 text10 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1594 text10 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1596 text10 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1598 text10 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-159A text10 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-159E text10 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15A0 text10 CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15A4 text10 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15A8 text10 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15AC text10 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15B0 text10 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15B4 text10 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15B8 text10 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15BC text10 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15C0 text10 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15C2 text10 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15C4 text10 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-15C6 text10 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
-1554 text9 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-1554 text9 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-158E text9 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
-1722 text8 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1722 text8 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1728 text8 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-172E text8 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1734 text8 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1768 text7 CODE >72:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1768 text7 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-176A text7 CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-176C text7 CODE >75:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-176E text7 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1770 text7 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1772 text7 CODE >78:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1774 text6 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1774 text6 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1778 text6 CODE >35:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1748 text5 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1748 text5 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-174C text5 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1750 text5 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1754 text5 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1758 text5 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1636 text4 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1636 text4 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-163A text4 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-163E text4 CODE >60:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1640 text4 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1644 text4 CODE >63:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1648 text4 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-164A text4 CODE >66:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1652 text4 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-165C text4 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1660 text4 CODE >69:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1664 text4 CODE >70:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16C4 text3 CODE >37:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16C4 text3 CODE >39:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16C8 text3 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16CC text3 CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16CE text3 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16D0 text3 CODE >44:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16D2 text3 CODE >45:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16D6 text3 CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16D8 text3 CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16DA text3 CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16DC text3 CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16DE text3 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16E0 text3 CODE >51:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16E2 text3 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16E4 text3 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16E6 text3 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1736 text2 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1736 text2 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-173A text2 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-173E text2 CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1742 text2 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1746 text2 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16E8 text1 CODE >3:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16E8 text1 CODE >4:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16EC text1 CODE >5:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16F0 text1 CODE >6:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16F4 text1 CODE >7:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16F8 text1 CODE >8:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-16FC text1 CODE >9:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1700 text1 CODE >10:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1704 text1 CODE >11:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
-1696 text0 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-1696 text0 CODE >87:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-169A text0 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-169E text0 CODE >89:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-16A0 text0 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-16A4 text0 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-16A8 text0 CODE >93:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-16BE text0 CODE >94:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-16C2 text0 CODE >90:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
-1442 cinit CODE >4587:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1442 cinit CODE >4589:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1442 cinit CODE >4592:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1442 cinit CODE >4651:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1444 cinit CODE >4652:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1446 cinit CODE >4653:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1448 cinit CODE >4654:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-144A cinit CODE >4655:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-144C cinit CODE >4656:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-144E cinit CODE >4659:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1450 cinit CODE >4662:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1454 cinit CODE >4663:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1456 cinit CODE >4664:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1456 cinit CODE >4665:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1458 cinit CODE >4666:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-145A cinit CODE >4667:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-145C cinit CODE >4672:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-145E cinit CODE >4673:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1460 cinit CODE >4674:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1462 cinit CODE >4675:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1464 cinit CODE >4676:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1466 cinit CODE >4677:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1468 cinit CODE >4678:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-146C cinit CODE >4679:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1470 cinit CODE >4680:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1470 cinit CODE >4681:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1472 cinit CODE >4682:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1476 cinit CODE >4683:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1478 cinit CODE >4684:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-147A cinit CODE >4685:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-147C cinit CODE >4691:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-147C cinit CODE >4693:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-147E cinit CODE >4694:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1480 cinit CODE >4696:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1482 cinit CODE >4697:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1484 cinit CODE >4698:C:\Users\Lucas\AppData\Local\Temp\s9bk.
-1486 cinit CODE >4699:C:\Users\Lucas\AppData\Local\Temp\s9bk.
+546 text11 CODE >116:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+54E text11 CODE >117:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+554 text11 CODE >120:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+556 text11 CODE >104:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+56C text11 CODE >121:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+5B2 text11 CODE >122:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+5B4 text11 CODE >123:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+5EA text11 CODE >124:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+5F0 text11 CODE >125:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+61E text11 CODE >126:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+624 text11 CODE >127:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+626 text11 CODE >129:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+62C text11 CODE >130:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+632 text11 CODE >131:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+636 text11 CODE >132:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+638 text11 CODE >133:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+63C text11 CODE >134:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+642 text11 CODE >135:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+646 text11 CODE >136:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+648 text11 CODE >137:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+64A text11 CODE >141:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+690 text11 CODE >142:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+694 text11 CODE >143:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+69C text11 CODE >144:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+6A2 text11 CODE >146:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+6AC text11 CODE >147:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+6F2 text11 CODE >148:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+6F4 text11 CODE >149:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+722 text11 CODE >151:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+728 text11 CODE >152:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+75E text11 CODE >153:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+764 text11 CODE >154:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+792 text11 CODE >155:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+798 text11 CODE >156:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+79A text11 CODE >158:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+79C text11 CODE >159:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+79E text11 CODE >160:C:\Pyro_Git\Pyro\PYR_M_NEW.X\buttonchanges.c
+176A text10 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+176E text10 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1770 text10 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1772 text10 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1774 text10 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1778 text10 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+177A text10 CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+177E text10 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1782 text10 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1786 text10 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+178A text10 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+178E text10 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1792 text10 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+1796 text10 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+179A text10 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+179C text10 CODE >32:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+179E text10 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+17A0 text10 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\communication.c
+16EE text9 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+16EE text9 CODE >26:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+172C text9 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\ignition.c
+18C4 text8 CODE >27:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18C4 text8 CODE >28:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18CA text8 CODE >29:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18D0 text8 CODE >30:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18D6 text8 CODE >31:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+191A text7 CODE >72:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+191A text7 CODE >73:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+191C text7 CODE >74:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+191E text7 CODE >75:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1920 text7 CODE >76:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1922 text7 CODE >77:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1924 text7 CODE >78:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1926 text6 CODE >33:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1926 text6 CODE >34:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+192A text6 CODE >35:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18EA text5 CODE >13:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18EA text5 CODE >14:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18EE text5 CODE >15:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18F2 text5 CODE >16:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18F6 text5 CODE >17:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18FA text5 CODE >18:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17D8 text4 CODE >56:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17D8 text4 CODE >58:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17DC text4 CODE >59:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17E0 text4 CODE >60:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17E2 text4 CODE >62:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17E6 text4 CODE >63:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17EA text4 CODE >64:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17EC text4 CODE >66:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17F4 text4 CODE >67:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+17FE text4 CODE >68:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1802 text4 CODE >69:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1806 text4 CODE >70:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1866 text3 CODE >37:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1866 text3 CODE >39:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+186A text3 CODE >40:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+186E text3 CODE >42:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1870 text3 CODE >43:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1872 text3 CODE >44:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1874 text3 CODE >45:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1878 text3 CODE >46:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+187A text3 CODE >47:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+187C text3 CODE >48:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+187E text3 CODE >49:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1880 text3 CODE >50:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1882 text3 CODE >51:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1884 text3 CODE >52:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1886 text3 CODE >53:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1888 text3 CODE >54:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18D8 text2 CODE >20:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18D8 text2 CODE >21:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18DC text2 CODE >22:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18E0 text2 CODE >23:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18E4 text2 CODE >24:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18E8 text2 CODE >25:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+188A text1 CODE >3:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+188A text1 CODE >4:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+188E text1 CODE >5:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1892 text1 CODE >6:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1896 text1 CODE >7:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+189A text1 CODE >8:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+189E text1 CODE >9:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18A2 text1 CODE >10:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+18A6 text1 CODE >11:C:\Pyro_Git\Pyro\PYR_M_NEW.X\init.c
+1838 text0 CODE >86:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1838 text0 CODE >87:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+183C text0 CODE >88:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1840 text0 CODE >89:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1842 text0 CODE >91:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1846 text0 CODE >92:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+184A text0 CODE >93:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1860 text0 CODE >94:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1864 text0 CODE >90:C:\Pyro_Git\Pyro\PYR_M_NEW.X\main.c
+1622 cinit CODE >4580:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1622 cinit CODE >4582:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1622 cinit CODE >4585:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1622 cinit CODE >4650:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1626 cinit CODE >4651:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1628 cinit CODE >4652:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1628 cinit CODE >4653:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+162A cinit CODE >4654:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+162C cinit CODE >4655:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+162E cinit CODE >4658:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1630 cinit CODE >4661:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1634 cinit CODE >4662:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1636 cinit CODE >4663:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1636 cinit CODE >4664:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1638 cinit CODE >4665:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+163A cinit CODE >4666:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+163C cinit CODE >4671:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+163E cinit CODE >4672:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1640 cinit CODE >4673:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1642 cinit CODE >4674:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1644 cinit CODE >4675:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1646 cinit CODE >4676:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1648 cinit CODE >4677:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+164C cinit CODE >4678:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1650 cinit CODE >4679:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1650 cinit CODE >4680:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1652 cinit CODE >4681:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1656 cinit CODE >4682:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1658 cinit CODE >4683:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+165A cinit CODE >4684:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+165C cinit CODE >4690:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+165C cinit CODE >4692:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+165E cinit CODE >4693:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1660 cinit CODE >4695:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1662 cinit CODE >4696:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1664 cinit CODE >4697:C:\Users\Lucas\AppData\Local\Temp\s4o0.
+1666 cinit CODE >4698:C:\Users\Lucas\AppData\Local\Temp\s4o0.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -760,70 +822,74 @@ DFC text15 CODE >80:C:\Pyro_Git\Pyro\PYR_M_NEW.X\storage.c
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_Check_Detonators 1554 0 CODE 0 text9 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Check_Detonators 16EE 0 CODE 0 text9 dist/default/debug\PYR_M_NEW.X.debug.obj
 ___awdiv@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 ___lwmod@counter 64 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __LdataBANK1 0 0 ABS 0 dataBANK1 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hspace_0 30000E 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__Hspace_1 1F4 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
+__Hspace_1 1CC 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hspace_2 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 Delay_Routine@delay_multiplyer 61 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __HidataBANK1 0 0 ABS 0 idataBANK1 dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Set_Display@information 15 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_ofi2_Set_Display 13A0 0 CODE 0 text25 dist/default/debug\PYR_M_NEW.X.debug.obj
-i2_Evaluate_Display A82 0 CODE 0 text29 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Set_Display@information 18 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2_Set_Display 1582 0 CODE 0 text26 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2_Evaluate_Display A76 0 CODE 0 text31 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Receive_Dump 18FC 0 CODE 0 text35 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\PYR_M_NEW.X.debug.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-__end_of_InitAnsel 1736 0 CODE 0 text8 dist/default/debug\PYR_M_NEW.X.debug.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+__end_of_InitAnsel 18D8 0 CODE 0 text8 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_InitTimer 1666 0 CODE 0 text4 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_InitTimer 1808 0 CODE 0 text4 dist/default/debug\PYR_M_NEW.X.debug.obj
 _T1CONbits FCD 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_InitAnsel 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Ignite_Detonators 11BE 0 CODE 0 text34 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Ignite_Detonators 1354 0 CODE 0 text37 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_InitTimer 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__Lsmallconst 21A 0 SMALLCONST 0 smallconst dist/default/debug\PYR_M_NEW.X.debug.obj
-_Init 16E8 0 CODE 0 text1 dist/default/debug\PYR_M_NEW.X.debug.obj
-___sp 0 0 STACK 2 stack C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-_main 1696 0 CODE 0 text0 dist/default/debug\PYR_M_NEW.X.debug.obj
-btemp 40 0 COMRAM 1 temp dist/default/debug\PYR_M_NEW.X.debug.obj
-start 216 0 CODE 0 init C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
+__Lsmallconst 224 0 SMALLCONST 0 smallconst dist/default/debug\PYR_M_NEW.X.debug.obj
+_Init 188A 0 CODE 0 text1 dist/default/debug\PYR_M_NEW.X.debug.obj
+___sp 0 0 STACK 2 stack C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+_main 1838 0 CODE 0 text0 dist/default/debug\PYR_M_NEW.X.debug.obj
+btemp 3A 0 COMRAM 1 temp dist/default/debug\PYR_M_NEW.X.debug.obj
+start 220 0 CODE 0 init C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+i2___lwdiv@quotient 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
+_string_load 91 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Init 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_main 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
+__size_of___lwdiv 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of___lwmod 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 Transmit@receiver 62 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_InitInterrupt 1774 0 CODE 0 text7 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_InitInterrupt 1926 0 CODE 0 text7 dist/default/debug\PYR_M_NEW.X.debug.obj
 i2___lwmod@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-_InitAnsel 1722 0 CODE 0 text8 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Start_Timer 1722 0 CODE 0 text12 dist/default/debug\PYR_M_NEW.X.debug.obj
-_InitTimer 1636 0 CODE 0 text4 dist/default/debug\PYR_M_NEW.X.debug.obj
+_InitAnsel 18C4 0 CODE 0 text8 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Start_Timer 18C4 0 CODE 0 text12 dist/default/debug\PYR_M_NEW.X.debug.obj
+_InitTimer 17D8 0 CODE 0 text4 dist/default/debug\PYR_M_NEW.X.debug.obj
 __LidataBANK1 0 0 ABS 0 idataBANK1 dist/default/debug\PYR_M_NEW.X.debug.obj
-_InitMiscellaneous 1774 0 CODE 0 text6 dist/default/debug\PYR_M_NEW.X.debug.obj
-Evaluate_Display@evaluate 68 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+_InitMiscellaneous 1926 0 CODE 0 text6 dist/default/debug\PYR_M_NEW.X.debug.obj
+Evaluate_Display@evaluate 69 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_CCP2MX$PORTC1 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Set_Bits 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 Ignite_Detonators@counter 6 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Evaluate_Display@size 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Evaluate_Display@size 10 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 Transmit@port 61 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__Hpowerup 216 0 CODE 0 powerup dist/default/debug\PYR_M_NEW.X.debug.obj
-__pbitbssCOMRAM 1F0 -1B2 COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+__Hpowerup 220 0 CODE 0 powerup dist/default/debug\PYR_M_NEW.X.debug.obj
+__pbitbssCOMRAM 1C8 -18F COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_CCP3MX$PORTB5 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+__size_of_Receive_Dump 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_ofi2_Set_Bits 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__accesstop 60 0 ABS 0 - C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-intlevel0 0 0 CODE 0 text C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-intlevel1 0 0 CODE 0 text C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-intlevel2 0 0 CODE 0 text C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-intlevel3 0 0 CODE 0 text C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
+__accesstop 60 0 ABS 0 - C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+intlevel0 0 0 CODE 0 text C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+intlevel1 0 0 CODE 0 text C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+intlevel2 0 0 CODE 0 text C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+intlevel3 0 0 CODE 0 text C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
 Read_Data@data_read 62 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_ofi2_Check_Detonators 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Set_Display@value 16 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Set_Display@value 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -833,8 +899,9 @@ __Hifardata 0 0 CODE 0 ifardata dist/default/debug\PYR_M_NEW.X.debug.obj
 ___awdiv@sign 6 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\PYR_M_NEW.X.debug.obj
 i2Write_Display_Byte@counter 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Check_Detonators 1590 0 CODE 0 text9 dist/default/debug\PYR_M_NEW.X.debug.obj
-_Check_Buttons 270 0 CODE 0 text11 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Check_Detonators 172E 0 CODE 0 text9 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Check_Buttons 272 0 CODE 0 text11 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Receive_Dump 190C 0 CODE 0 text35 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Del_Data 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _ANSELA F38 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -842,9 +909,9 @@ _ANSELB F39 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _ANSELC F3A 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 ___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Check_Detonators 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-Load_Data@counter 79 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+Load_Data@counter 7C 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
 _EECON1bits FA6 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _CCPR1H FBF 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _CCPR1L FBE 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -852,68 +919,72 @@ __size_of_Receive 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 i2___lwmod@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_ofi2_Write_Display_Byte 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-_Set_Bits DFE 0 CODE 0 text21 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Set_Bits DE8 0 CODE 0 text22 dist/default/debug\PYR_M_NEW.X.debug.obj
 _EECON2 FA7 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _EEDATA FA8 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-_Ignite_Detonators 1152 0 CODE 0 text34 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Ignite_Detonators 12E8 0 CODE 0 text37 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\PYR_M_NEW.X.debug.obj
-Del_Data@counter 7A 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-_Set_Display 11BE 0 CODE 0 text16 dist/default/debug\PYR_M_NEW.X.debug.obj
+Del_Data@counter 7D 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Set_Display 1354 0 CODE 0 text16 dist/default/debug\PYR_M_NEW.X.debug.obj
 _TXSTA1bits FAC 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\PYR_M_NEW.X.debug.obj
-__Hintcodelo 216 0 CODE 0 intcodelo dist/default/debug\PYR_M_NEW.X.debug.obj
+__LnvBANK0 0 0 ABS 0 nvBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Hintcodelo 220 0 CODE 0 intcodelo dist/default/debug\PYR_M_NEW.X.debug.obj
 ___awdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Evaluate_Signs@valuecounter 14 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-_Evaluate_Display 78E 0 CODE 0 text20 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Evaluate_Signs@valuecounter 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+_Evaluate_Display 7A0 0 CODE 0 text21 dist/default/debug\PYR_M_NEW.X.debug.obj
 ___lwmod@divisor 62 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of___awdiv 10DA 0 CODE 0 text32 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Set_Bits EE8 0 CODE 0 text21 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of___lwmod 134A 0 CODE 0 text19 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_ofi2_Write_Display_Byte 1512 0 CODE 0 text26 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Read_Data 1442 0 CODE 0 text22 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of___awdiv 1270 0 CODE 0 text34 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Set_Bits EF8 0 CODE 0 text22 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of___lwdiv 12E8 0 CODE 0 text20 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of___lwmod 147C 0 CODE 0 text19 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2_Write_Display_Byte 16AC 0 CODE 0 text27 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Read_Data 1622 0 CODE 0 text23 dist/default/debug\PYR_M_NEW.X.debug.obj
 Set_Bits@bits 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+?i2___lwdiv 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 ?i2___lwmod 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Read_Data 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+___lwdiv@quotient 65 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 ___lwmod@dividend 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__Lintcodelo 216 0 CODE 0 intcodelo dist/default/debug\PYR_M_NEW.X.debug.obj
-_Del_Data 148A 0 CODE 0 text13 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Lintcodelo 220 0 CODE 0 intcodelo dist/default/debug\PYR_M_NEW.X.debug.obj
+_Del_Data 147C 0 CODE 0 text13 dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-start_initialization 1442 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Write_Display_Byte 12E8 0 CODE 0 text17 dist/default/debug\PYR_M_NEW.X.debug.obj
+start_initialization 1622 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Write_Display_Byte 141A 0 CODE 0 text17 dist/default/debug\PYR_M_NEW.X.debug.obj
 _OSCCON FD3 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 _TRISCbits F94 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-i2_Evaluate_Signs 1222 0 CODE 0 text27 dist/default/debug\PYR_M_NEW.X.debug.obj
-_Read_Data 13F4 0 CODE 0 text22 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Del_Data 14D0 0 CODE 0 text13 dist/default/debug\PYR_M_NEW.X.debug.obj
-Isr@search_index 2C 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+i2_Evaluate_Signs 1150 0 CODE 0 text28 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Read_Data 15D4 0 CODE 0 text23 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Del_Data 14D6 0 CODE 0 text13 dist/default/debug\PYR_M_NEW.X.debug.obj
+Isr@search_index 2F 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 ___rparam_used 1 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_STVREN$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _RCREG1 FAE 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-i2_Transmit 1600 0 CODE 0 text35 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2_Transmit 17A2 0 CODE 0 text38 dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_WDTPS$32768 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _SPBRG1 FAF 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 _SSP1IF 7CF3 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-Isr@pixel_index_bit 2B 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+Isr@pixel_index_bit 2E 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Start_Timer 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-Set_Display@value 75 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Save_Data 13F4 0 CODE 0 text14 dist/default/debug\PYR_M_NEW.X.debug.obj
-_master_addressed 1F1 -1B2 COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+Set_Display@value 78 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Save_Data 152C 0 CODE 0 text14 dist/default/debug\PYR_M_NEW.X.debug.obj
+_master_addressed 1C9 -18F COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 _TXREG1 FAD 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-_receive_counter 36 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+_receive_counter 38 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+i2___lwdiv@counter 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Save_Data 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Check_Buttons 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 Save_Data@store_address 62 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_ofi2_Evaluate_Display 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Receive 1768 0 CODE 0 text33 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Receive 191A 0 CODE 0 text36 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Evaluate_Signs 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hcinit 0 0 ABS 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hconst 0 0 CODE 0 const dist/default/debug\PYR_M_NEW.X.debug.obj
-_Write_Display_Byte 1286 0 CODE 0 text17 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Write_Display_Byte 13B8 0 CODE 0 text17 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hidata 0 0 CODE 0 idata dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hidloc 200008 0 IDLOC 0 idloc dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -930,14 +1001,15 @@ __Htext6 0 0 ABS 0 text6 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext7 0 0 ABS 0 text7 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext8 0 0 ABS 0 text8 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext9 0 0 ABS 0 text9 dist/default/debug\PYR_M_NEW.X.debug.obj
-Set_Bits@Bitoutput 67 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-Isr@pixel_index_array 2A 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+Set_Bits@Bitoutput 68 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+___lwdiv@counter 64 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+Isr@pixel_index_array 2D 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\PYR_M_NEW.X.debug.obj
-__smallconst 21A 0 SMALLCONST 0 smallconst C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
+__smallconst 224 0 SMALLCONST 0 smallconst C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
 Save_Data@store 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-_Save_Data 13A0 0 CODE 0 text14 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Evaluate_Display A82 0 CODE 0 text20 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Save_Data 14D6 0 CODE 0 text14 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Evaluate_Display A76 0 CODE 0 text21 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hcomram 0 0 ABS 0 comram dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/debug\PYR_M_NEW.X.debug.obj
 Write_Display_Byte@write_data 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -947,7 +1019,7 @@ __Lcinit 0 0 ABS 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lconst 0 0 CODE 0 const dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lidata 0 0 CODE 0 idata dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lidloc 200000 0 IDLOC 0 idloc dist/default/debug\PYR_M_NEW.X.debug.obj
-Set_Display@information 74 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+Set_Display@information 77 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lparam 0 0 COMRAM 1 rparam dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lrdata 0 0 COMRAM 1 rdata dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -963,9 +1035,9 @@ __Ltext7 0 0 ABS 0 text7 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext8 0 0 ABS 0 text8 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Evaluate_Display 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-_ignite_ready 1F0 -1B2 COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+_ignite_ready 1C8 -18F COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Check_Buttons 78E 0 CODE 0 text11 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Check_Buttons 7A0 0 CODE 0 text11 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\PYR_M_NEW.X.debug.obj
 _PORTAbits F80 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _PORTBbits F81 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -975,27 +1047,28 @@ __CFG_T3CMX$PORTC0 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _INTCONbits FF2 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Habs1 0 0 ABS 0 abs1 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hdata 0 0 ABS 0 data dist/default/debug\PYR_M_NEW.X.debug.obj
-__Hinit 216 0 CODE 0 init dist/default/debug\PYR_M_NEW.X.debug.obj
+__Hinit 220 0 CODE 0 init dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hrbss 0 0 COMRAM 1 rbss dist/default/debug\PYR_M_NEW.X.debug.obj
-__Htemp 41 0 COMRAM 1 temp dist/default/debug\PYR_M_NEW.X.debug.obj
+__Htemp 3B 0 COMRAM 1 temp dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext 0 0 ABS 0 text dist/default/debug\PYR_M_NEW.X.debug.obj
 __Labs1 0 0 ABS 0 abs1 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ldata 0 0 ABS 0 data dist/default/debug\PYR_M_NEW.X.debug.obj
-__Linit 216 0 CODE 0 init dist/default/debug\PYR_M_NEW.X.debug.obj
+__Linit 220 0 CODE 0 init dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/default/debug\PYR_M_NEW.X.debug.obj
-__Ltemp 40 0 COMRAM 1 temp dist/default/debug\PYR_M_NEW.X.debug.obj
+__Ltemp 3A 0 COMRAM 1 temp dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext 0 0 ABS 0 text dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_XINST$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
+__pnvBANK0 94 0 BANK0 1 nvBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 _SSP1CON1 FC6 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _SSP1STAT FC7 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-_pin_selected 7D 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+_pin_selected 81 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-int$flags 40 0 COMRAM 1 temp dist/default/debug\PYR_M_NEW.X.debug.obj
+int$flags 3A 0 COMRAM 1 temp dist/default/debug\PYR_M_NEW.X.debug.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hintret 0 0 ABS 0 intret dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_ofi2_Transmit 1636 0 CODE 0 text35 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2_Transmit 17D8 0 CODE 0 text38 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_InitPort 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_InitTris 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -1004,14 +1077,16 @@ __S0 30000E 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __S1 1B4 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __S2 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _pin 100 0 BANK1 1 dataBANK1 dist/default/debug\PYR_M_NEW.X.debug.obj
-__pnvCOMRAM 3F 0 COMRAM 1 nvCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_ofi2_Evaluate_Signs 1286 0 CODE 0 text27 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2_Evaluate_Signs 11EC 0 CODE 0 text28 dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
+i2___lwdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\PYR_M_NEW.X.debug.obj
+_string_delete 8E 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_ofi2_Evaluate_Signs 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Isr 216 0 CODE 0 intcode dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Isr 220 0 CODE 0 intcode dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_BORV$190 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
+__HnvBANK0 0 0 ABS 0 nvBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hramtop 200 0 RAM 0 ramtop dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -1035,7 +1110,7 @@ __Htext20 0 0 ABS 0 text20 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext21 0 0 ABS 0 text21 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext22 0 0 ABS 0 text22 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext23 0 0 ABS 0 text23 dist/default/debug\PYR_M_NEW.X.debug.obj
-__Htext25 0 0 ABS 0 text25 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Htext24 0 0 ABS 0 text24 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext26 0 0 ABS 0 text26 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext27 0 0 ABS 0 text27 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext28 0 0 ABS 0 text28 dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -1046,110 +1121,124 @@ __Htext32 0 0 ABS 0 text32 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext33 0 0 ABS 0 text33 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext34 0 0 ABS 0 text34 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Htext35 0 0 ABS 0 text35 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Htext36 0 0 ABS 0 text36 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Htext37 0 0 ABS 0 text37 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Htext38 0 0 ABS 0 text38 dist/default/debug\PYR_M_NEW.X.debug.obj
 _RCSTAbits FAB 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _PIE1bits F9D 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 i2Write_Display_Byte@write_data 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-_InitPort 1748 0 CODE 0 text5 dist/default/debug\PYR_M_NEW.X.debug.obj
-_InitTris 1736 0 CODE 0 text2 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext10 1590 0 CODE 0 text10 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext11 270 0 CODE 0 text11 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext12 1706 0 CODE 0 text12 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext13 148A 0 CODE 0 text13 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext14 13A0 0 CODE 0 text14 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext15 CF0 0 CODE 0 text15 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext16 11BE 0 CODE 0 text16 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext17 1286 0 CODE 0 text17 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext18 10DA 0 CODE 0 text18 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext19 12E8 0 CODE 0 text19 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext20 78E 0 CODE 0 text20 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext21 DFE 0 CODE 0 text21 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext22 13F4 0 CODE 0 text22 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext23 1666 0 CODE 0 text23 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext25 134A 0 CODE 0 text25 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext26 14D0 0 CODE 0 text26 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext27 1222 0 CODE 0 text27 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext28 1512 0 CODE 0 text28 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext29 A82 0 CODE 0 text29 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext30 EE8 0 CODE 0 text30 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext31 15C8 0 CODE 0 text31 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext32 1056 0 CODE 0 text32 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext33 175A 0 CODE 0 text33 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext34 1152 0 CODE 0 text34 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext35 1600 0 CODE 0 text35 dist/default/debug\PYR_M_NEW.X.debug.obj
-___awdiv 1056 0 CODE 0 text32 dist/default/debug\PYR_M_NEW.X.debug.obj
-___lwmod 12E8 0 CODE 0 text19 dist/default/debug\PYR_M_NEW.X.debug.obj
+_InitPort 18EA 0 CODE 0 text5 dist/default/debug\PYR_M_NEW.X.debug.obj
+_InitTris 18D8 0 CODE 0 text2 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext10 176A 0 CODE 0 text10 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext11 272 0 CODE 0 text11 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext12 18A8 0 CODE 0 text12 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext13 147C 0 CODE 0 text13 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext14 14D6 0 CODE 0 text14 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext15 CC8 0 CODE 0 text15 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext16 1354 0 CODE 0 text16 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext17 13B8 0 CODE 0 text17 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext18 EF8 0 CODE 0 text18 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext19 141A 0 CODE 0 text19 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext20 1270 0 CODE 0 text20 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext21 7A0 0 CODE 0 text21 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext22 DE8 0 CODE 0 text22 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext23 15D4 0 CODE 0 text23 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext24 1808 0 CODE 0 text24 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext26 152C 0 CODE 0 text26 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext27 166A 0 CODE 0 text27 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext28 1150 0 CODE 0 text28 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext29 16AC 0 CODE 0 text29 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext30 1582 0 CODE 0 text30 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext31 A76 0 CODE 0 text31 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext32 FCE 0 CODE 0 text32 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext33 172E 0 CODE 0 text33 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext34 11EC 0 CODE 0 text34 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext35 18FC 0 CODE 0 text35 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext36 190C 0 CODE 0 text36 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext37 12E8 0 CODE 0 text37 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext38 17A2 0 CODE 0 text38 dist/default/debug\PYR_M_NEW.X.debug.obj
+___awdiv 11EC 0 CODE 0 text34 dist/default/debug\PYR_M_NEW.X.debug.obj
+___lwdiv 1270 0 CODE 0 text20 dist/default/debug\PYR_M_NEW.X.debug.obj
+___lwmod 141A 0 CODE 0 text19 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2___lwdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/debug\PYR_M_NEW.X.debug.obj
-_pixels 37 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+_pixels 83 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lcomram 0 0 ABS 0 comram dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Set_Display 1222 0 CODE 0 text16 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_InitPort 175A 0 CODE 0 text5 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Set_Display 13B8 0 CODE 0 text16 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_InitPort 18FC 0 CODE 0 text5 dist/default/debug\PYR_M_NEW.X.debug.obj
 Write_Display_Byte@counter 66 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_InitTris 1748 0 CODE 0 text2 dist/default/debug\PYR_M_NEW.X.debug.obj
-_overrun 1F2 -1B2 COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-_slave_selected 7E 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Set_Bits@bitcount 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_InitTris 18EA 0 CODE 0 text2 dist/default/debug\PYR_M_NEW.X.debug.obj
+_overrun 1CA -18F COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+_slave_selected 82 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Set_Bits@bitcount 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 _RCSTA1bits FAB 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\PYR_M_NEW.X.debug.obj
-_Delay_Routine 1666 0 CODE 0 text23 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Delay_Routine 1808 0 CODE 0 text24 dist/default/debug\PYR_M_NEW.X.debug.obj
+___lwdiv@divisor 62 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\PYR_M_NEW.X.debug.obj
-_testflag 1F3 -1B2 COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-stackhi FF 0 ABS 0 - C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-stacklo 82 0 ABS 0 - C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
-_received 2D 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+_testflag 1CB -18F COMRAM 1 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+stackhi FF 0 ABS 0 - C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+stacklo 95 0 ABS 0 - C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
+_received 30 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lintret 0 0 ABS 0 intret dist/default/debug\PYR_M_NEW.X.debug.obj
-i2_Set_Bits EE8 0 CODE 0 text30 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2_Set_Bits FCE 0 CODE 0 text32 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_InitMiscellaneous 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-Evaluate_Signs@valuecounter 73 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_ofi2_Check_Detonators 1600 0 CODE 0 text31 dist/default/debug\PYR_M_NEW.X.debug.obj
+Evaluate_Signs@valuecounter 76 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2_Check_Detonators 176A 0 CODE 0 text33 dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-i2_Write_Display_Byte 14D0 0 CODE 0 text26 dist/default/debug\PYR_M_NEW.X.debug.obj
-_Start_Timer 1706 0 CODE 0 text12 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_ofi2___lwmod 1554 0 CODE 0 text28 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2_Write_Display_Byte 166A 0 CODE 0 text27 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Start_Timer 18A8 0 CODE 0 text12 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2___lwdiv 15D4 0 CODE 0 text30 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2___lwmod 16EE 0 CODE 0 text29 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lspace_0 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lspace_1 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lspace_2 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__pbssCOMRAM 2D 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+__pbssCOMRAM 30 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __HbitbssCOMRAM 0 0 ABS 0 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+__size_ofi2___lwdiv 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_ofi2___lwmod 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 _PIR1bits F9E 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _PIR2bits FA1 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__Lend_init 216 0 CODE 0 end_init dist/default/debug\PYR_M_NEW.X.debug.obj
+__Lend_init 220 0 CODE 0 end_init dist/default/debug\PYR_M_NEW.X.debug.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-end_of_initialization 147C 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
+end_of_initialization 165C 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/debug\PYR_M_NEW.X.debug.obj
-i2_Set_Display 134A 0 CODE 0 text25 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2_Set_Display 152C 0 CODE 0 text26 dist/default/debug\PYR_M_NEW.X.debug.obj
 ___awdiv@quotient 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 ?___awdiv 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+___lwdiv@dividend 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+?___lwdiv 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 ?___lwmod 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-i2___lwmod 1512 0 CODE 0 text28 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2___lwdiv 1582 0 CODE 0 text30 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2___lwmod 16AC 0 CODE 0 text29 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/debug\PYR_M_NEW.X.debug.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-_Receive 175A 0 CODE 0 text33 dist/default/debug\PYR_M_NEW.X.debug.obj
-_display_counter 3F 0 COMRAM 1 nvCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+_Receive 190C 0 CODE 0 text36 dist/default/debug\PYR_M_NEW.X.debug.obj
+_display_counter 94 0 BANK0 1 nvBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lramtop 200 0 RAM 0 ramtop dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Transmit 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Write_Display_Byte 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/debug\PYR_M_NEW.X.debug.obj
-Evaluate_Display@size 70 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__pcinit 1442 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
-i2_Check_Detonators 15C8 0 CODE 0 text31 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext0 1696 0 CODE 0 text0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext1 16E8 0 CODE 0 text1 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext2 1736 0 CODE 0 text2 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext3 16C4 0 CODE 0 text3 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext4 1636 0 CODE 0 text4 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext5 1748 0 CODE 0 text5 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext6 1774 0 CODE 0 text6 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext7 1768 0 CODE 0 text7 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext8 1722 0 CODE 0 text8 dist/default/debug\PYR_M_NEW.X.debug.obj
-__ptext9 1554 0 CODE 0 text9 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Load_Data DFE 0 CODE 0 text15 dist/default/debug\PYR_M_NEW.X.debug.obj
+Evaluate_Display@size 6F 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+__pcinit 1622 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
+i2_Check_Detonators 172E 0 CODE 0 text33 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext0 1838 0 CODE 0 text0 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext1 188A 0 CODE 0 text1 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext2 18D8 0 CODE 0 text2 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext3 1866 0 CODE 0 text3 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext4 17D8 0 CODE 0 text4 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext5 18EA 0 CODE 0 text5 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext6 1926 0 CODE 0 text6 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext7 191A 0 CODE 0 text7 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext8 18C4 0 CODE 0 text8 dist/default/debug\PYR_M_NEW.X.debug.obj
+__ptext9 16EE 0 CODE 0 text9 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Load_Data DE8 0 CODE 0 text15 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -1165,7 +1254,7 @@ __Ltext20 0 0 ABS 0 text20 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext21 0 0 ABS 0 text21 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext22 0 0 ABS 0 text22 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext23 0 0 ABS 0 text23 dist/default/debug\PYR_M_NEW.X.debug.obj
-__Ltext25 0 0 ABS 0 text25 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Ltext24 0 0 ABS 0 text24 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext26 0 0 ABS 0 text26 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext27 0 0 ABS 0 text27 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext28 0 0 ABS 0 text28 dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -1176,25 +1265,29 @@ __Ltext32 0 0 ABS 0 text32 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext33 0 0 ABS 0 text33 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext34 0 0 ABS 0 text34 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Ltext35 0 0 ABS 0 text35 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Ltext36 0 0 ABS 0 text36 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Ltext37 0 0 ABS 0 text37 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Ltext38 0 0 ABS 0 text38 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Load_Data 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__ramtop 200 0 RAM 0 ramtop C:\Users\Lucas\AppData\Local\Temp\s9bk.obj
+__ramtop 200 0 RAM 0 ramtop C:\Users\Lucas\AppData\Local\Temp\s4o0.obj
 __size_ofi2_Transmit 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__Lpowerup 216 0 CODE 0 powerup dist/default/debug\PYR_M_NEW.X.debug.obj
-_InitTransmission 16C4 0 CODE 0 text3 dist/default/debug\PYR_M_NEW.X.debug.obj
-_InitInterrupt 1768 0 CODE 0 text7 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Lpowerup 220 0 CODE 0 powerup dist/default/debug\PYR_M_NEW.X.debug.obj
+_InitTransmission 1866 0 CODE 0 text3 dist/default/debug\PYR_M_NEW.X.debug.obj
+_InitInterrupt 191A 0 CODE 0 text7 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\PYR_M_NEW.X.debug.obj
-Evaluate_Signs@evaluation_value 71 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-_current_time 33 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-__psmallconst 21A 0 SMALLCONST 0 smallconst dist/default/debug\PYR_M_NEW.X.debug.obj
+Evaluate_Signs@evaluation_value 70 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+_current_time 36 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+Receive_Dump@dump 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+__psmallconst 224 0 SMALLCONST 0 smallconst dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Ignite_Detonators 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\PYR_M_NEW.X.debug.obj
 i2Transmit@port 2 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_ofi2_Set_Bits FA2 0 CODE 0 text30 dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Set_Display@type 18 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-_Load_Data CF0 0 CODE 0 text15 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2_Set_Bits 109C 0 CODE 0 text32 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Set_Display@type 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+_Load_Data CC8 0 CODE 0 text15 dist/default/debug\PYR_M_NEW.X.debug.obj
 ___param_bank 10 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of__initialization 147C 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of__initialization 165C 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -1202,29 +1295,29 @@ i2Transmit@receiver 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.deb
 __Libigdata 0 0 CODE 0 ibigdata dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-_Evaluate_Signs 10DA 0 CODE 0 text18 dist/default/debug\PYR_M_NEW.X.debug.obj
-__pidataBANK1 FA2 0 CODE 0 idataBANK1 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Evaluate_Signs EF8 0 CODE 0 text18 dist/default/debug\PYR_M_NEW.X.debug.obj
+__pidataBANK1 109C 0 CODE 0 idataBANK1 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Delay_Routine 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 Delay_Routine@delay_counter 62 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-Set_Display@type 77 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+Set_Display@type 7A 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_HFOFST$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 ?_Read_Data 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-Set_Bits@bitcount 66 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Evaluate_Display@evaluate 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+Set_Bits@bitcount 67 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Evaluate_Display@evaluate A 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 _T3CONbits FB1 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-_Transmit 1590 0 CODE 0 text10 dist/default/debug\PYR_M_NEW.X.debug.obj
+_Transmit 176A 0 CODE 0 text10 dist/default/debug\PYR_M_NEW.X.debug.obj
 _SSP1BUF FC9 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__Hend_init 21A 0 CODE 0 end_init dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Init 1706 0 CODE 0 text1 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Hend_init 224 0 CODE 0 end_init dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Init 18A8 0 CODE 0 text1 dist/default/debug\PYR_M_NEW.X.debug.obj
 Transmit@operation 60 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_main 16C4 0 CODE 0 text0 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_main 1866 0 CODE 0 text0 dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Set_Display 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __pintcode 8 0 CODE 0 intcode dist/default/debug\PYR_M_NEW.X.debug.obj
 _EEADR FA9 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_InitMiscellaneous 177A 0 CODE 0 text6 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Transmit 15C8 0 CODE 0 text10 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_InitMiscellaneous 192C 0 CODE 0 text6 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Transmit 17A2 0 CODE 0 text10 dist/default/debug\PYR_M_NEW.X.debug.obj
 _PORTA F80 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _PORTB F81 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 _PORTC F82 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -1250,31 +1343,31 @@ __Lsfr 0 0 ABS 0 sfr dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_PLLCFG$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_CPB$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-_signs 7F 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Delay_Routine 1696 0 CODE 0 text23 dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_ofi2_Evaluate_Display CF0 0 CODE 0 text29 dist/default/debug\PYR_M_NEW.X.debug.obj
+_signs 8B 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Delay_Routine 1838 0 CODE 0 text24 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_ofi2_Evaluate_Display CC8 0 CODE 0 text31 dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_PRICLKEN$OFF 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_Isr 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_ofi2_Set_Display 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __HdataBANK1 0 0 ABS 0 dataBANK1 dist/default/debug\PYR_M_NEW.X.debug.obj
 __LbitbssCOMRAM 0 0 ABS 0 bitbssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 Read_Data@read_address 64 0 BANK0 1 cstackBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-__initialization 1442 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
+__initialization 1622 0 CODE 0 cinit dist/default/debug\PYR_M_NEW.X.debug.obj
 _BAUDCON1bits FB8 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__pbssBANK0 7D 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Set_Bits@Bitoutput 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-i2Evaluate_Signs@evaluation_value 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+__pbssBANK0 80 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Set_Bits@Bitoutput 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
+i2Evaluate_Signs@evaluation_value 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 i2___lwmod@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-_check_counter 35 0 COMRAM 1 bssCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_Evaluate_Signs 1152 0 CODE 0 text18 dist/default/debug\PYR_M_NEW.X.debug.obj
+_check_counter 80 0 BANK0 1 bssBANK0 dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_Evaluate_Signs FCE 0 CODE 0 text18 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/debug\PYR_M_NEW.X.debug.obj
-__Hsmallconst 270 0 SMALLCONST 0 smallconst dist/default/debug\PYR_M_NEW.X.debug.obj
-__end_of_InitTransmission 16E8 0 CODE 0 text3 dist/default/debug\PYR_M_NEW.X.debug.obj
+__Hsmallconst 272 0 SMALLCONST 0 smallconst dist/default/debug\PYR_M_NEW.X.debug.obj
+__end_of_InitTransmission 188A 0 CODE 0 text3 dist/default/debug\PYR_M_NEW.X.debug.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/debug\PYR_M_NEW.X.debug.obj
 _CCP1CONbits FBD 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\PYR_M_NEW.X.debug.obj
 __CFG_MCLRE$EXTMCLR 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
-__Hintcode 216 0 CODE 0 intcode dist/default/debug\PYR_M_NEW.X.debug.obj
+__Hintcode 220 0 CODE 0 intcode dist/default/debug\PYR_M_NEW.X.debug.obj
 i2Set_Bits@bits 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_InitTransmission 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 __size_of_InitInterrupt 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
@@ -1303,11 +1396,11 @@ __size_of_InitInterrupt 0 0 ABS 0 - dist/default/debug\PYR_M_NEW.X.debug.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 idloc 0 200000 200000 8 1
-text11 0 270 270 150A 1
-cstackCOMRAM 1 1 1 40 1
-cstackBANK0 1 60 60 22 1
+text11 0 272 272 16BA 1
+cstackCOMRAM 1 1 1 3A 1
+cstackBANK0 1 60 60 35 1
 reset_vec 0 0 0 4 1
-intcode 0 8 8 212 1
-smallconst 0 21A 21A 56 1
+intcode 0 8 8 21C 1
+smallconst 0 224 224 4E 1
 dataBANK1 1 100 100 B4 1
 config 0 300000 300000 E 1

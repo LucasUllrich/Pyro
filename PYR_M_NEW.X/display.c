@@ -39,7 +39,7 @@ void Set_Bits(const unsigned char *bits) {
                 break;
         }
     }
-    pixels[display_counter] = Bitoutput;
+    pixels[(display_counter - 1)] = Bitoutput;
 }
 
 
@@ -49,8 +49,8 @@ void Set_Bits(const unsigned char *bits) {
  * @param size      number of segments (7-segment)
  * @param evaluate  Value that should be displayed as pointer on array
  */
-void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
-    for(display_counter = (size + 1); display_counter > 0;
+void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
+    for(display_counter = size; display_counter > 0;
             display_counter--) {
         NOP();
         switch (evaluate[(display_counter - 1)]) {
@@ -106,7 +106,7 @@ void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
                 Set_Bits("G");
                 break;
             default:
-                Set_Bits(0);
+                Set_Bits('0');
         }
     }
 }
@@ -117,11 +117,11 @@ void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
  * @param evaluation_value  Tha value that should be evaluated
  */
 void Evaluate_Signs(unsigned int evaluation_value) {
-    for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
-            valuecounter++) {
-       signs[valuecounter] = evaluation_value % 10;
-       signs[valuecounter] += 0x30;
-       evaluation_value >>= 1;
+    for(unsigned char valuecounter = sizeof(signs); valuecounter > 0;
+            valuecounter--) {
+       signs[(valuecounter - 1)] = evaluation_value % 10;
+       signs[(valuecounter - 1)] += 0x30;
+       evaluation_value = evaluation_value / 10;
     }
     NOP();
     Evaluate_Display(sizeof(signs), signs);

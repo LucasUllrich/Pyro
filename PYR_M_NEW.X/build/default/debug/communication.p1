@@ -7314,14 +7314,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;storage.h: 18: void Load_Data(void);
 [; ;storage.h: 19: void Del_Data(void);
+"27 storage.h
+[v _string_load `uc ~T0 @X0 -> 3 `i e ]
+[; ;storage.h: 27: unsigned char string_load[3];
+"28
+[v _string_delete `uc ~T0 @X0 -> 3 `i e ]
+[; ;storage.h: 28: unsigned char string_delete[3];
 [; ;display.h: 16: void Display(void);
-[; ;display.h: 17: void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
+[; ;display.h: 17: void Evaluate_Display(unsigned char size, unsigned char *evaluate);
 [; ;display.h: 18: void Evaluate_Signs(unsigned int evaluation_value);
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 7 `i e ]
-[; ;display.h: 28: unsigned char pixels[7];
+[v _pixels `uc ~T0 @X0 -> 8 `i e ]
+[; ;display.h: 28: unsigned char pixels[8];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
@@ -7334,13 +7340,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port);
 [; ;communication.h: 18: unsigned char Receive(void);
-[; ;communication.h: 19: void Write_Display_Byte(unsigned char *write_data);
-"26 communication.h
+[; ;communication.h: 19: void Receive_Dump(void);
+[; ;communication.h: 20: void Write_Display_Byte(unsigned char *write_data);
+"27 communication.h
 [v _overrun `b ~T0 @X0 1 e ]
 [i _overrun
 -> 0 `i
 ]
-[; ;communication.h: 26: bit overrun = 0;
+[; ;communication.h: 27: bit overrun = 0;
 "41 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready
@@ -7738,60 +7745,93 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 1122 ]
 }
 "46
+[v _Receive_Dump `(v ~T0 @X0 1 ef ]
+{
+[; ;communication.c: 46: void Receive_Dump(void) {
+[e :U _Receive_Dump ]
+[f ]
+"47
+[v _dump `uc ~T0 @X0 1 a ]
+[; ;communication.c: 47: unsigned char dump;
+[; ;communication.c: 48: if(RCSTA1bits.OERR == 1) {
+"48
+[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1125  ]
+{
+[; ;communication.c: 49: RCSTA1bits.CREN = 0;
+"49
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;communication.c: 50: RCSTA1bits.CREN = 1;
+"50
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;communication.c: 51: overrun = 1;
+"51
+[e = _overrun -> -> 1 `i `b ]
+"52
+}
+[e :U 1125 ]
+[; ;communication.c: 52: }
+[; ;communication.c: 53: dump = RCREG1;
+"53
+[e = _dump _RCREG1 ]
+[; ;communication.c: 54: }
+"54
+[e :UE 1124 ]
+}
+"56
 [v _Write_Display_Byte `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;communication.c: 46: void Write_Display_Byte(unsigned char *write_data) {
+[; ;communication.c: 56: void Write_Display_Byte(unsigned char *write_data) {
 [e :U _Write_Display_Byte ]
 [v _write_data `*uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;communication.c: 47: for(unsigned char counter = sizeof(pixels); counter > 0;
-"47
+[; ;communication.c: 57: for(unsigned char counter = sizeof(pixels); counter > 0;
+"57
 {
 [v _counter `uc ~T0 @X0 1 a ]
 [e = _counter -> -> # _pixels `ui `uc ]
-[; ;communication.c: 48: counter--) {
-[e $ > -> _counter `i -> 0 `i 1125  ]
-[e $U 1126  ]
-"48
-[e :U 1125 ]
-{
-[; ;communication.c: 49: if(SSP1IF = 1) {
-"49
-[e $ ! = _SSP1IF -> -> 1 `i `b 1128  ]
-{
-[; ;communication.c: 50: SSP1IF = 0;
-"50
-[e = _SSP1IF -> -> 0 `i `b ]
-"51
-}
-[e :U 1128 ]
-[; ;communication.c: 51: }
-[; ;communication.c: 52: SSP1BUF = write_data[counter - 1];
-"52
-[e = _SSP1BUF *U + _write_data * -> - -> _counter `i -> 1 `i `x -> -> # *U _write_data `i `x ]
-[; ;communication.c: 54: SSP1IF = 0;
-"54
-[e = _SSP1IF -> -> 0 `i `b ]
-[; ;communication.c: 55: PORTCbits.RC0 = 0;
-"55
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-[; ;communication.c: 56: PORTCbits.RC0 = 1;
-"56
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;communication.c: 57: PORTCbits.RC0 = 0;
-"57
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+[; ;communication.c: 58: counter--) {
+[e $ > -> _counter `i -> 0 `i 1127  ]
+[e $U 1128  ]
 "58
-}
-"48
-[e -- _counter -> -> 1 `i `uc ]
-"47
-[e $ > -> _counter `i -> 0 `i 1125  ]
-[e :U 1126 ]
-"58
-}
-[; ;communication.c: 58: }
-[; ;communication.c: 59: }
+[e :U 1127 ]
+{
+[; ;communication.c: 59: if(SSP1IF = 1) {
 "59
-[e :UE 1124 ]
+[e $ ! = _SSP1IF -> -> 1 `i `b 1130  ]
+{
+[; ;communication.c: 60: SSP1IF = 0;
+"60
+[e = _SSP1IF -> -> 0 `i `b ]
+"61
+}
+[e :U 1130 ]
+[; ;communication.c: 61: }
+[; ;communication.c: 62: SSP1BUF = write_data[counter - 1];
+"62
+[e = _SSP1BUF *U + _write_data * -> - -> _counter `i -> 1 `i `x -> -> # *U _write_data `i `x ]
+[; ;communication.c: 64: SSP1IF = 0;
+"64
+[e = _SSP1IF -> -> 0 `i `b ]
+[; ;communication.c: 65: PORTCbits.RC0 = 0;
+"65
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+[; ;communication.c: 66: PORTCbits.RC0 = 1;
+"66
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;communication.c: 67: PORTCbits.RC0 = 0;
+"67
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+"68
+}
+"58
+[e -- _counter -> -> 1 `i `uc ]
+"57
+[e $ > -> _counter `i -> 0 `i 1127  ]
+[e :U 1128 ]
+"68
+}
+[; ;communication.c: 68: }
+[; ;communication.c: 69: }
+"69
+[e :UE 1126 ]
 }

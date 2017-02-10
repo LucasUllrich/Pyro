@@ -90,6 +90,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Receive `(uc ~T0 @X0 0 ef ]
 "19 display.h
 [v _Set_Display `(v ~T0 @X0 0 ef3`uc`uc`ui ]
+"19 communication.h
+[v _Receive_Dump `(v ~T0 @X0 0 ef ]
 "43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -7272,14 +7274,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;storage.h: 18: void Load_Data(void);
 [; ;storage.h: 19: void Del_Data(void);
+"27 storage.h
+[v _string_load `uc ~T0 @X0 -> 3 `i e ]
+[; ;storage.h: 27: unsigned char string_load[3];
+"28
+[v _string_delete `uc ~T0 @X0 -> 3 `i e ]
+[; ;storage.h: 28: unsigned char string_delete[3];
 [; ;display.h: 16: void Display(void);
-[; ;display.h: 17: void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
+[; ;display.h: 17: void Evaluate_Display(unsigned char size, unsigned char *evaluate);
 [; ;display.h: 18: void Evaluate_Signs(unsigned int evaluation_value);
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 7 `i e ]
-[; ;display.h: 28: unsigned char pixels[7];
+[v _pixels `uc ~T0 @X0 -> 8 `i e ]
+[; ;display.h: 28: unsigned char pixels[8];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
@@ -7292,13 +7300,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port);
 [; ;communication.h: 18: unsigned char Receive(void);
-[; ;communication.h: 19: void Write_Display_Byte(unsigned char *write_data);
-"26 communication.h
+[; ;communication.h: 19: void Receive_Dump(void);
+[; ;communication.h: 20: void Write_Display_Byte(unsigned char *write_data);
+"27 communication.h
 [v _overrun `b ~T0 @X0 1 e ]
 [i _overrun
 -> 0 `i
 ]
-[; ;communication.h: 26: bit overrun = 0;
+[; ;communication.h: 27: bit overrun = 0;
 "41 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready
@@ -7579,9 +7588,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;interrupt.h: 25: bit master_addressed = 0;
-[v F7567 `(v ~T0 @X0 1 tf ]
+[v F7571 `(v ~T0 @X0 1 tf ]
 "4 interrupt.c
-[v _Isr `IF7567 ~T0 @X0 1 e ]
+[v _Isr `IF7571 ~T0 @X0 1 e ]
 {
 [; ;interrupt.c: 4: void interrupt Isr(void) {
 [e :U _Isr ]
@@ -7642,179 +7651,185 @@ Version 3.2 HI-TECH Software Intermediate Code
 "22
 [e $ ! == -> . . _PIR1bits 1 3 `i -> 1 `i 1109  ]
 {
-[; ;interrupt.c: 23: PIR1bits.RCIF = 0;
+[; ;interrupt.c: 23: if(RCSTAbits.RX9D == 1) {
 "23
-[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
-[; ;interrupt.c: 24: if(RCSTAbits.RX9D == 1) {
-"24
 [e $ ! == -> . . _RCSTAbits 0 0 `i -> 1 `i 1110  ]
 {
-[; ;interrupt.c: 25: receive_counter = 0;
-"25
+[; ;interrupt.c: 24: receive_counter = 0;
+"24
 [e = _receive_counter -> -> 0 `i `uc ]
-[; ;interrupt.c: 27: received[receive_counter] =
-[; ;interrupt.c: 28: Receive();
-"28
+[; ;interrupt.c: 26: received[receive_counter] =
+[; ;interrupt.c: 27: Receive();
+"27
 [e = *U + &U _received * -> _receive_counter `ux -> -> # *U &U _received `ui `ux ( _Receive ..  ]
-[; ;interrupt.c: 29: receive_counter++;
-"29
+[; ;interrupt.c: 28: receive_counter++;
+"28
 [e ++ _receive_counter -> -> 1 `i `uc ]
-[; ;interrupt.c: 31: if(received[0] == 0xAA) {
-"31
+[; ;interrupt.c: 30: if(received[0] == 0xAA) {
+"30
 [e $ ! == -> *U + &U _received * -> -> -> 0 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 170 `i 1111  ]
 {
-[; ;interrupt.c: 32: master_addressed = 1;
-"32
+[; ;interrupt.c: 31: master_addressed = 1;
+"31
 [e = _master_addressed -> -> 1 `i `b ]
-"33
+"32
 }
-[; ;interrupt.c: 33: } else {
+[; ;interrupt.c: 32: } else {
 [e $U 1112  ]
 [e :U 1111 ]
 {
-[; ;interrupt.c: 34: master_addressed = 0;
-"34
+[; ;interrupt.c: 33: master_addressed = 0;
+"33
 [e = _master_addressed -> -> 0 `i `b ]
-"35
+"34
 }
 [e :U 1112 ]
-"36
+"35
 }
-[; ;interrupt.c: 35: }
-[; ;interrupt.c: 36: } else if(master_addressed == 1) {
+[; ;interrupt.c: 34: }
+[; ;interrupt.c: 35: } else if(master_addressed == 1) {
 [e $U 1113  ]
 [e :U 1110 ]
 [e $ ! == -> _master_addressed `i -> 1 `i 1114  ]
 {
-[; ;interrupt.c: 37: received[receive_counter] =
-[; ;interrupt.c: 38: Receive();
-"38
+[; ;interrupt.c: 36: received[receive_counter] =
+[; ;interrupt.c: 37: Receive();
+"37
 [e = *U + &U _received * -> _receive_counter `ux -> -> # *U &U _received `ui `ux ( _Receive ..  ]
-[; ;interrupt.c: 39: receive_counter++;
-"39
+[; ;interrupt.c: 38: receive_counter++;
+"38
 [e ++ _receive_counter -> -> 1 `i `uc ]
-[; ;interrupt.c: 41: if(receive_counter > 5) {
-"41
+[; ;interrupt.c: 40: if(receive_counter > 5) {
+"40
 [e $ ! > -> _receive_counter `i -> 5 `i 1115  ]
 {
-[; ;interrupt.c: 42: receive_counter = 0;
-"42
+[; ;interrupt.c: 41: receive_counter = 0;
+"41
 [e = _receive_counter -> -> 0 `i `uc ]
-[; ;interrupt.c: 43: master_addressed = 0;
-"43
+[; ;interrupt.c: 42: master_addressed = 0;
+"42
 [e = _master_addressed -> -> 0 `i `b ]
-[; ;interrupt.c: 45: if(received[2] == 'T') {
-"45
+[; ;interrupt.c: 44: if(received[2] == 'T') {
+"44
 [e $ ! == -> *U + &U _received * -> -> -> 2 `i `ui `ux -> -> # *U &U _received `ui `ux `ui -> 84 `ui 1116  ]
 {
-"46
+"45
 [v _search_index `uc ~T0 @X0 1 a ]
-[; ;interrupt.c: 46: unsigned char search_index = 0xFF;
+[; ;interrupt.c: 45: unsigned char search_index = 0xFF;
 [e = _search_index -> -> 255 `i `uc ]
-"47
+"46
 [v _pixel_index_array `uc ~T0 @X0 1 a ]
-[; ;interrupt.c: 47: unsigned char pixel_index_array = 0;
+[; ;interrupt.c: 46: unsigned char pixel_index_array = 0;
 [e = _pixel_index_array -> -> 0 `i `uc ]
-"48
+"47
 [v _pixel_index_bit `uc ~T0 @X0 1 a ]
-[; ;interrupt.c: 48: unsigned char pixel_index_bit = 0;
+[; ;interrupt.c: 47: unsigned char pixel_index_bit = 0;
 [e = _pixel_index_bit -> -> 0 `i `uc ]
-[; ;interrupt.c: 49: search_index = (received[1] * 10);
-"49
+[; ;interrupt.c: 48: search_index = (received[1] * 10);
+"48
 [e = _search_index -> * -> *U + &U _received * -> -> -> 1 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 10 `i `uc ]
-[; ;interrupt.c: 51: search_index += received[3];
-"51
+[; ;interrupt.c: 50: search_index += received[3];
+"50
 [e =+ _search_index *U + &U _received * -> -> -> 3 `i `ui `ux -> -> # *U &U _received `ui `ux ]
-[; ;interrupt.c: 53: pixel_index_array =
-[; ;interrupt.c: 54: pin[search_index].led_address / 8;
-"54
+[; ;interrupt.c: 52: pixel_index_array =
+[; ;interrupt.c: 53: pin[search_index].led_address / 8;
+"53
 [e = _pixel_index_array -> / -> . *U + &U _pin * -> _search_index `ux -> -> # *U &U _pin `ui `ux 3 `i -> 8 `i `uc ]
-[; ;interrupt.c: 55: pixel_index_bit =
-[; ;interrupt.c: 56: pin[search_index].led_address % 8;
-"56
+[; ;interrupt.c: 54: pixel_index_bit =
+[; ;interrupt.c: 55: pin[search_index].led_address % 8;
+"55
 [e = _pixel_index_bit -> % -> . *U + &U _pin * -> _search_index `ux -> -> # *U &U _pin `ui `ux 3 `i -> 8 `i `uc ]
-[; ;interrupt.c: 57: if(received[4] == '1'){
-"57
+[; ;interrupt.c: 56: if(received[4] == '1'){
+"56
 [e $ ! == -> *U + &U _received * -> -> -> 4 `i `ui `ux -> -> # *U &U _received `ui `ux `ui -> 49 `ui 1117  ]
 {
-[; ;interrupt.c: 58: pixels[pixel_index_array] |=
-[; ;interrupt.c: 59: (1 << pixel_index_bit);
-"59
+[; ;interrupt.c: 57: pixels[pixel_index_array] |=
+[; ;interrupt.c: 58: (1 << pixel_index_bit);
+"58
 [e =| *U + &U _pixels * -> _pixel_index_array `ux -> -> # *U &U _pixels `ui `ux -> << -> 1 `i _pixel_index_bit `uc ]
-"60
+"59
 }
-[; ;interrupt.c: 60: }else if(received[4] == '0') {
+[; ;interrupt.c: 59: }else if(received[4] == '0') {
 [e $U 1118  ]
 [e :U 1117 ]
 [e $ ! == -> *U + &U _received * -> -> -> 4 `i `ui `ux -> -> # *U &U _received `ui `ux `ui -> 48 `ui 1119  ]
 {
-[; ;interrupt.c: 61: pixels[pixel_index_array] &=
-[; ;interrupt.c: 62: ~(1 << pixel_index_bit);
-"62
+[; ;interrupt.c: 60: pixels[pixel_index_array] &=
+[; ;interrupt.c: 61: ~(1 << pixel_index_bit);
+"61
 [e =& *U + &U _pixels * -> _pixel_index_array `ux -> -> # *U &U _pixels `ui `ux -> ~ << -> 1 `i _pixel_index_bit `uc ]
-"63
+"62
 }
 [e :U 1119 ]
-"64
+"63
 [e :U 1118 ]
-[; ;interrupt.c: 63: }
-[; ;interrupt.c: 64: if(received[5] == '1') {
+[; ;interrupt.c: 62: }
+[; ;interrupt.c: 63: if(received[5] == '1') {
 [e $ ! == -> *U + &U _received * -> -> -> 5 `i `ui `ux -> -> # *U &U _received `ui `ux `ui -> 49 `ui 1120  ]
 {
-[; ;interrupt.c: 65: Set_Display('7', 'P', (received[1] + 1));
-"65
+[; ;interrupt.c: 64: Set_Display('7', 'P', (received[1] + 1));
+"64
 [e ( _Set_Display (3 , , -> -> 55 `ui `uc -> -> 80 `ui `uc -> + -> *U + &U _received * -> -> -> 1 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 1 `i `ui ]
-"66
+"65
 }
 [e :U 1120 ]
-"67
+"66
 }
 [e :U 1116 ]
-"68
+"67
 }
 [e :U 1115 ]
-"69
+"68
 }
-[e :U 1114 ]
-"70
-[e :U 1113 ]
+[; ;interrupt.c: 65: }
 [; ;interrupt.c: 66: }
 [; ;interrupt.c: 67: }
-[; ;interrupt.c: 68: }
-[; ;interrupt.c: 69: }
-[; ;interrupt.c: 70: __nop();
-[e ( ___nop ..  ]
-[; ;interrupt.c: 71: if(check_counter < 30 && testflag == 1) {
-"71
-[e $ ! && < -> _check_counter `i -> 30 `i == -> _testflag `i -> 1 `i 1121  ]
+[; ;interrupt.c: 68: } else {
+[e $U 1121  ]
+[e :U 1114 ]
 {
-[; ;interrupt.c: 72: check_counter++;
-"72
-[e ++ _check_counter -> -> 1 `i `uc ]
-[; ;interrupt.c: 73: Check_Detonators();
-"73
-[e ( _Check_Detonators ..  ]
-"74
+[; ;interrupt.c: 69: Receive_Dump();
+"69
+[e ( _Receive_Dump ..  ]
+"70
 }
-[; ;interrupt.c: 74: }else {
-[e $U 1122  ]
 [e :U 1121 ]
+[e :U 1113 ]
+[; ;interrupt.c: 70: }
+[; ;interrupt.c: 71: __nop();
+"71
+[e ( ___nop ..  ]
+[; ;interrupt.c: 72: if(check_counter < 30 && testflag == 1) {
+"72
+[e $ ! && < -> _check_counter `i -> 30 `i == -> _testflag `i -> 1 `i 1122  ]
 {
-[; ;interrupt.c: 75: check_counter = 0;
+[; ;interrupt.c: 73: check_counter++;
+"73
+[e ++ _check_counter -> -> 1 `i `uc ]
+[; ;interrupt.c: 74: Check_Detonators();
+"74
+[e ( _Check_Detonators ..  ]
 "75
-[e = _check_counter -> -> 0 `i `uc ]
-[; ;interrupt.c: 76: testflag = 0;
-"76
-[e = _testflag -> -> 0 `i `b ]
-"77
 }
+[; ;interrupt.c: 75: }else {
+[e $U 1123  ]
 [e :U 1122 ]
+{
+[; ;interrupt.c: 76: check_counter = 0;
+"76
+[e = _check_counter -> -> 0 `i `uc ]
+[; ;interrupt.c: 77: testflag = 0;
+"77
+[e = _testflag -> -> 0 `i `b ]
 "78
 }
+[e :U 1123 ]
+"79
+}
 [e :U 1109 ]
-[; ;interrupt.c: 77: }
 [; ;interrupt.c: 78: }
 [; ;interrupt.c: 79: }
-"79
+[; ;interrupt.c: 80: }
+"80
 [e :UE 1106 ]
 }

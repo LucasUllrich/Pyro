@@ -19,5 +19,13 @@ void Load_Data(void);
 void Del_Data(void);
 // </editor-fold>
 
+
+/***************************************************
+ * Variables and constants
+ ***************************************************/
+// <editor-fold defaultstate="collapsed" desc="variables">
+unsigned char string_load[3];
+unsigned char string_delete[3];
+// </editor-fold>
 #endif	/* STORAGE_H */
 

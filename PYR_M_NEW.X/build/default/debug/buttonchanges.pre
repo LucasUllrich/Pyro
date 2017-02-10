@@ -8969,15 +8969,19 @@ unsigned int Read_Data(unsigned char read_address);
 void Load_Data(void);
 void Del_Data(void);
 
+# 27
+unsigned char string_load[3];
+unsigned char string_delete[3];
+
 # 16 "display.h"
 void Display(void);
-void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
+void Evaluate_Display(unsigned char size, unsigned char *evaluate);
 void Evaluate_Signs(unsigned int evaluation_value);
 void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
 
 # 28
-unsigned char pixels[7];
+unsigned char pixels[8];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 
@@ -8985,9 +8989,10 @@ unsigned char display_counter = 0;
 void Transmit(unsigned char receiver, unsigned char operation,
 unsigned char port);
 unsigned char Receive(void);
+void Receive_Dump(void);
 void Write_Display_Byte(unsigned char *write_data);
 
-# 26
+# 27
 bit overrun = 0;
 
 # 41 "main.h"
@@ -9044,6 +9049,7 @@ void Check_Buttons(void) {
 if(PORTCbits.RC1 == 1) {
 Delay_Routine(3);
 if(PORTCbits.RC1 == 1) {
+__nop();
 ignite_ready = 1;
 Start_Timer();
 __nop();
@@ -9054,6 +9060,7 @@ return;
 } else if(PORTBbits.RB2 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB2 == 1) {
+__nop();
 if(PORTBbits.RB3 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB3 == 1) {
@@ -9073,6 +9080,7 @@ __nop();
 } else if(PORTBbits.RB3 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB3 == 1) {
+__nop();
 if(PORTBbits.RB2 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB2 == 1) {
@@ -9092,6 +9100,7 @@ __nop();
 } else if(PORTBbits.RB4 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB4 == 1) {
+__nop();
 pin[pin_selected].time += 10;
 if(pin[pin_selected].time > 999) {
 pin[pin_selected].time = 0;
@@ -9103,6 +9112,7 @@ __nop();
 } else if(PORTBbits.RB1 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB1 == 1) {
+__nop();
 if(PORTBbits.RB0 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB0 == 1) {
@@ -9141,6 +9151,7 @@ __nop();
 } else if(PORTBbits.RB0 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB0 == 1) {
+__nop();
 if(PORTBbits.RB1 == 1) {
 Delay_Routine(3);
 if(PORTBbits.RB1 == 1) {
@@ -9166,5 +9177,7 @@ Set_Display('7', '-', pin[pin_selected].time);
 Delay_Routine(30);
 __nop();
 }
+} else {
+__nop();
 }
 }

@@ -7308,14 +7308,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;storage.h: 18: void Load_Data(void);
 [; ;storage.h: 19: void Del_Data(void);
+"27 storage.h
+[v _string_load `uc ~T0 @X0 -> 3 `i e ]
+[; ;storage.h: 27: unsigned char string_load[3];
+"28
+[v _string_delete `uc ~T0 @X0 -> 3 `i e ]
+[; ;storage.h: 28: unsigned char string_delete[3];
 [; ;display.h: 16: void Display(void);
-[; ;display.h: 17: void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
+[; ;display.h: 17: void Evaluate_Display(unsigned char size, unsigned char *evaluate);
 [; ;display.h: 18: void Evaluate_Signs(unsigned int evaluation_value);
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 7 `i e ]
-[; ;display.h: 28: unsigned char pixels[7];
+[v _pixels `uc ~T0 @X0 -> 8 `i e ]
+[; ;display.h: 28: unsigned char pixels[8];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
@@ -7328,13 +7334,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port);
 [; ;communication.h: 18: unsigned char Receive(void);
-[; ;communication.h: 19: void Write_Display_Byte(unsigned char *write_data);
-"26 communication.h
+[; ;communication.h: 19: void Receive_Dump(void);
+[; ;communication.h: 20: void Write_Display_Byte(unsigned char *write_data);
+"27 communication.h
 [v _overrun `b ~T0 @X0 1 e ]
 [i _overrun
 -> 0 `i
 ]
-[; ;communication.h: 26: bit overrun = 0;
+[; ;communication.h: 27: bit overrun = 0;
 "41 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready

@@ -8969,9 +8969,13 @@ unsigned int Read_Data(unsigned char read_address);
 void Load_Data(void);
 void Del_Data(void);
 
+# 27
+unsigned char string_load[3];
+unsigned char string_delete[3];
+
 # 16 "display.h"
 void Display(void);
-void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
+void Evaluate_Display(unsigned char size, unsigned char *evaluate);
 void Evaluate_Signs(unsigned int evaluation_value);
 void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
@@ -8985,9 +8989,10 @@ unsigned char display_counter = 0;
 void Transmit(unsigned char receiver, unsigned char operation,
 unsigned char port);
 unsigned char Receive(void);
+void Receive_Dump(void);
 void Write_Display_Byte(unsigned char *write_data);
 
-# 26
+# 27
 bit overrun = 0;
 
 # 41 "main.h"
@@ -9079,6 +9084,16 @@ overrun = 1;
 return (RCREG1);
 }
 
+void Receive_Dump(void) {
+unsigned char dump;
+if(RCSTA1bits.OERR == 1) {
+RCSTA1bits.CREN = 0;
+RCSTA1bits.CREN = 1;
+overrun = 1;
+}
+dump = RCREG1;
+}
+
 void Write_Display_Byte(unsigned char *write_data) {
 for(unsigned char counter = sizeof(pixels); counter > 0;
 counter--) {
@@ -9086,7 +9101,7 @@ if(SSP1IF = 1) {
 SSP1IF = 0;
 }
 SSP1BUF = write_data[counter - 1];
-while (SSP1IF == 0);
+
 SSP1IF = 0;
 PORTCbits.RC0 = 0;
 PORTCbits.RC0 = 1;

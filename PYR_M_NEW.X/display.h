@@ -14,7 +14,7 @@
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="Prototypes">
 void Display(void);
-void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
+void Evaluate_Display(unsigned char size, unsigned char *evaluate);
 void Evaluate_Signs(unsigned int evaluation_value);
 void Set_Display(unsigned char type, unsigned char information,
         unsigned int value);
@@ -25,7 +25,7 @@ void Set_Display(unsigned char type, unsigned char information,
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="variables">
 //#define COM_TEST
-unsigned char pixels[7];
+unsigned char pixels[8];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 /** Description to pixels[]

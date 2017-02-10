@@ -27,6 +27,7 @@ void Check_Buttons(void) {
     if(Ignite == 1) {
         Delay_Routine(3);
         if(Ignite == 1) {
+            NOP();
             ignite_ready = 1;
             Start_Timer();
             NOP();
@@ -37,6 +38,7 @@ void Check_Buttons(void) {
     } else if(Time_Up == 1) {
         Delay_Routine(3);
         if(Time_Up == 1) {
+            NOP();
             if(Time_Down == 1) {
                 Delay_Routine(3);
                 if(Time_Down == 1) {
@@ -56,6 +58,7 @@ void Check_Buttons(void) {
     } else if(Time_Down == 1) {
         Delay_Routine(3);
         if(Time_Down == 1) {
+            NOP();
             if(Time_Up == 1) {
                 Delay_Routine(3);
                 if(Time_Up == 1) {
@@ -75,6 +78,7 @@ void Check_Buttons(void) {
     } else if(Time_Upup == 1) {
         Delay_Routine(3);
         if(Time_Upup == 1) {
+            NOP();
             pin[pin_selected].time += 10;
             if(pin[pin_selected].time > 999) {
                 pin[pin_selected].time = 0;
@@ -86,6 +90,7 @@ void Check_Buttons(void) {
     } else if(Port_Up == 1) {
         Delay_Routine(3);
         if(Port_Up == 1) {
+            NOP();
             if(Slave_Up == 1) {
                 Delay_Routine(3);
                 if(Slave_Up == 1) {
@@ -124,6 +129,7 @@ void Check_Buttons(void) {
     } else if(Slave_Up == 1) {
         Delay_Routine(3);
         if(Slave_Up == 1) {
+            NOP();
             if(Port_Up == 1) {
                 Delay_Routine(3);
                 if(Port_Up == 1) {
@@ -149,5 +155,7 @@ void Check_Buttons(void) {
             Delay_Routine(30);
             NOP();
         }
+    } else {
+        NOP();
     }
 }

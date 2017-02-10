@@ -5,7 +5,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"19 communication.h
+"20 communication.h
 [v _Write_Display_Byte `(v ~T0 @X0 0 ef1`*uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7184,14 +7184,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;storage.h: 17: unsigned int Read_Data(unsigned char read_address);
 [; ;storage.h: 18: void Load_Data(void);
 [; ;storage.h: 19: void Del_Data(void);
+"27 storage.h
+[v _string_load `uc ~T0 @X0 -> 3 `i e ]
+[; ;storage.h: 27: unsigned char string_load[3];
+"28
+[v _string_delete `uc ~T0 @X0 -> 3 `i e ]
+[; ;storage.h: 28: unsigned char string_delete[3];
 [; ;display.h: 16: void Display(void);
-[; ;display.h: 17: void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
+[; ;display.h: 17: void Evaluate_Display(unsigned char size, unsigned char *evaluate);
 [; ;display.h: 18: void Evaluate_Signs(unsigned int evaluation_value);
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 7 `i e ]
-[; ;display.h: 28: unsigned char pixels[7];
+[v _pixels `uc ~T0 @X0 -> 8 `i e ]
+[; ;display.h: 28: unsigned char pixels[8];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
@@ -7204,13 +7210,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;communication.h: 16: void Transmit(unsigned char receiver, unsigned char operation,
 [; ;communication.h: 17: unsigned char port);
 [; ;communication.h: 18: unsigned char Receive(void);
-[; ;communication.h: 19: void Write_Display_Byte(unsigned char *write_data);
-"26 communication.h
+[; ;communication.h: 19: void Receive_Dump(void);
+[; ;communication.h: 20: void Write_Display_Byte(unsigned char *write_data);
+"27 communication.h
 [v _overrun `b ~T0 @X0 1 e ]
 [i _overrun
 -> 0 `i
 ]
-[; ;communication.h: 26: bit overrun = 0;
+[; ;communication.h: 27: bit overrun = 0;
 "41 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready
@@ -7596,25 +7603,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 "41
 }
 [; ;display.c: 41: }
-[; ;display.c: 42: pixels[display_counter] = Bitoutput;
+[; ;display.c: 42: pixels[(display_counter - 1)] = Bitoutput;
 "42
-[e = *U + &U _pixels * -> _display_counter `ux -> -> # *U &U _pixels `ui `ux _Bitoutput ]
+[e = *U + &U _pixels * -> -> - -> _display_counter `i -> 1 `i `ui `ux -> -> # *U &U _pixels `ui `ux _Bitoutput ]
 [; ;display.c: 43: }
 "43
 [e :UE 1106 ]
 }
 "52
-[v _Evaluate_Display `(v ~T0 @X0 1 ef2`uc`*Cuc ]
+[v _Evaluate_Display `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
-[; ;display.c: 52: void Evaluate_Display(unsigned char size, const unsigned char *evaluate) {
+[; ;display.c: 52: void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
 [e :U _Evaluate_Display ]
 [v _size `uc ~T0 @X0 1 r1 ]
-[v _evaluate `*Cuc ~T0 @X0 1 r2 ]
+[v _evaluate `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;display.c: 53: for(display_counter = (size + 1); display_counter > 0;
+[; ;display.c: 53: for(display_counter = size; display_counter > 0;
 "53
 {
-[e = _display_counter -> + -> _size `i -> 1 `i `uc ]
+[e = _display_counter _size ]
 [; ;display.c: 54: display_counter--) {
 [e $U 1125  ]
 "54
@@ -7783,9 +7790,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.c: 108: default:
 "108
 [e :U 1145 ]
-[; ;display.c: 109: Set_Bits(0);
+[; ;display.c: 109: Set_Bits('0');
 "109
-[e ( _Set_Bits (1 -> -> 0 `i `*Cuc ]
+[e ( _Set_Bits (1 -> -> 48 `ui `*Cuc ]
 "110
 }
 [; ;display.c: 110: }
@@ -7834,32 +7841,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _Evaluate_Signs ]
 [v _evaluation_value `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;display.c: 120: for(unsigned char valuecounter = 0; valuecounter < sizeof(signs);
+[; ;display.c: 120: for(unsigned char valuecounter = sizeof(signs); valuecounter > 0;
 "120
 {
 [v _valuecounter `uc ~T0 @X0 1 a ]
-[e = _valuecounter -> -> 0 `i `uc ]
-[; ;display.c: 121: valuecounter++) {
-[e $ < -> _valuecounter `ui -> # _signs `ui 1147  ]
+[e = _valuecounter -> -> # _signs `ui `uc ]
+[; ;display.c: 121: valuecounter--) {
+[e $ > -> _valuecounter `i -> 0 `i 1147  ]
 [e $U 1148  ]
 "121
 [e :U 1147 ]
 {
-[; ;display.c: 122: signs[valuecounter] = evaluation_value % 10;
+[; ;display.c: 122: signs[(valuecounter - 1)] = evaluation_value % 10;
 "122
-[e = *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
-[; ;display.c: 123: signs[valuecounter] += 0x30;
+[e = *U + &U _signs * -> -> - -> _valuecounter `i -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
+[; ;display.c: 123: signs[(valuecounter - 1)] += 0x30;
 "123
-[e =+ *U + &U _signs * -> _valuecounter `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
-[; ;display.c: 124: evaluation_value >>= 1;
+[e =+ *U + &U _signs * -> -> - -> _valuecounter `i -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[; ;display.c: 124: evaluation_value = evaluation_value / 10;
 "124
-[e =>> _evaluation_value -> 1 `i ]
+[e = _evaluation_value / _evaluation_value -> -> 10 `i `ui ]
 "125
 }
 "121
-[e ++ _valuecounter -> -> 1 `i `uc ]
+[e -- _valuecounter -> -> 1 `i `uc ]
 "120
-[e $ < -> _valuecounter `ui -> # _signs `ui 1147  ]
+[e $ > -> _valuecounter `i -> 0 `i 1147  ]
 [e :U 1148 ]
 "125
 }
@@ -7869,7 +7876,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( ___nop ..  ]
 [; ;display.c: 127: Evaluate_Display(sizeof(signs), signs);
 "127
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc -> &U _signs `*Cuc ]
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
 [; ;display.c: 128: }
 "128
 [e :UE 1146 ]
@@ -7912,7 +7919,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
 [; ;display.c: 148: Evaluate_Display(sizeof(signs), signs);
 "148
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc -> &U _signs `*Cuc ]
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
 "149
 }
 [; ;display.c: 149: } else {

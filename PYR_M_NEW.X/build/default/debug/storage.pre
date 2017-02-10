@@ -8969,15 +8969,19 @@ unsigned int Read_Data(unsigned char read_address);
 void Load_Data(void);
 void Del_Data(void);
 
+# 27
+unsigned char string_load[3];
+unsigned char string_delete[3];
+
 # 16 "display.h"
 void Display(void);
-void Evaluate_Display(unsigned char size, const unsigned char *evaluate);
+void Evaluate_Display(unsigned char size, unsigned char *evaluate);
 void Evaluate_Signs(unsigned int evaluation_value);
 void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
 
 # 28
-unsigned char pixels[7];
+unsigned char pixels[8];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 
@@ -8985,9 +8989,10 @@ unsigned char display_counter = 0;
 void Transmit(unsigned char receiver, unsigned char operation,
 unsigned char port);
 unsigned char Receive(void);
+void Receive_Dump(void);
 void Write_Display_Byte(unsigned char *write_data);
 
-# 26
+# 27
 bit overrun = 0;
 
 # 41 "main.h"
@@ -9068,9 +9073,10 @@ while(PIR2bits.EEIF == 0);
 PIR2bits.EEIF = 0;
 EECON1bits.WREN = 0;
 INTCONbits.GIE = 1;
+__nop();
 }
 
-# 44
+# 45
 unsigned int Read_Data(unsigned char read_address) {
 unsigned int data_read = 0;
 read_address += 50;
@@ -9089,9 +9095,13 @@ data_read |= EEDATA;
 return data_read;
 }
 
-# 65
+# 66
 void Load_Data(void) {
-Evaluate_Display(3, "LOA");
+string_load[0] = 'L';
+string_load[1] = 'O';
+string_load[2] = 'A';
+
+Evaluate_Display(3, string_load);
 Delay_Routine(3);
 for(unsigned char counter = 0; counter < 30; counter++) {
 pin[counter].time = Read_Data(counter);
@@ -9107,12 +9117,17 @@ Set_Display('7', '-', pin[pin_selected].time);
 Delay_Routine(20);
 }
 
-# 85
+# 90
 void Del_Data(void) {
-Evaluate_Display(3, "DEL");
+string_delete[0] = 'D';
+string_delete[1] = 'E';
+string_delete[2] = 'L';
+
+Evaluate_Display(3, string_delete);
 Delay_Routine(3);
 for(unsigned char counter = 0; counter < 30; counter++) {
 Save_Data(0, counter);
 }
 Load_Data();
+__nop();
 }

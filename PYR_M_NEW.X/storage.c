@@ -33,6 +33,7 @@ void Save_Data(unsigned int store,
     PIR2bits.EEIF = 0;
     EECON1bits.WREN = 0;
     INTCONbits.GIE = 1;
+    NOP();
 }
 
 
@@ -63,7 +64,11 @@ unsigned int Read_Data(unsigned char read_address) {
  * Initial data retrievement from storage
  */
 void Load_Data(void) {
-    Evaluate_Display(3, "LOA");
+    string_load[0] = 'L';
+    string_load[1] = 'O';
+    string_load[2] = 'A';
+    
+    Evaluate_Display(3, string_load);
     Delay_Routine(3);
     for(unsigned char counter = 0; counter < 30; counter++) {
         pin[counter].time = Read_Data(counter);
@@ -83,10 +88,15 @@ void Load_Data(void) {
  * Erasing data from the storage to get a fresh start at 0
  */
 void Del_Data(void) {
-    Evaluate_Display(3, "DEL");
+    string_delete[0] = 'D';
+    string_delete[1] = 'E';
+    string_delete[2] = 'L';
+    
+    Evaluate_Display(3, string_delete);
     Delay_Routine(3);
     for(unsigned char counter = 0; counter < 30; counter++) {
         Save_Data(0, counter);
     }
     Load_Data();
+    NOP();
 }
