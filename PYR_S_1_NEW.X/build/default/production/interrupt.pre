@@ -9370,7 +9370,7 @@ received[receive_counter] =
 Receive();
 receive_counter++;
 
-if(received[0] == 0x00) {
+if(received[0] == 0x01) {
 slave_addressed = 1;
 } else {
 slave_addressed = 0;

@@ -22,12 +22,17 @@ void Transmit(unsigned char receiver, unsigned char operation,
     TXSTA1bits.TX9D = 1;         //9th-Bit transmitted as 1 -> Address
     TXREG1 = receiver;              //Transmitting slave address
     while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG
+    TXSTA1bits.TX9D = 0;
+    __delay_ms(1);
     TXREG1 = TRANSMITTER;        //Transmitting actual data
     while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG    
+    __delay_ms(1);
     TXREG1 = operation;          //Transmitting actual data
     while(PIR1bits.TXIF == 0);   //Checking for a clear TXREG    
+    __delay_ms(1);
     TXREG1 = port;               //Transmitting actual data
     while(TXSTA1bits.TRMT == 0); //Checking for a clear TSR    
+    __delay_ms(1);
     Transmit_En = 0;             //Disable RS485 module for transmission
     RCSTA1bits.CREN = 1;         //Enabling receiver again
     NOP();                       //Debugging

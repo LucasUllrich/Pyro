@@ -89,10 +89,6 @@ void main(void) {
     Led = 1;
     while(1) {
         Check_Buttons();
-        if(testflag == 1) {
-            Set_Display('7', 'T',0);
-            Check_Detonators();
-        }
     }
     return;
 }

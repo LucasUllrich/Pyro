@@ -8981,7 +8981,7 @@ void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
 
 # 28
-unsigned char pixels[8];
+unsigned char pixels[7];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 
@@ -8995,7 +8995,7 @@ void Write_Display_Byte(unsigned char *write_data);
 # 27
 bit overrun = 0;
 
-# 41 "main.h"
+# 42 "main.h"
 bit ignite_ready = 0;
 
 typedef struct Slave_Output
@@ -9041,7 +9041,7 @@ sl_out pin[] =
 {2, 9, 29, 48, },
 };
 
-# 110
+# 111
 void Delay_Routine(unsigned char delay_multiplyer);
 
 # 16 "interrupt.h"
@@ -9072,6 +9072,7 @@ TMR1L = 0;
 TMR1H = 0;
 }
 if(PIR1bits.RCIF == 1) {
+__nop();
 if(RCSTAbits.RX9D == 1) {
 receive_counter = 0;
 
@@ -9103,8 +9104,10 @@ search_index += received[3];
 
 pixel_index_array =
 pin[search_index].led_address / 8;
+__nop();
 pixel_index_bit =
 pin[search_index].led_address % 8;
+__nop();
 if(received[4] == '1'){
 pixels[pixel_index_array] |=
 (1 << pixel_index_bit);
@@ -9112,21 +9115,30 @@ pixels[pixel_index_array] |=
 pixels[pixel_index_array] &=
 ~(1 << pixel_index_bit);
 }
-if(received[5] == '1') {
-Set_Display('7', 'P', (received[1] + 1));
+
+if(received[5] == '0') {
+Set_Display('7', 'P', received[1]);
+Delay_Routine(10);
+Set_Display('7', 'T',0);
+}
+
+__nop();
+if(check_counter < 30 && testflag == 1) {
+check_counter++;
+Check_Detonators();
+if(check_counter > 29) {
+Set_Display('7', 'T',0);
+check_counter = 0;
+testflag = 0;
+}
+}else {
+check_counter = 0;
+testflag = 0;
 }
 }
 }
 } else {
 Receive_Dump();
-}
-__nop();
-if(check_counter < 30 && testflag == 1) {
-check_counter++;
-Check_Detonators();
-}else {
-check_counter = 0;
-testflag = 0;
 }
 }
 }

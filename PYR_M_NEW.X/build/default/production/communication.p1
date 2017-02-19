@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"43 main.h
+"44 main.h
 [s S1105 `uc 1 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address led_address time ]
 "6564 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
@@ -96,7 +96,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXSTA1bits `VS598 ~T0 @X0 0 e@4012 ]
 "10736
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
-"10813
+[v F7486 `(v ~T0 @X0 1 tf1`ul ]
+"152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v __delay `JF7486 ~T0 @X0 0 e ]
+[p i __delay ]
+"10813 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f23k22.h
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
 "18829
 [v _SSP1IF `Vb ~T0 @X0 0 e@31987 ]
@@ -7326,8 +7330,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 8 `i e ]
-[; ;display.h: 28: unsigned char pixels[8];
+[v _pixels `uc ~T0 @X0 -> 7 `i e ]
+[; ;display.h: 28: unsigned char pixels[7];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
@@ -7348,229 +7352,229 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;communication.h: 27: bit overrun = 0;
-"41 main.h
+"42 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready
 -> 0 `i
 ]
-[; ;main.h: 41: bit ignite_ready = 0;
-[; ;main.h: 43: typedef struct Slave_Output
-[; ;main.h: 44: {
-[; ;main.h: 45: unsigned char slave;
-[; ;main.h: 46: unsigned char output;
-[; ;main.h: 47: unsigned char address;
-[; ;main.h: 48: unsigned char led_address;
-[; ;main.h: 49: signed int time;
-[; ;main.h: 50: }sl_out;
-"52
+[; ;main.h: 42: bit ignite_ready = 0;
+[; ;main.h: 44: typedef struct Slave_Output
+[; ;main.h: 45: {
+[; ;main.h: 46: unsigned char slave;
+[; ;main.h: 47: unsigned char output;
+[; ;main.h: 48: unsigned char address;
+[; ;main.h: 49: unsigned char led_address;
+[; ;main.h: 50: signed int time;
+[; ;main.h: 51: }sl_out;
+"53
 [v _pin `S1105 ~T0 @X0 -> 0 `x e ]
 [i _pin
 :U ..
 :U ..
-"54
+"55
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 31 `i `uc
 ..
 :U ..
-"55
+"56
 -> -> 0 `i `uc
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 30 `i `uc
 ..
 :U ..
-"56
+"57
 -> -> 0 `i `uc
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 29 `i `uc
 ..
 :U ..
-"57
+"58
 -> -> 0 `i `uc
 -> -> 3 `i `uc
 -> -> 3 `i `uc
 -> -> 28 `i `uc
 ..
 :U ..
-"58
+"59
 -> -> 0 `i `uc
 -> -> 4 `i `uc
 -> -> 4 `i `uc
 -> -> 27 `i `uc
 ..
 :U ..
-"59
+"60
 -> -> 0 `i `uc
 -> -> 5 `i `uc
 -> -> 5 `i `uc
 -> -> 26 `i `uc
 ..
 :U ..
-"60
+"61
 -> -> 0 `i `uc
 -> -> 6 `i `uc
 -> -> 6 `i `uc
 -> -> 25 `i `uc
 ..
 :U ..
-"61
+"62
 -> -> 0 `i `uc
 -> -> 7 `i `uc
 -> -> 7 `i `uc
 -> -> 24 `i `uc
 ..
 :U ..
-"62
+"63
 -> -> 0 `i `uc
 -> -> 8 `i `uc
 -> -> 8 `i `uc
 -> -> 39 `i `uc
 ..
 :U ..
-"63
+"64
 -> -> 0 `i `uc
 -> -> 9 `i `uc
 -> -> 9 `i `uc
 -> -> 38 `i `uc
 ..
 :U ..
-"64
+"65
 -> -> 1 `i `uc
 -> -> 0 `i `uc
 -> -> 10 `i `uc
 -> -> 37 `i `uc
 ..
 :U ..
-"65
+"66
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 11 `i `uc
 -> -> 36 `i `uc
 ..
 :U ..
-"66
+"67
 -> -> 1 `i `uc
 -> -> 2 `i `uc
 -> -> 12 `i `uc
 -> -> 35 `i `uc
 ..
 :U ..
-"67
+"68
 -> -> 1 `i `uc
 -> -> 3 `i `uc
 -> -> 13 `i `uc
 -> -> 34 `i `uc
 ..
 :U ..
-"68
+"69
 -> -> 1 `i `uc
 -> -> 4 `i `uc
 -> -> 14 `i `uc
 -> -> 33 `i `uc
 ..
 :U ..
-"69
+"70
 -> -> 1 `i `uc
 -> -> 5 `i `uc
 -> -> 15 `i `uc
 -> -> 32 `i `uc
 ..
 :U ..
-"70
+"71
 -> -> 1 `i `uc
 -> -> 6 `i `uc
 -> -> 16 `i `uc
 -> -> 47 `i `uc
 ..
 :U ..
-"71
+"72
 -> -> 1 `i `uc
 -> -> 7 `i `uc
 -> -> 17 `i `uc
 -> -> 46 `i `uc
 ..
 :U ..
-"72
+"73
 -> -> 1 `i `uc
 -> -> 8 `i `uc
 -> -> 18 `i `uc
 -> -> 45 `i `uc
 ..
 :U ..
-"73
+"74
 -> -> 1 `i `uc
 -> -> 9 `i `uc
 -> -> 19 `i `uc
 -> -> 44 `i `uc
 ..
 :U ..
-"74
+"75
 -> -> 2 `i `uc
 -> -> 0 `i `uc
 -> -> 20 `i `uc
 -> -> 43 `i `uc
 ..
 :U ..
-"75
+"76
 -> -> 2 `i `uc
 -> -> 1 `i `uc
 -> -> 21 `i `uc
 -> -> 42 `i `uc
 ..
 :U ..
-"76
+"77
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 22 `i `uc
 -> -> 41 `i `uc
 ..
 :U ..
-"77
+"78
 -> -> 2 `i `uc
 -> -> 3 `i `uc
 -> -> 23 `i `uc
 -> -> 40 `i `uc
 ..
 :U ..
-"78
+"79
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> 24 `i `uc
 -> -> 53 `i `uc
 ..
 :U ..
-"79
+"80
 -> -> 2 `i `uc
 -> -> 5 `i `uc
 -> -> 25 `i `uc
 -> -> 52 `i `uc
 ..
 :U ..
-"80
+"81
 -> -> 2 `i `uc
 -> -> 6 `i `uc
 -> -> 26 `i `uc
 -> -> 51 `i `uc
 ..
 :U ..
-"81
+"82
 -> -> 2 `i `uc
 -> -> 7 `i `uc
 -> -> 27 `i `uc
 -> -> 50 `i `uc
 ..
 :U ..
-"82
+"83
 -> -> 2 `i `uc
 -> -> 8 `i `uc
 -> -> 28 `i `uc
 -> -> 49 `i `uc
 ..
 :U ..
-"83
+"84
 -> -> 2 `i `uc
 -> -> 9 `i `uc
 -> -> 29 `i `uc
@@ -7578,40 +7582,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;main.h: 52: sl_out pin[] =
-[; ;main.h: 53: {
-[; ;main.h: 54: {0, 0, 0, 31, },
-[; ;main.h: 55: {0, 1, 1, 30, },
-[; ;main.h: 56: {0, 2, 2, 29, },
-[; ;main.h: 57: {0, 3, 3, 28, },
-[; ;main.h: 58: {0, 4, 4, 27, },
-[; ;main.h: 59: {0, 5, 5, 26, },
-[; ;main.h: 60: {0, 6, 6, 25, },
-[; ;main.h: 61: {0, 7, 7, 24, },
-[; ;main.h: 62: {0, 8, 8, 39, },
-[; ;main.h: 63: {0, 9, 9, 38, },
-[; ;main.h: 64: {1, 0, 10, 37, },
-[; ;main.h: 65: {1, 1, 11, 36, },
-[; ;main.h: 66: {1, 2, 12, 35, },
-[; ;main.h: 67: {1, 3, 13, 34, },
-[; ;main.h: 68: {1, 4, 14, 33, },
-[; ;main.h: 69: {1, 5, 15, 32, },
-[; ;main.h: 70: {1, 6, 16, 47, },
-[; ;main.h: 71: {1, 7, 17, 46, },
-[; ;main.h: 72: {1, 8, 18, 45, },
-[; ;main.h: 73: {1, 9, 19, 44, },
-[; ;main.h: 74: {2, 0, 20, 43, },
-[; ;main.h: 75: {2, 1, 21, 42, },
-[; ;main.h: 76: {2, 2, 22, 41, },
-[; ;main.h: 77: {2, 3, 23, 40, },
-[; ;main.h: 78: {2, 4, 24, 53, },
-[; ;main.h: 79: {2, 5, 25, 52, },
-[; ;main.h: 80: {2, 6, 26, 51, },
-[; ;main.h: 81: {2, 7, 27, 50, },
-[; ;main.h: 82: {2, 8, 28, 49, },
-[; ;main.h: 83: {2, 9, 29, 48, },
-[; ;main.h: 84: };
-[; ;main.h: 110: void Delay_Routine(unsigned char delay_multiplyer);
+[; ;main.h: 53: sl_out pin[] =
+[; ;main.h: 54: {
+[; ;main.h: 55: {0, 0, 0, 31, },
+[; ;main.h: 56: {0, 1, 1, 30, },
+[; ;main.h: 57: {0, 2, 2, 29, },
+[; ;main.h: 58: {0, 3, 3, 28, },
+[; ;main.h: 59: {0, 4, 4, 27, },
+[; ;main.h: 60: {0, 5, 5, 26, },
+[; ;main.h: 61: {0, 6, 6, 25, },
+[; ;main.h: 62: {0, 7, 7, 24, },
+[; ;main.h: 63: {0, 8, 8, 39, },
+[; ;main.h: 64: {0, 9, 9, 38, },
+[; ;main.h: 65: {1, 0, 10, 37, },
+[; ;main.h: 66: {1, 1, 11, 36, },
+[; ;main.h: 67: {1, 2, 12, 35, },
+[; ;main.h: 68: {1, 3, 13, 34, },
+[; ;main.h: 69: {1, 4, 14, 33, },
+[; ;main.h: 70: {1, 5, 15, 32, },
+[; ;main.h: 71: {1, 6, 16, 47, },
+[; ;main.h: 72: {1, 7, 17, 46, },
+[; ;main.h: 73: {1, 8, 18, 45, },
+[; ;main.h: 74: {1, 9, 19, 44, },
+[; ;main.h: 75: {2, 0, 20, 43, },
+[; ;main.h: 76: {2, 1, 21, 42, },
+[; ;main.h: 77: {2, 2, 22, 41, },
+[; ;main.h: 78: {2, 3, 23, 40, },
+[; ;main.h: 79: {2, 4, 24, 53, },
+[; ;main.h: 80: {2, 5, 25, 52, },
+[; ;main.h: 81: {2, 6, 26, 51, },
+[; ;main.h: 82: {2, 7, 27, 50, },
+[; ;main.h: 83: {2, 8, 28, 49, },
+[; ;main.h: 84: {2, 9, 29, 48, },
+[; ;main.h: 85: };
+[; ;main.h: 111: void Delay_Routine(unsigned char delay_multiplyer);
 [; ;interrupt.h: 16: void interrupt Isr(void);
 "23 interrupt.h
 [v _received `uc ~T0 @X0 -> 6 `i e ]
@@ -7670,175 +7674,190 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1110 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1111  ]
 [e :U 1112 ]
-[; ;communication.c: 25: TXREG1 = 0xAA;
+[; ;communication.c: 25: TXSTA1bits.TX9D = 0;
 "25
-[e = _TXREG1 -> -> 170 `i `uc ]
-[; ;communication.c: 26: while(PIR1bits.TXIF == 0);
+[e = . . _TXSTA1bits 0 0 -> -> 0 `i `uc ]
+[; ;communication.c: 26: _delay((unsigned long)((1)*(4000000/4000.0)));
 "26
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 27: TXREG1 = 0xAA;
+"27
+[e = _TXREG1 -> -> 170 `i `uc ]
+[; ;communication.c: 28: while(PIR1bits.TXIF == 0);
+"28
 [e $U 1113  ]
 [e :U 1114 ]
 [e :U 1113 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1114  ]
 [e :U 1115 ]
-[; ;communication.c: 27: TXREG1 = operation;
-"27
+[; ;communication.c: 29: _delay((unsigned long)((1)*(4000000/4000.0)));
+"29
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 30: TXREG1 = operation;
+"30
 [e = _TXREG1 _operation ]
-[; ;communication.c: 28: while(PIR1bits.TXIF == 0);
-"28
+[; ;communication.c: 31: while(PIR1bits.TXIF == 0);
+"31
 [e $U 1116  ]
 [e :U 1117 ]
 [e :U 1116 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1117  ]
 [e :U 1118 ]
-[; ;communication.c: 29: TXREG1 = port;
-"29
+[; ;communication.c: 32: _delay((unsigned long)((1)*(4000000/4000.0)));
+"32
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 33: TXREG1 = port;
+"33
 [e = _TXREG1 _port ]
-[; ;communication.c: 30: while(TXSTA1bits.TRMT == 0);
-"30
+[; ;communication.c: 34: while(TXSTA1bits.TRMT == 0);
+"34
 [e $U 1119  ]
 [e :U 1120 ]
 [e :U 1119 ]
 [e $ == -> . . _TXSTA1bits 0 1 `i -> 0 `i 1120  ]
 [e :U 1121 ]
-[; ;communication.c: 31: PORTBbits.RB5 = 0;
-"31
+[; ;communication.c: 35: _delay((unsigned long)((1)*(4000000/4000.0)));
+"35
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 36: PORTBbits.RB5 = 0;
+"36
 [e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;communication.c: 32: RCSTA1bits.CREN = 1;
-"32
+[; ;communication.c: 37: RCSTA1bits.CREN = 1;
+"37
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 33: __nop();
-"33
+[; ;communication.c: 38: __nop();
+"38
 [e ( ___nop ..  ]
-[; ;communication.c: 34: }
-"34
+[; ;communication.c: 39: }
+"39
 [e :UE 1106 ]
 }
-"37
+"42
 [v _Receive `(uc ~T0 @X0 1 ef ]
 {
-[; ;communication.c: 37: unsigned char Receive(void) {
+[; ;communication.c: 42: unsigned char Receive(void) {
 [e :U _Receive ]
 [f ]
-[; ;communication.c: 38: if(RCSTA1bits.OERR == 1) {
-"38
+[; ;communication.c: 43: if(RCSTA1bits.OERR == 1) {
+"43
 [e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1123  ]
 {
-[; ;communication.c: 39: RCSTA1bits.CREN = 0;
-"39
+[; ;communication.c: 44: RCSTA1bits.CREN = 0;
+"44
 [e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;communication.c: 40: RCSTA1bits.CREN = 1;
-"40
+[; ;communication.c: 45: RCSTA1bits.CREN = 1;
+"45
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 41: overrun = 1;
-"41
+[; ;communication.c: 46: overrun = 1;
+"46
 [e = _overrun -> -> 1 `i `b ]
-"42
+"47
 }
 [e :U 1123 ]
-[; ;communication.c: 42: }
-[; ;communication.c: 43: return (RCREG1);
-"43
+[; ;communication.c: 47: }
+[; ;communication.c: 48: return (RCREG1);
+"48
 [e ) _RCREG1 ]
 [e $UE 1122  ]
-[; ;communication.c: 44: }
-"44
+[; ;communication.c: 49: }
+"49
 [e :UE 1122 ]
 }
-"46
+"51
 [v _Receive_Dump `(v ~T0 @X0 1 ef ]
 {
-[; ;communication.c: 46: void Receive_Dump(void) {
+[; ;communication.c: 51: void Receive_Dump(void) {
 [e :U _Receive_Dump ]
 [f ]
-"47
+"52
 [v _dump `uc ~T0 @X0 1 a ]
-[; ;communication.c: 47: unsigned char dump;
-[; ;communication.c: 48: if(RCSTA1bits.OERR == 1) {
-"48
+[; ;communication.c: 52: unsigned char dump;
+[; ;communication.c: 53: if(RCSTA1bits.OERR == 1) {
+"53
 [e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1125  ]
 {
-[; ;communication.c: 49: RCSTA1bits.CREN = 0;
-"49
+[; ;communication.c: 54: RCSTA1bits.CREN = 0;
+"54
 [e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;communication.c: 50: RCSTA1bits.CREN = 1;
-"50
+[; ;communication.c: 55: RCSTA1bits.CREN = 1;
+"55
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 51: overrun = 1;
-"51
+[; ;communication.c: 56: overrun = 1;
+"56
 [e = _overrun -> -> 1 `i `b ]
-"52
+"57
 }
 [e :U 1125 ]
-[; ;communication.c: 52: }
-[; ;communication.c: 53: dump = RCREG1;
-"53
+[; ;communication.c: 57: }
+[; ;communication.c: 58: dump = RCREG1;
+"58
 [e = _dump _RCREG1 ]
-[; ;communication.c: 54: }
-"54
+[; ;communication.c: 59: }
+"59
 [e :UE 1124 ]
 }
-"56
+"61
 [v _Write_Display_Byte `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;communication.c: 56: void Write_Display_Byte(unsigned char *write_data) {
+[; ;communication.c: 61: void Write_Display_Byte(unsigned char *write_data) {
 [e :U _Write_Display_Byte ]
 [v _write_data `*uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;communication.c: 57: for(unsigned char counter = sizeof(pixels); counter > 0;
-"57
+[; ;communication.c: 62: for(unsigned char counter = sizeof(pixels); counter > 0;
+"62
 {
 [v _counter `uc ~T0 @X0 1 a ]
 [e = _counter -> -> # _pixels `ui `uc ]
-[; ;communication.c: 58: counter--) {
+[; ;communication.c: 63: counter--) {
 [e $ > -> _counter `i -> 0 `i 1127  ]
 [e $U 1128  ]
-"58
+"63
 [e :U 1127 ]
 {
-[; ;communication.c: 59: if(SSP1IF = 1) {
-"59
+[; ;communication.c: 64: if(SSP1IF = 1) {
+"64
 [e $ ! = _SSP1IF -> -> 1 `i `b 1130  ]
 {
-[; ;communication.c: 60: SSP1IF = 0;
-"60
+[; ;communication.c: 65: SSP1IF = 0;
+"65
 [e = _SSP1IF -> -> 0 `i `b ]
-"61
+"66
 }
 [e :U 1130 ]
-[; ;communication.c: 61: }
-[; ;communication.c: 62: SSP1BUF = write_data[counter - 1];
-"62
+[; ;communication.c: 66: }
+[; ;communication.c: 67: SSP1BUF = write_data[counter - 1];
+"67
 [e = _SSP1BUF *U + _write_data * -> - -> _counter `i -> 1 `i `x -> -> # *U _write_data `i `x ]
-[; ;communication.c: 63: while (SSP1IF == 0);
-"63
+[; ;communication.c: 68: while (SSP1IF == 0);
+"68
 [e $U 1131  ]
 [e :U 1132 ]
 [e :U 1131 ]
 [e $ == -> _SSP1IF `i -> 0 `i 1132  ]
 [e :U 1133 ]
-[; ;communication.c: 64: SSP1IF = 0;
-"64
+[; ;communication.c: 69: SSP1IF = 0;
+"69
 [e = _SSP1IF -> -> 0 `i `b ]
-[; ;communication.c: 65: PORTCbits.RC0 = 0;
-"65
+[; ;communication.c: 70: PORTCbits.RC0 = 0;
+"70
 [e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-[; ;communication.c: 66: PORTCbits.RC0 = 1;
-"66
+[; ;communication.c: 71: PORTCbits.RC0 = 1;
+"71
 [e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;communication.c: 67: PORTCbits.RC0 = 0;
-"67
+[; ;communication.c: 72: PORTCbits.RC0 = 0;
+"72
 [e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-"68
+"73
 }
-"58
+"63
 [e -- _counter -> -> 1 `i `uc ]
-"57
+"62
 [e $ > -> _counter `i -> 0 `i 1127  ]
 [e :U 1128 ]
-"68
+"73
 }
-[; ;communication.c: 68: }
-[; ;communication.c: 69: }
-"69
+[; ;communication.c: 73: }
+[; ;communication.c: 74: }
+"74
 [e :UE 1126 ]
 }

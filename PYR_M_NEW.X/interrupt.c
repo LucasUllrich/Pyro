@@ -20,6 +20,7 @@ void interrupt Isr(void) {
         TMR1H = 0;
     }
     if(PIR1bits.RCIF == 1) {            // detecting reception over UART
+        NOP();
         if(RCSTAbits.RX9D == 1) {       // an address is sent
             receive_counter = 0;        // restart counting of reception
                                         // bytes
@@ -51,8 +52,10 @@ void interrupt Isr(void) {
                             // To address the port
                     pixel_index_array = 
                             pin[search_index].led_address / 8;
+                    NOP();
                     pixel_index_bit = 
                             pin[search_index].led_address % 8;
+                    NOP();
                     if(received[4] == '1'){
                         pixels[pixel_index_array] |= 
                                 (1 << pixel_index_bit);
@@ -60,21 +63,30 @@ void interrupt Isr(void) {
                         pixels[pixel_index_array] &= 
                                 ~(1 << pixel_index_bit);
                     }
-                    if(received[5] == '1') {
-                        Set_Display('7', 'P', (received[1] + 1));
+#ifdef CHECK_POWER
+                    if(received[5] == '0') {
+                        Set_Display('7', 'P', received[1]);
+                        Delay_Routine(10);
+                        Set_Display('7', 'T',0);
+                    }
+#endif
+                    NOP();
+                    if(check_counter < 30 && testflag == 1) {
+                        check_counter++;
+                        Check_Detonators();
+                        if(check_counter > 29) {
+                            Set_Display('7', 'T',0);
+                            check_counter = 0;
+                            testflag = 0;
+                        }
+                    }else {
+                        check_counter = 0;
+                        testflag = 0;
                     }
                 }
             }
         } else {
             Receive_Dump();
-        }
-        NOP();
-        if(check_counter < 30 && testflag == 1) {
-            check_counter++;
-            Check_Detonators();
-        }else {
-            check_counter = 0;
-            testflag = 0;
         }
     }
 }

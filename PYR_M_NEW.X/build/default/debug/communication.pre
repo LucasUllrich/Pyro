@@ -8981,7 +8981,7 @@ void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
 
 # 28
-unsigned char pixels[8];
+unsigned char pixels[7];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 
@@ -8995,7 +8995,7 @@ void Write_Display_Byte(unsigned char *write_data);
 # 27
 bit overrun = 0;
 
-# 41 "main.h"
+# 42 "main.h"
 bit ignite_ready = 0;
 
 typedef struct Slave_Output
@@ -9041,7 +9041,7 @@ sl_out pin[] =
 {2, 9, 29, 48, },
 };
 
-# 110
+# 111
 void Delay_Routine(unsigned char delay_multiplyer);
 
 # 16 "interrupt.h"
@@ -9063,12 +9063,17 @@ while(PIR1bits.TXIF == 0);
 TXSTA1bits.TX9D = 1;
 TXREG1 = receiver;
 while(PIR1bits.TXIF == 0);
+TXSTA1bits.TX9D = 0;
+_delay((unsigned long)((1)*(4000000/4000.0)));
 TXREG1 = 0xAA;
 while(PIR1bits.TXIF == 0);
+_delay((unsigned long)((1)*(4000000/4000.0)));
 TXREG1 = operation;
 while(PIR1bits.TXIF == 0);
+_delay((unsigned long)((1)*(4000000/4000.0)));
 TXREG1 = port;
 while(TXSTA1bits.TRMT == 0);
+_delay((unsigned long)((1)*(4000000/4000.0)));
 PORTBbits.RB5 = 0;
 RCSTA1bits.CREN = 1;
 __nop();
@@ -9101,7 +9106,7 @@ if(SSP1IF = 1) {
 SSP1IF = 0;
 }
 SSP1BUF = write_data[counter - 1];
-
+while (SSP1IF == 0);
 SSP1IF = 0;
 PORTCbits.RC0 = 0;
 PORTCbits.RC0 = 1;

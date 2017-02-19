@@ -95,6 +95,9 @@ void Check_Buttons(void) {
                 Delay_Routine(3);
                 if(Slave_Up == 1) {
                     testflag = 1;
+                    Set_Display('7', 'T',0);
+                    Delay_Routine(30);
+                    Check_Detonators();
                     return;             // End of function due to other
                                         // desired operation
                 }
@@ -134,6 +137,9 @@ void Check_Buttons(void) {
                 Delay_Routine(3);
                 if(Port_Up == 1) {
                     testflag = 1;
+                    Set_Display('7', 'T',0);
+                    Delay_Routine(30);
+                    Check_Detonators();
                     return;             // End of function due to other
                                         // desired operation
                 }

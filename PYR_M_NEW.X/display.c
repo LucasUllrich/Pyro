@@ -105,6 +105,9 @@ void Evaluate_Display(unsigned char size, unsigned char *evaluate) {
             case '-':
                 Set_Bits("G");
                 break;
+            case 'T':
+                Set_Bits("BCDEF");
+                break;
             default:
                 Set_Bits("0");
         }

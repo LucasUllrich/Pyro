@@ -8981,7 +8981,7 @@ void Set_Display(unsigned char type, unsigned char information,
 unsigned int value);
 
 # 28
-unsigned char pixels[8];
+unsigned char pixels[7];
 unsigned char signs[3];
 unsigned char display_counter = 0;
 
@@ -8995,7 +8995,7 @@ void Write_Display_Byte(unsigned char *write_data);
 # 27
 bit overrun = 0;
 
-# 41 "main.h"
+# 42 "main.h"
 bit ignite_ready = 0;
 
 typedef struct Slave_Output
@@ -9041,7 +9041,7 @@ sl_out pin[] =
 {2, 9, 29, 48, },
 };
 
-# 110
+# 111
 void Delay_Routine(unsigned char delay_multiplyer);
 
 # 12 "display.c"
@@ -9135,13 +9135,16 @@ break;
 case '-':
 Set_Bits("G");
 break;
+case 'T':
+Set_Bits("BCDEF");
+break;
 default:
 Set_Bits("0");
 }
 }
 }
 
-# 119
+# 122
 void Evaluate_Signs(unsigned int evaluation_value) {
 for(unsigned char valuecounter = sizeof(signs); valuecounter > 0;
 valuecounter--) {
@@ -9153,7 +9156,7 @@ __nop();
 Evaluate_Display(sizeof(signs), signs);
 }
 
-# 139
+# 142
 void Set_Display(unsigned char type, unsigned char information,
 unsigned int value) {
 switch (type) {

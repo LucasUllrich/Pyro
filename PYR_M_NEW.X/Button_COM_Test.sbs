@@ -1,0 +1,117 @@
+## SCL Builder Setup File: Do not edit!!
+
+## VERSION: MPLAB X
+## FORMAT:  v2.00.01
+## DEVICE:  PIC18F23K22
+
+## PINREGACTIONS
+cyc
+No Repeat
+--
+&
+## ADVPINREGACTIONS
+--
+&
+--
+COND2
+Any
+
+
+
+0
+cyc
+
+--
+&
+## CLOCK
+&
+## STIMULUSFILE
+
+RCREG1
+Message
+
+2
+C:\Pyro_Git\Pyro\Master_full_reception_test.txt
+Pkt
+Yes
+
+--
+&
+## RESPONSEFILE
+&
+## ASYNCH
+Pin
+RB0
+Pulse High
+20 ms
+Slave
+3
+--
+Pin
+RB1
+Pulse High
+20 ms
+Port
+3
+--
+Pin
+RB2
+Pulse High
+20 ms
+T+
+3
+--
+Pin
+RB3
+Pulse High
+20 ms
+T-
+3
+--
+Pin
+RB4
+Pulse High
+20 ms
+T+10
+3
+--
+Pin
+RC1
+Pulse High
+20 ms
+Ignite
+3
+--
+Pin
+RB2
+Set High
+
+
+-1
+--
+Pin
+RB2
+Set Low
+
+
+-1
+--
+Pin
+RB3
+Set High
+
+
+-1
+--
+Pin
+RB3
+Set Low
+
+
+-1
+--
+&
+## ADVANCEDSCL
+
+0
+&

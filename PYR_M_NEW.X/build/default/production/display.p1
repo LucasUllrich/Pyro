@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"43 main.h
+"44 main.h
 [s S1105 `uc 1 `uc 1 `uc 1 `uc 1 `i 1 ]
 [n S1105 Slave_Output slave output address led_address time ]
 "43 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
@@ -7196,8 +7196,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 19: void Set_Display(unsigned char type, unsigned char information,
 [; ;display.h: 20: unsigned int value);
 "28 display.h
-[v _pixels `uc ~T0 @X0 -> 8 `i e ]
-[; ;display.h: 28: unsigned char pixels[8];
+[v _pixels `uc ~T0 @X0 -> 7 `i e ]
+[; ;display.h: 28: unsigned char pixels[7];
 "29
 [v _signs `uc ~T0 @X0 -> 3 `i e ]
 [; ;display.h: 29: unsigned char signs[3];
@@ -7218,229 +7218,229 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;communication.h: 27: bit overrun = 0;
-"41 main.h
+"42 main.h
 [v _ignite_ready `b ~T0 @X0 1 e ]
 [i _ignite_ready
 -> 0 `i
 ]
-[; ;main.h: 41: bit ignite_ready = 0;
-[; ;main.h: 43: typedef struct Slave_Output
-[; ;main.h: 44: {
-[; ;main.h: 45: unsigned char slave;
-[; ;main.h: 46: unsigned char output;
-[; ;main.h: 47: unsigned char address;
-[; ;main.h: 48: unsigned char led_address;
-[; ;main.h: 49: signed int time;
-[; ;main.h: 50: }sl_out;
-"52
+[; ;main.h: 42: bit ignite_ready = 0;
+[; ;main.h: 44: typedef struct Slave_Output
+[; ;main.h: 45: {
+[; ;main.h: 46: unsigned char slave;
+[; ;main.h: 47: unsigned char output;
+[; ;main.h: 48: unsigned char address;
+[; ;main.h: 49: unsigned char led_address;
+[; ;main.h: 50: signed int time;
+[; ;main.h: 51: }sl_out;
+"53
 [v _pin `S1105 ~T0 @X0 -> 0 `x e ]
 [i _pin
 :U ..
 :U ..
-"54
+"55
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 31 `i `uc
 ..
 :U ..
-"55
+"56
 -> -> 0 `i `uc
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 30 `i `uc
 ..
 :U ..
-"56
+"57
 -> -> 0 `i `uc
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 29 `i `uc
 ..
 :U ..
-"57
+"58
 -> -> 0 `i `uc
 -> -> 3 `i `uc
 -> -> 3 `i `uc
 -> -> 28 `i `uc
 ..
 :U ..
-"58
+"59
 -> -> 0 `i `uc
 -> -> 4 `i `uc
 -> -> 4 `i `uc
 -> -> 27 `i `uc
 ..
 :U ..
-"59
+"60
 -> -> 0 `i `uc
 -> -> 5 `i `uc
 -> -> 5 `i `uc
 -> -> 26 `i `uc
 ..
 :U ..
-"60
+"61
 -> -> 0 `i `uc
 -> -> 6 `i `uc
 -> -> 6 `i `uc
 -> -> 25 `i `uc
 ..
 :U ..
-"61
+"62
 -> -> 0 `i `uc
 -> -> 7 `i `uc
 -> -> 7 `i `uc
 -> -> 24 `i `uc
 ..
 :U ..
-"62
+"63
 -> -> 0 `i `uc
 -> -> 8 `i `uc
 -> -> 8 `i `uc
 -> -> 39 `i `uc
 ..
 :U ..
-"63
+"64
 -> -> 0 `i `uc
 -> -> 9 `i `uc
 -> -> 9 `i `uc
 -> -> 38 `i `uc
 ..
 :U ..
-"64
+"65
 -> -> 1 `i `uc
 -> -> 0 `i `uc
 -> -> 10 `i `uc
 -> -> 37 `i `uc
 ..
 :U ..
-"65
+"66
 -> -> 1 `i `uc
 -> -> 1 `i `uc
 -> -> 11 `i `uc
 -> -> 36 `i `uc
 ..
 :U ..
-"66
+"67
 -> -> 1 `i `uc
 -> -> 2 `i `uc
 -> -> 12 `i `uc
 -> -> 35 `i `uc
 ..
 :U ..
-"67
+"68
 -> -> 1 `i `uc
 -> -> 3 `i `uc
 -> -> 13 `i `uc
 -> -> 34 `i `uc
 ..
 :U ..
-"68
+"69
 -> -> 1 `i `uc
 -> -> 4 `i `uc
 -> -> 14 `i `uc
 -> -> 33 `i `uc
 ..
 :U ..
-"69
+"70
 -> -> 1 `i `uc
 -> -> 5 `i `uc
 -> -> 15 `i `uc
 -> -> 32 `i `uc
 ..
 :U ..
-"70
+"71
 -> -> 1 `i `uc
 -> -> 6 `i `uc
 -> -> 16 `i `uc
 -> -> 47 `i `uc
 ..
 :U ..
-"71
+"72
 -> -> 1 `i `uc
 -> -> 7 `i `uc
 -> -> 17 `i `uc
 -> -> 46 `i `uc
 ..
 :U ..
-"72
+"73
 -> -> 1 `i `uc
 -> -> 8 `i `uc
 -> -> 18 `i `uc
 -> -> 45 `i `uc
 ..
 :U ..
-"73
+"74
 -> -> 1 `i `uc
 -> -> 9 `i `uc
 -> -> 19 `i `uc
 -> -> 44 `i `uc
 ..
 :U ..
-"74
+"75
 -> -> 2 `i `uc
 -> -> 0 `i `uc
 -> -> 20 `i `uc
 -> -> 43 `i `uc
 ..
 :U ..
-"75
+"76
 -> -> 2 `i `uc
 -> -> 1 `i `uc
 -> -> 21 `i `uc
 -> -> 42 `i `uc
 ..
 :U ..
-"76
+"77
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 22 `i `uc
 -> -> 41 `i `uc
 ..
 :U ..
-"77
+"78
 -> -> 2 `i `uc
 -> -> 3 `i `uc
 -> -> 23 `i `uc
 -> -> 40 `i `uc
 ..
 :U ..
-"78
+"79
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> 24 `i `uc
 -> -> 53 `i `uc
 ..
 :U ..
-"79
+"80
 -> -> 2 `i `uc
 -> -> 5 `i `uc
 -> -> 25 `i `uc
 -> -> 52 `i `uc
 ..
 :U ..
-"80
+"81
 -> -> 2 `i `uc
 -> -> 6 `i `uc
 -> -> 26 `i `uc
 -> -> 51 `i `uc
 ..
 :U ..
-"81
+"82
 -> -> 2 `i `uc
 -> -> 7 `i `uc
 -> -> 27 `i `uc
 -> -> 50 `i `uc
 ..
 :U ..
-"82
+"83
 -> -> 2 `i `uc
 -> -> 8 `i `uc
 -> -> 28 `i `uc
 -> -> 49 `i `uc
 ..
 :U ..
-"83
+"84
 -> -> 2 `i `uc
 -> -> 9 `i `uc
 -> -> 29 `i `uc
@@ -7448,40 +7448,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;main.h: 52: sl_out pin[] =
-[; ;main.h: 53: {
-[; ;main.h: 54: {0, 0, 0, 31, },
-[; ;main.h: 55: {0, 1, 1, 30, },
-[; ;main.h: 56: {0, 2, 2, 29, },
-[; ;main.h: 57: {0, 3, 3, 28, },
-[; ;main.h: 58: {0, 4, 4, 27, },
-[; ;main.h: 59: {0, 5, 5, 26, },
-[; ;main.h: 60: {0, 6, 6, 25, },
-[; ;main.h: 61: {0, 7, 7, 24, },
-[; ;main.h: 62: {0, 8, 8, 39, },
-[; ;main.h: 63: {0, 9, 9, 38, },
-[; ;main.h: 64: {1, 0, 10, 37, },
-[; ;main.h: 65: {1, 1, 11, 36, },
-[; ;main.h: 66: {1, 2, 12, 35, },
-[; ;main.h: 67: {1, 3, 13, 34, },
-[; ;main.h: 68: {1, 4, 14, 33, },
-[; ;main.h: 69: {1, 5, 15, 32, },
-[; ;main.h: 70: {1, 6, 16, 47, },
-[; ;main.h: 71: {1, 7, 17, 46, },
-[; ;main.h: 72: {1, 8, 18, 45, },
-[; ;main.h: 73: {1, 9, 19, 44, },
-[; ;main.h: 74: {2, 0, 20, 43, },
-[; ;main.h: 75: {2, 1, 21, 42, },
-[; ;main.h: 76: {2, 2, 22, 41, },
-[; ;main.h: 77: {2, 3, 23, 40, },
-[; ;main.h: 78: {2, 4, 24, 53, },
-[; ;main.h: 79: {2, 5, 25, 52, },
-[; ;main.h: 80: {2, 6, 26, 51, },
-[; ;main.h: 81: {2, 7, 27, 50, },
-[; ;main.h: 82: {2, 8, 28, 49, },
-[; ;main.h: 83: {2, 9, 29, 48, },
-[; ;main.h: 84: };
-[; ;main.h: 110: void Delay_Routine(unsigned char delay_multiplyer);
+[; ;main.h: 53: sl_out pin[] =
+[; ;main.h: 54: {
+[; ;main.h: 55: {0, 0, 0, 31, },
+[; ;main.h: 56: {0, 1, 1, 30, },
+[; ;main.h: 57: {0, 2, 2, 29, },
+[; ;main.h: 58: {0, 3, 3, 28, },
+[; ;main.h: 59: {0, 4, 4, 27, },
+[; ;main.h: 60: {0, 5, 5, 26, },
+[; ;main.h: 61: {0, 6, 6, 25, },
+[; ;main.h: 62: {0, 7, 7, 24, },
+[; ;main.h: 63: {0, 8, 8, 39, },
+[; ;main.h: 64: {0, 9, 9, 38, },
+[; ;main.h: 65: {1, 0, 10, 37, },
+[; ;main.h: 66: {1, 1, 11, 36, },
+[; ;main.h: 67: {1, 2, 12, 35, },
+[; ;main.h: 68: {1, 3, 13, 34, },
+[; ;main.h: 69: {1, 4, 14, 33, },
+[; ;main.h: 70: {1, 5, 15, 32, },
+[; ;main.h: 71: {1, 6, 16, 47, },
+[; ;main.h: 72: {1, 7, 17, 46, },
+[; ;main.h: 73: {1, 8, 18, 45, },
+[; ;main.h: 74: {1, 9, 19, 44, },
+[; ;main.h: 75: {2, 0, 20, 43, },
+[; ;main.h: 76: {2, 1, 21, 42, },
+[; ;main.h: 77: {2, 2, 22, 41, },
+[; ;main.h: 78: {2, 3, 23, 40, },
+[; ;main.h: 79: {2, 4, 24, 53, },
+[; ;main.h: 80: {2, 5, 25, 52, },
+[; ;main.h: 81: {2, 6, 26, 51, },
+[; ;main.h: 82: {2, 7, 27, 50, },
+[; ;main.h: 83: {2, 8, 28, 49, },
+[; ;main.h: 84: {2, 9, 29, 48, },
+[; ;main.h: 85: };
+[; ;main.h: 111: void Delay_Routine(unsigned char delay_multiplyer);
 "12 display.c
 [v _Set_Bits `(v ~T0 @X0 1 ef1`*Cuc ]
 {
@@ -7787,15 +7787,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.c: 107: break;
 "107
 [e $U 1126  ]
-[; ;display.c: 108: default:
+[; ;display.c: 108: case 'T':
 "108
 [e :U 1145 ]
-[; ;display.c: 109: Set_Bits("0");
+[; ;display.c: 109: Set_Bits("BCDEF");
 "109
 [e ( _Set_Bits (1 :s 18C ]
+[; ;display.c: 110: break;
 "110
+[e $U 1126  ]
+[; ;display.c: 111: default:
+"111
+[e :U 1146 ]
+[; ;display.c: 112: Set_Bits("0");
+"112
+[e ( _Set_Bits (1 :s 19C ]
+"113
 }
-[; ;display.c: 110: }
+[; ;display.c: 113: }
 [e $U 1126  ]
 "56
 [e :U 1127 ]
@@ -7816,10 +7825,11 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 79 `ui `uc 1142
  , $ -> -> 80 `ui `uc 1143
  , $ -> -> 45 `ui `uc 1144
- 1145 ]
-"110
+ , $ -> -> 84 `ui `uc 1145
+ 1146 ]
+"113
 [e :U 1126 ]
-"111
+"114
 }
 "54
 [e -- _display_counter -> -> 1 `i `uc ]
@@ -7827,138 +7837,138 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1125 ]
 [e $ > -> _display_counter `i -> 0 `i 1122  ]
 [e :U 1123 ]
-"111
+"114
 }
-[; ;display.c: 111: }
-[; ;display.c: 112: }
-"112
+[; ;display.c: 114: }
+[; ;display.c: 115: }
+"115
 [e :UE 1121 ]
 }
-"119
+"122
 [v _Evaluate_Signs `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;display.c: 119: void Evaluate_Signs(unsigned int evaluation_value) {
+[; ;display.c: 122: void Evaluate_Signs(unsigned int evaluation_value) {
 [e :U _Evaluate_Signs ]
 [v _evaluation_value `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;display.c: 120: for(unsigned char valuecounter = sizeof(signs); valuecounter > 0;
-"120
+[; ;display.c: 123: for(unsigned char valuecounter = sizeof(signs); valuecounter > 0;
+"123
 {
 [v _valuecounter `uc ~T0 @X0 1 a ]
 [e = _valuecounter -> -> # _signs `ui `uc ]
-[; ;display.c: 121: valuecounter--) {
-[e $ > -> _valuecounter `i -> 0 `i 1147  ]
-[e $U 1148  ]
-"121
-[e :U 1147 ]
-{
-[; ;display.c: 122: signs[(valuecounter - 1)] = evaluation_value % 10;
-"122
-[e = *U + &U _signs * -> -> - -> _valuecounter `i -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
-[; ;display.c: 123: signs[(valuecounter - 1)] += 0x30;
-"123
-[e =+ *U + &U _signs * -> -> - -> _valuecounter `i -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
-[; ;display.c: 124: evaluation_value = evaluation_value / 10;
+[; ;display.c: 124: valuecounter--) {
+[e $ > -> _valuecounter `i -> 0 `i 1148  ]
+[e $U 1149  ]
 "124
-[e = _evaluation_value / _evaluation_value -> -> 10 `i `ui ]
-"125
-}
-"121
-[e -- _valuecounter -> -> 1 `i `uc ]
-"120
-[e $ > -> _valuecounter `i -> 0 `i 1147  ]
 [e :U 1148 ]
-"125
-}
-[; ;display.c: 125: }
-[; ;display.c: 126: __nop();
-"126
-[e ( ___nop ..  ]
-[; ;display.c: 127: Evaluate_Display(sizeof(signs), signs);
-"127
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
-[; ;display.c: 128: }
-"128
-[e :UE 1146 ]
-}
-"139
-[v _Set_Display `(v ~T0 @X0 1 ef3`uc`uc`ui ]
-"140
 {
-[; ;display.c: 139: void Set_Display(unsigned char type, unsigned char information,
-[; ;display.c: 140: unsigned int value) {
+[; ;display.c: 125: signs[(valuecounter - 1)] = evaluation_value % 10;
+"125
+[e = *U + &U _signs * -> -> - -> _valuecounter `i -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> % _evaluation_value -> -> 10 `i `ui `uc ]
+[; ;display.c: 126: signs[(valuecounter - 1)] += 0x30;
+"126
+[e =+ *U + &U _signs * -> -> - -> _valuecounter `i -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[; ;display.c: 127: evaluation_value = evaluation_value / 10;
+"127
+[e = _evaluation_value / _evaluation_value -> -> 10 `i `ui ]
+"128
+}
+"124
+[e -- _valuecounter -> -> 1 `i `uc ]
+"123
+[e $ > -> _valuecounter `i -> 0 `i 1148  ]
+[e :U 1149 ]
+"128
+}
+[; ;display.c: 128: }
+[; ;display.c: 129: __nop();
+"129
+[e ( ___nop ..  ]
+[; ;display.c: 130: Evaluate_Display(sizeof(signs), signs);
+"130
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
+[; ;display.c: 131: }
+"131
+[e :UE 1147 ]
+}
+"142
+[v _Set_Display `(v ~T0 @X0 1 ef3`uc`uc`ui ]
+"143
+{
+[; ;display.c: 142: void Set_Display(unsigned char type, unsigned char information,
+[; ;display.c: 143: unsigned int value) {
 [e :U _Set_Display ]
-"139
+"142
 [v _type `uc ~T0 @X0 1 r1 ]
 [v _information `uc ~T0 @X0 1 r2 ]
-"140
+"143
 [v _value `ui ~T0 @X0 1 r3 ]
 [f ]
-[; ;display.c: 141: switch (type) {
-"141
-[e $U 1152  ]
-{
-[; ;display.c: 142: case '7':
-"142
-[e :U 1153 ]
-[; ;display.c: 143: if(information != '-') {
-"143
-[e $ ! != -> _information `ui -> 45 `ui 1154  ]
-{
-[; ;display.c: 144: signs[2] = value;
+[; ;display.c: 144: switch (type) {
 "144
-[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
-[; ;display.c: 145: signs[2] += 0x30;
-"145
-[e =+ *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
-[; ;display.c: 146: signs[1] = '-';
-"146
-[e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
-[; ;display.c: 147: signs[0] = information;
-"147
-[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
-[; ;display.c: 148: Evaluate_Display(sizeof(signs), signs);
-"148
-[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
-"149
-}
-[; ;display.c: 149: } else {
-[e $U 1155  ]
-[e :U 1154 ]
+[e $U 1153  ]
 {
-[; ;display.c: 150: Evaluate_Signs(value);
+[; ;display.c: 145: case '7':
+"145
+[e :U 1154 ]
+[; ;display.c: 146: if(information != '-') {
+"146
+[e $ ! != -> _information `ui -> 45 `ui 1155  ]
+{
+[; ;display.c: 147: signs[2] = value;
+"147
+[e = *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux -> _value `uc ]
+[; ;display.c: 148: signs[2] += 0x30;
+"148
+[e =+ *U + &U _signs * -> -> -> 2 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 48 `i `uc ]
+[; ;display.c: 149: signs[1] = '-';
+"149
+[e = *U + &U _signs * -> -> -> 1 `i `ui `ux -> -> # *U &U _signs `ui `ux -> -> 45 `ui `uc ]
+[; ;display.c: 150: signs[0] = information;
 "150
-[e ( _Evaluate_Signs (1 _value ]
+[e = *U + &U _signs * -> -> -> 0 `i `ui `ux -> -> # *U &U _signs `ui `ux _information ]
+[; ;display.c: 151: Evaluate_Display(sizeof(signs), signs);
 "151
-}
-[e :U 1155 ]
-[; ;display.c: 151: }
-[; ;display.c: 152: break;
+[e ( _Evaluate_Display (2 , -> -> # _signs `ui `uc &U _signs ]
 "152
-[e $U 1151  ]
-[; ;display.c: 153: case 'L':
+}
+[; ;display.c: 152: } else {
+[e $U 1156  ]
+[e :U 1155 ]
+{
+[; ;display.c: 153: Evaluate_Signs(value);
 "153
+[e ( _Evaluate_Signs (1 _value ]
+"154
+}
 [e :U 1156 ]
+[; ;display.c: 154: }
 [; ;display.c: 155: break;
 "155
-[e $U 1151  ]
+[e $U 1152  ]
+[; ;display.c: 156: case 'L':
 "156
-}
-[; ;display.c: 156: }
-[e $U 1151  ]
-"141
-[e :U 1152 ]
-[e [\ _type , $ -> -> 55 `ui `uc 1153
- , $ -> -> 76 `ui `uc 1156
- 1151 ]
-"156
-[e :U 1151 ]
-[; ;display.c: 157: Write_Display_Byte(pixels);
-"157
-[e ( _Write_Display_Byte (1 &U _pixels ]
-[; ;display.c: 158: }
+[e :U 1157 ]
+[; ;display.c: 158: break;
 "158
-[e :UE 1150 ]
+[e $U 1152  ]
+"159
+}
+[; ;display.c: 159: }
+[e $U 1152  ]
+"144
+[e :U 1153 ]
+[e [\ _type , $ -> -> 55 `ui `uc 1154
+ , $ -> -> 76 `ui `uc 1157
+ 1152 ]
+"159
+[e :U 1152 ]
+[; ;display.c: 160: Write_Display_Byte(pixels);
+"160
+[e ( _Write_Display_Byte (1 &U _pixels ]
+[; ;display.c: 161: }
+"161
+[e :UE 1151 ]
 }
 [a 9C 65 66 67 68 69 70 71 0 ]
 [a 7C 65 67 68 69 70 71 0 ]
@@ -7974,7 +7984,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 1C 65 66 67 68 69 70 0 ]
 [a 12C 65 66 67 68 69 70 0 ]
 [a 15C 65 66 67 68 69 70 0 ]
+[a 18C 66 67 68 69 70 0 ]
 [a 14C 68 69 70 0 ]
 [a 8C 65 66 67 0 ]
 [a 2C 66 67 0 ]
-[a 18C 48 0 ]
+[a 19C 48 0 ]

@@ -28,6 +28,7 @@
 #define ELEMENTS(x) (sizeof(x) / sizeof(x[0]))
 #define TRANSMITTER 0xAA
 #define ADDRESS 0xAA
+#define CHECK_POWER
 // </editor-fold>
 
 

@@ -84,7 +84,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXSTA1bits `VS633 ~T0 @X0 0 e@4012 ]
 "11530
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
-"11607
+[v F7818 `(v ~T0 @X0 1 tf1`ul ]
+"152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
+[v __delay `JF7818 ~T0 @X0 0 e ]
+[p i __delay ]
+"11607 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f44k22.h
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7606,130 +7610,148 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1144 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1145  ]
 [e :U 1146 ]
-[; ;communication.c: 28: TXREG1 = 0x01;
+[; ;communication.c: 28: TXSTA1bits.TX9D = 0;
 "28
-[e = _TXREG1 -> -> 1 `i `uc ]
-[; ;communication.c: 29: while(PIR1bits.TXIF == 0);
+[e = . . _TXSTA1bits 0 0 -> -> 0 `i `uc ]
+[; ;communication.c: 29: _delay((unsigned long)((1)*(4000000/4000.0)));
 "29
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 30: TXREG1 = 0x01;
+"30
+[e = _TXREG1 -> -> 1 `i `uc ]
+[; ;communication.c: 31: while(PIR1bits.TXIF == 0);
+"31
 [e $U 1147  ]
 [e :U 1148 ]
 [e :U 1147 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1148  ]
 [e :U 1149 ]
-[; ;communication.c: 30: TXREG1 = operation;
-"30
+[; ;communication.c: 32: _delay((unsigned long)((1)*(4000000/4000.0)));
+"32
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 33: TXREG1 = operation;
+"33
 [e = _TXREG1 _operation ]
-[; ;communication.c: 31: while(PIR1bits.TXIF == 0);
-"31
+[; ;communication.c: 34: while(PIR1bits.TXIF == 0);
+"34
 [e $U 1150  ]
 [e :U 1151 ]
 [e :U 1150 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1151  ]
 [e :U 1152 ]
-[; ;communication.c: 32: TXREG1 = port;
-"32
+[; ;communication.c: 35: _delay((unsigned long)((1)*(4000000/4000.0)));
+"35
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 36: TXREG1 = port;
+"36
 [e = _TXREG1 _port ]
-[; ;communication.c: 33: while(PIR1bits.TXIF == 0);
-"33
+[; ;communication.c: 37: while(PIR1bits.TXIF == 0);
+"37
 [e $U 1153  ]
 [e :U 1154 ]
 [e :U 1153 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1154  ]
 [e :U 1155 ]
-[; ;communication.c: 34: TXREG1 = con_status;
-"34
+[; ;communication.c: 38: _delay((unsigned long)((1)*(4000000/4000.0)));
+"38
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 39: TXREG1 = con_status;
+"39
 [e = _TXREG1 _con_status ]
-[; ;communication.c: 35: while(PIR1bits.TXIF == 0);
-"35
+[; ;communication.c: 40: while(PIR1bits.TXIF == 0);
+"40
 [e $U 1156  ]
 [e :U 1157 ]
 [e :U 1156 ]
 [e $ == -> . . _PIR1bits 1 2 `i -> 0 `i 1157  ]
 [e :U 1158 ]
-[; ;communication.c: 36: TXREG1 = p_status;
-"36
+[; ;communication.c: 41: _delay((unsigned long)((1)*(4000000/4000.0)));
+"41
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;communication.c: 42: TXREG1 = p_status;
+"42
 [e = _TXREG1 _p_status ]
-[; ;communication.c: 37: while(TXSTA1bits.TRMT == 0);
-"37
+[; ;communication.c: 43: while(TXSTA1bits.TRMT == 0);
+"43
 [e $U 1159  ]
 [e :U 1160 ]
 [e :U 1159 ]
 [e $ == -> . . _TXSTA1bits 0 1 `i -> 0 `i 1160  ]
 [e :U 1161 ]
-[; ;communication.c: 38: PORTDbits.RD4 = 0;
-"38
+[; ;communication.c: 44: PORTDbits.RD4 = 0;
+"44
 [e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
-[; ;communication.c: 39: RCSTA1bits.CREN = 1;
-"39
+[; ;communication.c: 45: RCSTA1bits.CREN = 1;
+"45
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 40: __nop();
-"40
+[; ;communication.c: 46: __nop();
+"46
 [e ( ___nop ..  ]
-[; ;communication.c: 41: }
-"41
+[; ;communication.c: 47: }
+"47
 [e :UE 1140 ]
 }
-"44
+"50
 [v _Receive `(uc ~T0 @X0 1 ef ]
 {
-[; ;communication.c: 44: unsigned char Receive(void) {
+[; ;communication.c: 50: unsigned char Receive(void) {
 [e :U _Receive ]
 [f ]
-[; ;communication.c: 45: if(RCSTA1bits.OERR == 1) {
-"45
+[; ;communication.c: 51: if(RCSTA1bits.OERR == 1) {
+"51
 [e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1163  ]
 {
-[; ;communication.c: 46: RCSTA1bits.CREN = 0;
-"46
+[; ;communication.c: 52: RCSTA1bits.CREN = 0;
+"52
 [e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;communication.c: 47: RCSTA1bits.CREN = 1;
-"47
+[; ;communication.c: 53: RCSTA1bits.CREN = 1;
+"53
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 48: overrun = 1;
-"48
+[; ;communication.c: 54: overrun = 1;
+"54
 [e = _overrun -> -> 1 `i `b ]
-"49
+"55
 }
 [e :U 1163 ]
-[; ;communication.c: 49: }
-[; ;communication.c: 50: return (RCREG1);
-"50
+[; ;communication.c: 55: }
+[; ;communication.c: 56: return (RCREG1);
+"56
 [e ) _RCREG1 ]
 [e $UE 1162  ]
-[; ;communication.c: 51: }
-"51
+[; ;communication.c: 57: }
+"57
 [e :UE 1162 ]
 }
-"53
+"59
 [v _Receive_Dump `(v ~T0 @X0 1 ef ]
 {
-[; ;communication.c: 53: void Receive_Dump(void) {
+[; ;communication.c: 59: void Receive_Dump(void) {
 [e :U _Receive_Dump ]
 [f ]
-"54
+"60
 [v _dump `uc ~T0 @X0 1 a ]
-[; ;communication.c: 54: unsigned char dump;
-[; ;communication.c: 55: if(RCSTA1bits.OERR == 1) {
-"55
+[; ;communication.c: 60: unsigned char dump;
+[; ;communication.c: 61: if(RCSTA1bits.OERR == 1) {
+"61
 [e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1165  ]
 {
-[; ;communication.c: 56: RCSTA1bits.CREN = 0;
-"56
+[; ;communication.c: 62: RCSTA1bits.CREN = 0;
+"62
 [e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;communication.c: 57: RCSTA1bits.CREN = 1;
-"57
+[; ;communication.c: 63: RCSTA1bits.CREN = 1;
+"63
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;communication.c: 58: overrun = 1;
-"58
+[; ;communication.c: 64: overrun = 1;
+"64
 [e = _overrun -> -> 1 `i `b ]
-"59
+"65
 }
 [e :U 1165 ]
-[; ;communication.c: 59: }
-[; ;communication.c: 60: dump = RCREG1;
-"60
+[; ;communication.c: 65: }
+[; ;communication.c: 66: dump = RCREG1;
+"66
 [e = _dump _RCREG1 ]
-[; ;communication.c: 61: }
-"61
+[; ;communication.c: 67: }
+"67
 [e :UE 1164 ]
 }

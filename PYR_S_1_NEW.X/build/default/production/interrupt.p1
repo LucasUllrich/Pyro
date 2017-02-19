@@ -7571,9 +7571,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;interrupt.c: 11: receive_counter++;
 "11
 [e ++ _receive_counter -> -> 1 `i `uc ]
-[; ;interrupt.c: 13: if(received[0] == 0x00) {
+[; ;interrupt.c: 13: if(received[0] == 0x01) {
 "13
-[e $ ! == -> *U + &U _received * -> -> -> 0 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 0 `i 1143  ]
+[e $ ! == -> *U + &U _received * -> -> -> 0 `i `ui `ux -> -> # *U &U _received `ui `ux `i -> 1 `i 1143  ]
 {
 [; ;interrupt.c: 14: slave_addressed = 1;
 "14

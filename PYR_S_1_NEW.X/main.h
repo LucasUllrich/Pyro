@@ -24,7 +24,7 @@
  ***************************************************/
 // <editor-fold defaultstate="collapsed" desc="variables">
 #define _XTAL_FREQ  4000000
-#define ADDRESS     0x00
+#define ADDRESS     0x01
 #define TRANSMITTER 0x01
 #define OPERATION   2
 #define PORT        3
@@ -43,7 +43,7 @@ bit slave_addressed = 0;
 #define Probe_3     PORTCbits.RC2
 #define Probe_4     PORTEbits.RE2
 #define Probe_5     PORTEbits.RE0
-#define Probe_6     PORTAbits.RA4
+#define Probe_6     PORTBbits.RB2
 #define Probe_7     PORTBbits.RB4
 #define Probe_8     PORTAbits.RA2
 #define Probe_9     PORTAbits.RA0
