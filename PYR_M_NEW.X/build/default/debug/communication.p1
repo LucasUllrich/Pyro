@@ -7828,13 +7828,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;communication.c: 67: SSP1BUF = write_data[counter - 1];
 "67
 [e = _SSP1BUF *U + _write_data * -> - -> _counter `i -> 1 `i `x -> -> # *U _write_data `i `x ]
-[; ;communication.c: 68: while (SSP1IF == 0);
-"68
-[e $U 1131  ]
-[e :U 1132 ]
-[e :U 1131 ]
-[e $ == -> _SSP1IF `i -> 0 `i 1132  ]
-[e :U 1133 ]
 [; ;communication.c: 69: SSP1IF = 0;
 "69
 [e = _SSP1IF -> -> 0 `i `b ]
